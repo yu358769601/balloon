@@ -129,7 +129,7 @@ export default class ItemLine extends cc.Component {
     }
     move() {
         if (this.moveDir != null) {
-            this.node.angle = cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x)) - 90;
+            this.node.angle = (cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x)) - 90)*1;
         }
 
 
