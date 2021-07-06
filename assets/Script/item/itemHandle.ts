@@ -23,6 +23,9 @@ export default class ItemHandle extends cc.Component {
     }
 
     initView(){
+
+
+        return
         this.node.on(cc.Node.EventType.TOUCH_START,(event)=>{
             let location = event.getLocation();// 获取节点坐标
             this.firstX = location.x;
@@ -58,9 +61,12 @@ export default class ItemHandle extends cc.Component {
                 if (endY  > 0){
                     //向下函数
                     // ccLog.log("移动方向 ",'down');
+                    Emitter.fire("onLineAngleRight")
+
                 } else {
                     //向上函数
                     // ccLog.log("移动方向 ",'up');
+                    Emitter.fire("onLineAngleLeft")
                 }
             }
 

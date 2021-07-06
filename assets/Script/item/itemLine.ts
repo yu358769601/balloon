@@ -7,6 +7,7 @@
 
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
+import {instance} from "../../scripts/Joystick";
 
 const {ccclass, property} = cc._decorator;
 
@@ -20,12 +21,31 @@ export default class ItemLine extends cc.Component {
     //检测有没有
     checkNode1 : cc.Node = null
     checkNode2 : cc.Node = null
+    private moveDir: cc.Vec2;
     onLoad () {
         this.removeEmitter()
         this.registerEmitter()
 
+        instance.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
+        instance.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        instance.on(cc.Node.EventType.TOUCH_END, this.onTouchEnd, this);
+    }
+
+    onTouchStart(event: cc.Event.EventTouch, data){
+        Emitter.fire("onLineTOUCH_START")
 
     }
+
+    onTouchMove(event: cc.Event.EventTouch, data) {
+        // this._speedType = data.speedType;
+        this.moveDir = data.moveDistance;
+    }
+
+    onTouchEnd(event: cc.Event.EventTouch, data) {
+        // this._speedType = data.speedType;
+        Emitter.fire("onLineTOUCH_END")
+    }
+
     protected onDestroy(): void {
         this.removeEmitter()
     }
@@ -53,10 +73,10 @@ export default class ItemLine extends cc.Component {
     }
 
     onLineAngleLeft(selfName){
-        this.node.angle+=1
+        this.node.angle+=2
     }
     onLineAngleRight(selfName){
-        this.node.angle-=1
+        this.node.angle-=2
     }
     onLineTOUCH_START(selfName){
         this.checkNode2 = null
@@ -107,7 +127,16 @@ export default class ItemLine extends cc.Component {
 
         this.checkNode2 = null
     }
+    move() {
+        if (this.moveDir != null) {
+            this.node.angle = cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x)) - 90;
+        }
 
 
-    // update (dt) {}
+
+    }
+
+    update (dt) {
+        this.move();
+    }
 }
