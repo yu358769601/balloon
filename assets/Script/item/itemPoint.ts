@@ -18,12 +18,22 @@ export default class ItemPoint extends cc.Component {
 
     // LIFE-CYCLE CALLBACKS:
     @property({
-        displayName: "编号",
-        tooltip: "编号",
+        displayName: "本身编号",
+        tooltip: "本身编号",
         type: cc.Integer
-
     })
     index : number = 0
+
+
+    @property({
+        displayName: "允许进入的编号",
+        tooltip: "允许进入的编号",
+        type: cc.Integer
+    })
+    allowInIndexs : number[] = []
+    //记录
+    allowInIndexsSet : number[] = []
+
 
 
     onLoad () {
