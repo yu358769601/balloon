@@ -120,16 +120,18 @@ export default class ItemLine extends cc.Component {
         //     ccLog.log("史莱姆 进来了"," 肇事者 ",sendData.self)
         //     sendData.self.getComponent("beatingSlime").setInTag(true)
         // }
+
+        sendData.self.node.getComponent("itemPoint").标记.active = true
         this.checkNode2 = sendData.self.node
     }
     onCollisionExitByControlCheckLineCollision(selfName,sendData){
         // ccLog.log("撞到了 退出 碰撞 "," 受害者 ",sendData.self," 肇事者 ",sendData.other)
-
+        sendData.self.node.getComponent("itemPoint").标记.active = false
         this.checkNode2 = null
     }
     move() {
         if (this.moveDir != null) {
-            this.node.angle = (cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x)) - 90)*1;
+            this.node.angle = (cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x)) )*1;
         }
 
 

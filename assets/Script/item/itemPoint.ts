@@ -5,6 +5,8 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import GetNode, {GetNodeType} from "../System/Utils/getNode";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -33,10 +35,22 @@ export default class ItemPoint extends cc.Component {
     allowInIndexs : number[] = []
     //记录
     allowInIndexsSet : number[] = []
+    private 标记: cc.Node;
 
 
 
     onLoad () {
+        this.initView()
+    }
+
+    private initView() {
+        let  data
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "标记",
+            parentNode: this.node,
+        }
+         this.标记 = GetNode.getNode(data)
 
     }
 
