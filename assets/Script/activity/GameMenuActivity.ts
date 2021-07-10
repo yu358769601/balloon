@@ -42,23 +42,28 @@ export default class GameMenuActivity extends Activity {
     }
     onShowTempLine(self,index){
         // Emitter.fire("onShowTempLine", this.checkNode1.getComponent("itemPoint").index)
-        let data
-        data = {
-            type : GetNodeType.开始隐藏通过参数显示,
-            otherData : index+"",
-            parentNode : this.node
-        }
-        let temp = GetNode.getNode(data)
-        if (temp) {
-            if (temp.active == false) {
-                temp.active = true
-            }
-        }
+
+        // let data
+        // data = {
+        //     type : GetNodeType.开始隐藏通过参数显示,
+        //     otherData : index+"",
+        //     parentNode : this.node
+        // }
+        // let temp = GetNode.getNode(data)
+        // if (temp) {
+        //     if (temp.active == false) {
+        //         temp.active = true
+        //     }
+        // }
 
 
 
     }
     start () {
+
+       let itemStart =  this.getComponentInChildren("itemStart")
+
+        Emitter.fire("onStartGame",itemStart.node)
 
     }
 
