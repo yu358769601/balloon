@@ -31,7 +31,11 @@ export default class ControlCheckSlime extends cc.Component {
     }
     // 碰撞状态中调用
     onCollisionStay(other, self) {
-
+        let sendData = {
+            other,
+            self,
+        }
+        Emitter.fire("onCollisionStayByControlCheckLineCollision", sendData)
     }
     // 碰撞结束时调用
     onCollisionExit(other, self) {

@@ -53,14 +53,18 @@ export default class ItemPoint extends cc.Component {
 
 
     //index
-    onEndNodeShow(selfName,index){
-        this.标记.active = false
-        for (let i = 0; i < this.allowInOutIndexs.length; i++) {
-            if (this.allowInOutIndexs[i] == index ) {
-                this.标记.active = true
-                return
+    onEndNodeShow(selfName,data){
+        if (data.index2 != null) {
+            this.标记.active = false
+            //让下一个 可以 移动的点 发亮
+            for (let i = 0; i < this.allowInOutIndexs.length; i++) {
+                if (this.allowInOutIndexs[i] ==data.index2 ) {
+                    this.标记.active = true
+                    break
+                }
             }
         }
+
 
     }
 

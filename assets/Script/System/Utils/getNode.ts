@@ -205,6 +205,46 @@ export default class GetNode extends cc.Component {
         }else if (data.type != this.nodeType &&data.otherData.trim() == this.otherData.trim()) {
             console.error("定位系统","===>","检测警告","===>","具体内容","===>","有如下其他数据相同但是类型不同请查找",this.otherData.trim())
         }
+
+        return  null
     }
+
+
+    //     let data = {
+    //         index1 : "",
+    //         index2 : "",
+    //           component : "",
+    //          parentNode : parentNode
+    //     }
+    // GetNode.getNodeByComponent(data)
+    static getNodeByComponent(data){
+        let controlNodes = data.parentNode.getComponentsInChildren(data.component)
+
+        let returnNodes = []
+        for (let i = 0; i <controlNodes.length ; i++) {
+            let  controlNode = controlNodes[i]
+            let node = controlNode.getControlNode(data)
+            if (node != null) {
+                // ccLog.log("controlNode",node)
+                returnNodes.push(node)
+            }
+        }
+        if (returnNodes.length == 1) {
+            return returnNodes[0]
+        }else if (returnNodes.length == 0) {
+            console.error("定位系统","===>","检测错误","===>","具体内容","===>","没有找到",data)
+            return null
+        }else if (returnNodes.length > 1) {
+            console.error("定位系统","===>","检测错误","===>","具体内容","===>","找到多个",data)
+            for (let i = 0; i <returnNodes.length ; i++) {
+                console.error("定位系统","===>","检测错误","===>","具体内容","===>","找到多个结果请及时处理",returnNodes[i])
+            }
+
+            return null
+        }
+
+    }
+
+
     // update (dt) {}
 }

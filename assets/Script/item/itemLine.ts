@@ -63,6 +63,7 @@ export default class ItemLine extends cc.Component {
 
 
     中距离: cc.Node = null
+    中皮肤: cc.Node = null
 
 
 
@@ -73,10 +74,13 @@ export default class ItemLine extends cc.Component {
     onStartGame(selfName,startNode){
         this.startNode = startNode
         this.node.setPosition(this.startNode.getPosition())
-
+        this.index =  this.startNode.getComponent("itemPoint").index
 
 
         this.onSetWideth(null,null)
+
+
+
     }
 
     //设置宽高
@@ -88,14 +92,19 @@ export default class ItemLine extends cc.Component {
         this.中距离.width = this.groupWidthLength*this.group
         this.中距离.height = this.groupHeightLength
 
+        this.中皮肤.width = this.groupWidthLength*this.group
+
+
 
         let boxCollider = this.中距离.getComponent(cc.BoxCollider)
         boxCollider.offset = new Vec2(this.中距离.width/2,0)
         boxCollider.size = new Size(this.中距离.width,this.中距离.height)
 
-       this.index =  this.startNode.getComponent("itemPoint").index
 
-        Emitter.fire("onEndNodeShow",this.index)
+        let newdata = {
+            index2 : this.index,
+        }
+        Emitter.fire("onEndNodeShow",newdata)
     }
 
 
@@ -138,6 +147,12 @@ export default class ItemLine extends cc.Component {
             parentNode : this.node
         }
         this.中距离 = GetNode.getNode(data)
+         data = {
+            type : GetNodeType.纯查找,
+            otherData : "中皮肤",
+            parentNode : this.node
+        }
+        this.中皮肤 = GetNode.getNode(data)
     }
 
 
@@ -148,7 +163,10 @@ export default class ItemLine extends cc.Component {
         Emitter.remove('onLineTOUCH_END', this.onLineTOUCH_END, this)
         Emitter.remove('onCollisionEnterByControlCheckLineCollision', this.onCollisionEnterByControlCheckLineCollision, this)
         Emitter.remove('onCollisionExitByControlCheckLineCollision', this.onCollisionExitByControlCheckLineCollision, this)
+        Emitter.remove('onCollisionStayByControlCheckLineCollision', this.onCollisionStayByControlCheckLineCollision, this)
         Emitter.remove('onStartGame', this.onStartGame, this)
+        Emitter.remove('onAddGroup', this.onAddGroup, this)
+        Emitter.remove('onSetGroup', this.onSetGroup, this)
     }
 
     registerEmitter() {
@@ -158,7 +176,10 @@ export default class ItemLine extends cc.Component {
         Emitter.register('onLineTOUCH_END', this.onLineTOUCH_END, this)
         Emitter.register('onCollisionEnterByControlCheckLineCollision', this.onCollisionEnterByControlCheckLineCollision, this)
         Emitter.register('onCollisionExitByControlCheckLineCollision', this.onCollisionExitByControlCheckLineCollision, this)
+        Emitter.register('onCollisionStayByControlCheckLineCollision', this.onCollisionStayByControlCheckLineCollision, this)
         Emitter.register('onStartGame', this.onStartGame, this)
+        Emitter.register('onAddGroup', this.onAddGroup, this)
+        Emitter.register('onSetGroup', this.onSetGroup, this)
     }
 
     start() {
@@ -178,6 +199,10 @@ export default class ItemLine extends cc.Component {
     }
 
     onLineTOUCH_END(selfName) {
+
+
+        ccLog.log("走我了"," this.endNode ",this.endNode," this.startNode ",this.startNode)
+
         if (this.endNode == null) {
 
         } else {
@@ -191,15 +216,23 @@ export default class ItemLine extends cc.Component {
                 if (this.startNode != this.endNode) {
                     ccLog.log("编号 棍子", this.index ," 落点 ",this.endNode.getComponent("itemPoint").index)
 
+                    let index1 = this.index
+                    let index2 = this.endNode.getComponent("itemPoint").index
+
+
                     //设置落点
                     this.node.setPosition(this.endNode.getPosition())
                     this.startNode = this.endNode
 
-
                     this.index =  this.endNode.getComponent("itemPoint").index
                     // ccLog.log("我要爆炸了 1 ", "起点单位", this.startNode, "落点单位", this.endNode)
 
-                    Emitter.fire("onEndNodeShow",this.index)
+                    let data = {
+                        index1 :index1,
+                        index2 : index2
+                    }
+
+                    Emitter.fire("onEndNodeShow",data)
                 } else {
                     ccLog.log("我要爆炸了 2")
                 }
@@ -225,12 +258,18 @@ export default class ItemLine extends cc.Component {
 
         //进入范围提示
         // sendData.self.node.getComponent("itemPoint").标记.active = true
+
+        ccLog.log("突然闯入",sendData.self.node.getComponent("itemPoint").标记.active)
         if (sendData.self.node.getComponent("itemPoint").标记.active == true) {
             this.endNode = sendData.self.node
         }
 
     }
-
+    onCollisionStayByControlCheckLineCollision(selfName, sendData){
+        if (sendData.self.node.getComponent("itemPoint").标记.active == true) {
+            this.endNode = sendData.self.node
+        }
+    }
     onCollisionExitByControlCheckLineCollision(selfName, sendData) {
         // ccLog.log("撞到了 退出 碰撞 "," 受害者 ",sendData.self," 肇事者 ",sendData.other)
         //出去范围提示
@@ -248,6 +287,25 @@ export default class ItemLine extends cc.Component {
 
 
     }
+    onAddGroup(selfName,group){
+
+
+        if ( this.group +group <0 ) {
+            ccLog.log("游戏结束")
+        }else{
+            this.group += group
+            this.onSetWideth(null,null)
+            ccLog.log("我现在要设置多少组 减少之后",this.group,"距离",this.中距离.width)
+        }
+
+    }
+
+    onSetGroup(selfName,group){
+        this.group = group
+        this.onSetWideth(null,null)
+        ccLog.log("我现在要设置多少组",this.group,"距离",this.中距离.width)
+    }
+
 
     update(dt) {
         this.move();
