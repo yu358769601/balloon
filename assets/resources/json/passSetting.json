@@ -1,0 +1,92 @@
+{
+
+  "diamond_" : "每关结束送的钻石",
+  "diamond" : 10,
+
+  "passGetGem_" : "过关看广告送的钻石",
+  "passGetGem" : 30,
+
+  "passpassTimeOut_" : "过关之后的等待时间",
+  "passpassTimeOut" : 2,
+
+  "shopRandomBuyGem_" : "商店随机购买消耗钻石",
+  "shopRandomBuyGem" : 600,
+
+  "shopGetGem_" : "商店看广告获取钻石",
+  "shopGetGem" : 30,
+
+  "lookADSexMax_" : "看广告买随机成人风橡皮",
+  "lookADSexMax" : 2,
+
+
+  "luckIndex_": "转盘送的钻石数字",
+  "luckIndex_0": 100,
+  "luckIndex_2": 50,
+  "luckIndex_4": 150,
+
+
+  "nowPassRubber_": "当前关卡送的橡皮相关",
+
+  "nowPassRubberIndex" : 20,
+  "nowPassRubberNumMax" : 5,
+  "nowPassRubberIndexMax" : 100,
+
+  "passADTipsTime_" : "关卡15秒没有过关 强制弹出提示",
+  "passADTipsTime" : 15,
+
+  "passADTipsTimeIndex_" : "大于等于多少关走 15秒这个",
+  "passADTipsTimeIndex" : 3,
+
+  "passADTipsGem_" : "看提示消耗灯泡",
+  "passADTipsGem" : 100,
+
+
+  "passADTips1Gem_" : "关卡提示1消耗",
+  "passADTips1Gem" : 20,
+
+  "passADTips2Gem_" : "关卡提示2消耗",
+  "passADTips2Gem" : 40,
+
+  "passADJumpPassGem_" : "关卡跳关消耗",
+  "passADJumpPassGem" : 40,
+
+
+  "passADimage_textGem_" : "关卡图文提示消耗",
+  "passADimage_textGem" : 40,
+
+  "passADAddGem_" : "关卡看广告增加钻石",
+  "passADAddGem" : 40,
+
+  "itemOnlineGiftBagList_" : "在线礼包时间段",
+  "itemOnlineGiftBagList" : [
+    {
+      "time" : 15000,
+      "gem" : 10
+    },
+    {
+      "time" : 45000,
+      "gem" : 15
+    },
+    {
+      "time" : 60000,
+      "gem" : 20
+    },
+    {
+      "time" : 180000,
+      "gem" : 25
+    },
+    {
+      "time" : 300000,
+      "gem" : 30
+    },
+    {
+      "time" : 300000,
+      "gem" : 30
+    }
+  ],
+
+  "ttfenxiang_" : "头条分享送钻石",
+  "ttfenxiang" : 40,
+  "ttchapinggailv_" : "头条出现插屏的概率",
+  "ttchapinggailv" : 100
+}

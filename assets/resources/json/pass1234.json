@@ -1,0 +1,67 @@
+{
+  "list": [
+    {
+      "index": 8,
+      "passName": "pass_24",
+      "itemName": "pass_24",
+      "pager" : 1,
+      "tip": [
+        {
+          "index": 0,
+          "type": 0,
+          "src": "先消灭下面2个红色软泥墙！"
+        },
+        {
+          "index": 1,
+          "type": 1,
+          "src": "依次摧毁红色、棕色、绿色和蓝色软泥墙！"
+        }
+      ],
+      "gameData": {
+        "title": "逃出重围!"
+      },
+      "passSP": "CheckpointItem_24"
+    }, {
+      "index": 8,
+      "passName": "pass_end",
+      "itemName": "pass_end",
+      "pager" : 3,
+      "type": 0,
+      "tip": [
+        {
+          "index": 0,
+          "type": 0,
+          "src": "我要睡觉"
+        },
+        {
+          "index": 1,
+          "type": 1,
+          "src": "我要休息"
+        },
+        {
+          "index": 2,
+          "type": 2,
+          "src": ""
+        },
+        {
+          "index": 3,
+          "type": 3,
+          "list": [
+            {
+              "src" : "pass_1_tip_1",
+              "text": "图文提示1"
+            },
+            {
+              "src" : "pass_1_tip_2",
+              "text": "图文提示2"
+            }
+          ]
+        }
+      ],
+      "gameData": {
+        "title": "让我喝口水!"
+      },
+      "passSP": "CheckpointItem_24"
+    }
+  ]
+}

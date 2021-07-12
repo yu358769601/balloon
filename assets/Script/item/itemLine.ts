@@ -11,12 +11,19 @@ import {instance} from "../../scripts/Joystick";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Vec2 = cc.Vec2;
 import Size = cc.Size;
+import {DialogType, ItemPreType} from "../System/Type/enums";
 
 const {ccclass, property} = cc._decorator;
+
+
+
 
 @ccclass
 export default class ItemLine extends cc.Component {
 //棍子
+
+
+    data : any = null
 
     // LIFE-CYCLE CALLBACKS:
     @property({
@@ -82,7 +89,13 @@ export default class ItemLine extends cc.Component {
 
 
     }
+    //
+    setData(data) {
+        this.data = data
+        ccLog.log("本关所有内容 杆子",data)
+        this.initView()
 
+    }
     //设置宽高
     onSetWideth(selfName,data){
         if (data) {
@@ -113,7 +126,6 @@ export default class ItemLine extends cc.Component {
         this.removeEmitter()
         this.registerEmitter()
 
-        this.initView()
 
         instance.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
         instance.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
@@ -233,6 +245,14 @@ export default class ItemLine extends cc.Component {
                     }
 
                     Emitter.fire("onEndNodeShow",data)
+
+
+                    let getKeyData = {
+                        index : index2,
+                        self : this,
+                        callBack : this.getKeyCallBack
+                    }
+                    Emitter.fire("onGetKey",getKeyData)
                 } else {
                     ccLog.log("我要爆炸了 2")
                 }
@@ -243,6 +263,17 @@ export default class ItemLine extends cc.Component {
 
         }
     }
+
+    getKeyCallBack(data,key){
+        ccLog.log("现在这个位置有钥匙 "," data ",data," key ",key)
+
+        key.node.destroy()
+
+
+
+    }
+
+
 
     async onCollisionEnterByControlCheckLineCollision(selfName, sendData) {
         // let sendData = {
@@ -290,8 +321,17 @@ export default class ItemLine extends cc.Component {
     onAddGroup(selfName,group){
 
 
-        if ( this.group +group <0 ) {
+        if ( this.group +group <=0 ) {
             ccLog.log("游戏结束")
+            // let cllbacks = {
+            //     // self : this,
+            //     successfulCallback: this.successfulCallback,
+            //     failureCallback: this.failureCallback
+            // }
+            // myNowPassRubber : UtilsDB.getMyNowPassRubber(),
+            // data.myNowPassRubber = UtilsDB.getMyNowPassRubber()
+            // data.self = this
+            Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
         }else{
             this.group += group
             this.onSetWideth(null,null)

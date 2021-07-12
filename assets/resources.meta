@@ -4,9 +4,25 @@
   "isBundle": true,
   "bundleName": "resources",
   "priority": 8,
-  "compressionType": {},
-  "optimizeHotUpdate": {},
-  "inlineSpriteFrames": {},
-  "isRemoteBundle": {},
+  "compressionType": {
+    "qgame": "default",
+    "quickgame": "default",
+    "wechatgame": "default"
+  },
+  "optimizeHotUpdate": {
+    "qgame": false,
+    "quickgame": false,
+    "wechatgame": false
+  },
+  "inlineSpriteFrames": {
+    "qgame": false,
+    "quickgame": false,
+    "wechatgame": false
+  },
+  "isRemoteBundle": {
+    "qgame": true,
+    "quickgame": true,
+    "wechatgame": true
+  },
   "subMetas": {}
 }

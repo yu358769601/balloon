@@ -251,15 +251,15 @@ export default class LoadManage{
             cb(null, obj)
             return
         }
-        // cc.log("这里走过吗 重要 准备加载",path)
+        // ccLog.log("这里走过吗重要准备加载",path)
         //加载本地图片 预制体
          cc.resources.load(path, type,(error, res) =>{
-             // cc.log("加载 什么错误吗",error,res)
+             // ccLog.log("加载 什么错误吗",error,res)
 
                  if(error == null)
                  {
                      this._loadResCache[path] = res
-                     // cc.log("这里走过吗 重要 资料存在现在放在这里了",this._loadResCache[path])
+                     // ccLog.log("这里走过吗 重要 资料存在现在放在这里了",this._loadResCache[path])
                      cb(error, res)
                      return
                  }
@@ -378,6 +378,9 @@ export default class LoadManage{
             }
 
         }
+
+
+        ccLog.log("总共都有啥啊",this._loadResCache);
         if (callbacks.scheduleEnd) {
             callbacks.scheduleEnd(currentCount,count)
         }

@@ -1,0 +1,1011 @@
+{
+  "list" : [
+
+    {
+      "itemAddComponent" : "MAP1_0",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "出發了!先到樓下商場去港鐵站.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+
+      ]
+    },
+
+
+
+
+
+    {
+      "itemAddComponent" : "MAP2_1",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "這破石堆明顯不適合輪椅行駛呀!你可找一些讓輪椅能安全行駛的路徑.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "我得找到正確的路才行.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP2_100",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "這破石堆明顯不適合行走呀!你可找一些能安全行走的路徑.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "我得找到正確的路才行.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP2_2",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "樓梯是不適合輪椅行駛的!你可找一些讓輪椅安全行駛的路徑.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "我得找到正確的路才行.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP2_3",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "非常正確!輔助斜坡路是輪椅使用者的好朋友!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP2_4",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "過馬路,要小心, 注意紅綠燈!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP2_5",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "看到工地與路障,你應小心避開.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP2_6",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "看到垃圾桶與雜物,你應小心避開.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP2_10",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "馬路上都是車太危險了.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_0",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "到樓下月台就可以上列車了.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_1",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "看到水灘與提示板,你應小心避開.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_50",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_child",
+          "type" : 1,
+          "text" : "我們遇上導盲犬, 要緊記「三不一問」!"
+        },
+        {
+          "head" : "chat_head_child",
+          "type" : 1,
+          "text" : "不干擾：不要以聲音、手勢吸引導盲犬的注意力。不要在使用者未經同意的狀況下，任意撫摸導盲犬。"
+        },
+        {
+          "head" : "chat_head_child",
+          "type" : 1,
+          "text" : "不餵食：絕對不要以任何食物吸引或餵食導盲犬。"
+        },
+        {
+          "head" : "chat_head_child",
+          "type" : 1,
+          "text" : "一問：看到視障人士在公共地方猶豫徘徊不前時，主動詢問是否需要的協助。"
+        },
+        {
+          "head" : "chat_head_child",
+          "type" : 1,
+          "text" : "如果想要認識導盲犬，請先徵求使用者的同意。"
+        },
+        {
+          "head" : "chat_head_child",
+          "type" : 0,
+          "text" : "非常對!小朋友你們真懂事,值得表揚!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_child",
+          "type" : 1,
+          "text" : "我們讓你先行!再見!"
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_2",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_child",
+          "type" : 1,
+          "text" : "我們應讓路給有需要人士哦!"
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_3",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "哎呀!人有三急!去找洗手間先!找工作人員問一下應該可找到.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_4",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "接下来要去樓下月台就可坐港鐵了.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_5",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "樓梯是不適合輪椅行駛的!你可找一些讓輪椅安全行駛的路徑.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "我得找到正確的路下去才行.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_6",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "扶手電梯是不適合輪椅行駛的!你可找一些讓輪椅安全行駛的路徑.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "我得找到正確的路下去才行.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_7",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "升降電梯似乎可幫到我……",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_8",
+      "itemName" : "TalkItem",
+      "list" : [
+
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "非常正確!升降電梯是輪椅使用者的好朋友!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_20",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "請問洗手間在哪?",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_train_girl_TALKING",
+          "type" : 1,
+          "text" : "請跟我來,我帶你過去."
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "謝謝妳.",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_30",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "需要先去洗手間之後再來乘坐電梯",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP3_40",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_train_girl_TALKING",
+          "type" : 1,
+          "text" : "先生,洗手間在這裡."
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "謝謝你!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP4_0",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "列車到了,去上車先",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP4_1",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "我們不可以這樣勉強上車的,試試找工作人員幫忙吧",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP4_2",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "你好,我想上列車,可否幫幫忙?",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_train_man_TALKING",
+          "type" : 1,
+          "text" : "舉手之勞,請跟我來吧!"
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP4_10",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_train_man_TALKING",
+          "type" : 1,
+          "text" : "你的導盲犬真乖!歡迎乘坐列車!"
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP4_11",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_NPC06",
+          "type" : 1,
+          "text" : "我們讓你先上吧!"
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP5_0",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "之後要去巴士站轉車, 巴士站在哪呢?",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP5_1",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "老闆,想問下巴士站怎麼去?",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_shop_B",
+          "type" : 1,
+          "text" : "巴士站就在馬路對面,記得要上天橋過去哦!"
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "謝謝!祝老闆生意興隆呀!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP5_2",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "非常正確!行人天橋是輪椅使用者過馬路的好伙伴!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP5_20",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "非常正確!行人天橋是視障人仕過馬路的好伙伴!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP5_3",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "巴士站就在前面!加油!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP6_0",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "接下來要去巴士站轉車",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP6_1",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "危險的工地不要勉強走過,另選道路吧",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP6_2",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_NPC06",
+          "type" : 1,
+          "text" : "你到前面的有需要人士等候區,可以優先上車哦"
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP6_ANI",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_bus_driver_TALKING",
+          "type" : 1,
+          "text" : "讓我協助你固定好輪椅吧!"
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "謝謝!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_bus_driver_TALKING",
+          "type" : 1,
+          "text" : "不用客氣!"
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP7_0",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "肚子有點餓,找間茶餐廳醫肚先!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP7_1",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "請問茶餐廳在哪?",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_shop_A_TALKING",
+          "type" : 1,
+          "text" : "在後面大街上就是了"
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "謝謝!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP7_2",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "現在不少商場或店鋪,都有斜坡輔助道路,方便有需要人仕",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP7_3",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "樓梯對於我來說實在是上不去啊",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "選擇正確的路去茶餐廳",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP7_4",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "樓梯對於我來說實在是下不去啊",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "選擇正確的路去活動現場",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP8_0",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "真好吃.海邊公園就在前面,快到了!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        },
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "穿過人群我就到最終地點了加油!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemAddComponent" : "MAP8_2",
+      "itemName" : "TalkItem",
+      "list" : [
+        {
+          "head" : "chat_head_wheel_TALKING_v2",
+          "type" : 0,
+          "text" : "YEAH!到了!時間剛剛好!義工活動快開始了,希望今天可將更多快樂,給予所有人!謝謝你!",
+          "playerType" : [
+            {
+              "head" : "chat_head_blind_TALKING_v2"
+            },
+            {
+              "head" : "chat_head_wheel_TALKING_v2"
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}

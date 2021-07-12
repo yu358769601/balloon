@@ -1,0 +1,12 @@
+{
+  "list": [
+    {
+      "index": 1,
+      "componentName" : "pass",
+      "passName": "pass_1",
+      "itemName": "pass_1",
+      "pager" : 0,
+      "type": 1
+    }
+  ]
+}

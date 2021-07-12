@@ -5,8 +5,9 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-import LoadManage from "../../Script/System/Load/LoadManage";
-import ccLog from "../../Script/System/Log/ccLog";
+
+import LoadManage from "../Load/LoadManage";
+import ccLog from "../Log/ccLog";
 
 const {ccclass, property} = cc._decorator;
 
@@ -28,6 +29,7 @@ export default class JsonManager extends cc.Component {
     static rubberjson: cc.JsonAsset = null
     static passpager: cc.JsonAsset = null
     static passGameOver: cc.JsonAsset = null
+    static passData: cc.JsonAsset = null
     onLoad () {}
 
     start () {
@@ -38,9 +40,10 @@ export default class JsonManager extends cc.Component {
         // JsonManager.talkList.json
         this.passjson = await LoadManage.getJsonForName("passjson");
         this.passSettingjson = await LoadManage.getJsonForName("passSettingjson");
-        this.rubberjson = await LoadManage.getJsonForName("rubberjson");
-        this.passpager = await LoadManage.getJsonForName("passpager");
-        this.passGameOver = await LoadManage.getJsonForName("passGameOver");
+        this.passData = await LoadManage.getJsonForName("passData");
+        // this.rubberjson = await LoadManage.getJsonForName("rubberjson");
+        // this.passpager = await LoadManage.getJsonForName("passpager");
+        // this.passGameOver = await LoadManage.getJsonForName("passGameOver");
 
 
         ccLog.log("有沒有",this.rubberjson)
@@ -83,6 +86,27 @@ export default class JsonManager extends cc.Component {
 
         return list
     }
+    static getPassDatalists(){
+        // for (let i = 0; i < this.pass.json.list.length; i++) {
+        //     let item = this.pass.json.list[i]
+        //     if (item.passName == passName) {
+        //         return item
+        //     }
+        // }
+        let list = []
+        if (this.passData.json.list.length > 0) {
+            for (let i = 0; i <this.passData.json.list.length ; i++) {
+                let item = this.passData.json.list[i]
+                // item.index = i+1
+                list.push(item)
+            }
+        }
+
+        return list
+    }
+
+
+
     static getPassPagerlists(){
         // for (let i = 0; i < this.pass.json.list.length; i++) {
         //     let item = this.pass.json.list[i]
@@ -125,6 +149,23 @@ export default class JsonManager extends cc.Component {
         }
         return null
     }
+
+    //获取关卡数据通过名字
+    // JsonManager.getPassDataByName(passName)
+    static getPassDataByName(passName){
+        let list = JsonManager.getPassDatalists()
+        for (let i = 0; i < list.length; i++) {
+            let item = list[i]
+            if (item.passName == passName) {
+                // item.index = i
+                return item
+            }
+        }
+        return null
+    }
+
+
+
     //获取关卡通过页号
     // JsonManager.getPassByPager(pager)
     static getPassByPager(pager){
@@ -246,7 +287,6 @@ export default class JsonManager extends cc.Component {
         }
         return list[0]
     }
-
     //JsonManager.getTalkListItem(name)
     static getTalkListItem(name){
         ccLog.log("有嗎",JsonManager.talkList.json,"名字",name)
@@ -282,6 +322,17 @@ export default class JsonManager extends cc.Component {
             let item = JsonManager.rubberjson.json.list[i]
                 list.push(item)
         }
+
+        return list
+    }
+
+
+    //拆解关卡数据  锚点
+    static getPassDatas(data){
+        // ccLog.log("有嗎",JsonManager.rubber.json,"名字",name)
+        let list = []
+
+
 
         return list
     }

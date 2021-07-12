@@ -134,7 +134,7 @@ export default class ItemLineBG extends cc.Component {
 
         this.initView()
 
-
+        // ccLog.log("我的参数",this.node.rotation)
 
 
 

@@ -27,8 +27,6 @@ import ChannelManger from "./System/qudao/channelManger";
 const {ccclass, property} = cc._decorator;
 
 
-
-
 @ccclass
 export default class Helloworld extends cc.Component {
 
@@ -41,7 +39,7 @@ export default class Helloworld extends cc.Component {
     // @property(cc.Node)
     // LoadNode: cc.Node = null;
     // @property(cc.Camera)
-     mainCamera: cc.Camera = null;
+    mainCamera: cc.Camera = null;
 
     // @property(cc.Node)
     // edu: cc.Node = null;
@@ -57,47 +55,50 @@ export default class Helloworld extends cc.Component {
     tempSprite: cc.Sprite = null;
 
 
-    loadResNamePath : {[path: string]: string} = null
-    loadResNamePoolPath : {[path: string]: string} = null
+    loadResNamePath: { [path: string]: string } = null
+    loadResNamePoolPath: { [path: string]: string } = null
 
-    static photoframe : {[path: string]: string} = null
+    static photoframe: { [path: string]: string } = null
     physicsManager = null
-    FrameRate : number = 0
+    FrameRate: number = 0
     private 专属渠道: ChannelHelloWroldByAndroid;
     private 测试按钮: cc.Node = null;
     private 测试节点: cc.Node = null;
 
 
-
     protected onDestroy(): void {
         this.removeEmitter()
     }
-    removeEmitter(){
-        Emitter.remove('onGetCamera', this.onGetCamera,this)
-        Emitter.remove('onGetCodeAD', this.onGetCodeAD,this)
+
+    removeEmitter() {
+        Emitter.remove('onGetCamera', this.onGetCamera, this)
+        Emitter.remove('onGetCodeAD', this.onGetCodeAD, this)
     }
-    registerEmitter(){
-        Emitter.register('onGetCamera', this.onGetCamera,this)
-        Emitter.register('onGetCodeAD', this.onGetCodeAD,this)
+
+    registerEmitter() {
+        Emitter.register('onGetCamera', this.onGetCamera, this)
+        Emitter.register('onGetCodeAD', this.onGetCodeAD, this)
     }
-    onGetCamera(selfName,self,callback){
+
+    onGetCamera(selfName, self, callback) {
         if (callback) {
-            callback(self,this.mainCamera)
+            callback(self, this.mainCamera)
         }
     }
-    async start () {
+
+    async start() {
 
 
-         // Emitter.fire("onPlay")
+        // Emitter.fire("onPlay")
 
-         // let eduTip = await UtilsNode.getNode("eduTip",this.edu);
+        // let eduTip = await UtilsNode.getNode("eduTip",this.edu);
 
-         // NLog.level = 0
-         // NLog.print(1,"111","测试")
+        // NLog.level = 0
+        // NLog.print(1,"111","测试")
 
-         // ccLog.log("怎么说",{id : 11})
-         // cc.log("确定是走到我这了是吧 0",eduTip)
-         // eduTip.getComponent("EduTip").initView()
+        // ccLog.log("怎么说",{id : 11})
+        // cc.log("确定是走到我这了是吧 0",eduTip)
+        // eduTip.getComponent("EduTip").initView()
 
 
         this.initView()
@@ -109,21 +110,16 @@ export default class Helloworld extends cc.Component {
         //html, body {margin:0; padding:0; width:100%; height:100%}
 
 
-
-
-
-
         // cc.game.setFrameRate(60)
         // cc.director.getScheduler().setTimeScale(2);
         // this.physicsManager.FIXED_TIME_STEP = 1 / 20;
-
 
 
         // ccLog.logTag = false
         // init logic
         // this.label.string = this.text;
 
-        this.专属渠道 =  this.getComponent("channelHelloWroldByAndroid")
+        this.专属渠道 = this.getComponent("channelHelloWroldByAndroid")
         this.专属渠道.init(this)
 
 
@@ -138,17 +134,21 @@ export default class Helloworld extends cc.Component {
     //     return this.loadResNamePath["Photoframe"+name]
     // }
 
-    initJson(){
+    initJson() {
         let load = {}
         load["passjson"] = "json/pass"
         load["passSettingjson"] = "json/passSetting"
-        load["passpager"] = "json/passpager"
-        load["rubberjson"] = "json/rubber"
-        load["passGameOver"] = "json/passGameOver"
+        load["passData"] = "json/passData"
+
+
+        // load["passpager"] = "json/passpager"
+        // load["rubberjson"] = "json/rubber"
+        // load["passGameOver"] = "json/passGameOver"
 
         return load
     }
-    initPre(){
+
+    initPre() {
         let load = {}
         // load["testPre"] = "item/testPre"
         load["pass_1"] = "Checkpoint/pass_1"
@@ -159,8 +159,8 @@ export default class Helloworld extends cc.Component {
         load["tipsBtn"] = "item/tipsBtn"
         load["luckDialog"] = "dialog/luckDialog"
         //测试选关
-        load[DialogType.测试选关] = "dialog/"+DialogType.测试选关
-        load[DialogType.翻页选关] = "dialog/"+DialogType.翻页选关
+        load[DialogType.测试选关] = "dialog/" + DialogType.测试选关
+        load[DialogType.翻页选关] = "dialog/" + DialogType.翻页选关
         //选关
         load["SelectLevelDialog"] = "dialog/SelectLevelDialog"
         //橡皮
@@ -218,44 +218,47 @@ export default class Helloworld extends cc.Component {
         // load["pass_14"] = "Checkpoint/pass_14"
         return load
     }
-    initPass(){
+
+    initPass() {
         let load = {}
 
         let list = JsonManager.getPasslists()
         if (list) {
             for (let i = 0; i < list.length; i++) {
                 //设置关卡名字
-                load[list[i].passName] = "Checkpoint/"+list[i].passName
+                load[list[i].componentName] = "pass/" + list[i].componentName
                 //设置关卡图片
-                load[list[i].passSP] = "CheckpointItem/"+list[i].passSP
+                // load[list[i].passSP] = "CheckpointItem/"+list[i].passSP
             }
         }
 
         return load
     }
-    initPassSP(){
+
+    initPassSP() {
         let load = {}
 
         let list = JsonManager.getPasslists()
         if (list) {
             for (let i = 0; i < list.length; i++) {
-                load[list[i].passSP] = "CheckpointItem/"+list[i].passSP
+                load[list[i].passSP] = "CheckpointItem/" + list[i].passSP
             }
         }
 
         return load
     }
-    initPassPager(){
+
+    initPassPager() {
         let load = {}
 
         let list = JsonManager.getPassPagerlists()
 
-        ccLog.log("设置头像了呢啊有吗",list)
+        ccLog.log("设置头像了呢啊有吗", list)
         if (list) {
             for (let i = 0; i < list.length; i++) {
                 //设置主角头像
-                load[list[i].src] = "CheckpointItem/"+list[i].src
-                ccLog.log("设置头像了呢啊",load[list[i].src])
+                load[list[i].src] = "CheckpointItem/" + list[i].src
+                ccLog.log("设置头像了呢啊", load[list[i].src])
             }
         }
 
@@ -263,7 +266,7 @@ export default class Helloworld extends cc.Component {
     }
 
 
-    initSound(){
+    initSound() {
         let load = {}
         // 按钮 = "按钮",
         //     擦除失败 = "擦除失败",
@@ -279,10 +282,9 @@ export default class Helloworld extends cc.Component {
         //     胜利弹出胜利界面时播放 = "胜利弹出胜利界面时播放",
         //     在商店购买到新皮肤时 = "在商店购买到新皮肤时",
 
-        for(let key in SoundType)
-        {
+        for (let key in SoundType) {
             // ccLog.log("声音",key);
-            load["sound_"+key] = "mp3/"+key
+            load["sound_" + key] = "mp3/" + key
         }
         // load["sound_"+SoundType.按钮] = "mp3/"+SoundType.按钮
         // load["sound_"+SoundType.猫叫] = "mp3/"+SoundType.猫叫
@@ -298,19 +300,18 @@ export default class Helloworld extends cc.Component {
         // load["sound_"+SoundType.胜利界面] = "mp3/"+SoundType.胜利界面
 
 
-
         return load
     }
 
-    initTTF(){
+    initTTF() {
         let load = {}
         // load["华康海报体W12"] = "TF/"+"华康海报体W12"
-        load["pangtouyu"] = "TF/"+"pangtouyu"
+        load["pangtouyu"] = "TF/" + "pangtouyu"
         return load
     }
 
 
-    initTips(){
+    initTips() {
         let load = {}
         load["pass_1_tip_1"] = "passtips/pass_1_tip_1"
         load["pass_2_tip_1"] = "passtips/pass_2_tip_1"
@@ -340,7 +341,8 @@ export default class Helloworld extends cc.Component {
 
         return load
     }
-    initRubber(){
+
+    initRubber() {
         let load = {}
 
 
@@ -412,7 +414,7 @@ export default class Helloworld extends cc.Component {
         return load
     }
 
-    initGameOverSP(){
+    initGameOverSP() {
         let load = {}
 
         load["tishi1"] = "gameover/tishi1"
@@ -421,63 +423,78 @@ export default class Helloworld extends cc.Component {
         return load
     }
 
-    initDialog(){
+    initDialog() {
         let load = {}
         // load["GameMenuActivity"] = "activity/GameMenuActivity"
         // load["GameActivity"] = "activity/GameActivity"
         // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
         for (let dialogTypeKey in DialogType) {
-            load[DialogType[dialogTypeKey]] = "dialog/"+DialogType[dialogTypeKey]
+            load[DialogType[dialogTypeKey]] = "dialog/" + DialogType[dialogTypeKey]
         }
         return load
     }
-    initItem(){
+
+    initItem() {
         let load = {}
         // load["GameMenuActivity"] = "activity/GameMenuActivity"
         // load["GameActivity"] = "activity/GameActivity"
         // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
         for (let ItemTypeKey in ItemPreType) {
-            load[ItemPreType[ItemTypeKey]] = "item/"+ItemPreType[ItemTypeKey]
+            load[ItemPreType[ItemTypeKey]] = "item/" + ItemPreType[ItemTypeKey]
         }
         return load
     }
+
     DialogType
 
-    initActivity(){
+    initActivity() {
         let load = {}
         // load["GameMenuActivity"] = "activity/GameMenuActivity"
         // load["GameActivity"] = "activity/GameActivity"
         // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
 
         for (let activityUITypeKey in ActivityUIType) {
-            load[ActivityUIType[activityUITypeKey]] = "activity/"+ActivityUIType[activityUITypeKey]
+            load[ActivityUIType[activityUITypeKey]] = "activity/" + ActivityUIType[activityUITypeKey]
         }
         return load
     }
-    initAn(){
+
+    initAn() {
         let load = {}
         // load["gebulindiyiguan"] = "anim/gebulindiyiguan"
         return load
     }
-    initPool(){
+
+    initPool() {
         let load = {}
         load["fireworksItem"] = "item/fireworksItem"
 
         return load
     }
 
+    //第一次加载
+    initJsonLoad() {
+        let load = {}
+        let jsonLoad = this.initJson()
+        this.addList(load, jsonLoad)
+
+        return load
+    }
 
     //第一次加载
-    initFirstLoad(){
+    initFirstLoad() {
         let load = {}
-        // let jsonLoad = this.initJson()
-        // this.addList(load,jsonLoad)
         let activity = this.initActivity()
-        this.addList(load,activity)
-        // let dialog = this.initDialog()
-        // this.addList(load,dialog)
-        // let item = this.initItem()
-        // this.addList(load,item)
+        this.addList(load, activity)
+        let pass = this.initPass()
+        this.addList(load, pass)
+        let item = this.initItem()
+        this.addList(load, item)
+
+
+        let dialog = this.initDialog()
+        this.addList(load, dialog)
+
         // let an = this.initAn()
         // this.addList(load,an)
         // let tips = this.initTips()
@@ -486,8 +503,9 @@ export default class Helloworld extends cc.Component {
 
         return load
     }
+
     //都是图片
-    initSp(){
+    initSp() {
         let load = {}
         // let rubber = this.initRubber()
         // this.addList(load,rubber)
@@ -498,7 +516,8 @@ export default class Helloworld extends cc.Component {
 
         return load
     }
-    initRes(){
+
+    initRes() {
         let load = {}
 
         load["放大镜"] = "res/getItem/放大镜"
@@ -512,7 +531,7 @@ export default class Helloworld extends cc.Component {
         return load
     }
 
-    initLoad(){
+    initLoad() {
         let load = {}
         // let pre = this.initPre()
         // this.addList(load,pre)
@@ -524,49 +543,51 @@ export default class Helloworld extends cc.Component {
         // 华康海报体W12
         return load
     }
-    initLoadPass(){
+
+    initLoadPass() {
         let load = {}
-        let pass = this.initPass()
-        this.addList(load,pass)
-        let passsp = this.initPassSP()
-        this.addList(load,passsp)
-        let passPager = this.initPassPager()
-        this.addList(load,passPager)
-        let tips = this.initTips()
-        this.addList(load,tips)
+        // let pass = this.initPass()
+        // this.addList(load,pass)
+        // let passsp = this.initPassSP()
+        // this.addList(load,passsp)
+        // let passPager = this.initPassPager()
+        // this.addList(load,passPager)
+        // let tips = this.initTips()
+        // this.addList(load,tips)
         // 华康海报体W12
         return load
     }
 
-    initNotLoad(){
+    initNotLoad() {
         let load = {}
         let pass = this.initPass()
-        this.addList(load,pass)
+        this.addList(load, pass)
 
         let sound = this.initSound()
-        this.addList(load,sound)
+        this.addList(load, sound)
         let pre = this.initPre()
-        this.addList(load,pre)
+        this.addList(load, pre)
         let passsp = this.initPassSP()
-        this.addList(load,passsp)
+        this.addList(load, passsp)
         let passPager = this.initPassPager()
-        this.addList(load,passPager)
+        this.addList(load, passPager)
         // 华康海报体W12
         return load
     }
 
 
-    addList(arr1,arr2){
+    addList(arr1, arr2) {
         for (let item in arr2) {
             arr1[item] = arr2[item]
         }
 
         return arr1
     }
-    结算_送橡皮变化2 : cc.Node = null
-    结算_送橡皮底板1 : cc.Node = null
 
-    initView(){
+    结算_送橡皮变化2: cc.Node = null
+    结算_送橡皮底板1: cc.Node = null
+
+    initView() {
         let data
         //  data = {
         //     type : GetNodeType.纯查找,
@@ -581,59 +602,87 @@ export default class Helloworld extends cc.Component {
         // }
         // this.结算_送橡皮底板1 = GetNode.getNode(data)
 
-         data = {
-            type : GetNodeType.开始隐藏通过参数显示,
-            otherData : "测试按钮",
-            parentNode : this.node
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "测试按钮",
+            parentNode: this.node
         }
         this.测试按钮 = GetNode.getNode(data)
 
         data = {
-            type : GetNodeType.开始隐藏通过参数显示,
-            otherData : "测试节点",
-            parentNode : this.node
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "测试节点",
+            parentNode: this.node
         }
         this.测试节点 = GetNode.getNode(data)
         data = {
-            type : GetNodeType.纯查找,
-            otherData : "ActivityRoot",
-            parentNode : this.node
+            type: GetNodeType.纯查找,
+            otherData: "ActivityRoot",
+            parentNode: this.node
         }
         this.主节点 = GetNode.getNode(data)
-
 
 
         // if (GameSetting.mode ==gameModeType.测试){
         //     this. 测试节点.active = true
         // }
-        if (GameSetting.mode ==gameModeType.测试){
-            this. 测试按钮.active = true
-            this.测试按钮.on(cc.Node.EventType.TOUCH_START,()=>{
+        if (GameSetting.mode == gameModeType.测试) {
+            this.测试按钮.active = true
+            this.测试按钮.on(cc.Node.EventType.TOUCH_START, () => {
                 this.测试节点.active = true
-            },this)
+            }, this)
         }
 
     }
 
     //别的组件调用的
-   async startLoad(){
+    async startLoad() {
         UIActivity.initView(this.主节点)
-        await LoadManage.starLoad(this.initFirstLoad(),{
-            schedule : (currentCount,count)=>{
+        await LoadManage.starLoad(this.initJsonLoad(), {
+            schedule: (currentCount, count) => {
                 // cc.log("回调进度",currentCount,"/",count);
                 // this.loadbar.progress = currentCount/count
-                ccLog.log("回调进度",currentCount)
+                ccLog.log("回调进度", currentCount)
                 // this.结算_送橡皮变化2.height = currentCount / count * this.结算_送橡皮底板1.height
 
             },
-            itemCallback : (item)=>{
-                ccLog.log("回调进度什么呢",item)
+            itemCallback: (item) => {
+                ccLog.log("回调进度什么呢", item)
             },
-            scheduleEnd :async (currentCount,count)=>{
+            scheduleEnd: async (currentCount, count) => {
 
             },
         });
-        // await JsonManager.initJson()
+        await JsonManager.initJson()
+        await LoadManage.starLoad(this.initFirstLoad(), {
+            schedule: (currentCount, count) => {
+                // cc.log("回调进度",currentCount,"/",count);
+                // this.loadbar.progress = currentCount/count
+                ccLog.log("回调进度", currentCount)
+                // this.结算_送橡皮变化2.height = currentCount / count * this.结算_送橡皮底板1.height
+
+            },
+            itemCallback: (item) => {
+                ccLog.log("回调进度什么呢", item)
+            },
+            scheduleEnd: async (currentCount, count) => {
+
+            },
+        });
+
+        let pass = JsonManager.getPassByIndex(UtilsDB.getMyPassSave().index)
+        ccLog.log("什么数据呢", pass)
+        let passData = JsonManager.getPassDataByName(pass.passName)
+
+
+        UIActivity.startToActivity("GameMenuActivity",
+            {
+                pass: pass,
+                passData: passData
+            }
+        )
+
+
         // LoadManage.starNotLoad(this.initNotLoad());
         //
         // LoadManage.starLoad(this.initSp(),{
@@ -702,11 +751,11 @@ export default class Helloworld extends cc.Component {
         //         }
         //     });
         // }
-       // Umengstatistics.setEventForAndroidCount(maidianType.加载完成的次数)
-       //  Emitter.fire("onOpenDialog",{name : DialogType.四格漫画,zIndex : 100,data : {pass : pass},self : this},null)
+        // Umengstatistics.setEventForAndroidCount(maidianType.加载完成的次数)
+        //  Emitter.fire("onOpenDialog",{name : DialogType.四格漫画,zIndex : 100,data : {pass : pass},self : this},null)
 
         // UIActivity.startToActivity("FourGridActivity",{pass : pass})
-        UIActivity.startToActivity("GameMenuActivity",null)
+
 
         // LoadManage.starAllLoad();
 
@@ -714,19 +763,19 @@ export default class Helloworld extends cc.Component {
         // Emitter.fire("onInitMusicSwitch")
     }
 
-    onGetCodeAD(){
+    onGetCodeAD() {
         if (ChannelManger.getInstance().getChannelTypeIsNoAndroid() == true) {
-            Api.getAdControlInfo((num)=>{
+            Api.getAdControlInfo((num) => {
             })
         }
     }
 
-     onDisable() {
-         this.removeEmitter()
+    onDisable() {
+        this.removeEmitter()
     }
 
     async onLoad() {
-        cc.director.getCollisionManager().enabled=true;
+        cc.director.getCollisionManager().enabled = true;
 
         cc.director.getCollisionManager().enabledDebugDraw = true;
 
@@ -738,54 +787,48 @@ export default class Helloworld extends cc.Component {
         this.physicsManager.enabledAccumulator = true
 
 
-         this.removeEmitter()
-         this.registerEmitter()
+        this.removeEmitter()
+        this.registerEmitter()
         // UtilsDB.initADtimeTips()
 
 
+        //编辑器
+        // this.initloadResByEdit()
 
-         //编辑器
-         // this.initloadResByEdit()
+        ccLog.logTag = true
+        let channel = ChannelManger.getInstance().getChannel();
+        channel.initAd()
 
-         ccLog.logTag = true
-         let channel = ChannelManger.getInstance().getChannel();
-         channel.initAd()
-
-         ccLog.log("当前渠道",channel)
+        ccLog.log("当前渠道", channel)
 
 
-         Api.getAdControlInfo((num)=>{
-             ccLog.log("当前渠道",channel,"广告参数",num)
-         })
+        Api.getAdControlInfo((num) => {
+            ccLog.log("当前渠道", channel, "广告参数", num)
+        })
 
-         // qudaoCommon.initallAd();
-         //
+        // qudaoCommon.initallAd();
+        //
 
-            let listNode = []
-         // for (let i = 0; i < 10; i++) {
-         //     // ccLog.log("开始跳了吗",i)
-         //     let node1 =await UtilsNode.getNodeFromPool("fireworksItem",this.node);
-         //     listNode.push(node1)
-         // }
-         // for (let i = 0; i < listNode.length; i++) {
-         //     UtilsAction.gameOverJump(listNode[i],()=>{
-         //         UtilsNode.setNodeFromPool("fireworksItem",listNode[i])
-         //     })
-         //     await Utils.setTimerOnce(this,0.2)
-         //     ccLog.log("开始跳了吗",i,listNode[i])
-         // }
+        let listNode = []
+        // for (let i = 0; i < 10; i++) {
+        //     // ccLog.log("开始跳了吗",i)
+        //     let node1 =await UtilsNode.getNodeFromPool("fireworksItem",this.node);
+        //     listNode.push(node1)
+        // }
+        // for (let i = 0; i < listNode.length; i++) {
+        //     UtilsAction.gameOverJump(listNode[i],()=>{
+        //         UtilsNode.setNodeFromPool("fireworksItem",listNode[i])
+        //     })
+        //     await Utils.setTimerOnce(this,0.2)
+        //     ccLog.log("开始跳了吗",i,listNode[i])
+        // }
         // ccLog.log("获取组件名字",cc.js.getClassName(Helloworld))
-
-
 
 
     }
 
 
-
-
-
-     update(dt: number): void {
+    update(dt: number): void {
         // let FrameRate = cc.game.getFrameRate()
         //  if (this.FrameRate != FrameRate) {
         //
@@ -798,7 +841,7 @@ export default class Helloworld extends cc.Component {
         //  this.physicsManager.enabled = false;
     }
 
-    initListening(){
+    initListening() {
 
     }
 

@@ -129,6 +129,7 @@ export default abstract class BaseDialog extends cc.Component {
     abstract removeEmitter()
 
     abstract registerEmitter()
+    abstract initView()
 
     start() {
 
