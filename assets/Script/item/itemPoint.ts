@@ -7,6 +7,7 @@
 
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Emitter from "../System/Msg/Emitter";
+import ccLog from "../System/Log/ccLog";
 
 const {ccclass, property} = cc._decorator;
 
@@ -14,13 +15,13 @@ const {ccclass, property} = cc._decorator;
 export default class ItemPoint extends cc.Component {
 //节点
 
-
+    data : any = null
     // @property(cc.Label)
     // label: cc.Label = null;
     //
     // @property
     // text: string = 'hello';
-
+    isStart : boolean = false
     // LIFE-CYCLE CALLBACKS:
     @property({
         displayName: "本身编号",
@@ -74,7 +75,6 @@ export default class ItemPoint extends cc.Component {
         this.removeEmitter()
         this.registerEmitter()
 
-        this.initView()
     }
 
     private initView() {
@@ -100,8 +100,37 @@ export default class ItemPoint extends cc.Component {
         Emitter.register('onEndNodeShow', this.onEndNodeShow, this)
     }
 
+    setData(data){
+        this.data = data
 
+        this.initView()
 
+        this.initNode()
+    }
+    initNode(){
+        // allowInOutIndexs: Array(3)
+        // 0: "2"
+        // 1: "4"
+        // 2: "1"
+        // length: 3
+        // __proto__: Array(0)
+        // index: 0
+        // isStart: true
+        // typeName: "itemPoint"
+        // x: -266.818
+        // y: 228.048
+        ccLog.log("点数据",this.data)
+        this.allowInOutIndexs = this.data.allowInOutIndexs
+        this.index = this.data.index
+
+        this.isStart = this.data.isStart
+        if (this.isStart == true) {
+            this.addComponent("itemStart")
+        }
+
+        this.node.setPosition(this.data.x,this.data.y)
+
+    }
     start () {
 
     }

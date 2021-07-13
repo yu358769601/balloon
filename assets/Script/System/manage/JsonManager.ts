@@ -328,13 +328,26 @@ export default class JsonManager extends cc.Component {
 
 
     //拆解关卡数据  锚点
+    // JsonManager.getPassDatas(data)
     static getPassDatas(data){
         // ccLog.log("有嗎",JsonManager.rubber.json,"名字",name)
-        let list = []
+        let passData = {}
+
+
+        for (let i = 0; i <data.getitemNames.length ; i++) {
+           let getitemName = data.getitemNames[i]
+            passData[getitemName] = []
+
+            for (let x = 0; x <data.passData.passData.length ; x++) {
+                if (data.passData.passData[x].typeName == getitemName) {
+                    passData[getitemName].push(data.passData.passData[x])
+                }
+            }
+        }
 
 
 
-        return list
+        return passData
     }
 
 

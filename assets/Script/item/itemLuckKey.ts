@@ -15,7 +15,7 @@ export default class ItemLuckKey extends cc.Component {
 
     // @property(cc.Label)
     // label: cc.Label = null;
-
+    data : any = null
     // @property
     // text: string = 'hello';
     @property({
@@ -30,7 +30,6 @@ export default class ItemLuckKey extends cc.Component {
         this.removeEmitter()
         this.registerEmitter()
 
-        this.initView()
     }
 
     removeEmitter() {
@@ -54,6 +53,25 @@ export default class ItemLuckKey extends cc.Component {
 
 
     }
+    setData(data){
+        this.data = data
+
+        this.initView()
+
+        this.initNode()
+    }
+    initNode(){
+        ccLog.log("钥匙数据",this.data)
+        // index: 2
+        // typeName: "itemLuckKey"
+        // x: -436.747
+        // y: -241.279
+      this.index = this.data.index
+
+        this.node.setPosition(this.data.x,this.data.y)
+
+    }
+
     initView(){
 
     }

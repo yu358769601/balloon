@@ -714,13 +714,17 @@ export enum DialogType {
 }
 export enum ItemPreType {
     打印吐司 = "ToastItem",
-    条目点 = "itemPoint",
+
     加钱 = "addGem",
     资产 = "assetsItem",
     关卡页 = "pageCheckPointItem",
     关卡条目 = "checkPointItemguan",
     图文提示条目 = "imageTextItem",
-    条目棍子 = "itemLine",
+
+    操作棍 = "itemLine",
+    点 = "itemPoint",
+    线 = "itemLineBG",
+    钥匙 = "itemLuckKey",
 }
 
 

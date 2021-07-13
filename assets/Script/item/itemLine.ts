@@ -81,6 +81,7 @@ export default class ItemLine extends cc.Component {
     onStartGame(selfName,startNode){
         this.startNode = startNode
         this.node.setPosition(this.startNode.getPosition())
+        this.node.rotation = 180
         this.index =  this.startNode.getComponent("itemPoint").index
 
 
@@ -179,6 +180,7 @@ export default class ItemLine extends cc.Component {
         Emitter.remove('onStartGame', this.onStartGame, this)
         Emitter.remove('onAddGroup', this.onAddGroup, this)
         Emitter.remove('onSetGroup', this.onSetGroup, this)
+        Emitter.remove('onGameOverCall', this.onGameOverCall, this)
     }
 
     registerEmitter() {
@@ -192,6 +194,7 @@ export default class ItemLine extends cc.Component {
         Emitter.register('onStartGame', this.onStartGame, this)
         Emitter.register('onAddGroup', this.onAddGroup, this)
         Emitter.register('onSetGroup', this.onSetGroup, this)
+        Emitter.register('onGameOverCall', this.onGameOverCall, this)
     }
 
     start() {
@@ -267,7 +270,10 @@ export default class ItemLine extends cc.Component {
     getKeyCallBack(data,key){
         ccLog.log("现在这个位置有钥匙 "," data ",data," key ",key)
 
-        key.node.destroy()
+        if (key.node) {
+            key.node.destroy()
+        }
+
 
 
 
@@ -318,11 +324,20 @@ export default class ItemLine extends cc.Component {
 
 
     }
+
+
+    onGameOverCall(){
+        Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
+    }
+
+
     onAddGroup(selfName,group){
 
 
         if ( this.group +group <=0 ) {
             ccLog.log("游戏结束")
+            this.group += group
+            this.onSetWideth(null,null)
             // let cllbacks = {
             //     // self : this,
             //     successfulCallback: this.successfulCallback,
