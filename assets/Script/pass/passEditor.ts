@@ -27,7 +27,7 @@ enum PassEnum {
 //
 // }
 @ccclass
-export default class Pass extends BasePass {
+export default class PassEditor extends BasePass {
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -76,22 +76,16 @@ export default class Pass extends BasePass {
         ccLog.log("本关所有内容", data)
         this.initView()
 
+        this.getitemNames = [
+            ItemPreType.点, ItemPreType.线, ItemPreType.钥匙,ItemPreType.操作棍
+        ]
+        data.getitemNames = this.getitemNames
+        let passData = JsonManager.getPassDatas(data)
+        //初始化游乐场
+        await this.initPlayBackground(passData)
+        // ItemPreType.条目棍子
 
-        if (data != null) {
-
-            this.getitemNames = [
-                ItemPreType.点, ItemPreType.线, ItemPreType.钥匙,ItemPreType.操作棍
-            ]
-            data.getitemNames = this.getitemNames
-            let passData = JsonManager.getPassDatas(data)
-            //初始化游乐场
-            await this.initPlayBackground(passData)
-            // ItemPreType.条目棍子
-
-            await this.addLine(passData)
-        }
-
-
+        await this.addLine(passData)
     }
 
 

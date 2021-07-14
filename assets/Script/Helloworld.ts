@@ -670,16 +670,11 @@ export default class Helloworld extends cc.Component {
             },
         });
 
-        let pass = JsonManager.getPassByIndex(UtilsDB.getMyPassSave().index)
-        ccLog.log("什么数据呢", pass)
-        let passData = JsonManager.getPassDataByName(pass.passName)
+
 
 
         UIActivity.startToActivity("GameMenuActivity",
-            {
-                pass: pass,
-                passData: passData
-            }
+            null
         )
 
 

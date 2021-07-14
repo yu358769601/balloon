@@ -1,9 +1,15 @@
 {
   "list": [
     {
-
+      "index": 1,
       "passName": "pass_1",
       "itemName": "pass_1",
+
+      "otherData" : {
+        "luck" : true
+      },
+
+
 
       "passData": [
 
@@ -144,6 +150,12 @@
           "typeName" : "itemLuckKey",
           "index" : 2,
 
+          "x" : -436.747,
+          "y": -241.279
+        },
+        {
+          "typeName" : "itemLine",
+          "rotation": 100,
           "x" : -436.747,
           "y": -241.279
         }

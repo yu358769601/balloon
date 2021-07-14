@@ -81,7 +81,7 @@ export default class ItemLine extends cc.Component {
     onStartGame(selfName,startNode){
         this.startNode = startNode
         this.node.setPosition(this.startNode.getPosition())
-        this.node.rotation = 180
+
         this.index =  this.startNode.getComponent("itemPoint").index
 
 
@@ -95,6 +95,9 @@ export default class ItemLine extends cc.Component {
         this.data = data
         ccLog.log("本关所有内容 杆子",data)
         this.initView()
+
+
+        this.node.angle = data.itemLine.rotation
 
     }
     //设置宽高

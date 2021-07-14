@@ -150,8 +150,9 @@ export default class ItemLineBG extends cc.Component {
 
         this.node.setPosition(this.data.x,this.data.y)
 
-
         this.onSetWideth(null,null)
+
+
     }
 
 

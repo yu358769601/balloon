@@ -97,7 +97,7 @@ export default class JsonManager extends cc.Component {
         if (this.passData.json.list.length > 0) {
             for (let i = 0; i <this.passData.json.list.length ; i++) {
                 let item = this.passData.json.list[i]
-                // item.index = i+1
+                item.index = i+1
                 list.push(item)
             }
         }
@@ -277,7 +277,7 @@ export default class JsonManager extends cc.Component {
     //获取关卡通过索引
     // JsonManager.getPassByIndex(index)
     static getPassByIndex(index){
-        let list = JsonManager.getPasslists()
+        let list = JsonManager.getPassDatalists()
 
         for (let i = 0; i < list.length; i++) {
             let item = list[i]
@@ -338,9 +338,9 @@ export default class JsonManager extends cc.Component {
            let getitemName = data.getitemNames[i]
             passData[getitemName] = []
 
-            for (let x = 0; x <data.passData.passData.length ; x++) {
-                if (data.passData.passData[x].typeName == getitemName) {
-                    passData[getitemName].push(data.passData.passData[x])
+            for (let x = 0; x <data.passData.length ; x++) {
+                if (data.passData[x].typeName == getitemName) {
+                    passData[getitemName].push(data.passData[x])
                 }
             }
         }

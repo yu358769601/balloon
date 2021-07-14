@@ -79,9 +79,9 @@ export default class Menu extends cc.Component {
             pass = JsonManager.getPassByIndex(index)
 
             ccLog.log("下一关数据吗",pass)
-            Emitter.fire("onSetPassByName", {pass: pass,passData:passData})
+            Emitter.fire("onSetPassByName", passData)
         }else{
-            Emitter.fire("onSetPassByName", {pass: pass,passData:passData})
+            Emitter.fire("onSetPassByName", passData)
         }
     }
 
