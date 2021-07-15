@@ -11,11 +11,12 @@ import {instance} from "../../scripts/Joystick";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Vec2 = cc.Vec2;
 import Size = cc.Size;
+import ItemBase from "./itemBase";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class ItemLineBG extends cc.Component {
+export default class ItemLineBG extends ItemBase {
 //下面的临时点
 
     // LIFE-CYCLE CALLBACKS:
@@ -248,6 +249,9 @@ export default class ItemLineBG extends cc.Component {
 
 
     update(dt) {
+    }
+
+    setEditData(editData) {
     }
 
 }

@@ -11,7 +11,7 @@ import ccLog from "../System/Log/ccLog";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class ControlCheckSlime extends cc.Component {
+export default class ControlCheckLine extends cc.Component {
 
     // @property(cc.Label)
     // label: cc.Label = null;

@@ -12,6 +12,7 @@ import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Vec2 = cc.Vec2;
 import Size = cc.Size;
 import {DialogType, ItemPreType} from "../System/Type/enums";
+import ItemBase from "./itemBase";
 
 const {ccclass, property} = cc._decorator;
 
@@ -19,7 +20,7 @@ const {ccclass, property} = cc._decorator;
 
 
 @ccclass
-export default class ItemLine extends cc.Component {
+export default class ItemLine extends ItemBase{
 //棍子
 
 
@@ -367,6 +368,9 @@ export default class ItemLine extends cc.Component {
 
     update(dt) {
         this.move();
+    }
+
+    setEditData(editData) {
     }
 
 }

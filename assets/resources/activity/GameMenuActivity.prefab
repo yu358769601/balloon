@@ -459,7 +459,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
+      "width": 150,
       "height": 100
     },
     "_anchorPoint": {
@@ -471,8 +471,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -490,
-        431.01,
+        -465,
+        -612.709,
         0,
         0,
         0,
@@ -523,7 +523,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 60,
+      "width": 120,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -575,8 +575,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "功能",
-    "_N$string": "功能",
+    "_string": "菜单功能",
+    "_N$string": "菜单功能",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -646,11 +646,11 @@
     "_enabled": true,
     "alignMode": 1,
     "_target": null,
-    "_alignFlags": 8,
+    "_alignFlags": 12,
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": 0,
+    "_bottom": 297.29100000000005,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
@@ -790,12 +790,12 @@
     "_prefab": {
       "__id__": 28
     },
-    "_opacity": 140.25,
+    "_opacity": 140,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 249,
+      "g": 171,
+      "b": 171,
       "a": 255
     },
     "_contentSize": {
@@ -947,9 +947,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 234,
-      "g": 159,
-      "b": 159,
+      "r": 159,
+      "g": 232,
+      "b": 234,
       "a": 255
     },
     "_contentSize": {
@@ -1869,9 +1869,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 234,
-      "g": 159,
-      "b": 159,
+      "r": 159,
+      "g": 232,
+      "b": 234,
       "a": 255
     },
     "_contentSize": {

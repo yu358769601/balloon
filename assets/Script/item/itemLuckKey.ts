@@ -7,11 +7,12 @@
 
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
+import ItemBase from "./itemBase";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class ItemLuckKey extends cc.Component {
+export default class ItemLuckKey extends ItemBase {
 
     // @property(cc.Label)
     // label: cc.Label = null;
@@ -78,6 +79,9 @@ export default class ItemLuckKey extends cc.Component {
 
     start () {
 
+    }
+
+    setEditData(editData) {
     }
 
     // update (dt) {}

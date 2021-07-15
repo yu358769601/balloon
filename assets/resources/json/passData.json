@@ -79,7 +79,7 @@
           "indexStart" : 0,
           "indexEnd" : 2,
           "rotation": 93,
-          "group": 4,
+          "group": 8,
 
 
           "x" : -266.896,
@@ -90,7 +90,7 @@
           "indexStart" : 0,
           "indexEnd" : 1,
           "rotation": -88.582,
-          "group": 5,
+          "group": 8,
 
           "x" : -266.896,
           "y": 236.985
@@ -100,7 +100,7 @@
           "indexStart" : 0,
           "indexEnd" : 4,
           "rotation": 0,
-          "group": 8,
+          "group": 14,
 
           "x" : -266.896,
           "y": 236.985
@@ -110,7 +110,7 @@
           "indexStart" : 1,
           "indexEnd" : 3,
           "rotation": 0,
-          "group": 8,
+          "group": 14,
 
           "x" : -265.484,
           "y": -123.106
@@ -120,7 +120,7 @@
           "indexStart" : 2,
           "indexEnd" : 5,
           "rotation": 0,
-          "group": 8,
+          "group": 14,
 
           "x" : -291.178,
           "y": 519.403
@@ -130,7 +130,7 @@
           "indexStart" : 3,
           "indexEnd" : 4,
           "rotation": 90,
-          "group": 6,
+          "group": 8,
 
           "x" : 216.703,
           "y": -127.54
@@ -140,7 +140,7 @@
           "indexStart" : 4,
           "indexEnd" : 5,
           "rotation": 90,
-          "group": 6,
+          "group": 8,
 
           "x" : 207.634,
           "y": 220.116

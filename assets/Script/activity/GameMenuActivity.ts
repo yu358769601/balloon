@@ -134,10 +134,11 @@ export default class GameMenuActivity extends Activity {
             this.菜单_功能UI.active = false
         },this)
 
-        this.菜单_制作.on(cc.Node.EventType.TOUCH_END,()=>{
+        this.菜单_制作.on(cc.Node.EventType.TOUCH_END,async()=>{
            let passName =  this.菜单_关卡输入名字.string
             ccLog.log("输入的名字关卡 制作",passName)
-
+            let passData = JsonManager.getPassDataByName(passName)
+            await this.onSetEditPassByName("",passData)
         },this)
 
 
@@ -186,7 +187,6 @@ export default class GameMenuActivity extends Activity {
         ccLog.log("执行顺序 ","onLoad")
 
 
-        this.initView()
 
     }
     //设置关卡通过名字
@@ -245,49 +245,15 @@ export default class GameMenuActivity extends Activity {
     // Emitter.fire("onSetPassByName",data)
     async onSetEditPassByName(selfName,data){
         ccLog.log("当前设置关卡 本关所有内容",data)
-        if (data !=null) {
-            if (this.currentNode != null) {
-                this.currentNode.destroy()
-                await Utils.setTimerOnce(this,0.05)
-            }
-            this.currentNode = await UtilsNode.getNode("passEditor",this.passRoot)
-            // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
-            ccLog.log("有东西么",this.currentNode)
-            this.currentNode.getComponent("basePass").setData(data)
-            // Emitter.fire("onInitTipsBtn", data)
-            // Emitter.fire("onInitPass", data)
 
-
-
-            //多少关之后走这个弹出提示的部分
-            // if (data.pass.index >= JsonManager.passSettingjson.json.passADTipsTimeIndex) {
-            //     Emitter.fire("onPassADTipsTimeStart",true)
-            //     Emitter.fire("onPassADTipsTime")
-            // }
-
-            // pass:
-            //     gameData: {title: "帮他取得游戏机"}
-            //     index: 0
-            //     itemName: "pass_101"
-            //     passName: "pass_101"
-            //     tip: "pass_101_tip"
-
-            // let myPassSave = UtilsDB.getMyPassSave()
-            // myPassSave.index =data.pass.index
-            // let passName = data.pass.passName
-            //
-            // myPassSave.index =data.pass.index
-            // myPassSave.passName =data.pass.passName
-            // UtilsDB.setMyPassSave(myPassSave)
-
-            // this.loadPass(data.pass.index)
-            // UtilsDB.addCheckpointRecords(passName,SelectCheckPointType.已解锁未通关)
-        }else{
-            ccLog.log("没了")
-            // let index = 0
-            // let pass = JsonManager.getPassByIndex(index)
-            // Emitter.fire("onSetPassByName", {pass: pass})
+        if (this.currentNode != null) {
+            this.currentNode.destroy()
+            await Utils.setTimerOnce(this,0.05)
         }
+        this.currentNode = await UtilsNode.getNode("passEditor",this.passRoot)
+        // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
+        ccLog.log("有东西么",this.currentNode)
+        this.currentNode.getComponent("basePass").setData(data)
 
 
 

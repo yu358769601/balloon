@@ -13,7 +13,7 @@ import {
     DialogType,
     ItemName,
     ActivityType,
-    ActivityUIType, ItemType, ItemPreType
+    ActivityUIType, ItemType, ItemPreType, PassItemType
 } from "./System/Type/enums";
 import Api from "./System/api/api";
 import GameSetting, {gameModeType} from "./System/mode/gameSetting";
@@ -223,15 +223,17 @@ export default class Helloworld extends cc.Component {
         let load = {}
 
         let list = JsonManager.getPasslists()
-        if (list) {
-            for (let i = 0; i < list.length; i++) {
-                //设置关卡名字
-                load[list[i].componentName] = "pass/" + list[i].componentName
-                //设置关卡图片
-                // load[list[i].passSP] = "CheckpointItem/"+list[i].passSP
-            }
+        // if (list) {
+        //     for (let i = 0; i < list.length; i++) {
+        //         //设置关卡名字
+        //         load[list[i].componentName] = "pass/" + list[i].componentName
+        //         //设置关卡图片
+        //         // load[list[i].passSP] = "CheckpointItem/"+list[i].passSP
+        //     }
+        // }
+        for (let passItemType in PassItemType) {
+            load[PassItemType[passItemType]] = "pass/" + PassItemType[passItemType]
         }
-
         return load
     }
 
@@ -495,14 +497,29 @@ export default class Helloworld extends cc.Component {
         let dialog = this.initDialog()
         this.addList(load, dialog)
 
+        let itemPreType = this.initItemPreType()
+        this.addList(load, itemPreType)
+
+
         // let an = this.initAn()
         // this.addList(load,an)
         // let tips = this.initTips()
         // this.addList(load,tips)
 
-
         return load
     }
+
+    initItemPreType(){
+        let load = {}
+        // load["GameMenuActivity"] = "activity/GameMenuActivity"
+        // load["GameActivity"] = "activity/GameActivity"
+        // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
+        for (let itemPreType in ItemPreType) {
+            load[ItemPreType[itemPreType]] = "item/" + ItemPreType[itemPreType]
+        }
+        return load
+    }
+
 
     //都是图片
     initSp() {

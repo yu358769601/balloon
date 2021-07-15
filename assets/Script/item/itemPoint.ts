@@ -8,14 +8,18 @@
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
+import ItemBase from "./itemBase";
+import UtilsNode from "../System/Utils/UtilsNode";
+import {ItemPreType} from "../System/Type/enums";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class ItemPoint extends cc.Component {
+export default class ItemPoint extends ItemBase {
 //节点
 
     data : any = null
+    editData : any = null
     // @property(cc.Label)
     // label: cc.Label = null;
     //
@@ -102,11 +106,24 @@ export default class ItemPoint extends cc.Component {
 
     setData(data){
         this.data = data
-
         this.initView()
 
         this.initNode()
     }
+
+   async setEditData(editData){
+        this.editData = editData
+
+        this.addComponent("controlMaterial").setData(editData)
+
+
+        // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
+        // node.getComponent(ItemPreType.具体编辑条目提示).setData(data)
+
+    }
+
+
+
     initNode(){
         // allowInOutIndexs: Array(3)
         // 0: "2"
