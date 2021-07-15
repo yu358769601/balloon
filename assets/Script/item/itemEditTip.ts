@@ -12,7 +12,7 @@ import ccLog from "../System/Log/ccLog";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class ItemEditTiop extends cc.Component {
+export default class ItemEditTip extends cc.Component {
 
     data : any = null
 

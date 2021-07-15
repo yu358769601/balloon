@@ -9,7 +9,7 @@ import BasePass from "./basePass";
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
-import {ItemPreType} from "../System/Type/enums";
+import {DialogType, ItemPreType} from "../System/Type/enums";
 import UtilsNode from "../System/Utils/UtilsNode";
 import JsonManager from "../System/manage/JsonManager";
 import DrawLine from "../System/Utils/drawLine";
@@ -37,6 +37,8 @@ export default class PassEditor extends BasePass {
 
     //当前选择的工具箱条目按钮
     selectItemMaterialBtn : any = null
+
+    itemEditTios : cc.Node;
 
 
     data: any = null
@@ -92,9 +94,26 @@ export default class PassEditor extends BasePass {
         ccLog.log("现在要去具体设置了", editData)
 
 
-      if (UtilsNode.isComponent(editData.node,"itemEditTiop") == false ) {
-          let itemEditTios = await UtilsNode.getNode(ItemPreType.具体编辑条目提示, editData.node)
-          itemEditTios.getComponent(ItemPreType.具体编辑条目提示).setData(editData)
+      if (UtilsNode.isComponent(editData.node,"itemEditTip") == false ) {
+         this.itemEditTios = await UtilsNode.getNode(ItemPreType.具体编辑条目提示, editData.node)
+          this. itemEditTios.getComponent(ItemPreType.具体编辑条目提示).setData(editData)
+
+
+          let cllbacks = {
+              // self : this,
+              successfulCallback: this.successfulCallback,
+              failureCallback: this.failureCallback
+          }
+          // myNowPassRubber : UtilsDB.getMyNowPassRubber(),
+          let data = {
+              self : this,
+              editData : editData
+          }
+          Emitter.fire("onOpenDialog", {name: DialogType.详细设置, zIndex: 100,data : data}, cllbacks)
+
+
+          // let detailedSettingDialog = await UtilsNode.getNode(DialogType.详细设置, this.node)
+          // detailedSettingDialog.getComponent(DialogType.详细设置).setData(editData)
       }
 
 
@@ -102,6 +121,17 @@ export default class PassEditor extends BasePass {
 
     }
 
+    successfulCallback(data){
+        ccLog.log("关闭回来的",data," this ",this)
+
+        data.data.self.itemEditTios.destroy()
+
+        // itemEditTios
+
+    }
+    failureCallback(){
+
+    }
 
     startGame() {
         this.startGameView()

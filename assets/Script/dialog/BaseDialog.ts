@@ -27,19 +27,6 @@ export default abstract class BaseDialog extends cc.Component {
 
     // LIFE-CYCLE CALLBACKS:
 
-    public setTimerOnce(d) {
-
-        // if (this.timeID != -1) {
-        //     clearTimeout(this.timeID)
-        // }
-
-        return new Promise<any>((resolve, reject) => {
-            this.scheduleOnce(() => {
-                resolve()
-            }, d)
-        })
-
-    }
 
     // onLoad() {
     //
@@ -98,7 +85,7 @@ export default abstract class BaseDialog extends cc.Component {
 
     onDestroy(): void {
         // ccLog.log("清除")
-        GameSetting.setPassMode(passModeType.恢复)
+        // GameSetting.setPassMode(passModeType.恢复)
         this.removeEmitter()
         this.removeBaseEmitter()
     }
@@ -120,9 +107,9 @@ export default abstract class BaseDialog extends cc.Component {
 
         this.subclass = this.subclassCall()
 
-        Emitter.fire("onCheckOnlineGiftBag")
+        // Emitter.fire("onCheckOnlineGiftBag")
 
-        GameSetting.setPassMode(passModeType.暂停)
+        // GameSetting.setPassMode(passModeType.暂停)
 
     }
 
@@ -171,19 +158,6 @@ export default abstract class BaseDialog extends cc.Component {
 
     }
 
-    public Transitions(timer, callback) {
-        Emitter.fire("onTransitions", true, async () => {
-
-            await this.setTimerOnce(timer)
-            Emitter.fire("onTransitions", false, async () => {
-                if (callback) {
-                    callback()
-                }
-
-            })
-
-        })
-    }
 
 
     abstract subclassCall(): any;

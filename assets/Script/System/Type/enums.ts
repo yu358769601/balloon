@@ -8,7 +8,6 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
-import Tips from "../../tips/Tips";
 
 const {ccclass, property} = cc._decorator;
 
@@ -154,6 +153,7 @@ export enum DialogType {
     自渲染广告小游戏渠道 = "NativeAdDialog",
     在线礼包弹窗 = "onlineGiftBagDialog",
     头条分享 = "ttfenxiangDialog",
+    详细设置 = "detailedSettingDialog",
 }
 export enum ItemPreType {
     打印吐司 = "ToastItem",
@@ -171,7 +171,7 @@ export enum ItemPreType {
 
     工具箱材料按钮 = "itemMaterialBtn",
 
-    具体编辑条目提示 = "itemEditTiop",
+    具体编辑条目提示 = "itemEditTip",
 }
 
 
