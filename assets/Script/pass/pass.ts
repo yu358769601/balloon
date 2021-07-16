@@ -9,7 +9,7 @@ import BasePass from "./basePass";
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
-import {ItemPreType} from "../System/Type/enums";
+import {DialogType, ItemPreType} from "../System/Type/enums";
 import UtilsNode from "../System/Utils/UtilsNode";
 import JsonManager from "../System/manage/JsonManager";
 
@@ -54,11 +54,11 @@ export default class Pass extends BasePass {
     }
 
     registerEmitter() {
-
+        Emitter.register('onGameOverCall', this.onGameOverCall, this)
     }
 
     removeEmitter() {
-
+        Emitter.remove('onGameOverCall', this.onGameOverCall, this)
     }
 
     startGame() {
@@ -72,52 +72,53 @@ export default class Pass extends BasePass {
     }
 
     async setData(data) {
+        this.getitemNames = [
+            ItemPreType.点, ItemPreType.线, ItemPreType.钥匙,ItemPreType.操作棍
+        ]
         this.data = data
-        ccLog.log("本关所有内容", data)
+
         this.initView()
 
-
-        if (data != null) {
-
-            this.getitemNames = [
-                ItemPreType.点, ItemPreType.线, ItemPreType.钥匙,ItemPreType.操作棍
-            ]
-            data.getitemNames = this.getitemNames
-            let passData = JsonManager.getPassDatas(data)
+        this.data.getitemNames =  this.getitemNames
+        ccLog.log("设置关卡的数据 Pass",  this.data)
+            let passData = JsonManager.getPassDatas(this.data)
             //初始化游乐场
             await this.initPlayBackground(passData)
             // ItemPreType.条目棍子
 
             await this.addLine(passData)
-        }
 
 
     }
-
+    onGameOverCall(){
+        Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
+    }
 
     async addLine(passData) {
         let itemLine = passData[ItemPreType.操作棍][0]
+        if (itemLine) {
+            // this.data.itemLine = itemLine
 
-        this.data.itemLine = itemLine
-
-        this.lineNode = await UtilsNode.getNode(ItemPreType.操作棍, this.游乐场)
-        // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
-        this.lineNode.getComponent(ItemPreType.操作棍).setData(this.data)
-
-
-        let itemStart = this.getComponentInChildren("itemStart")
-
-        Emitter.fire("onStartGame", itemStart.node)
-        let itemLineBGs = this.getComponentsInChildren("itemLineBG")
+            this.lineNode = await UtilsNode.getNode(ItemPreType.操作棍, this.游乐场)
+            // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
+            this.lineNode.getComponent(ItemPreType.操作棍).setData(itemLine)
 
 
+            let itemStart = this.getComponentInChildren("itemStart")
+
+            Emitter.fire("onStartGame", itemStart.node)
+            let itemLineBGs = this.getComponentsInChildren("itemLineBG")
 
 
-        let group = 0
-        for (let i = 0; i < itemLineBGs.length; i++) {
-            group += itemLineBGs[i].group
+
+
+            let group = 0
+            for (let i = 0; i < itemLineBGs.length; i++) {
+                group += itemLineBGs[i].group
+            }
+            Emitter.fire("onSetGroup", group)
         }
-        Emitter.fire("onSetGroup", group)
+
     }
 
     async initPlayBackground(passData) {

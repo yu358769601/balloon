@@ -12,6 +12,7 @@ import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Vec2 = cc.Vec2;
 import Size = cc.Size;
 import ItemBase from "./itemBase";
+import {ItemPreType} from "../System/Type/enums";
 
 const {ccclass, property} = cc._decorator;
 
@@ -27,7 +28,7 @@ export default class ItemLineBG extends ItemBase {
     // })
     index : string = ""
 
-    data : any = null
+    // data : any = null
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -89,17 +90,13 @@ export default class ItemLineBG extends ItemBase {
 
     private moveDir: cc.Vec2;
 
-    //开始游戏
-    onStartGame(selfName,startNode){
-
-    }
 
     onSetWideth(selfName,data){
         if (data) {
             this.groupWidthLength = data.width
             this.groupHeightLength = data.height
         }
-
+        ccLog.log("中距离有吗", this.中距离)
 
         this.中距离.width = this.groupWidthLength*this.group
         this.中距离.height = this.groupHeightLength
@@ -154,6 +151,41 @@ export default class ItemLineBG extends ItemBase {
         this.onSetWideth(null,null)
 
 
+    }
+    setEdit(editData){
+        this.addComponent("controlMaterial").setData(editData)
+        // //编辑点的时候要有 图片
+        this.getComponent(cc.Sprite).enabled = true
+    }
+    setEditData(editData) {
+        this.editData = editData
+        this.initView()
+        this.addComponent("controlMaterial").setData(editData)
+        // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
+        // node.getComponent(ItemPreType.具体编辑条目提示).setData(data)
+
+        //编辑点的时候要有 图片
+        this.getComponent(cc.Sprite).enabled = true
+
+        // this.group = this.data.group
+        // this.index1 = this.data.indexStart+""
+        // this.index2 = this.data.indexEnd+""
+        // this.node.angle = this.data.rotation
+
+
+        //新创建的
+        let data = {
+            typeName : ItemPreType.线,
+            group : 5,
+            indexStart : 0,
+            indexEnd : 0,
+            rotation : 0,
+            x: editData.position.x,
+            y: editData.position.y,
+            zIndex : 0
+        }
+        this.data = data
+        this.initNode()
     }
 
 
@@ -249,9 +281,6 @@ export default class ItemLineBG extends ItemBase {
 
 
     update(dt) {
-    }
-
-    setEditData(editData) {
     }
 
 }

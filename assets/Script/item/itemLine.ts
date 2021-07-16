@@ -94,13 +94,21 @@ export default class ItemLine extends ItemBase{
     //
     setData(data) {
         this.data = data
-        ccLog.log("本关所有内容 杆子",data)
         this.initView()
 
+        this.initNode()
 
-        this.node.angle = data.itemLine.rotation
+        ccLog.log("setData 我是操作棍我现在的data是 ",this.data)
+    }
+    initNode(){
+        this.node.angle = this.data.rotation
+
+        this.node.zIndex = this.data.zIndex
+
 
     }
+
+
     //设置宽高
     onSetWideth(selfName,data){
         if (data) {
@@ -184,7 +192,7 @@ export default class ItemLine extends ItemBase{
         Emitter.remove('onStartGame', this.onStartGame, this)
         Emitter.remove('onAddGroup', this.onAddGroup, this)
         Emitter.remove('onSetGroup', this.onSetGroup, this)
-        Emitter.remove('onGameOverCall', this.onGameOverCall, this)
+
     }
 
     registerEmitter() {
@@ -198,7 +206,7 @@ export default class ItemLine extends ItemBase{
         Emitter.register('onStartGame', this.onStartGame, this)
         Emitter.register('onAddGroup', this.onAddGroup, this)
         Emitter.register('onSetGroup', this.onSetGroup, this)
-        Emitter.register('onGameOverCall', this.onGameOverCall, this)
+
     }
 
     start() {
@@ -330,9 +338,7 @@ export default class ItemLine extends ItemBase{
     }
 
 
-    onGameOverCall(){
-        Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
-    }
+
 
 
     onAddGroup(selfName,group){
@@ -350,7 +356,8 @@ export default class ItemLine extends ItemBase{
             // myNowPassRubber : UtilsDB.getMyNowPassRubber(),
             // data.myNowPassRubber = UtilsDB.getMyNowPassRubber()
             // data.self = this
-            Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
+            // Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
+            Emitter.fire("onGameOverCall")
         }else{
             this.group += group
             this.onSetWideth(null,null)
@@ -369,8 +376,31 @@ export default class ItemLine extends ItemBase{
     update(dt) {
         this.move();
     }
-
+    setEdit(editData){
+        this.addComponent("controlMaterial").setData(editData)
+        // //编辑点的时候要有 图片
+        this.getComponent(cc.Sprite).enabled = true
+        ccLog.log("我是 操作棍我需要高亮 我需要被点击")
+    }
     setEditData(editData) {
+        this.editData = editData
+        this.initView()
+        this.addComponent("controlMaterial").setData(editData)
+
+        //编辑点的时候要有 图片
+        this.getComponent(cc.Sprite).enabled = true
+        //新创建的
+        let data = {
+            typeName : ItemPreType.操作棍,
+            index : 0,
+            rotation : 0,
+            x: editData.position.x,
+            y: editData.position.y,
+            zIndex : 0
+        }
+        this.data = data
+        this.initNode()
+        ccLog.log("setEditData 我是操作棍我现在的data是 ",this.data)
     }
 
 }

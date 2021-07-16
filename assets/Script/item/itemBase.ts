@@ -13,8 +13,8 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default abstract class ItemBase extends cc.Component {
-
-
+    editData : any
+    data : any
     abstract setData(data)
     abstract setEditData(editData)
 

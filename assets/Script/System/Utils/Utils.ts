@@ -250,4 +250,65 @@ export default class Utils extends cc.Component {
         cc.Color.fromHEX(newColor,color16)
         node.color = newColor
     }
+
+    //字符串转数组
+    // Utils.strToArr(str)
+    static strToArr(str : string){
+      let arr = []
+        if (str) {
+          let ss =  str.split(",")
+            arr = ss
+        }
+        return arr
+    }
+    //数组转字符串
+    // Utils.arrToStr(arr)
+    static arrToStr(arr){
+        let str = ""
+
+        for (let i = 0; i <arr.length ; i++) {
+           let a = arr[i]
+            if (i < arr.length-1) {
+                str =  str + a + ","
+            }else{
+                str =  str + a
+            }
+
+        }
+        return str
+    }
+
+    /**
+     *
+     @param textToWrite数据
+     @param fileNameToSaveAs 文件名
+   */
+    // Utils.saveForBrowser(textToWrite,fileNameToSaveAs)
+    static saveForBrowser(textToWrite,fileNameToSaveAs){
+        if(cc.sys.isBrowser){
+            console.log('浏览器');
+            let textFileAsBlob= new Blob([textToWrite], { type: 'application/json' });
+            let downloadLink = document.createElement('a');
+            downloadLink.download = fileNameToSaveAs;
+            downloadLink.innerHTML = 'DownloadFile';
+            if (window.webkitURL != null){
+                //Chromeallowsthelinktobeclicked
+                //withoutactuallyaddingittotheDOM.
+                downloadLink.href=window.webkitURL.createObjectURL(textFileAsBlob);
+            }
+            else{
+                //FirefoxrequiresthelinktobeaddedtotheDOM
+                //beforeitcanbeclicked.
+                downloadLink.href=window.URL.createObjectURL(textFileAsBlob);
+                downloadLink.onclick=this.destroyClickedElement;
+                downloadLink.style.display='none';
+                document.body.appendChild(downloadLink);
+            }
+            downloadLink.click();
+        }
+    }
+    static destroyClickedElement(event) {
+         document.body.removeChild(event.target);
+     }
+
 }

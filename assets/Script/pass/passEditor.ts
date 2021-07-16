@@ -16,6 +16,7 @@ import DrawLine from "../System/Utils/drawLine";
 import ItemMaterialBtn from "../item/itemMaterialBtn";
 import Vec2 = cc.Vec2;
 import Tools from "../System/Utils/Tools";
+import Utils from "../System/Utils/Utils";
 
 const {ccclass, property} = cc._decorator;
 
@@ -38,7 +39,7 @@ export default class PassEditor extends BasePass {
     //当前选择的工具箱条目按钮
     selectItemMaterialBtn : any = null
 
-    itemEditTios : cc.Node;
+    itemEditTip : cc.Node;
 
 
     data: any = null
@@ -95,8 +96,8 @@ export default class PassEditor extends BasePass {
 
 
       if (UtilsNode.isComponent(editData.node,"itemEditTip") == false ) {
-         this.itemEditTios = await UtilsNode.getNode(ItemPreType.具体编辑条目提示, editData.node)
-          this. itemEditTios.getComponent(ItemPreType.具体编辑条目提示).setData(editData)
+         this.itemEditTip = await UtilsNode.getNode(ItemPreType.具体编辑条目提示, editData.node)
+          this. itemEditTip.getComponent(ItemPreType.具体编辑条目提示).setData(editData)
 
 
           let cllbacks = {
@@ -124,9 +125,9 @@ export default class PassEditor extends BasePass {
     successfulCallback(data){
         ccLog.log("关闭回来的",data," this ",this)
 
-        data.data.self.itemEditTios.destroy()
+        data.data.self.itemEditTip.destroy()
 
-        // itemEditTios
+        // itemEditTip
 
     }
     failureCallback(){
@@ -148,22 +149,18 @@ export default class PassEditor extends BasePass {
             ItemPreType.点, ItemPreType.线, ItemPreType.钥匙,ItemPreType.操作棍
         ]
         this.data = data
-        ccLog.log("本关所有内容", data)
+
         this.initView()
 
         this.initOnclick()
-
-
-        if (data) {
-
-            data.getitemNames = this.getitemNames
-            let passData = JsonManager.getPassDatas(data)
+        this.data.getitemNames =  this.getitemNames
+        ccLog.log("设置关卡的数据 PassEditor",  this.data)
+            let passData = JsonManager.getPassDatas(this.data)
             //初始化游乐场
             await this.initPlayBackground(passData)
             // ItemPreType.条目棍子
 
-            await this.addLine(passData)
-        }
+            // await this.addLine(passData)
 
         this.initTools()
 
@@ -188,66 +185,89 @@ export default class PassEditor extends BasePass {
 
     async addLine(passData) {
         let itemLine = passData[ItemPreType.操作棍][0]
+        if (itemLine) {
+            // this.data.itemLine = itemLine
 
-        this.data.itemLine = itemLine
-
-        this.lineNode = await UtilsNode.getNode(ItemPreType.操作棍, this.游乐场)
-        // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
-        this.lineNode.getComponent(ItemPreType.操作棍).setData(this.data)
-
-
-        let itemStart = this.getComponentInChildren("itemStart")
-
-        Emitter.fire("onStartGame", itemStart.node)
-        let itemLineBGs = this.getComponentsInChildren("itemLineBG")
+            this.lineNode = await UtilsNode.getNode(ItemPreType.操作棍, this.游乐场)
+            // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
+            this.lineNode.getComponent(ItemPreType.操作棍).setData(itemLine)
 
 
+            let itemStart = this.getComponentInChildren("itemStart")
+
+            Emitter.fire("onStartGame", itemStart.node)
+            let itemLineBGs = this.getComponentsInChildren("itemLineBG")
 
 
-        let group = 0
-        for (let i = 0; i < itemLineBGs.length; i++) {
-            group += itemLineBGs[i].group
+
+
+            let group = 0
+            for (let i = 0; i < itemLineBGs.length; i++) {
+                group += itemLineBGs[i].group
+            }
+            Emitter.fire("onSetGroup", group)
         }
-        Emitter.fire("onSetGroup", group)
+
     }
 
     async initPlayBackground(passData) {
         ccLog.log("游乐场数据", passData)
 
+        // let data = {
+        //     // position : new Vec2(newPos.x,newPos.y),
+        //     itemName : this.selectItemMaterialBtn.name
+        // }
 
-        for (let i = 0; i < passData[ItemPreType.点].length; i++) {
-            let itemPoint = passData[ItemPreType.点][i]
+        for (const passDataKey in passData) {
 
-            let itemPointNode = await UtilsNode.getNode(itemPoint.typeName,this.游乐场)
+            for (let i = 0; i < passData[passDataKey].length; i++){
+              let item =  passData[passDataKey][i]
+                let itemPointNode = await UtilsNode.getNode(passDataKey,this.游乐场)
 
-            itemPointNode.getComponent(itemPoint.typeName).setData(itemPoint)
-
-            // // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
-            // ccLog.log("有东西么",this.currentNode)
-            // this.currentNode.getComponent("basePass").setData(data)
+                itemPointNode.getComponent(passDataKey).setData(item)
+                let data = {
+                    // position : new Vec2(newPos.x,newPos.y),
+                    itemName :passDataKey
+                }
+                itemPointNode.getComponent(passDataKey).setEdit(data)
+                ccLog.log("具体条目 游乐场数据", passDataKey)
+            }
         }
-        for (let i = 0; i < passData[ItemPreType.线].length; i++) {
-            let itemPoint = passData[ItemPreType.线][i]
 
-            let itemPointNode = await UtilsNode.getNode(itemPoint.typeName,this.游乐场)
-
-            itemPointNode.getComponent(itemPoint.typeName).setData(itemPoint)
-
-            // // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
-            // ccLog.log("有东西么",this.currentNode)
-            // this.currentNode.getComponent("basePass").setData(data)
-        }
-        for (let i = 0; i < passData[ItemPreType.钥匙].length; i++) {
-            let itemPoint = passData[ItemPreType.钥匙][i]
-
-            let itemPointNode = await UtilsNode.getNode(itemPoint.typeName,this.游乐场)
-
-            itemPointNode.getComponent(itemPoint.typeName).setData(itemPoint)
-
-            // // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
-            // ccLog.log("有东西么",this.currentNode)
-            // this.currentNode.getComponent("basePass").setData(data)
-        }
+        //
+        // for (let i = 0; i < passData[ItemPreType.点].length; i++) {
+        //     let itemPoint = passData[ItemPreType.点][i]
+        //
+        //     let itemPointNode = await UtilsNode.getNode(itemPoint.typeName,this.游乐场)
+        //
+        //     itemPointNode.getComponent(itemPoint.typeName).setData(itemPoint)
+        //
+        //     // // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
+        //     // ccLog.log("有东西么",this.currentNode)
+        //     // this.currentNode.getComponent("basePass").setData(data)
+        // }
+        // for (let i = 0; i < passData[ItemPreType.线].length; i++) {
+        //     let itemPoint = passData[ItemPreType.线][i]
+        //
+        //     let itemPointNode = await UtilsNode.getNode(itemPoint.typeName,this.游乐场)
+        //
+        //     itemPointNode.getComponent(itemPoint.typeName).setData(itemPoint)
+        //
+        //     // // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
+        //     // ccLog.log("有东西么",this.currentNode)
+        //     // this.currentNode.getComponent("basePass").setData(data)
+        // }
+        // for (let i = 0; i < passData[ItemPreType.钥匙].length; i++) {
+        //     let itemPoint = passData[ItemPreType.钥匙][i]
+        //
+        //     let itemPointNode = await UtilsNode.getNode(itemPoint.typeName,this.游乐场)
+        //
+        //     itemPointNode.getComponent(itemPoint.typeName).setData(itemPoint)
+        //
+        //     // // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
+        //     // ccLog.log("有东西么",this.currentNode)
+        //     // this.currentNode.getComponent("basePass").setData(data)
+        // }
 
 
     }
@@ -361,10 +381,14 @@ export default class PassEditor extends BasePass {
                 this.编辑器_功能UI.active = false
         }, this)
         this.编辑器_保存关卡 .on(cc.Node.EventType.TOUCH_START, () => {
-                ccLog.log("保存关卡")
+                ccLog.log("保存关卡",this.data)
+                this.saveAllItem()
         }, this)
         this.编辑器_保存导出关卡 .on(cc.Node.EventType.TOUCH_START, () => {
             ccLog.log("保存导出关卡")
+            this.saveAllItem()
+
+            this.saveJson()
         }, this)
 
         this.编辑器_线格子设置宽高 .on(cc.Node.EventType.TOUCH_START, () => {
@@ -463,7 +487,30 @@ export default class PassEditor extends BasePass {
         // ccLog.log("编辑器游乐场创建",this.selectItemMaterialBtn)
     }
 
+    saveAllItem(){
+        // getitemNames: (4) ["itemPoint", "itemLineBG", "itemLuckKey", "itemLine"]
+        // index: 0
+        // itemName: "pass_2"
+        // passData: []
+        // passName: "pass_2"
+        this.data.passData = []
+        for (let i = 0; i < this.data.getitemNames.length; i++) {
+            let getitemName = this.data.getitemNames[i]
+
+           let getitemNamecs = this.游乐场.getComponentsInChildren(getitemName)
+            for (let x = 0; x <getitemNamecs.length ; x++) {
+                let getitemNamecsItem =  getitemNamecs[x]
+                ccLog.log("具体数据是什么",getitemNamecsItem.data)
+                this.data.passData.push(getitemNamecsItem.data)
+            }
+        }
 
 
 
+    }
+
+    private saveJson() {
+        ccLog.log("保存关卡导出",this.data)
+        Utils.saveForBrowser(JSON.stringify(this.data),"myjson")
+    }
 }

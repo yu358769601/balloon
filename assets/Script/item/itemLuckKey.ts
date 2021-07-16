@@ -8,6 +8,7 @@
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
 import ItemBase from "./itemBase";
+import {ItemPreType} from "../System/Type/enums";
 
 const {ccclass, property} = cc._decorator;
 
@@ -71,6 +72,7 @@ export default class ItemLuckKey extends ItemBase {
 
         this.node.setPosition(this.data.x,this.data.y)
 
+        this.node.zIndex = this.data.zIndex
     }
 
     initView(){
@@ -80,8 +82,29 @@ export default class ItemLuckKey extends ItemBase {
     start () {
 
     }
-
+    setEdit(editData){
+        this.addComponent("controlMaterial").setData(editData)
+        // //编辑点的时候要有 图片
+        this.getComponent(cc.Sprite).enabled = true
+    }
     setEditData(editData) {
+        this.editData = editData
+        this.initView()
+        this.addComponent("controlMaterial").setData(editData)
+
+        //编辑点的时候要有 图片
+        this.getComponent(cc.Sprite).enabled = true
+
+        //新创建的
+        let data = {
+            typeName : ItemPreType.钥匙,
+            index : 0,
+            x: editData.position.x,
+            y: editData.position.y,
+            zIndex : 0
+        }
+        this.data = data
+        this.initNode()
     }
 
     // update (dt) {}

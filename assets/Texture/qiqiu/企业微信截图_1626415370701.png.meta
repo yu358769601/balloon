@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "9a3763ae-5674-472b-8841-85d6f21a379c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 377,
+  "height": 788,
+  "platformSettings": {},
+  "subMetas": {
+    "企业微信截图_1626415370701": {
+      "ver": "1.0.4",
+      "uuid": "1b2e85ae-8c36-4ad4-a7a4-c9cab4476442",
+      "rawTextureUuid": "9a3763ae-5674-472b-8841-85d6f21a379c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 377,
+      "height": 788,
+      "rawWidth": 377,
+      "rawHeight": 788,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

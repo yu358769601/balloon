@@ -18,8 +18,6 @@ const {ccclass, property} = cc._decorator;
 export default class ItemPoint extends ItemBase {
 //节点
 
-    data : any = null
-    editData : any = null
     // @property(cc.Label)
     // label: cc.Label = null;
     //
@@ -110,16 +108,37 @@ export default class ItemPoint extends ItemBase {
 
         this.initNode()
     }
-
+    setEdit(editData){
+        this.addComponent("controlMaterial").setData(editData)
+        // //编辑点的时候要有 图片
+        this.getComponent(cc.Sprite).enabled = true
+    }
    async setEditData(editData){
         this.editData = editData
-
+       this.initView()
+        ccLog.log("编辑数据位置",editData)
         this.addComponent("controlMaterial").setData(editData)
 
 
         // this.currentNode.getComponent("BaseCheckPoint").setData(data.pass)
         // node.getComponent(ItemPreType.具体编辑条目提示).setData(data)
 
+       //编辑点的时候要有 图片
+       this.getComponent(cc.Sprite).enabled = true
+
+
+       //新创建的
+       let data = {
+            typeName : ItemPreType.点,
+           allowInOutIndexs : [],
+           index : 0,
+           isStart : false,
+           x: editData.position.x,
+           y: editData.position.y,
+           zIndex : 0
+       }
+        this.data = data
+       this.initNode()
     }
 
 
@@ -141,10 +160,14 @@ export default class ItemPoint extends ItemBase {
         this.index = this.data.index
 
         this.isStart = this.data.isStart
+
         if (this.isStart == true) {
             this.addComponent("itemStart")
+        }else{
+            UtilsNode.removeComponent(this.node, "itemStart")
         }
 
+        this.node.zIndex = this.data.zIndex
         this.node.setPosition(this.data.x,this.data.y)
 
     }

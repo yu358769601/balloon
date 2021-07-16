@@ -17,7 +17,7 @@ export default class ControlMaterial extends cc.Component {
 
     cdTime : number = 200
     myCdTime : number = 0
-
+    itemComponent : any
 
     onLoad() {
 
@@ -27,6 +27,22 @@ export default class ControlMaterial extends cc.Component {
         this.checkCdTime()
         ccLog.log("点击")
     }
+    TOUCH_MOVE(t){
+        let n_pos = t.getLocation();
+        let delta = t.getDelta();
+        this.node.x +=delta.x
+        this.node.y +=delta.y
+
+        //
+        this.itemComponent.data.x = this.node.x
+        this.itemComponent.data.y = this.node.y
+        // ccLog.log("我要去设置位置的属性了",this.itemComponent)
+    }
+    TOUCH_END(t){
+
+    }
+
+    //双击编辑详细资料
     checkCdTime(){
       let now =  UtilsTime.getTime()
         if (now - this.myCdTime < this.cdTime ) {
@@ -42,7 +58,12 @@ export default class ControlMaterial extends cc.Component {
 
     setData(data){
         this.data = data
+        this.itemComponent = this.node.getComponent(this.data.itemName)
+
+        ccLog.log("我是材料我的名字",data)
         this.node.on(cc.Node.EventType.TOUCH_START,this.TOUCH_START,this)
+        this.node.on(cc.Node.EventType.TOUCH_MOVE,this.TOUCH_MOVE,this)
+        this.node.on(cc.Node.EventType.TOUCH_END,this.TOUCH_END,this)
     }
 
 

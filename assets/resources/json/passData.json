@@ -4,163 +4,281 @@
       "index": 1,
       "passName": "pass_1",
       "itemName": "pass_1",
-
-      "otherData" : {
-        "luck" : true
-      },
-
-
-
       "passData": [
-
         {
-          "typeName" : "itemPoint",
-          "isStart" : true,
-          "index" : 0,
-          "allowInOutIndexs" : [
-             "2","4","1"
+          "typeName": "itemPoint",
+          "isStart": true,
+          "index": 0,
+          "allowInOutIndexs": [
+            "2",
+            "4",
+            "1"
           ],
-          "x" : -266.818,
-          "y": 228.048
+          "x": -266.818,
+          "y": 228.048,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemPoint",
-          "isStart" : false,
-          "index" : 1,
-          "allowInOutIndexs" : [
-            "0","3"
+          "typeName": "itemPoint",
+          "isStart": false,
+          "index": 1,
+          "allowInOutIndexs": [
+            "0",
+            "3"
           ],
-          "x" : -263.01,
-          "y": -120.932
+          "x": -263.01,
+          "y": -120.932,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemPoint",
-          "isStart" : false,
-          "index" : 2,
-          "allowInOutIndexs" : [
-            "0","5"
+          "typeName": "itemPoint",
+          "isStart": false,
+          "index": 2,
+          "allowInOutIndexs": [
+            "0",
+            "5"
           ],
-          "x" : -280.177,
-          "y": 515.242
+          "x": -280.177,
+          "y": 515.242,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemPoint",
-          "isStart" : false,
-          "index" : 3,
-          "allowInOutIndexs" : [
-            "4","1"
+          "typeName": "itemPoint",
+          "isStart": false,
+          "index": 3,
+          "allowInOutIndexs": [
+            "4",
+            "1"
           ],
-          "x" : 206.541,
-          "y": -110.54
+          "x": 206.541,
+          "y": -110.54,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemPoint",
-          "isStart" : false,
-          "index" : 4,
-          "allowInOutIndexs" : [
-            "5","0","3"
+          "typeName": "itemPoint",
+          "isStart": false,
+          "index": 4,
+          "allowInOutIndexs": [
+            "5",
+            "0",
+            "3"
           ],
-          "x" : 203.518,
-          "y": 231.07
+          "x": 203.518,
+          "y": 231.07,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemPoint",
-          "isStart" : false,
-          "index" : 5,
-          "allowInOutIndexs" : [
-            "2","4"
+          "typeName": "itemPoint",
+          "isStart": false,
+          "index": 5,
+          "allowInOutIndexs": [
+            "2",
+            "4"
           ],
-          "x" : 197.472,
-          "y": 527.334
+          "x": 197.472,
+          "y": 527.334,
+          "zIndex": 0
         },
-
         {
-          "typeName" : "itemLineBG",
-          "indexStart" : 0,
-          "indexEnd" : 2,
+          "typeName": "itemLineBG",
+          "indexStart": 0,
+          "indexEnd": 2,
           "rotation": 93,
           "group": 8,
-
-
-          "x" : -266.896,
-          "y": 236.985
+          "x": -266.896,
+          "y": 236.985,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemLineBG",
-          "indexStart" : 0,
-          "indexEnd" : 1,
+          "typeName": "itemLineBG",
+          "indexStart": 0,
+          "indexEnd": 1,
           "rotation": -88.582,
           "group": 8,
-
-          "x" : -266.896,
-          "y": 236.985
+          "x": -266.896,
+          "y": 236.985,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemLineBG",
-          "indexStart" : 0,
-          "indexEnd" : 4,
+          "typeName": "itemLineBG",
+          "indexStart": 0,
+          "indexEnd": 4,
           "rotation": 0,
           "group": 14,
-
-          "x" : -266.896,
-          "y": 236.985
+          "x": -266.896,
+          "y": 236.985,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemLineBG",
-          "indexStart" : 1,
-          "indexEnd" : 3,
+          "typeName": "itemLineBG",
+          "indexStart": 1,
+          "indexEnd": 3,
           "rotation": 0,
           "group": 14,
-
-          "x" : -265.484,
-          "y": -123.106
+          "x": -265.484,
+          "y": -123.106,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemLineBG",
-          "indexStart" : 2,
-          "indexEnd" : 5,
+          "typeName": "itemLineBG",
+          "indexStart": 2,
+          "indexEnd": 5,
           "rotation": 0,
           "group": 14,
-
-          "x" : -291.178,
-          "y": 519.403
+          "x": -291.178,
+          "y": 519.403,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemLineBG",
-          "indexStart" : 3,
-          "indexEnd" : 4,
+          "typeName": "itemLineBG",
+          "indexStart": 3,
+          "indexEnd": 4,
           "rotation": 90,
           "group": 8,
-
-          "x" : 216.703,
-          "y": -127.54
+          "x": 216.703,
+          "y": -127.54,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemLineBG",
-          "indexStart" : 4,
-          "indexEnd" : 5,
+          "typeName": "itemLineBG",
+          "indexStart": 4,
+          "indexEnd": 5,
           "rotation": 90,
           "group": 8,
-
-          "x" : 207.634,
-          "y": 220.116
-        },
-
-        {
-          "typeName" : "itemLuckKey",
-          "index" : 2,
-
-          "x" : -436.747,
-          "y": -241.279
+          "x": 207.634,
+          "y": 220.116,
+          "zIndex": 0
         },
         {
-          "typeName" : "itemLine",
+          "typeName": "itemLuckKey",
+          "index": 2,
+          "x": -436.747,
+          "y": -241.279,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
           "rotation": 100,
-          "x" : -436.747,
-          "y": -241.279
+          "x": -436.747,
+          "y": -241.279,
+          "zIndex": 0
         }
       ]
-
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [],
+          "index": 0,
+          "isStart": true,
+          "x": -218.88,
+          "y": 475.20000000000005,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 0,
+          "indexEnd": 0,
+          "rotation": 0,
+          "x": -146.88,
+          "y": 270.72,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 0,
+          "x": -46.079999999999984,
+          "y": 95.03999999999996,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": 2.8799999999999955,
+          "y": -46.08000000000004,
+          "zIndex": 0
+        }
+      ],
+      "index": 0,
+      "passName": "pass_2",
+      "itemName": "pass_2",
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [],
+          "index": 0,
+          "isStart": true,
+          "x": 403.1999999999999,
+          "y": -662.3999999999995,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [],
+          "index": 0,
+          "isStart": false,
+          "x": 143.99999999999994,
+          "y": -662.3999999999999,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [],
+          "index": 0,
+          "isStart": false,
+          "x": -391.67999999999984,
+          "y": -685.4399999999998,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [],
+          "index": 0,
+          "isStart": false,
+          "x": -123.84000000000003,
+          "y": -673.9200000000001,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 0,
+          "indexEnd": 0,
+          "rotation": 0,
+          "x": -135.35999999999996,
+          "y": 241.91999999999996,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": -387.58600000000007,
+          "y": 489.61900000000037,
+          "zIndex": 0
+        }
+      ],
+      "index": 3,
+      "passName": "pass_3",
+      "itemName": "pass_3",
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
     }
   ]
 }
