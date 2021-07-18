@@ -45,14 +45,14 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 230,
+      "g": 156,
+      "b": 156,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 588,
+      "width": 288,
       "height": 50
     },
     "_anchorPoint": {
@@ -366,7 +366,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 500,
+      "width": 200,
       "height": 50
     },
     "_anchorPoint": {
@@ -436,7 +436,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 500,
+      "width": 200,
       "height": 48
     },
     "_anchorPoint": {
@@ -488,7 +488,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "61868dc2-c63e-4482-8e9f-6fee7611fd14"
+    },
     "_type": 2,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -587,7 +589,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 500,
+      "width": 200,
       "height": 48
     },
     "_anchorPoint": {
@@ -693,7 +695,7 @@
     "_enabled": true,
     "nodeType": 1,
     "nodezIndex": 0,
-    "otherData": "",
+    "otherData": "外皮",
     "_id": ""
   },
   {
@@ -934,7 +936,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        566,
+        266,
         0,
         0,
         0,
@@ -1135,7 +1137,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 588,
+      "width": 288,
       "height": 50
     },
     "_resize": 1,

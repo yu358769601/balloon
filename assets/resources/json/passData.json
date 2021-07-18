@@ -203,7 +203,7 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
+      "index": 2,
       "passName": "pass_2",
       "itemName": "pass_2",
       "getitemNames": [
@@ -273,6 +273,53 @@
       "index": 3,
       "passName": "pass_3",
       "itemName": "pass_3",
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [],
+          "index": 0,
+          "isStart": true,
+          "x": -238.719,
+          "y": 193.6392,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 0,
+          "indexEnd": 0,
+          "rotation": 0,
+          "x": -7.171824973319076,
+          "y": 119.871931696905,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 0,
+          "x": -142.4119530416222,
+          "y": -33.810032017075855,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": 89.13553895410882,
+          "y": -132.1664887940235,
+          "zIndex": 0
+        }
+      ],
+      "index": 0,
+      "passName": "pass_4",
+      "itemName": "pass_4",
       "getitemNames": [
         "itemPoint",
         "itemLineBG",

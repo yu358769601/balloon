@@ -10,6 +10,7 @@ import ccLog from "../Log/ccLog";
 import SpecialAdControl from "./SpecialAdControl";
 import GameSetting, {gameModeType} from "../mode/gameSetting";
 import ChannelManger from "../qudao/channelManger";
+import Net from "./Net";
 
 const {ccclass, property} = cc._decorator;
 //进入类型
@@ -20,6 +21,10 @@ export default class Api  {
 
     static adCode = 1
     static adCodeTest = 1
+
+
+    static baseUrl : string = "http://192.168.3.250:10086"
+
 
     // Api.getAdControlInfo(callback ?)
     static async getAdControlInfo(callback ?) {
@@ -86,5 +91,39 @@ export default class Api  {
         }
         return Api.adCode
     }
+
+
+
+    static async go(data,callback) {
+
+        return  new Promise<any>(async (resolve, reject) => {
+            let result = await Net.go(data);
+            ccLog.log("网络请求 过程 0 ",result)
+            if (result) {
+                if (callback) {
+                    if (callback.successful) {
+                        ccLog.log("网络请求 成功",result)
+                        callback.successful(result)
+                    }
+                }
+                ccLog.log("网络请求 过程 1 ",result)
+                resolve(result)
+            }else{
+                if (callback) {
+                    if (callback.failure) {
+                        ccLog.log("网络请求 失败",result)
+                        callback.failure(result)
+                    }
+                }
+                ccLog.log("网络请求 过程 2 ",result)
+                resolve(null)
+
+            }
+
+
+            return result
+        })
+    }
+
 
 }

@@ -6593,7 +6593,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
+      "width": 350,
       "height": 100
     },
     "_anchorPoint": {
@@ -6605,7 +6605,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -409.004,
+        -336.234,
         -870.942,
         0,
         0,
@@ -6657,7 +6657,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 346.64,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6709,8 +6709,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "保存关卡",
-    "_N$string": "保存关卡",
+    "_string": "保存所有关卡(重要)",
+    "_N$string": "保存所有关卡(重要)",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -6794,7 +6794,7 @@
     "alignMode": 1,
     "_target": null,
     "_alignFlags": 12,
-    "_left": 30.99599999999998,
+    "_left": 28.76600000000002,
     "_right": 849.004,
     "_top": 1780.942,
     "_bottom": 39.05799999999999,
@@ -6858,7 +6858,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 250,
+      "width": 400,
       "height": 100
     },
     "_anchorPoint": {
@@ -6870,7 +6870,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        366.586,
+        288.96500000000003,
         -870.942,
         0,
         0,
@@ -6922,7 +6922,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240,
+      "width": 346.64,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6974,8 +6974,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "保存导出关卡",
-    "_N$string": "保存导出关卡",
+    "_string": "保存导出关卡(本关)",
+    "_N$string": "保存导出关卡(本关)",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -7060,7 +7060,7 @@
     "_target": null,
     "_alignFlags": 36,
     "_left": 0,
-    "_right": 48.414000000000016,
+    "_right": 51.035,
     "_top": 1780.942,
     "_bottom": 39.05799999999999,
     "_verticalCenter": 0,

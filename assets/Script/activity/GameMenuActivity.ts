@@ -14,7 +14,9 @@ import UtilsNode from "../System/Utils/UtilsNode";
 import UtilsDB from "../System/Utils/UtilsDB";
 import LoadManage from "../System/Load/LoadManage";
 import JsonManager from "../System/manage/JsonManager";
-import {PassItemType} from "../System/Type/enums";
+import {ItemPreType, PassItemType} from "../System/Type/enums";
+import Api from "../System/api/api";
+import UtilsTime from "../System/Utils/UtilsTime";
 
 const {ccclass, property} = cc._decorator;
 
@@ -37,6 +39,8 @@ export default class GameMenuActivity extends Activity {
     private 菜单_游玩: cc.Node = null
 
     private 菜单_测试设置: cc.Node = null
+    private 菜单_本地json保存到数据库: cc.Node = null
+    private 菜单_数据库下载json: cc.Node = null
 
     async onCreate(data: any) {
         ccLog.log("执行顺序 ", "onCreate", data)
@@ -119,6 +123,22 @@ export default class GameMenuActivity extends Activity {
         }
         this.菜单_测试设置 = GetNode.getNode(data)
 
+
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "菜单_本地json保存到数据库",
+            parentNode: this.node,
+        }
+        this.菜单_本地json保存到数据库 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "菜单_数据库下载json",
+            parentNode: this.node,
+        }
+        this.菜单_数据库下载json = GetNode.getNode(data)
+
+
+
     }
 
 
@@ -134,9 +154,9 @@ export default class GameMenuActivity extends Activity {
         this.菜单_制作.on(cc.Node.EventType.TOUCH_END, async () => {
             let passName = this.菜单_关卡输入名字.string
             ccLog.log("输入的名字关卡 制作", passName)
-            let passData = JsonManager.getPassDataByName(passName)
+            let passData =await JsonManager.getPassDataByName(passName)
 
-
+            ccLog.log("网络请求 网络数据还是本地数据呢5 ",passData)
             let data = {}
             if (passData == null) {
                 data["passData"] = []
@@ -156,7 +176,10 @@ export default class GameMenuActivity extends Activity {
             ccLog.log("输入的名字关卡 游玩", passName)
 
             ccLog.log("什么数据呢", passName)
-            let passData = JsonManager.getPassDataByName(passName)
+            let passData =await JsonManager.getPassDataByName(passName)
+
+            ccLog.log("网络请求 网络数据还是本地数据呢5 ",passData)
+
             let data = {}
             if (passData == null) {
                 data["passData"] = []
@@ -173,9 +196,85 @@ export default class GameMenuActivity extends Activity {
 
         this.菜单_测试设置.on(cc.Node.EventType.TOUCH_END, async () => {
             let urlName = this.菜单_网络地址.string
-
             ccLog.log("测试和设置网络", urlName)
 
+        }, this)
+
+        this.菜单_本地json保存到数据库.on(cc.Node.EventType.TOUCH_END, async () => {
+            ccLog.log("菜单_本地json保存到数据库")
+
+            let data = {
+                httpType : "post",
+                httpUrl : Api.baseUrl+"/setKey",
+                async : true,
+                data : {
+                    key : "passData",
+                    value : JSON.stringify(JsonManager.passData),
+                }
+            }
+            let callback = {
+                successful : ()=>{
+                    let  data = {
+                        txt : "本地json保存到数据库 成功"
+                    }
+                    // let cllbacks = {
+                    //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                    //     failureCallback: this.newSkinDialogfailureCallback
+                    // }
+                    Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+                },
+                failure : ()=>{
+                    let  data = {
+                        txt : "本地json保存到数据库 失败"
+                    }
+                    // let cllbacks = {
+                    //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                    //     failureCallback: this.newSkinDialogfailureCallback
+                    // }
+                    Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+                },
+            }
+            Api.go(data,callback)
+
+
+        }, this)
+        this.菜单_数据库下载json.on(cc.Node.EventType.TOUCH_END, async () => {
+            ccLog.log("菜单_数据库下载json")
+            let data = {
+                httpType : "post",
+                httpUrl : Api.baseUrl+"/getKey",
+                async : true,
+                data : {
+                    key : "passData",
+                }
+            }
+            let callback = {
+                successful : (result)=>{
+                    let  data = {
+                        txt : "数据库下载json 成功"
+                    }
+                    // let cllbacks = {
+                    //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                    //     failureCallback: this.newSkinDialogfailureCallback
+                    // }
+                    Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+                    let jsonData = JSON.parse( result.data[0].v)
+
+                    ccLog.log("网络请求 网络回来的完全体",jsonData)
+                    Utils.saveForBrowser(JSON.stringify(jsonData),"数据库json_"+UtilsTime.dateFormat("YYYY-mm-dd HH:MM", new Date))
+                },
+                failure :()=>{
+                    let  data = {
+                        txt : "数据库下载json 失败"
+                    }
+                    // let cllbacks = {
+                    //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                    //     failureCallback: this.newSkinDialogfailureCallback
+                    // }
+                    Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+                },
+            }
+            Api.go(data,callback)
         }, this)
 
 

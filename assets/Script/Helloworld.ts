@@ -13,7 +13,7 @@ import {
     DialogType,
     ItemName,
     ActivityType,
-    ActivityUIType, ItemType, ItemPreType, PassItemType
+    ActivityUIType, ItemPreType, PassItemType
 } from "./System/Type/enums";
 import Api from "./System/api/api";
 import GameSetting, {gameModeType} from "./System/mode/gameSetting";
@@ -818,6 +818,52 @@ export default class Helloworld extends cc.Component {
             ccLog.log("当前渠道", channel, "广告参数", num)
         })
 
+
+        // let data = {
+        //     httpType : "post",
+        //     httpUrl : Api.baseUrl+"/postTest",
+        //     async : true,
+        //     data : {
+        //         username : "122h",
+        //         userpassword : "122h213",
+        //     }
+        // }
+        // let callback = {
+        //     successful : this.successful,
+        //     failure : this.failure,
+        // }
+        // Api.go(data,callback)
+
+        // let data = {
+        //     httpType : "post",
+        //     httpUrl : Api.baseUrl+"/setKey",
+        //     async : true,
+        //     data : {
+        //         key : "passData",
+        //         value : JSON.stringify({id :1123}),
+        //     }
+        // }
+        // let callback = {
+        //     successful : this.successful,
+        //     failure : this.failure,
+        // }
+        // Api.go(data,callback)
+
+        // let data = {
+        //     httpType : "post",
+        //     httpUrl : Api.baseUrl+"/getKey",
+        //     async : true,
+        //     data : {
+        //         key : "passData",
+        //     }
+        // }
+        // let callback = {
+        //     successful : this.successful,
+        //     failure : this.failure,
+        // }
+        // Api.go(data,callback)
+
+
         // qudaoCommon.initallAd();
         //
 
@@ -838,7 +884,18 @@ export default class Helloworld extends cc.Component {
 
 
     }
+    successful(result){
+        ccLog.log("网络请求 成功 最终",result)
 
+       let jsonData = JSON.parse( result.data[0].v)
+
+        ccLog.log("网络请求 网络回来的完全体",jsonData)
+        // ccLog.log("网络请求 本地的对比",jsonData)
+    }
+    failure(result){
+        ccLog.log("网络请求 失败 最终",result)
+
+    }
 
     update(dt: number): void {
         // let FrameRate = cc.game.getFrameRate()

@@ -72,6 +72,7 @@ export default class ItemLine extends ItemBase{
 
     中距离: cc.Node = null
     中皮肤: cc.Node = null
+    外皮: cc.Node = null
 
 
 
@@ -119,6 +120,7 @@ export default class ItemLine extends ItemBase{
         this.中距离.height = this.groupHeightLength
 
         this.中皮肤.width = this.groupWidthLength*this.group
+        this.外皮.width = this.groupWidthLength*this.group
 
 
 
@@ -131,6 +133,11 @@ export default class ItemLine extends ItemBase{
             index2 : this.index,
         }
         Emitter.fire("onEndNodeShow",newdata)
+
+
+        ccLog.log("关于长度"," 整体长度 " ,this.node.width," 中距离长度 ",this.中距离.width," 中皮肤长度 ",this.中皮肤.width," 外皮长度 ",this.外皮.width )
+
+
     }
 
 
@@ -178,6 +185,12 @@ export default class ItemLine extends ItemBase{
             parentNode : this.node
         }
         this.中皮肤 = GetNode.getNode(data)
+         data = {
+            type : GetNodeType.纯查找,
+            otherData : "外皮",
+            parentNode : this.node
+        }
+        this.外皮 = GetNode.getNode(data)
     }
 
 

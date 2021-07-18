@@ -8,6 +8,9 @@
 
 import LoadManage from "../Load/LoadManage";
 import ccLog from "../Log/ccLog";
+import Api from "../api/api";
+import Emitter from "../Msg/Emitter";
+import {ItemPreType} from "../Type/enums";
 
 const {ccclass, property} = cc._decorator;
 
@@ -29,10 +32,15 @@ export default class JsonManager extends cc.Component {
     static rubberjson: cc.JsonAsset = null
     static passpager: cc.JsonAsset = null
     static passGameOver: cc.JsonAsset = null
-    static passData: cc.JsonAsset = null
+    static passData: any = null
+
+
+    static memoryPassData : any = null
+
     onLoad () {}
 
     start () {
+
 
     }
     //JsonManager.initJson()
@@ -40,13 +48,15 @@ export default class JsonManager extends cc.Component {
         // JsonManager.talkList.json
         this.passjson = await LoadManage.getJsonForName("passjson");
         this.passSettingjson = await LoadManage.getJsonForName("passSettingjson");
-        this.passData = await LoadManage.getJsonForName("passData");
+        let passData = await LoadManage.getJsonForName("passData");
+        // JsonManager.passData
+        this.passData =  passData.json
         // this.rubberjson = await LoadManage.getJsonForName("rubberjson");
         // this.passpager = await LoadManage.getJsonForName("passpager");
         // this.passGameOver = await LoadManage.getJsonForName("passGameOver");
 
 
-        ccLog.log("有沒有",this.rubberjson)
+        // ccLog.log("有沒有",this.rubberjson)
         // this.setting = await LoadManage.getJsonForName("setting");
         // ccLog.log("返回来的是什么 setting", this.setting)
     }
@@ -86,23 +96,154 @@ export default class JsonManager extends cc.Component {
 
         return list
     }
-    static getPassDatalists(){
+    //JsonManager.savePassData(passData)
+    static savePassData(passData){
+
+        ccLog.log("保存关卡 所有的关卡数据是",this.memoryPassData.list)
+        ccLog.log("保存关卡 保存当前关的",passData)
+
+
+        let index = -1
+        for (let i = 0; i < this.memoryPassData.list.length; i++) {
+         let item =  this.memoryPassData.list[i]
+            if (item.passName == passData.passName) {
+                index = i
+            }
+        }
+
+        if (index == -1) {
+            this.memoryPassData.list.push(passData)
+        }else{
+            this.memoryPassData.list[index] = passData
+        }
+
+
+        let data = {
+            httpType : "post",
+            httpUrl : Api.baseUrl+"/setKey",
+            async : true,
+            data : {
+                key : "passData",
+                value : JSON.stringify(this.memoryPassData),
+            }
+        }
+        let callback = {
+            successful : ()=>{
+                let  data = {
+                    txt : "保存所有关卡数据 成功"
+                }
+                // let cllbacks = {
+                //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                //     failureCallback: this.newSkinDialogfailureCallback
+                // }
+                Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+            },
+            failure :()=>{
+                let  data = {
+                    txt : "保存所有关卡数据 失败"
+                }
+                // let cllbacks = {
+                //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                //     failureCallback: this.newSkinDialogfailureCallback
+                // }
+                Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+            },
+        }
+        Api.go(data,callback)
+
+
+
+
+
+
+    }
+
+
+    static async getPassDatalists(){
         // for (let i = 0; i < this.pass.json.list.length; i++) {
         //     let item = this.pass.json.list[i]
         //     if (item.passName == passName) {
         //         return item
         //     }
         // }
+
         let list = []
-        if (this.passData.json.list.length > 0) {
-            for (let i = 0; i <this.passData.json.list.length ; i++) {
-                let item = this.passData.json.list[i]
-                item.index = i+1
-                list.push(item)
+
+        //内存
+        if (this.memoryPassData == null) {
+            this.memoryPassData = {
+                list : []
             }
+
+            ccLog.log("有请求吗")
+            //网络数据
+            let data = {
+                httpType : "post",
+                httpUrl : Api.baseUrl+"/getKey",
+                async : true,
+                data : {
+                    key : "passData",
+                }
+            }
+            // let callback = {
+            //     successful : (result)=>{
+            //         ccLog.log("网络请求 成功最终",result)
+            //         for (let i = 0; i <result.data.length ; i++) {
+            //             let item = result.data[i]
+            //             item.index = i+1
+            //             list.push(item)
+            //         }
+            //         this.memoryPassData.list = list
+            //     },
+            //     failure : (result)=>{
+            //
+            //         if (list.length == 0) {
+            //             //网络数据没有本地数据
+            //             if (this.passData.list.length > 0) {
+            //                 for (let i = 0; i <this.passData.list.length ; i++) {
+            //                     let item = this.passData.list[i]
+            //                     item.index = i+1
+            //                     list.push(item)
+            //                 }
+            //             }
+            //             this.memoryPassData.list = list
+            //         }
+            //     },
+            // }
+
+
+
+
+            let result = await Api.go(data,null);
+            ccLog.log("网络请求 网络数据还是本地数据呢 0 ",this.memoryPassData.list,result)
+            if (result) {
+                let jsonData = JSON.parse( result.data[0].v)
+                for (let i = 0; i <jsonData.list.length ; i++) {
+                    let item = jsonData.list[i]
+                    item.index = i+1
+                    list.push(item)
+                }
+                this.memoryPassData.list = list
+            }else{
+                if (list.length == 0) {
+                    //网络数据没有本地数据
+                    if (this.passData.list.length > 0) {
+                        for (let i = 0; i <this.passData.list.length ; i++) {
+                            let item = this.passData.list[i]
+                            item.index = i+1
+                            list.push(item)
+                        }
+                    }
+                    this.memoryPassData.list = list
+                }
+            }
+            ccLog.log("网络请求 网络数据还是本地数据呢1  网络请求结果",this.memoryPassData.list)
+            return  this.memoryPassData.list
+        }else{
+            ccLog.log("网络请求 网络数据还是本地数据呢1 没有网络请求结果",this.memoryPassData.list)
+            return  this.memoryPassData.list
         }
 
-        return list
     }
 
 
@@ -152,12 +293,15 @@ export default class JsonManager extends cc.Component {
 
     //获取关卡数据通过名字
     // JsonManager.getPassDataByName(passName)
-    static getPassDataByName(passName){
-        let list = JsonManager.getPassDatalists()
+    static async getPassDataByName(passName){
+        let list = await JsonManager.getPassDatalists()
+        ccLog.log("网络请求 网络数据还是本地数据呢3 ",list)
         for (let i = 0; i < list.length; i++) {
             let item = list[i]
+            ccLog.log("网络请求 网络数据还是本地数据呢4 ",item,passName)
             if (item.passName == passName) {
                 // item.index = i
+
                 return item
             }
         }

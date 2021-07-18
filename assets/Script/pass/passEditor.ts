@@ -504,8 +504,7 @@ export default class PassEditor extends BasePass {
                 this.data.passData.push(getitemNamecsItem.data)
             }
         }
-
-
+        JsonManager.savePassData(this.data)
 
     }
 
