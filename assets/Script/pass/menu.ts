@@ -70,7 +70,7 @@ export default class Menu extends cc.Component {
 
         let pass = JsonManager.getPassByIndex(index)
         ccLog.log("下一关数据",pass)
-        let passData =await JsonManager.getPassDataByName(pass.passName)
+        let passData =await JsonManager.getPassDataByName(pass.passName,false)
 
         // UtilsDB.addCheckpointRecords(pass.itemName,SelectCheckPointType.已解锁未通关)
 

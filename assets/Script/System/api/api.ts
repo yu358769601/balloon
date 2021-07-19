@@ -23,7 +23,7 @@ export default class Api  {
     static adCodeTest = 1
 
 
-    static baseUrl : string = "http://192.168.3.250:10086"
+    static baseUrl : string = "http://192.168.0.250:10086"
 
 
     // Api.getAdControlInfo(callback ?)

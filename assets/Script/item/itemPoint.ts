@@ -54,6 +54,8 @@ export default class ItemPoint extends ItemBase {
     allowInIndexsSet : number[] = []
     private 标记: cc.Node;
 
+    private 点数字提示: cc.Label;
+
 
     //index
     onEndNodeShow(selfName,data){
@@ -88,6 +90,12 @@ export default class ItemPoint extends ItemBase {
         }
         this.标记 = GetNode.getNode(data)
 
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "点数字提示",
+            parentNode: this.node,
+        }
+        this.点数字提示 = GetNode.getNode(data).getComponent(cc.Label)
     }
 
     onDestroy(): void {
@@ -112,6 +120,8 @@ export default class ItemPoint extends ItemBase {
         this.addComponent("controlMaterial").setData(editData)
         // //编辑点的时候要有 图片
         this.getComponent(cc.Sprite).enabled = true
+
+        this.点数字提示.node.active = true
     }
    async setEditData(editData){
         this.editData = editData
@@ -125,6 +135,8 @@ export default class ItemPoint extends ItemBase {
 
        //编辑点的时候要有 图片
        this.getComponent(cc.Sprite).enabled = true
+
+       this.点数字提示.node.active = true
 
 
        //新创建的
@@ -169,7 +181,8 @@ export default class ItemPoint extends ItemBase {
 
         this.node.zIndex = this.data.zIndex
         this.node.setPosition(this.data.x,this.data.y)
-
+        this.点数字提示.string = this.data.index+""
+        ccLog.log("点数字提示",this.点数字提示)
     }
     start () {
 

@@ -283,7 +283,7 @@ export default class JsonManager extends cc.Component {
         let list = JsonManager.getPasslists()
         for (let i = 0; i < list.length; i++) {
             let item = list[i]
-            if (item.passName == passName) {
+            if (item.passName == passName && item.isPlay == true) {
                 // item.index = i
                 return item
             }
@@ -293,13 +293,20 @@ export default class JsonManager extends cc.Component {
 
     //获取关卡数据通过名字
     // JsonManager.getPassDataByName(passName)
-    static async getPassDataByName(passName){
+    static async getPassDataByName(passName,isEditor){
         let list = await JsonManager.getPassDatalists()
         ccLog.log("网络请求 网络数据还是本地数据呢3 ",list)
         for (let i = 0; i < list.length; i++) {
             let item = list[i]
             ccLog.log("网络请求 网络数据还是本地数据呢4 ",item,passName)
-            if (item.passName == passName) {
+            if (isEditor == true) {
+                if (item.passName == passName) {
+                    // item.index = i
+
+                    return item
+                }
+            }
+            if (item.passName == passName &&  item.isPlay == true) {
                 // item.index = i
 
                 return item

@@ -24,7 +24,10 @@ enum PassEnum {
     关卡 = "pass"
 
 }
+export enum PassEnumToast {
+    没有本关 = " 没有本关或者本关不可以玩 "
 
+}
 // enum PassItemEnum {
 //     点= "itemPoint",
 //     线= "itemLineBG",
@@ -63,8 +66,14 @@ export default class PassEditor extends BasePass {
     private 编辑器_宪格子宽: cc.EditBox;
     private 编辑器_宪格子高: cc.EditBox;
 
+    private 编辑器_保存关卡名字: cc.EditBox;
+    private 编辑器_是否游玩: cc.Toggle;
+
     private 编辑器_工具箱: cc.Node;
     private 编辑器_清除选择: cc.Node;
+
+    private 编辑器_保存关卡名字保存按钮: cc.Node;
+    private 编辑器_是否游玩保存按钮: cc.Node;
 
     onDestroy() {
         super.onDestroy();
@@ -370,12 +379,45 @@ export default class PassEditor extends BasePass {
             parentNode: this.node
         }
         this.编辑器_清除选择 = GetNode.getNode(data)
+
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "编辑器_保存关卡名字",
+            parentNode: this.node
+        }
+        this.编辑器_保存关卡名字 = GetNode.getNode(data).getComponent(cc.EditBox)
+
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "编辑器_保存关卡名字保存按钮",
+            parentNode: this.node
+        }
+        this.编辑器_保存关卡名字保存按钮 = GetNode.getNode(data)
+
+
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "编辑器_是否游玩",
+            parentNode: this.node
+        }
+        this.编辑器_是否游玩 = GetNode.getNode(data).getComponent(cc.Toggle)
+
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "编辑器_是否游玩保存按钮",
+            parentNode: this.node
+        }
+        this.编辑器_是否游玩保存按钮 = GetNode.getNode(data)
+
+
+
     }
 
     // update (dt) {}
     private initOnclick() {
         this.编辑器_功能.on(cc.Node.EventType.TOUCH_START, () => {
             this.编辑器_功能UI.active = true
+            this.编辑器_保存关卡名字.string =  this.data.passName
         }, this)
         this.编辑器_关闭功能UI .on(cc.Node.EventType.TOUCH_START, () => {
                 this.编辑器_功能UI.active = false
@@ -460,8 +502,33 @@ export default class PassEditor extends BasePass {
 
         }, this)
 
+        this.编辑器_保存关卡名字保存按钮.on(cc.Node.EventType.TOUCH_START, () => {
 
 
+
+
+            this.data.passName =  this.编辑器_保存关卡名字.string
+            this.data.itemName =  this.编辑器_保存关卡名字.string
+            let  data = {
+                txt : "设置本关名字" + this.data.itemName
+            }
+            // let cllbacks = {
+            //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+            //     failureCallback: this.newSkinDialogfailureCallback
+            // }
+            Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+        }, this)
+        this.编辑器_是否游玩保存按钮.on(cc.Node.EventType.TOUCH_START, () => {
+            this.data.isPlay =   this.编辑器_是否游玩.isChecked
+            let  data = {
+                txt : "设置本关是否游玩" + this.data.isPlay
+            }
+            // let cllbacks = {
+            //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+            //     failureCallback: this.newSkinDialogfailureCallback
+            // }
+            Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+        }, this)
     }
 
     //创建条目在游乐场

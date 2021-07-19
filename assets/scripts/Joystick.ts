@@ -1,9 +1,20 @@
+import ccLog from "../Script/System/Log/ccLog";
+import Emitter from "../Script/System/Msg/Emitter";
+
 const { ccclass, property } = cc._decorator;
 
 /**
  * 全局事件监听实例
  */
 export const instance = new cc.EventTarget();
+
+export enum JoystickTypes {
+  上 ="上",
+  下 ="下",
+  左 ="左",
+  右 ="右",
+}
+
 
 /**
  * 方向类型
@@ -36,6 +47,11 @@ export enum JoystickType {
  */
 @ccclass
 export default class Joystick extends cc.Component {
+
+  firstX : number = 0
+  firstY : number = 0
+
+
   @property({
     type: cc.Node,
     displayName: "Dot",
@@ -124,12 +140,21 @@ export default class Joystick extends cc.Component {
     this.node.on(cc.Node.EventType.TOUCH_CANCEL, this._touchEndEvent, this);
   }
 
+
+
+
   /**
    * 触摸开始回调函数
    * @param event
    */
   _touchStartEvent(event: cc.Event.EventTouch) {
     instance.emit(cc.Node.EventType.TOUCH_START, event);
+
+    let location = event.getLocation();// 获取节点坐标
+    this.firstX = location.x;
+    this.firstY = location.y;
+
+
 
     const touchPos = this.node.convertToNodeSpaceAR(event.getLocation());
 
@@ -165,6 +190,65 @@ export default class Joystick extends cc.Component {
     ) {
       return false;
     }
+    // let location = event.getLocation();// 获取节点坐标
+    // this.firstX = location.x;
+    // this.firstY = location.y;
+    let delta = event.getDelta();
+
+    let touchPoint = event.getLocation();
+    let endX = delta.x
+    let endY = delta.y
+    // var tempPlayer = node.parent.convertToNodeSpaceAR(touchPoint);
+    // node.setPosition(tempPlayer);
+
+    if (Math.abs(endX) > Math.abs(endY)){
+      //手势向左右
+      //判断向左还是向右
+      if (endX  < 0){
+        //向左函数
+        // ccLog.log('滑动方向 左',endX);
+        Emitter.fire("onJoystick",JoystickTypes.左)
+      } else {
+        //向右函数
+        // ccLog.log('滑动方向 右',endX);
+        Emitter.fire("onJoystick",JoystickTypes.右)
+      }
+      // if (endY  > 0){
+      //   //向左函数
+      //   ccLog.log('滑动方向 左下',endX);
+      //   Emitter.fire("onJoystick",JoystickTypes.左)
+      // } else {
+      //   //向右函数
+      //   ccLog.log('滑动方向 右上',endX);
+      //   Emitter.fire("onJoystick",JoystickTypes.右)
+      // }
+    } else {
+      //手势向上下
+      //判断手势向上还是向下
+      if (endY  < 0){
+        //向下函数
+        // ccLog.log('滑动方向 下',endY);
+        Emitter.fire("onJoystick",JoystickTypes.下)
+      } else {
+        //向上函数
+        // ccLog.log('滑动方向 上',endY);
+        Emitter.fire("onJoystick",JoystickTypes.上)
+      }
+      // if (endX  > 0){
+      //   //向左函数
+      //   ccLog.log('滑动方向 左',endX);
+      //   Emitter.fire("onJoystick",JoystickTypes.左)
+      // } else {
+      //   //向右函数
+      //   ccLog.log('滑动方向 右',endX);
+      //   Emitter.fire("onJoystick",JoystickTypes.右)
+      // }
+    }
+
+
+
+
+
 
     // 以圆圈为锚点获取触摸坐标
     const touchPos = this.ring.convertToNodeSpaceAR(event.getLocation());

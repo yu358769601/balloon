@@ -26,6 +26,10 @@ export default class ItemLuckKey extends ItemBase {
         // type: cc.Integer
     })
     index : string = ""
+
+
+    index1: string = ""
+    index2: string = ""
     // LIFE-CYCLE CALLBACKS:
     //钥匙
     onLoad () {
@@ -52,7 +56,11 @@ export default class ItemLuckKey extends ItemBase {
                 data.callBack(data,this)
             }
         }
-
+        // if (data.index1 == this.index1 && data.index2 == this.index2 ) {
+        //     data.callBack(data,this)
+        // }else if (data.index1 == this.index2 && data.index2== this.index1) {
+        //     data.callBack(data,this)
+        // }
 
     }
     setData(data){
@@ -69,6 +77,10 @@ export default class ItemLuckKey extends ItemBase {
         // x: -436.747
         // y: -241.279
       this.index = this.data.index
+
+        this.index1 = this.data.index1
+        this.index2 = this.data.index2
+
 
         this.node.setPosition(this.data.x,this.data.y)
 
@@ -99,6 +111,8 @@ export default class ItemLuckKey extends ItemBase {
         let data = {
             typeName : ItemPreType.钥匙,
             index : 0,
+            index1 : 0,
+            index2 : 0,
             x: editData.position.x,
             y: editData.position.y,
             zIndex : 0

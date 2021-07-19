@@ -107,7 +107,12 @@ export default class DetailedSettingDialog extends BaseDialog {
     编辑器详情_线布局_角度数字 : cc.EditBox
     编辑器详情_线布局_组 : cc.EditBox
 
+    编辑器详情_钥匙_从 : cc.EditBox
+    编辑器详情_钥匙_到 : cc.EditBox
+
     编辑器详情_操作棍布局_角度数字 : cc.EditBox
+
+    编辑器详情_线布局_角度拉动条 : cc.Slider
     saveRemoveNode(node,name){
         let data
 
@@ -250,7 +255,12 @@ export default class DetailedSettingDialog extends BaseDialog {
                     parentNode: this.编辑器详情_线布局
                 }
                 this.编辑器详情_线布局_组 = GetNode.getNode(data).getComponent(cc.EditBox)
-
+                data = {
+                    type: GetNodeType.纯查找,
+                    otherData: "编辑器详情_线布局_角度拉动条",
+                    parentNode: this.编辑器详情_线布局
+                }
+                this.编辑器详情_线布局_角度拉动条 = GetNode.getNode(data).getComponent(cc.Slider)
 
                 this.getDataByName(name)
                 break;
@@ -260,6 +270,19 @@ export default class DetailedSettingDialog extends BaseDialog {
                 this.编辑器详情_钥匙布局.active = true
 
                 this.saveRemoveNode(this.编辑器详情_钥匙布局,name)
+
+                data = {
+                    type: GetNodeType.纯查找,
+                    otherData: "编辑器详情_钥匙_从",
+                    parentNode: this.编辑器详情_钥匙布局
+                }
+                this.编辑器详情_钥匙_从 = GetNode.getNode(data).getComponent(cc.EditBox)
+                data = {
+                    type: GetNodeType.纯查找,
+                    otherData: "编辑器详情_钥匙_到",
+                    parentNode: this.编辑器详情_钥匙布局
+                }
+                this.编辑器详情_钥匙_到 = GetNode.getNode(data).getComponent(cc.EditBox)
 
                 this.getDataByName(name)
                 break;
@@ -317,6 +340,10 @@ export default class DetailedSettingDialog extends BaseDialog {
 
                 this.编辑器详情_线布局_组.string = itemLineBG.data.group
                 this.编辑器详情_线布局_角度数字.string = itemLineBG.data.rotation
+
+                this.编辑器详情_线布局_角度拉动条.progress =360/ itemLineBG.data.rotation
+
+
                 this.编辑器详情_线布局_从.string = itemLineBG.data.indexStart
                 this.编辑器详情_线布局_到.string = itemLineBG.data.indexEnd
 
@@ -333,6 +360,8 @@ export default class DetailedSettingDialog extends BaseDialog {
                 let itemLuckKey = this.data.data.editData.node.getComponent(name)
 
                 this.编辑器详情_编号.string = itemLuckKey.data.index+""
+                // this.编辑器详情_钥匙_从.string = itemLuckKey.data.index1+""
+                // this.编辑器详情_钥匙_到.string = itemLuckKey.data.index2+""
                 this.编辑器详情_X位置.string = itemLuckKey.data.x
                 this.编辑器详情_Y位置.string = itemLuckKey.data.y
                 this.编辑器详情_层级.string = itemLuckKey.data.zIndex
@@ -412,7 +441,11 @@ export default class DetailedSettingDialog extends BaseDialog {
                 //     x: this.node.x,
                 //     y: this.node.y
                 // }
+                // this.编辑器详情_钥匙_从.string = itemLuckKey.data.index1+""
+                // this.编辑器详情_钥匙_到.string = itemLuckKey.data.index2+""
                 itemLuckKey.data.index =Number(this.编辑器详情_编号.string)
+                // itemLuckKey.data.index1 =Number(this.编辑器详情_钥匙_从.string)
+                // itemLuckKey.data.index2 =Number(this.编辑器详情_钥匙_到.string)
                 itemLuckKey.data.x =  Number(this.编辑器详情_X位置.string)
                 itemLuckKey.data.y = Number(this.编辑器详情_Y位置.string )
 
@@ -478,8 +511,13 @@ export default class DetailedSettingDialog extends BaseDialog {
         return this
     }
 
-
-
+    //线布局拉动条目
+    onSliderLineLa(){
+        let itemLineBG = this.data.data.editData.node.getComponent(ItemPreType.线)
+        itemLineBG.data.rotation = this.编辑器详情_线布局_角度拉动条.progress*360
+        this.编辑器详情_线布局_角度数字.string = itemLineBG.data.rotation
+        itemLineBG.initNode()
+    }
 
 
 

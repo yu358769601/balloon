@@ -7,7 +7,7 @@
 
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
-import {instance} from "../../scripts/Joystick";
+import {instance, JoystickType, JoystickTypes} from "../../scripts/Joystick";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Vec2 = cc.Vec2;
 import Size = cc.Size;
@@ -17,14 +17,12 @@ import ItemBase from "./itemBase";
 const {ccclass, property} = cc._decorator;
 
 
-
-
 @ccclass
-export default class ItemLine extends ItemBase{
+export default class ItemLine extends ItemBase {
 //棍子
 
 
-    data : any = null
+    data: any = null
 
     // LIFE-CYCLE CALLBACKS:
     @property({
@@ -32,19 +30,19 @@ export default class ItemLine extends ItemBase{
         tooltip: "本身编号",
         // type: cc.Integer
     })
-    index : string = ""
+    index: string = ""
     @property({
         displayName: "起点节点",
         tooltip: "起点节点",
         type: cc.Node
     })
-    startNode : cc.Node = null
+    startNode: cc.Node = null
     @property({
         displayName: "终点节点",
         tooltip: "终点节点",
         type: cc.Node
     })
-    endNode : cc.Node = null
+    endNode: cc.Node = null
 
 
     @property({
@@ -52,14 +50,14 @@ export default class ItemLine extends ItemBase{
         tooltip: "长度有多少组",
         // type: cc.Node
     })
-    group : number = 1
+    group: number = 1
     @property({
         displayName: "每组有多长",
         tooltip: "每组有多长",
         // type: cc.Node
     })
         //默认 高32 宽52
-    groupWidthLength : number =52
+    groupWidthLength: number = 52
 
     @property({
         displayName: "每组有多宽",
@@ -67,7 +65,7 @@ export default class ItemLine extends ItemBase{
         // type: cc.Node
     })
         //默认 高32 宽52
-    groupHeightLength : number =32
+    groupHeightLength: number = 32
 
 
     中距离: cc.Node = null
@@ -75,23 +73,21 @@ export default class ItemLine extends ItemBase{
     外皮: cc.Node = null
 
 
-
-
     private moveDir: cc.Vec2;
 
     //开始游戏
-    onStartGame(selfName,startNode){
+    onStartGame(selfName, startNode) {
         this.startNode = startNode
         this.node.setPosition(this.startNode.getPosition())
 
-        this.index =  this.startNode.getComponent("itemPoint").index
+        this.index = this.startNode.getComponent("itemPoint").index
 
 
-        this.onSetWideth(null,null)
-
+        this.onSetWideth(null, null)
 
 
     }
+
     //
     setData(data) {
         this.data = data
@@ -99,9 +95,10 @@ export default class ItemLine extends ItemBase{
 
         this.initNode()
 
-        ccLog.log("setData 我是操作棍我现在的data是 ",this.data)
+        ccLog.log("setData 我是操作棍我现在的data是 ", this.data)
     }
-    initNode(){
+
+    initNode() {
         this.node.angle = this.data.rotation
 
         this.node.zIndex = this.data.zIndex
@@ -111,35 +108,33 @@ export default class ItemLine extends ItemBase{
 
 
     //设置宽高
-    onSetWideth(selfName,data){
+    onSetWideth(selfName, data) {
         if (data) {
             this.groupWidthLength = data.width
             this.groupHeightLength = data.height
         }
-        this.中距离.width = this.groupWidthLength*this.group
+        this.中距离.width = this.groupWidthLength * this.group
         this.中距离.height = this.groupHeightLength
 
-        this.中皮肤.width = this.groupWidthLength*this.group
-        this.外皮.width = this.groupWidthLength*this.group
-
+        this.中皮肤.width = this.groupWidthLength * this.group
+        this.外皮.width = this.groupWidthLength * this.group
 
 
         let boxCollider = this.中距离.getComponent(cc.BoxCollider)
-        boxCollider.offset = new Vec2(this.中距离.width/2,0)
-        boxCollider.size = new Size(this.中距离.width,this.中距离.height)
+        boxCollider.offset = new Vec2(this.中距离.width / 2, 0)
+        boxCollider.size = new Size(this.中距离.width, this.中距离.height)
 
 
         let newdata = {
-            index2 : this.index,
+            index2: this.index,
         }
-        Emitter.fire("onEndNodeShow",newdata)
+        Emitter.fire("onEndNodeShow", newdata)
 
 
-        ccLog.log("关于长度"," 整体长度 " ,this.node.width," 中距离长度 ",this.中距离.width," 中皮肤长度 ",this.中皮肤.width," 外皮长度 ",this.外皮.width )
+        ccLog.log("关于长度", " 整体长度 ", this.node.width, " 中距离长度 ", this.中距离.width, " 中皮肤长度 ", this.中皮肤.width, " 外皮长度 ", this.外皮.width)
 
 
     }
-
 
 
     onLoad() {
@@ -171,24 +166,24 @@ export default class ItemLine extends ItemBase{
         this.removeEmitter()
     }
 
-    initView(){
+    initView() {
         let data
-         data = {
-            type : GetNodeType.纯查找,
-            otherData : "中距离",
-            parentNode : this.node
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "中距离",
+            parentNode: this.node
         }
         this.中距离 = GetNode.getNode(data)
-         data = {
-            type : GetNodeType.纯查找,
-            otherData : "中皮肤",
-            parentNode : this.node
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "中皮肤",
+            parentNode: this.node
         }
         this.中皮肤 = GetNode.getNode(data)
-         data = {
-            type : GetNodeType.纯查找,
-            otherData : "外皮",
-            parentNode : this.node
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "外皮",
+            parentNode: this.node
         }
         this.外皮 = GetNode.getNode(data)
     }
@@ -205,6 +200,7 @@ export default class ItemLine extends ItemBase{
         Emitter.remove('onStartGame', this.onStartGame, this)
         Emitter.remove('onAddGroup', this.onAddGroup, this)
         Emitter.remove('onSetGroup', this.onSetGroup, this)
+        Emitter.remove('onJoystick', this.onJoystick, this)
 
     }
 
@@ -219,6 +215,46 @@ export default class ItemLine extends ItemBase{
         Emitter.register('onStartGame', this.onStartGame, this)
         Emitter.register('onAddGroup', this.onAddGroup, this)
         Emitter.register('onSetGroup', this.onSetGroup, this)
+        Emitter.register('onJoystick', this.onJoystick, this)
+
+    }
+
+    onJoystick(selfName, direction) {
+
+        ccLog.log("现在棍子的 面向角度", this.node.angle,direction)
+          // 右 0 上 90   左 180 下 270
+        switch (direction) {
+            case JoystickTypes.左:
+                // ccLog.log("现在棍子的 面向角度", this.node.angle , "左面上线",90)
+                if (this.node.angle <= 180) {
+                    this.node.angle+=0.5
+                }else{
+                    this.node.angle-=0.5
+                }
+
+                break;
+            case JoystickTypes.上:
+                if (this.node.angle <= 90) {
+                    this.node.angle+=0.5
+                }else{
+                    this.node.angle-=0.5
+                }
+                break;
+            case JoystickTypes.右:
+                if (this.node.angle <= 0) {
+                    this.node.angle+=0.5
+                }else{
+                    this.node.angle-=0.5
+                }
+                break;
+            case JoystickTypes.下:
+                if (this.node.angle <= 270) {
+                    this.node.angle+=0.5
+                }else{
+                    this.node.angle-=0.5
+                }
+                break;
+        }
 
     }
 
@@ -241,7 +277,7 @@ export default class ItemLine extends ItemBase{
     onLineTOUCH_END(selfName) {
 
 
-        ccLog.log("走我了"," this.endNode ",this.endNode," this.startNode ",this.startNode)
+        ccLog.log("走我了", " this.endNode ", this.endNode, " this.startNode ", this.startNode)
 
         if (this.endNode == null) {
 
@@ -251,10 +287,10 @@ export default class ItemLine extends ItemBase{
             // }
             if (this.startNode != null && this.endNode != null) {
                 // Emitter.fire("onShowTempLine", this.startNode.getComponent("itemPoint").index)
-                 //设置临时显示
+                //设置临时显示
 
                 if (this.startNode != this.endNode) {
-                    ccLog.log("编号 棍子", this.index ," 落点 ",this.endNode.getComponent("itemPoint").index)
+                    ccLog.log("编号 棍子", this.index, " 落点 ", this.endNode.getComponent("itemPoint").index)
 
                     let index1 = this.index
                     let index2 = this.endNode.getComponent("itemPoint").index
@@ -264,23 +300,25 @@ export default class ItemLine extends ItemBase{
                     this.node.setPosition(this.endNode.getPosition())
                     this.startNode = this.endNode
 
-                    this.index =  this.endNode.getComponent("itemPoint").index
+                    this.index = this.endNode.getComponent("itemPoint").index
                     // ccLog.log("我要爆炸了 1 ", "起点单位", this.startNode, "落点单位", this.endNode)
 
                     let data = {
-                        index1 :index1,
-                        index2 : index2
+                        index1: index1,
+                        index2: index2
                     }
 
-                    Emitter.fire("onEndNodeShow",data)
+                    Emitter.fire("onEndNodeShow", data)
 
 
                     let getKeyData = {
-                        index : index2,
-                        self : this,
-                        callBack : this.getKeyCallBack
+                        // index1 :index1,
+                        // index2 : index2,
+                        index: index2,
+                        self: this,
+                        callBack: this.getKeyCallBack
                     }
-                    Emitter.fire("onGetKey",getKeyData)
+                    Emitter.fire("onGetKey", getKeyData)
                 } else {
                     ccLog.log("我要爆炸了 2")
                 }
@@ -288,22 +326,18 @@ export default class ItemLine extends ItemBase{
             // ccLog.log("我要爆炸了 0 ", "起点单位", this.startNode, "落点单位", this.endNode)
 
 
-
         }
     }
 
-    getKeyCallBack(data,key){
-        ccLog.log("现在这个位置有钥匙 "," data ",data," key ",key)
+    getKeyCallBack(data, key) {
+        ccLog.log("现在这个位置有钥匙 ", " data ", data, " key ", key)
 
         if (key.node) {
             key.node.destroy()
         }
 
 
-
-
     }
-
 
 
     async onCollisionEnterByControlCheckLineCollision(selfName, sendData) {
@@ -321,17 +355,19 @@ export default class ItemLine extends ItemBase{
         //进入范围提示
         // sendData.self.node.getComponent("itemPoint").标记.active = true
 
-        ccLog.log("突然闯入",sendData.self.node.getComponent("itemPoint").标记.active)
+        ccLog.log("突然闯入", sendData.self.node.getComponent("itemPoint").标记.active)
         if (sendData.self.node.getComponent("itemPoint").标记.active == true) {
             this.endNode = sendData.self.node
         }
 
     }
-    onCollisionStayByControlCheckLineCollision(selfName, sendData){
+
+    onCollisionStayByControlCheckLineCollision(selfName, sendData) {
         if (sendData.self.node.getComponent("itemPoint").标记.active == true) {
             this.endNode = sendData.self.node
         }
     }
+
     onCollisionExitByControlCheckLineCollision(selfName, sendData) {
         // ccLog.log("撞到了 退出 碰撞 "," 受害者 ",sendData.self," 肇事者 ",sendData.other)
         //出去范围提示
@@ -344,23 +380,34 @@ export default class ItemLine extends ItemBase{
 
     move() {
         if (this.moveDir != null) {
-            this.node.angle = (cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x))) * 1;
+
+
+            // ccLog.log("角度问题 0 ",this.moveDir.y, this.moveDir.x)
+            // ccLog.log("角度问题 1 ",Math.atan2(this.moveDir.y, this.moveDir.x))
+            // ccLog.log("角度问题 2 ",cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x)))
+            //
+            //
+
+            // this.node.angle = (cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x))) * 1;
+
+            // this.node.angle+=Math.atan2(this.moveDir.y, this.moveDir.x)
+            //
+            // ccLog.log("角度问题 3 ",this.node.angle)
+
+
         }
 
 
     }
 
 
+    onAddGroup(selfName, group) {
 
 
-
-    onAddGroup(selfName,group){
-
-
-        if ( this.group +group <=0 ) {
+        if (this.group + group <= 0) {
             ccLog.log("游戏结束")
             this.group += group
-            this.onSetWideth(null,null)
+            this.onSetWideth(null, null)
             // let cllbacks = {
             //     // self : this,
             //     successfulCallback: this.successfulCallback,
@@ -371,30 +418,32 @@ export default class ItemLine extends ItemBase{
             // data.self = this
             // Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
             Emitter.fire("onGameOverCall")
-        }else{
+        } else {
             this.group += group
-            this.onSetWideth(null,null)
-            ccLog.log("我现在要设置多少组 减少之后",this.group,"距离",this.中距离.width)
+            this.onSetWideth(null, null)
+            ccLog.log("我现在要设置多少组 减少之后", this.group, "距离", this.中距离.width)
         }
 
     }
 
-    onSetGroup(selfName,group){
+    onSetGroup(selfName, group) {
         this.group = group
-        this.onSetWideth(null,null)
-        ccLog.log("我现在要设置多少组",this.group,"距离",this.中距离.width)
+        this.onSetWideth(null, null)
+        ccLog.log("我现在要设置多少组", this.group, "距离", this.中距离.width)
     }
 
 
     update(dt) {
         this.move();
     }
-    setEdit(editData){
+
+    setEdit(editData) {
         this.addComponent("controlMaterial").setData(editData)
         // //编辑点的时候要有 图片
         this.getComponent(cc.Sprite).enabled = true
         ccLog.log("我是 操作棍我需要高亮 我需要被点击")
     }
+
     setEditData(editData) {
         this.editData = editData
         this.initView()
@@ -404,16 +453,16 @@ export default class ItemLine extends ItemBase{
         this.getComponent(cc.Sprite).enabled = true
         //新创建的
         let data = {
-            typeName : ItemPreType.操作棍,
-            index : 0,
-            rotation : 0,
+            typeName: ItemPreType.操作棍,
+            index: 0,
+            rotation: 0,
             x: editData.position.x,
             y: editData.position.y,
-            zIndex : 0
+            zIndex: 0
         }
         this.data = data
         this.initNode()
-        ccLog.log("setEditData 我是操作棍我现在的data是 ",this.data)
+        ccLog.log("setEditData 我是操作棍我现在的data是 ", this.data)
     }
 
 }

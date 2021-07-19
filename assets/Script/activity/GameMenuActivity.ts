@@ -17,6 +17,7 @@ import JsonManager from "../System/manage/JsonManager";
 import {ItemPreType, PassItemType} from "../System/Type/enums";
 import Api from "../System/api/api";
 import UtilsTime from "../System/Utils/UtilsTime";
+import {PassEnumToast} from "../pass/passEditor";
 
 const {ccclass, property} = cc._decorator;
 
@@ -154,7 +155,7 @@ export default class GameMenuActivity extends Activity {
         this.菜单_制作.on(cc.Node.EventType.TOUCH_END, async () => {
             let passName = this.菜单_关卡输入名字.string
             ccLog.log("输入的名字关卡 制作", passName)
-            let passData =await JsonManager.getPassDataByName(passName)
+            let passData =await JsonManager.getPassDataByName(passName,true)
 
             ccLog.log("网络请求 网络数据还是本地数据呢5 ",passData)
             let data = {}
@@ -163,6 +164,8 @@ export default class GameMenuActivity extends Activity {
                 data["index"] = 0
                 data["passName"] = passName
                 data["itemName"] = passName
+                data["isPlay"] = true
+
             } else {
                 data = passData
             }
@@ -176,21 +179,33 @@ export default class GameMenuActivity extends Activity {
             ccLog.log("输入的名字关卡 游玩", passName)
 
             ccLog.log("什么数据呢", passName)
-            let passData =await JsonManager.getPassDataByName(passName)
+            let passData =await JsonManager.getPassDataByName(passName,false)
 
             ccLog.log("网络请求 网络数据还是本地数据呢5 ",passData)
 
             let data = {}
             if (passData == null) {
-                data["passData"] = []
-                data["index"] = 0
-                data["passName"] = passName
-                data["itemName"] = passName
+                // data["passData"] = []
+                // data["index"] = 0
+                // data["passName"] = passName
+                // data["itemName"] = passName
+                // data["isPlay"] = true
+                let  data = {
+                    txt : PassEnumToast.没有本关+passName
+                }
+                // let cllbacks = {
+                //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                //     failureCallback: this.newSkinDialogfailureCallback
+                // }
+                Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+
+
             } else {
                 data = passData
+                ccLog.log("游玩 关卡相关数据", data)
+                await this.onSetPassByName("", data)
             }
-            ccLog.log("游玩 关卡相关数据", data)
-            await this.onSetPassByName("", data)
+
         }, this)
 
 

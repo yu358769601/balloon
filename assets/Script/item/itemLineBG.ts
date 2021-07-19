@@ -84,8 +84,10 @@ export default class ItemLineBG extends ItemBase {
 
 
     中距离: cc.Node = null
+    中皮肤: cc.Node = null
 
-
+    线数字提示1 : cc.Label = null
+    线数字提示2 : cc.Label = null
 
 
     private moveDir: cc.Vec2;
@@ -99,6 +101,7 @@ export default class ItemLineBG extends ItemBase {
         ccLog.log("中距离有吗", this.中距离)
 
         this.中距离.width = this.groupWidthLength*this.group
+        this.中皮肤.width = this.groupWidthLength*this.group
         this.中距离.height = this.groupHeightLength
         ccLog.log("中距离设置多长",this.data,this.中距离.width)
 
@@ -106,21 +109,20 @@ export default class ItemLineBG extends ItemBase {
         boxCollider.offset = new Vec2(this.中距离.width/2,0)
         boxCollider.size = new Size(this.中距离.width,this.中距离.height)
 
-        this.中距离.opacity = 20
+        this.中距离.opacity = 250
 
 
     }
 
 
     showNode(){
-        if (this.中距离.opacity == 20) {
+        if (this.中距离.opacity == 250) {
             this.中距离.opacity = 255
         }else if (this.中距离.opacity == 255) {
             ccLog.log("中距离设置多长该爆炸了")
 
             Emitter.fire("onGameOverCall")
         }
-
     }
 
 
@@ -150,12 +152,17 @@ export default class ItemLineBG extends ItemBase {
 
         this.onSetWideth(null,null)
 
+        this.线数字提示1.string = this.data.indexStart+""
+        this.线数字提示2.string = this.data.indexEnd+""
 
     }
     setEdit(editData){
         this.addComponent("controlMaterial").setData(editData)
         // //编辑点的时候要有 图片
         this.getComponent(cc.Sprite).enabled = true
+
+        this.线数字提示1.node.active = true
+        this.线数字提示2.node.active = true
     }
     setEditData(editData) {
         this.editData = editData
@@ -166,7 +173,8 @@ export default class ItemLineBG extends ItemBase {
 
         //编辑点的时候要有 图片
         this.getComponent(cc.Sprite).enabled = true
-
+        this.线数字提示1.node.active = true
+        this.线数字提示2.node.active = true
         // this.group = this.data.group
         // this.index1 = this.data.indexStart+""
         // this.index2 = this.data.indexEnd+""
@@ -228,11 +236,31 @@ export default class ItemLineBG extends ItemBase {
             parentNode : this.node
         }
         this.中距离 = GetNode.getNode(data)
+         data = {
+            type : GetNodeType.纯查找,
+            otherData : "中皮肤",
+            parentNode : this.node
+        }
+        this.中皮肤 = GetNode.getNode(data)
 
         this.中距离.on(cc.Node.EventType.TOUCH_END,()=>{
             ccLog.log("点击的数据是 我是背景棍子 ",this.data)
         },this)
 
+
+        data = {
+            type : GetNodeType.开始隐藏通过参数显示,
+            otherData : "线数字提示1",
+            parentNode : this.node
+        }
+        this.线数字提示1 = GetNode.getNode(data).getComponent(cc.Label)
+
+        data = {
+            type : GetNodeType.开始隐藏通过参数显示,
+            otherData : "线数字提示2",
+            parentNode : this.node
+        }
+        this.线数字提示2 = GetNode.getNode(data).getComponent(cc.Label)
 
     }
 
@@ -268,7 +296,7 @@ export default class ItemLineBG extends ItemBase {
             }
 
 
-            console.error("定位系统","===>","检测警告","===>","具体内容","===>","有如下其他数据相同但是类型不同请查找",data.index1 ,data.index2 )
+            console.error("定位系统","===>","检测警告","===>","具体内容","===>","有如下其他数据相同但是类型不同请查找",data.index1 ,data.index2 ,"我本身",this.index1, this.index2 )
 
         }
         return  null
