@@ -241,6 +241,7 @@ export default class ItemLine extends ItemBase {
                 }
                 break;
             case JoystickTypes.右:
+
                 if (this.node.angle <= 0) {
                     this.node.angle+=0.5
                 }else{
@@ -252,6 +253,22 @@ export default class ItemLine extends ItemBase {
                     this.node.angle+=0.5
                 }else{
                     this.node.angle-=0.5
+
+                    // if (this.node.angle >= 180) {
+                    //     // if (this.node.angle+0.5 > 360) {
+                    //     //     this.node.angle+=0.5
+                    //     //     this.node.angle = 0
+                    //     // }
+                    //     this.node.angle+=0.5
+                    // }else{
+                    //     if (this.node.angle-0.5 < 0) {
+                    //         this.node.angle-=0.5
+                    //         this.node.angle = 360
+                    //     }else{
+                    //         this.node.angle-=0.5
+                    //     }
+                    //
+                    // }
                 }
                 break;
         }
