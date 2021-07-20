@@ -12,7 +12,10 @@ import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Vec2 = cc.Vec2;
 import Size = cc.Size;
 import ItemBase from "./itemBase";
-import {ItemPreType} from "../System/Type/enums";
+import {balloonType, ItemPreType} from "../System/Type/enums";
+import Utils from "../System/Utils/Utils";
+import UtilsNode from "../System/Utils/UtilsNode";
+import LoadManage from "../System/Load/LoadManage";
 
 const {ccclass, property} = cc._decorator;
 
@@ -115,13 +118,17 @@ export default class ItemLineBG extends ItemBase {
     }
 
 
-    showNode(){
+   async showNode(){
         if (this.中距离.opacity == 250) {
             this.中距离.opacity = 255
+
+
+        let balloonSkin =  await  LoadManage.getSpriteForName(balloonType.fan_5)
+            this.中皮肤.getComponent(cc.Sprite).spriteFrame = balloonSkin
         }else if (this.中距离.opacity == 255) {
             ccLog.log("中距离设置多长该爆炸了")
 
-            Emitter.fire("onGameOverCall")
+            Emitter.fire("onPlayAgainGameOverCall")
         }
     }
 
@@ -161,8 +168,9 @@ export default class ItemLineBG extends ItemBase {
         // //编辑点的时候要有 图片
         this.getComponent(cc.Sprite).enabled = true
 
-        this.线数字提示1.node.active = true
-        this.线数字提示2.node.active = true
+
+        UtilsNode.show(this.线数字提示1.node,true)
+        UtilsNode.show(this.线数字提示2.node,true)
     }
     setEditData(editData) {
         this.editData = editData
@@ -173,8 +181,8 @@ export default class ItemLineBG extends ItemBase {
 
         //编辑点的时候要有 图片
         this.getComponent(cc.Sprite).enabled = true
-        this.线数字提示1.node.active = true
-        this.线数字提示2.node.active = true
+        UtilsNode.show(this.线数字提示1.node,true)
+        UtilsNode.show(this.线数字提示2.node,true)
         // this.group = this.data.group
         // this.index1 = this.data.indexStart+""
         // this.index2 = this.data.indexEnd+""

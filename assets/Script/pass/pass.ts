@@ -37,6 +37,9 @@ export default class Pass extends BasePass {
     游乐场: cc.Node = null
 
     lineNode: cc.Node = null
+
+    关卡_返回按钮: cc.Node = null
+
     getitemNames: string[] = []
 
     onDestroy() {
@@ -55,10 +58,12 @@ export default class Pass extends BasePass {
 
     registerEmitter() {
         Emitter.register('onGameOverCall', this.onGameOverCall, this)
+        Emitter.register('onPlayAgainGameOverCall', this.onPlayAgainGameOverCall, this)
     }
 
     removeEmitter() {
         Emitter.remove('onGameOverCall', this.onGameOverCall, this)
+        Emitter.remove('onPlayAgainGameOverCall', this.onPlayAgainGameOverCall, this)
     }
 
     startGame() {
@@ -79,6 +84,9 @@ export default class Pass extends BasePass {
 
         this.initView()
 
+        this.initOnClick()
+
+
         this.data.getitemNames =  this.getitemNames
         ccLog.log("设置关卡的数据 Pass",  this.data)
             let passData = JsonManager.getPassDatas(this.data)
@@ -92,6 +100,9 @@ export default class Pass extends BasePass {
     }
     onGameOverCall(){
         Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
+    }
+    onPlayAgainGameOverCall(){
+        Emitter.fire("onOpenDialog", {name: DialogType.重玩界面, zIndex: 100,data : this.data}, null)
     }
 
     async addLine(passData) {
@@ -171,10 +182,7 @@ export default class Pass extends BasePass {
             parentNode: this.node
         }
         this.重新开始 = GetNode.getNode(data)
-        this.重新开始.on(cc.Node.EventType.TOUCH_START, () => {
-            ccLog.log("点击生效了吗 本关所有内容", this.data)
-            Emitter.fire("onSetPassByName", this.data)
-        }, this)
+
 
 
         data = {
@@ -183,7 +191,27 @@ export default class Pass extends BasePass {
             parentNode: this.node
         }
         this.游乐场 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "关卡_返回按钮",
+            parentNode: this.node
+        }
+        this.关卡_返回按钮 = GetNode.getNode(data)
+
+
     }
 
     // update (dt) {}
+    private initOnClick() {
+        this.重新开始.on(cc.Node.EventType.TOUCH_START, () => {
+            ccLog.log("点击生效了吗 本关所有内容", this.data)
+            Emitter.fire("onSetPassByName", this.data)
+        }, this)
+
+        this.关卡_返回按钮.on(cc.Node.EventType.TOUCH_START, () => {
+            this.node.destroy()
+            Emitter.fire("onShowAll", true)
+        }, this)
+
+    }
 }

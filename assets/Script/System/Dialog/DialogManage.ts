@@ -65,7 +65,8 @@ export default class DialogManage extends cc.Component {
 
         ccLog.log("创建diaolog 到我着了吗" )
         let node = await UtilsNode.getNode(data.name, this.Root);
-        ccLog.log("我觉得有可能"," 组件有没有 ",node.getComponent(data.name)," 组件名字 ",data.name," 节点 ",node)
+        ccLog.log("我觉得有可能"," 组件有没有 0 ",node)
+        ccLog.log("我觉得有可能"," 组件有没有 1 ",node.getComponent(data.name)," 组件名字 ",data.name," 节点 ",node)
         node.getComponent(data.name).initCallback(cllbacks)
         node.getComponent(data.name).setData(data)
 

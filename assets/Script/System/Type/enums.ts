@@ -136,6 +136,7 @@ export enum ZindexType {
 
 export enum DialogType {
     结算界面 = "gameOverDialog",
+    重玩界面 = "playAgainGameOverDialog",
     提示对话框 = "tipsDialog",
     转盘 = "luckDialog",
     测试选关 = "SelectCheckPointDialog",
@@ -235,4 +236,11 @@ export enum PassItemType {
     关卡 = "pass",
     编辑关卡 = "passEditor",
 }
+
+export enum balloonType {
+
+    fan_5 = "fan_5",
+
+}
+
 

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "c6451a60-a147-4d66-830a-a9603f71412d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1080,
+  "height": 1920,
+  "platformSettings": {},
+  "subMetas": {
+    "获得新皮肤展示": {
+      "ver": "1.0.4",
+      "uuid": "a3ccd643-9fa9-4b08-879b-7d43a81b4030",
+      "rawTextureUuid": "c6451a60-a147-4d66-830a-a9603f71412d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1080,
+      "height": 1920,
+      "rawWidth": 1080,
+      "rawHeight": 1920,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

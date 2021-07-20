@@ -10,6 +10,7 @@ import Utils from "../System/Utils/Utils";
 import ChannelBase from "./channelBase";
 import ccLog from "../System/Log/ccLog";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
+import UtilsNode from "../System/Utils/UtilsNode";
 
 const {ccclass, property} = cc._decorator;
 
@@ -35,11 +36,10 @@ export default class ChannelHelloWroldByAndroid extends ChannelBase {
         //     this.hello.startLoad()
         // }
 
-
-        this.忠告.active = true
+        UtilsNode.show(this.忠告,true)
         ccLog.log("现在我是什么渠道 亮起来", this.忠告)
         await Utils.setTimerOnce(this, 0.5)
-        this.忠告.active = false
+        UtilsNode.show(this.忠告,false)
         this.hello.startLoad()
     }
 

@@ -60,11 +60,11 @@ export default class ItemPoint extends ItemBase {
     //index
     onEndNodeShow(selfName,data){
         if (data.index2 != null) {
-            this.标记.active = false
+            UtilsNode.show(this.标记,false)
             //让下一个 可以 移动的点 发亮
             for (let i = 0; i < this.allowInOutIndexs.length; i++) {
                 if (this.allowInOutIndexs[i] ==data.index2 ) {
-                    this.标记.active = true
+                    UtilsNode.show(this.标记,true)
                     break
                 }
             }
@@ -121,7 +121,7 @@ export default class ItemPoint extends ItemBase {
         // //编辑点的时候要有 图片
         this.getComponent(cc.Sprite).enabled = true
 
-        this.点数字提示.node.active = true
+        UtilsNode.show(this.点数字提示.node,true)
     }
    async setEditData(editData){
         this.editData = editData
@@ -136,8 +136,7 @@ export default class ItemPoint extends ItemBase {
        //编辑点的时候要有 图片
        this.getComponent(cc.Sprite).enabled = true
 
-       this.点数字提示.node.active = true
-
+       UtilsNode.show(this.点数字提示.node,true)
 
        //新创建的
        let data = {

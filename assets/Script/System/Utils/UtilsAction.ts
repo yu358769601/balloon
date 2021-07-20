@@ -873,4 +873,20 @@ export default class UtilsAction extends cc.Component {
             node.runAction(sequence);
         })
     }
+
+    // UtilsAction.moveByRepeatForeverXY_easeElasticOut(node,duration,x,y,tofadeOutTime,callback)
+    static moveByRepeatForeverXY_easeElasticOut(node: cc.Node, duration: number, x: number, y: number, tofadeOutTime,callback: any) {
+        node.stopAllActions()
+        let interval1 = cc.moveBy(duration, x, y).easing(cc.easeElasticInOut(tofadeOutTime));
+        let interval2 = cc.moveBy(duration, -x, -y).easing(cc.easeElasticInOut(tofadeOutTime));
+        // let callbacktemp = cc.callFunc(()=> {
+        //     if (callback) {
+        //         callback()
+        //     }
+        // }, this);
+        let sequence = cc.sequence(interval1, interval2);
+        let repeatForever = cc.repeatForever(sequence);
+        node.runAction(repeatForever);
+    }
+
 }

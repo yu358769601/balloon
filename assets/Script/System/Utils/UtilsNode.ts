@@ -203,7 +203,20 @@ export default class UtilsNode extends cc.Component {
         }
     }
 
+    // UtilsNode.show(node,b)
+    static show(node,b,opacity ?){
+        if (b == true) {
+            node.active = true
+            if (opacity !=null) {
+                node.opacity = opacity
+            }else{
+                node.opacity = 255
+            }
 
-
+        }else{
+            node.opacity = 0
+            node.active = false
+        }
+    }
 
 }

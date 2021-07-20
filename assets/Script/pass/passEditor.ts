@@ -416,11 +416,11 @@ export default class PassEditor extends BasePass {
     // update (dt) {}
     private initOnclick() {
         this.编辑器_功能.on(cc.Node.EventType.TOUCH_START, () => {
-            this.编辑器_功能UI.active = true
+            UtilsNode.show(this.编辑器_功能UI,true)
             this.编辑器_保存关卡名字.string =  this.data.passName
         }, this)
         this.编辑器_关闭功能UI .on(cc.Node.EventType.TOUCH_START, () => {
-                this.编辑器_功能UI.active = false
+            UtilsNode.show(this.编辑器_功能UI,false)
         }, this)
         this.编辑器_保存关卡 .on(cc.Node.EventType.TOUCH_START, () => {
                 ccLog.log("保存关卡",this.data)

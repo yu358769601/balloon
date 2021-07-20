@@ -11,6 +11,7 @@ import ccLog from "../System/Log/ccLog";
 import {ItemPreType} from "../System/Type/enums";
 import Utils from "../System/Utils/Utils";
 import Emitter from "../System/Msg/Emitter";
+import UtilsNode from "../System/Utils/UtilsNode";
 
 const {ccclass, property} = cc._decorator;
 
@@ -204,8 +205,7 @@ export default class DetailedSettingDialog extends BaseDialog {
 
         switch (name){
             case ItemPreType.点:
-                this.编辑器详情_点布局.active = true
-
+                UtilsNode.show(this.编辑器详情_点布局,true,150)
                 this.saveRemoveNode(this.编辑器详情_点布局,name)
 
 
@@ -228,8 +228,7 @@ export default class DetailedSettingDialog extends BaseDialog {
             break;
 
             case ItemPreType.线:
-                this.编辑器详情_线布局.active = true
-
+                UtilsNode.show(this.编辑器详情_线布局,true,150)
                 this.saveRemoveNode(this.编辑器详情_线布局,name)
                 data = {
                     type: GetNodeType.纯查找,
@@ -267,8 +266,7 @@ export default class DetailedSettingDialog extends BaseDialog {
 
 
             case ItemPreType.钥匙:
-                this.编辑器详情_钥匙布局.active = true
-
+                UtilsNode.show(this.编辑器详情_钥匙布局,true,150)
                 this.saveRemoveNode(this.编辑器详情_钥匙布局,name)
 
                 data = {
@@ -287,8 +285,7 @@ export default class DetailedSettingDialog extends BaseDialog {
                 this.getDataByName(name)
                 break;
             case ItemPreType.操作棍:
-                this.编辑器详情_操作棍布局.active = true
-
+                UtilsNode.show(this.编辑器详情_操作棍布局,true,150)
                 this.saveRemoveNode(this.编辑器详情_操作棍布局,name)
 
                 data = {

@@ -8,6 +8,7 @@
 import menu = cc._decorator.menu;
 import Emitter from "../Msg/Emitter";
 import Utils from "./Utils";
+import ccLog from "../Log/ccLog";
 
 const {ccclass, property} = cc._decorator;
 
@@ -192,6 +193,13 @@ export default class GetNode extends cc.Component {
         }
 
     }
+
+    show(){
+        this.node.active = true
+        this.node.opacity = 255
+    }
+
+
     getControlNode(data){
         // ccLog.log("进来对比的数据"," 进来类型 ",data.type ," 本身类型 ", this.nodeType ," 进来其他数据 ",data.otherData.trim() , " 本身其他数据 ",this.otherData.trim())
 
@@ -201,6 +209,9 @@ export default class GetNode extends cc.Component {
         }
 
         if (data.type == this.nodeType && data.otherData.trim() == this.otherData.trim()){
+            // if (this.nodeType == GetNodeType.开始隐藏通过参数显示) {
+            //     this.node.opacity = 255
+            // }
             return this.node
         }else if (data.type != this.nodeType &&data.otherData.trim() == this.otherData.trim()) {
             console.error("定位系统","===>","检测警告","===>","具体内容","===>","有如下其他数据相同但是类型不同请查找",this.otherData.trim())

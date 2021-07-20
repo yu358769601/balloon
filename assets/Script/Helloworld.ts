@@ -13,7 +13,7 @@ import {
     DialogType,
     ItemName,
     ActivityType,
-    ActivityUIType, ItemPreType, PassItemType
+    ActivityUIType, ItemPreType, PassItemType, balloonType
 } from "./System/Type/enums";
 import Api from "./System/api/api";
 import GameSetting, {gameModeType} from "./System/mode/gameSetting";
@@ -33,9 +33,10 @@ export default class Helloworld extends cc.Component {
     // @property(cc.Label)
     label: cc.Label = null;
     // @property(cc.ProgressBar)
-    loadbar: cc.ProgressBar = null;
+    初始界面_进度条: cc.ProgressBar = null;
     // @property(cc.Node)
     主节点: cc.Node = null;
+    只有熊: cc.Node = null;
     // @property(cc.Node)
     // LoadNode: cc.Node = null;
     // @property(cc.Camera)
@@ -447,7 +448,6 @@ export default class Helloworld extends cc.Component {
         return load
     }
 
-    DialogType
 
     initActivity() {
         let load = {}
@@ -500,6 +500,9 @@ export default class Helloworld extends cc.Component {
         let itemPreType = this.initItemPreType()
         this.addList(load, itemPreType)
 
+        let initBalloonType = this.initBalloonType()
+        this.addList(load, initBalloonType)
+
 
         // let an = this.initAn()
         // this.addList(load,an)
@@ -516,6 +519,16 @@ export default class Helloworld extends cc.Component {
         // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
         for (let itemPreType in ItemPreType) {
             load[ItemPreType[itemPreType]] = "item/" + ItemPreType[itemPreType]
+        }
+        return load
+    }
+    initBalloonType(){
+        let load = {}
+        // load["GameMenuActivity"] = "activity/GameMenuActivity"
+        // load["GameActivity"] = "activity/GameActivity"
+        // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
+        for (let itemPreType in balloonType) {
+            load[balloonType[itemPreType]] = "lineSkin/" + balloonType[itemPreType]
         }
         return load
     }
@@ -638,18 +651,28 @@ export default class Helloworld extends cc.Component {
             parentNode: this.node
         }
         this.主节点 = GetNode.getNode(data)
-
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "初始界面_进度条",
+            parentNode: this.node
+        }
+        this.初始界面_进度条 = GetNode.getNode(data).getComponent(cc.ProgressBar)
 
         // if (GameSetting.mode ==gameModeType.测试){
         //     this. 测试节点.active = true
         // }
         if (GameSetting.mode == gameModeType.测试) {
-            this.测试按钮.active = true
+            UtilsNode.show(this.测试按钮,true)
             this.测试按钮.on(cc.Node.EventType.TOUCH_START, () => {
-                this.测试节点.active = true
+                UtilsNode.show(this.测试节点,true)
             }, this)
         }
-
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "只有熊",
+            parentNode: this.node
+        }
+        this.只有熊 = GetNode.getNode(data)
     }
 
     //别的组件调用的
@@ -658,41 +681,45 @@ export default class Helloworld extends cc.Component {
         await LoadManage.starLoad(this.initJsonLoad(), {
             schedule: (currentCount, count) => {
                 // cc.log("回调进度",currentCount,"/",count);
-                // this.loadbar.progress = currentCount/count
-                ccLog.log("回调进度", currentCount)
+                // this.初始界面_进度条.progress = currentCount/count
+                // ccLog.log("回调进度", currentCount)
                 // this.结算_送橡皮变化2.height = currentCount / count * this.结算_送橡皮底板1.height
 
             },
             itemCallback: (item) => {
-                ccLog.log("回调进度什么呢", item)
+                // ccLog.log("回调进度什么呢", item)
             },
             scheduleEnd: async (currentCount, count) => {
-
+                // this.初始界面_进度条.progress = currentCount/count
             },
         });
         await JsonManager.initJson()
         await LoadManage.starLoad(this.initFirstLoad(), {
             schedule: (currentCount, count) => {
                 // cc.log("回调进度",currentCount,"/",count);
-                // this.loadbar.progress = currentCount/count
-                ccLog.log("回调进度", currentCount)
+                this.初始界面_进度条.progress = currentCount/count
+                // ccLog.log("回调进度", currentCount/count)
                 // this.结算_送橡皮变化2.height = currentCount / count * this.结算_送橡皮底板1.height
 
             },
             itemCallback: (item) => {
-                ccLog.log("回调进度什么呢", item)
+                // ccLog.log("回调进度什么呢", item)
             },
             scheduleEnd: async (currentCount, count) => {
-
+                this.初始界面_进度条.progress = currentCount/count
             },
         });
 
-
+       // await Utils.setTimerOnce(this,3)
 
 
         UIActivity.startToActivity("GameMenuActivity",
             null
         )
+
+
+
+        UtilsNode.show(this.只有熊,false)
 
 
         // LoadManage.starNotLoad(this.initNotLoad());
@@ -785,6 +812,7 @@ export default class Helloworld extends cc.Component {
     onDisable() {
         this.removeEmitter()
     }
+
 
     async onLoad() {
         cc.director.getCollisionManager().enabled = true;

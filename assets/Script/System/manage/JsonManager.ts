@@ -427,8 +427,8 @@ export default class JsonManager extends cc.Component {
     }
     //获取关卡通过索引
     // JsonManager.getPassByIndex(index)
-    static getPassByIndex(index){
-        let list = JsonManager.getPassDatalists()
+    static async getPassByIndex(index){
+        let list = await JsonManager.getPassDatalists()
 
         for (let i = 0; i < list.length; i++) {
             let item = list[i]

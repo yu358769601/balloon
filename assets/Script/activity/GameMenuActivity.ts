@@ -146,10 +146,10 @@ export default class GameMenuActivity extends Activity {
     initOnClick() {
 
         this.菜单_功能.on(cc.Node.EventType.TOUCH_END, () => {
-            this.菜单_功能UI.active = true
+            UtilsNode.show(this.菜单_功能UI,true)
         }, this)
         this.菜单_关闭功能UI.on(cc.Node.EventType.TOUCH_END, () => {
-            this.菜单_功能UI.active = false
+            UtilsNode.show(this.菜单_功能UI,false)
         }, this)
 
         this.菜单_制作.on(cc.Node.EventType.TOUCH_END, async () => {
@@ -169,6 +169,7 @@ export default class GameMenuActivity extends Activity {
             } else {
                 data = passData
             }
+            Emitter.fire("onShowAll", false)
             ccLog.log("制作 关卡相关数据", data)
             await this.onSetEditPassByName("", data)
         }, this)
@@ -201,9 +202,15 @@ export default class GameMenuActivity extends Activity {
 
 
             } else {
+
+                Emitter.fire("onShowAll", false)
+
                 data = passData
                 ccLog.log("游玩 关卡相关数据", data)
                 await this.onSetPassByName("", data)
+
+
+
             }
 
         }, this)
