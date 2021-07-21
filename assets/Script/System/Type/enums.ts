@@ -155,11 +155,13 @@ export enum DialogType {
     在线礼包弹窗 = "onlineGiftBagDialog",
     头条分享 = "ttfenxiangDialog",
     详细设置 = "detailedSettingDialog",
+    设置 = "settingDialog",
 }
 export enum ItemPreType {
     打印吐司 = "ToastItem",
 
     加钱 = "addGem",
+    加钱条目 = "addGemItem",
     资产 = "assetsItem",
     关卡页 = "pageCheckPointItem",
     关卡条目 = "checkPointItemguan",

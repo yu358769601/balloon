@@ -12,6 +12,7 @@ import JsonManager from "../System/manage/JsonManager";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import UtilsAction from "../System/Utils/UtilsAction";
 import Utils from "../System/Utils/Utils";
+import {DialogType} from "../System/Type/enums";
 
 const {ccclass, property} = cc._decorator;
 
@@ -105,6 +106,8 @@ export default class Menu extends cc.Component {
     菜单_熊熊: cc.Node
     菜单_背景: cc.Node
 
+    菜单_更多精彩: cc.Node
+    菜单_添加桌面: cc.Node
     initView() {
         let data
 
@@ -159,6 +162,18 @@ export default class Menu extends cc.Component {
             parentNode: this.node
         }
         this.菜单_背景 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "菜单_更多精彩",
+            parentNode: this.node
+        }
+        this.菜单_更多精彩 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "菜单_添加桌面",
+            parentNode: this.node
+        }
+        this.菜单_添加桌面 = GetNode.getNode(data)
     }
 
     initClick() {
@@ -169,6 +184,10 @@ export default class Menu extends cc.Component {
             let pass = await JsonManager.getPassByIndex(UtilsDB.getMyPassSave().index)
             ccLog.log("关卡信息",pass)
             Emitter.fire("onSetPassByName", pass)
+        }, this)
+        this.菜单_设置按钮.on(cc.Node.EventType.TOUCH_END, async () => {
+
+            Emitter.fire("onOpenDialog", {name: DialogType.设置, zIndex: 100,data : this.data}, null)
         }, this)
 
 
@@ -185,6 +204,9 @@ export default class Menu extends cc.Component {
            UtilsAction.fadeIn(this.菜单_开始按钮,time,null)
            UtilsAction.moveBy(this.菜单_设置按钮,time,+300,0,null)
            UtilsAction.moveBy(this.菜单_商城按钮,time,-300,0,null)
+
+           UtilsAction.moveBy(this.菜单_添加桌面,time,-300,0,null)
+           UtilsAction.moveBy(this.菜单_更多精彩,time,+300,0,null)
            this.菜单_熊熊.active = true
            await Utils.setTimerOnce(this,time)
            this.菜单_消失动画吞噬.active = false
@@ -199,6 +221,10 @@ export default class Menu extends cc.Component {
            UtilsAction.fadeOut(this.菜单_开始按钮,time,null)
            UtilsAction.moveBy(this.菜单_设置按钮,time,-300,0,null)
            UtilsAction.moveBy(this.菜单_商城按钮,time,+300,0,null)
+
+           UtilsAction.moveBy(this.菜单_添加桌面,time,+300,0,null)
+           UtilsAction.moveBy(this.菜单_更多精彩,time,-300,0,null)
+
            this.菜单_熊熊.active = false
            await Utils.setTimerOnce(this,time)
            this.菜单_开始按钮.active = false

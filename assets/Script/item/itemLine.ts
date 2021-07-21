@@ -221,57 +221,156 @@ export default class ItemLine extends ItemBase {
 
     onJoystick(selfName, direction) {
 
-        // ccLog.log("现在棍子的 面向角度", this.node.angle,direction)
-          // 右 0 上 90   左 180 下 270
-        // switch (direction) {
-        //     case JoystickTypes.左:
-        //         // ccLog.log("现在棍子的 面向角度", this.node.angle , "左面上线",90)
-        //         if (this.node.angle <= 180) {
-        //             this.node.angle+=0.5
-        //         }else{
-        //             this.node.angle-=0.5
-        //         }
-        //
-        //         break;
-        //     case JoystickTypes.上:
-        //         if (this.node.angle <= 90) {
-        //             this.node.angle+=0.5
-        //         }else{
-        //             this.node.angle-=0.5
-        //         }
-        //         break;
-        //     case JoystickTypes.右:
-        //
-        //         if (this.node.angle <= 0) {
-        //             this.node.angle+=0.5
-        //         }else{
-        //             this.node.angle-=0.5
-        //         }
-        //         break;
-        //     case JoystickTypes.下:
-        //         if (this.node.angle <= 270) {
-        //             this.node.angle+=0.5
-        //         }else{
-        //             this.node.angle-=0.5
-        //
-        //             // if (this.node.angle >= 180) {
-        //             //     // if (this.node.angle+0.5 > 360) {
-        //             //     //     this.node.angle+=0.5
-        //             //     //     this.node.angle = 0
-        //             //     // }
-        //             //     this.node.angle+=0.5
-        //             // }else{
-        //             //     if (this.node.angle-0.5 < 0) {
-        //             //         this.node.angle-=0.5
-        //             //         this.node.angle = 360
-        //             //     }else{
-        //             //         this.node.angle-=0.5
-        //             //     }
-        //             //
-        //             // }
-        //         }
-        //         break;
-        // }
+        ccLog.log("现在棍子的 面向角度", this.node.angle, direction)
+
+        if (this.node.angle == 0) {
+            this.node.angle = 360
+        }
+        if (this.node.angle > 360) {
+            this.node.angle = 1
+        }
+
+
+        // 右 0 上 90   左 180 下 270
+        switch (direction) {
+            case JoystickTypes.左:
+                // ccLog.log("现在棍子的 面向角度", this.node.angle , "左面上线",90)
+
+                if (this.node.angle > 0 && this.node.angle < 180) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle += 0.5
+                    break;
+                }
+                if (this.node.angle >= 180 && this.node.angle < 360) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle -= 0.5
+                    break;
+                }
+
+
+                break;
+            case JoystickTypes.上:
+
+
+                if (this.node.angle > 0 && this.node.angle < 90) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle += 0.5
+                    break;
+                }
+                if (this.node.angle >= 90 && this.node.angle < 180) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle -= 0.5
+                    break;
+                }
+                if (this.node.angle > 180 && this.node.angle < 270) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle -= 0.5
+                    break;
+                }
+                if (this.node.angle > 270 && this.node.angle < 360) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle += 0.5
+                    break;
+                }
+            case JoystickTypes.右:
+                if (this.node.angle > 0 && this.node.angle <= 180) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle -= 0.5
+                    break;
+                }
+                if (this.node.angle > 180 && this.node.angle <= 270) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle += 0.5
+                    break;
+                }
+
+                if (this.node.angle > 270) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle += 0.5
+                    break;
+                }
+
+                // if (this.node.angle <= 0) {
+                //     this.node.angle+=0.5
+                // }else{
+                //     this.node.angle-=0.5
+                // }
+                break;
+            case JoystickTypes.下:
+                // if (this.node.angle <= 270) {
+                //     this.node.angle+=0.5
+                // }else {
+                //     this.node.angle -= 0.5
+                // }
+
+                if (this.node.angle < 0 && this.node.angle > 270) {
+                    this.node.angle -= 0.5
+                    break;
+                }
+                if (this.node.angle < 360 && this.node.angle > 270) {
+                    this.node.angle -= 0.5
+                    break;
+                }
+
+
+                if (this.node.angle < 90 && this.node.angle > 0) {
+                    this.node.angle -= 0.5
+                    break;
+                }
+
+                if (this.node.angle >= 90 && this.node.angle <= 180) {
+                    this.node.angle += 0.5
+                    break;
+                }
+
+
+                if (this.node.angle > 180 && this.node.angle <= 270) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle += 0.5
+                    break;
+                }
+                if (this.node.angle > 270 && this.node.angle <= 360) {
+                    // if (this.node.angle+0.5 > 360) {
+                    //     this.node.angle+=0.5
+                    //     this.node.angle = 0
+                    // }
+                    this.node.angle -= 0.5
+                    break;
+                }
+
+
+                break;
+        }
 
     }
 
@@ -405,7 +504,7 @@ export default class ItemLine extends ItemBase {
             //
             //
 
-            this.node.angle = (cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x))) * 1;
+            // this.node.angle = (cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x))) * 1;
 
             // this.node.angle+=Math.atan2(this.moveDir.y, this.moveDir.x)
             //

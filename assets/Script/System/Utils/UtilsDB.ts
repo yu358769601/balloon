@@ -25,7 +25,7 @@ export default class UtilsDB extends cc.Component {
     static skills: any[] = []
 
 
-    static gameName: string = "jiujiuxiaolaomei_"
+    static gameName: string = "balloon_"
 
     static setJson(key: string, json: {}) {
         if (json == null) {
@@ -2336,7 +2336,7 @@ export default class UtilsDB extends cc.Component {
     // UtilsDB.addSexADMin(data)
     static addSexADMin(data) {
         let sexAD = UtilsDB.getSexAD()
-        if (sexAD.min < JsonManager.passSettingjson.json.lookADSexMax) {
+        if (sexAD.min < JsonManager.passSettingjson.lookADSexMax) {
             sexAD.min++
             this.setJson("sexAD", sexAD)
 
@@ -2345,7 +2345,7 @@ export default class UtilsDB extends cc.Component {
             if (data.lookADCallBack) {
                 data.lookADCallBack(data)
             }
-            if (sexAD.min >= JsonManager.passSettingjson.json.lookADSexMax) {
+            if (sexAD.min >= JsonManager.passSettingjson.lookADSexMax) {
                 sexAD.min = 0
                 this.setJson("sexAD", sexAD)
 
@@ -2357,7 +2357,7 @@ export default class UtilsDB extends cc.Component {
             }
 
         }
-        if (sexAD.min >= JsonManager.passSettingjson.json.lookADSexMax) {
+        if (sexAD.min >= JsonManager.passSettingjson.lookADSexMax) {
             sexAD.min = 0
             this.setJson("sexAD", sexAD)
 
@@ -2409,8 +2409,8 @@ export default class UtilsDB extends cc.Component {
         if (nowPassRubber.rubber.name == "") {
             let rubberPass = this.getMyRubberByNotBuyRubberPass()
             // nowPassRubber.rubber.name =
-            let nowPassRubberIndex = JsonManager.passSettingjson.json.nowPassRubberIndex
-            let nowPassRubberNumMax = JsonManager.passSettingjson.json.nowPassRubberNumMax
+            let nowPassRubberIndex = JsonManager.passSettingjson.nowPassRubberIndex
+            let nowPassRubberNumMax = JsonManager.passSettingjson.nowPassRubberNumMax
             ccLog.log("我没买过的关卡橡皮", rubberPass)
             // isCheck: false
             // item:
@@ -2475,7 +2475,7 @@ export default class UtilsDB extends cc.Component {
         // rubber:
         //     index: 20
         //     name: "sj_1"
-        if (MyNowPassRubber.rubber.index >= JsonManager.passSettingjson.json.nowPassRubberIndexMax) {
+        if (MyNowPassRubber.rubber.index >= JsonManager.passSettingjson.nowPassRubberIndexMax) {
             UtilsDB.addMyNotRubber(MyNowPassRubber.rubber.name)
             UtilsDB.initNowPassRubber()
         } else {
@@ -2859,7 +2859,7 @@ export default class UtilsDB extends cc.Component {
         let onlineGiftBag = UtilsDB.getOnlineGiftBag();
         // 如果是明天他应该就是 index == -1 了
 
-        let itemOnlineGiftBagList = JsonManager.passSettingjson.json.itemOnlineGiftBagList
+        let itemOnlineGiftBagList = JsonManager.passSettingjson.itemOnlineGiftBagList
 
 
         //今天没有玩完

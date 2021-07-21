@@ -119,8 +119,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 60,
-      "height": 60
+      "width": 30,
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -235,7 +235,7 @@
     "_prefab": {
       "__id__": 10
     },
-    "_opacity": 255,
+    "_opacity": 136.935,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,

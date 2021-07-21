@@ -140,7 +140,7 @@ export default class ChannelImageTextDialog extends ChannelBase {
 
            ChannelManger.getInstance().getChannel().showBannerAd()
            let  r = Utils.random(0,100)
-           if (r < JsonManager.passSettingjson.json.ttchapinggailv ) {
+           if (r < JsonManager.passSettingjson.ttchapinggailv ) {
                await Utils.setTimerOnce(this,0.5)
                ChannelManger.getInstance().getChannel().showInterstitialAd();
            }

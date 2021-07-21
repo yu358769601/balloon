@@ -11,6 +11,8 @@ import Utils from "../System/Utils/Utils";
 import Emitter from "../System/Msg/Emitter";
 import UtilsDB from "../System/Utils/UtilsDB";
 import Api from "../System/api/api";
+import JsonManager from "../System/manage/JsonManager";
+import ChannelManger from "../System/qudao/channelManger";
 
 const {ccclass, property} = cc._decorator;
 
@@ -199,7 +201,7 @@ export default class ChannelgameOverDialog extends ChannelBase {
            //data.oppoNativeADToClose
 
            let  r = Utils.random(0,100)
-           if (r < JsonManager.passSettingjson.json.ttchapinggailv ) {
+           if (r < JsonManager.passSettingjson.ttchapinggailv ) {
               await Utils.setTimerOnce(this,0.5)
                ChannelManger.getInstance().getChannel().showInterstitialAd();
            }else{

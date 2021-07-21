@@ -14,6 +14,7 @@ import {IDialogLayout} from "../dialog/BaseDialog";
 import ChannelManger from "../System/qudao/channelManger";
 import {Channel_oppoADType} from "../System/qudao/channel_oppo";
 import {Channel_vivoADCode} from "../System/qudao/channel_vivo";
+import JsonManager from "../System/manage/JsonManager";
 
 const {ccclass, property} = cc._decorator;
 
@@ -161,7 +162,7 @@ export default class Channeltips1or2Dialog extends ChannelBase {
            ChannelManger.getInstance().getChannel().showBannerAd()
 
            let  r = Utils.random(0,100)
-           if (r < JsonManager.passSettingjson.json.ttchapinggailv ) {
+           if (r < JsonManager.passSettingjson.ttchapinggailv ) {
                await Utils.setTimerOnce(this,0.5)
                ChannelManger.getInstance().getChannel().showInterstitialAd();
            }

@@ -28,12 +28,12 @@ export default class JsonManager extends cc.Component {
     //关卡json
     static passjson: cc.JsonAsset = null
     //关卡奖励部分
-    static passSettingjson: cc.JsonAsset = null
+
     static rubberjson: cc.JsonAsset = null
     static passpager: cc.JsonAsset = null
     static passGameOver: cc.JsonAsset = null
     static passData: any = null
-
+    static passSettingjson: any = null
 
     static memoryPassData : any = null
 
@@ -47,7 +47,8 @@ export default class JsonManager extends cc.Component {
     static async initJson() {
         // JsonManager.talkList.json
         this.passjson = await LoadManage.getJsonForName("passjson");
-        this.passSettingjson = await LoadManage.getJsonForName("passSettingjson");
+     let passSetting = await LoadManage.getJsonForName("passSettingjson");
+        this.passSettingjson =  passSetting.json
         let passData = await LoadManage.getJsonForName("passData");
         // JsonManager.passData
         this.passData =  passData.json

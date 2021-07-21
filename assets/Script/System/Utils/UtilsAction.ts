@@ -888,5 +888,20 @@ export default class UtilsAction extends cc.Component {
         let repeatForever = cc.repeatForever(sequence);
         node.runAction(repeatForever);
     }
-
+    //一直旋转
+    static turnUpRepeatForeverSetDeltaAngle(node: cc.Node, deltaAngle: number,duration: number) {
+        node.stopAllActions()
+        // node.scaleX = 1
+        // node.scaleY = 1
+        let interval1 = cc.rotateBy(duration, deltaAngle)
+        // let interval2 = cc.scaleTo(duration, 1, 1).easing(cc.easeElasticInOut(duration));
+        // let callbacktemp = cc.callFunc(() => {
+        //     if (callback) {
+        //         callback()
+        //     }
+        // }, this);
+        // let sequence = cc.sequence(interval1);
+        let rep = cc.repeatForever(interval1)
+        node.runAction(rep);
+    }
 }

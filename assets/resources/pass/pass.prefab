@@ -1388,7 +1388,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 1080,
-      "height": 900
+      "height": 1920
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1400,7 +1400,7 @@
       "ctor": "Float64Array",
       "array": [
         -540,
-        -446.422,
+        -960,
         0,
         0,
         0,
@@ -1458,7 +1458,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 1080,
-      "height": 900
+      "height": 1920
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1564,7 +1564,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 1080,
-      "height": 900
+      "height": 1920
     },
     "_resize": 0,
     "_N$layoutType": 1,
@@ -1883,8 +1883,8 @@
     "_alignFlags": 45,
     "_left": 0,
     "_right": 0,
-    "_top": 506.422,
-    "_bottom": 513.578,
+    "_top": 0,
+    "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
