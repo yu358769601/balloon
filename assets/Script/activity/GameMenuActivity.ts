@@ -14,7 +14,7 @@ import UtilsNode from "../System/Utils/UtilsNode";
 import UtilsDB from "../System/Utils/UtilsDB";
 import LoadManage from "../System/Load/LoadManage";
 import JsonManager from "../System/manage/JsonManager";
-import {ItemPreType, PassItemType} from "../System/Type/enums";
+import {DialogType, ItemPreType, PassItemType} from "../System/Type/enums";
 import Api from "../System/api/api";
 import UtilsTime from "../System/Utils/UtilsTime";
 import {PassEnumToast} from "../pass/passEditor";
@@ -463,7 +463,7 @@ export default class GameMenuActivity extends Activity {
 
     start() {
 
-
+        // Emitter.fire("onOpenDialog", {name: DialogType.扎气球, zIndex: 100,data : {}}, null)
     }
 
     // update (dt) {}

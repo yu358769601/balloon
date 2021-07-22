@@ -12,6 +12,7 @@ import Emitter from "../System/Msg/Emitter";
 import {DialogType, ItemPreType} from "../System/Type/enums";
 import UtilsDB, {AssetsType} from "../System/Utils/UtilsDB";
 import JsonManager from "../System/manage/JsonManager";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -52,6 +53,8 @@ export default class PlayAgainGameOverDialog extends BaseDialog {
         this.data = data
         this.initView()
         this.initOnClick()
+
+        Emitter.fire("onPlaySound",SoundType.失败)
     }
 
     subclassCall(): any {

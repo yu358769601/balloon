@@ -13,6 +13,7 @@ import Utils from "../System/Utils/Utils";
 import UtilsDB, {AssetsType} from "../System/Utils/UtilsDB";
 import JsonManager from "../System/manage/JsonManager";
 import {DialogType, ItemPreType} from "../System/Type/enums";
+import ControlGoLuckGame from "../control/controlGoLuckGame";
 
 const {ccclass, property} = cc._decorator;
 
@@ -143,7 +144,37 @@ export default class GameOverDialog extends BaseDialog {
     ItemPreTypesuccessfulCallback(data){
         data.data.self.node.destroy()
 
-        Emitter.fire("onNextPass",data.data.self.data.data)
+        data.data.self.goLuckGame(data.data.self.data.data)
+
+
+    }
+
+
+    //先判断去扎气球
+    goLuckGame(data){
+        // getitemNames: Array(4)
+        // 0: "itemPoint"
+        // 1: "itemLineBG"
+        // 2: "itemLuckKey"
+        // 3: "itemLine"
+        // length: 4
+        // __proto__: Array(0)
+        // index: 1
+        // isPlay: true
+        // itemName: "pass_1"
+        
+        let list = JsonManager.passSettingjson.GoLuckGameIndexs
+        
+        for (let i = 0; i <list.length ; i++) {
+           let item =  list[i]
+            if (data.index == item) {
+                Emitter.fire("onOpenDialog", {name: DialogType.扎气球, zIndex: 100,data : data}, null)
+                return
+            }
+        }
+        
+        ccLog.log("扎气球数据 ",data)
+        Emitter.fire("onNextPass",data)
     }
 
    async initView() {

@@ -156,10 +156,14 @@ export enum DialogType {
     头条分享 = "ttfenxiangDialog",
     详细设置 = "detailedSettingDialog",
     设置 = "settingDialog",
+    扎气球 = "luckGameDialog",
+
 }
 export enum ItemPreType {
     打印吐司 = "ToastItem",
-
+    扎气球条目 = "itemBalloon",
+    金币条目 = "itemGold",
+    爆炸条目 = "itemBoom",
     加钱 = "addGem",
     加钱条目 = "addGemItem",
     资产 = "assetsItem",

@@ -503,7 +503,8 @@ export default class Helloworld extends cc.Component {
         let initBalloonType = this.initBalloonType()
         this.addList(load, initBalloonType)
 
-
+        let sound = this.initSound()
+        this.addList(load, sound)
         // let an = this.initAn()
         // this.addList(load,an)
         // let tips = this.initTips()
@@ -720,7 +721,7 @@ export default class Helloworld extends cc.Component {
 
 
         UtilsNode.show(this.只有熊,false)
-
+        Emitter.fire("onInitMusicSwitch")
 
         // LoadManage.starNotLoad(this.initNotLoad());
         //

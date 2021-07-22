@@ -310,5 +310,35 @@ export default class Utils extends cc.Component {
     static destroyClickedElement(event) {
          document.body.removeChild(event.target);
      }
-
+    /**
+     * 以某点为圆心，生成圆周上等分点的坐标
+     *
+     * @param {number} r 半径
+     * @param {cc.Vec2} pos 圆心坐标
+     * @param {number} count 等分点数量
+     * @param {number} [randomScope=80] 等分点的随机波动范围
+     * @returns {cc.Vec2[]} 返回等分点坐标
+     */
+    // Utils.getCirclePoints(300,new cc.Vec2(0,0),count,60)
+    static getCirclePoints(r: number, pos: cc.Vec2, count: number, randomScope: number = 60): cc.Vec2[] {
+        let points = [];
+        let radians = (Math.PI / 180) * Math.round(360 / count);
+        for (let i = 0; i < count; i++) {
+            let x = pos.x + r * Math.sin(radians * i);
+            let y = pos.y + r * Math.cos(radians * i);
+            points.unshift(cc.v3(x + Math.random() * randomScope, y + Math.random() * randomScope, 0));
+        }
+        return points;
+    }
+    // Utils.getCirclePointsNoRandom(300,new cc.Vec2(0,0),count,60)
+    static getCirclePointsNoRandom(r: number, pos: cc.Vec2, count: number, randomScope: number = 60): cc.Vec2[] {
+        let points = [];
+        let radians = (Math.PI / 180) * Math.round(360 / count);
+        for (let i = 0; i < count; i++) {
+            let x = pos.x + r * Math.sin(radians * i);
+            let y = pos.y + r * Math.cos(radians * i);
+            points.unshift(cc.v3(x +  randomScope, y +  randomScope, 0));
+        }
+        return points;
+    }
 }

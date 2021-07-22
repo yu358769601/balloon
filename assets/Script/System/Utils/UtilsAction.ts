@@ -71,7 +71,7 @@ export default class UtilsAction extends cc.Component {
         let repeatForever = cc.repeatForever(sequence);
         node.runAction(repeatForever);
     }
-
+    //永远上下
     static moveByRepeatForeverXY(node: cc.Node, duration: number, x: number, y: number, callback: any) {
         node.stopAllActions()
         let interval1 = cc.moveBy(duration, x, y);
@@ -315,7 +315,7 @@ export default class UtilsAction extends cc.Component {
     static jumpTo(node: cc.Node, duration: number, x: number, y: number, height: number, jumps: number, callback: any) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
-            let interval1 = cc.jumpTo(duration, x, y, 100, 1);
+            let interval1 = cc.jumpTo(duration, x, y, height, jumps);
             let callbacktemp = cc.callFunc(() => {
                 if (callback) {
                     callback()
@@ -874,6 +874,7 @@ export default class UtilsAction extends cc.Component {
         })
     }
 
+    //一直上下带缓动
     // UtilsAction.moveByRepeatForeverXY_easeElasticOut(node,duration,x,y,tofadeOutTime,callback)
     static moveByRepeatForeverXY_easeElasticOut(node: cc.Node, duration: number, x: number, y: number, tofadeOutTime,callback: any) {
         node.stopAllActions()
