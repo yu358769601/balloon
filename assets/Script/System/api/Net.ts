@@ -73,7 +73,7 @@ class Net {
                 }
 
             }
-           xmlhttp.timeout  = 2000;// 8 seconds for timeout
+           xmlhttp.timeout  = 500;// 8 seconds for timeout
 
            xmlhttp.ontimeout =  (e) =>{
                // XMLHttpRequest 超时。在此做某事。

@@ -190,6 +190,12 @@ export default class Menu extends cc.Component {
             Emitter.fire("onOpenDialog", {name: DialogType.设置, zIndex: 100,data : this.data}, null)
         }, this)
 
+        this.菜单_商城按钮.on(cc.Node.EventType.TOUCH_END, async () => {
+
+            Emitter.fire("onOpenDialog", {name: DialogType.商店, zIndex: 100,data : null}, null)
+
+        }, this)
+
 
 
 

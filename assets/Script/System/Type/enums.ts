@@ -157,11 +157,14 @@ export enum DialogType {
     详细设置 = "detailedSettingDialog",
     设置 = "settingDialog",
     扎气球 = "luckGameDialog",
+    扎气球得到奖励 = "luckGameGetGoldDialog",
+    商店 = "shoppingDialog",
 
 }
 export enum ItemPreType {
     打印吐司 = "ToastItem",
     扎气球条目 = "itemBalloon",
+    商品页布局 = "itemShopLayou",
     金币条目 = "itemGold",
     爆炸条目 = "itemBoom",
     加钱 = "addGem",

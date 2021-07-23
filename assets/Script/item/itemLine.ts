@@ -220,7 +220,7 @@ export default class ItemLine extends ItemBase {
     }
 
     onJoystick(selfName, direction) {
-
+        let moveCount = 1
         ccLog.log("现在棍子的 面向角度", this.node.angle, direction)
 
         if (this.node.angle == 0) {
@@ -241,7 +241,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle += 0.5
+                    this.node.angle += moveCount
                     break;
                 }
                 if (this.node.angle >= 180 && this.node.angle < 360) {
@@ -249,7 +249,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle -= 0.5
+                    this.node.angle -= moveCount
                     break;
                 }
 
@@ -263,7 +263,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle += 0.5
+                    this.node.angle += moveCount
                     break;
                 }
                 if (this.node.angle >= 90 && this.node.angle < 180) {
@@ -271,7 +271,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle -= 0.5
+                    this.node.angle -= moveCount
                     break;
                 }
                 if (this.node.angle > 180 && this.node.angle < 270) {
@@ -279,7 +279,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle -= 0.5
+                    this.node.angle -= moveCount
                     break;
                 }
                 if (this.node.angle > 270 && this.node.angle < 360) {
@@ -287,7 +287,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle += 0.5
+                    this.node.angle += moveCount
                     break;
                 }
             case JoystickTypes.右:
@@ -296,7 +296,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle -= 0.5
+                    this.node.angle -= moveCount
                     break;
                 }
                 if (this.node.angle > 180 && this.node.angle <= 270) {
@@ -304,7 +304,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle += 0.5
+                    this.node.angle += moveCount
                     break;
                 }
 
@@ -313,7 +313,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle += 0.5
+                    this.node.angle += moveCount
                     break;
                 }
 
@@ -331,22 +331,22 @@ export default class ItemLine extends ItemBase {
                 // }
 
                 if (this.node.angle < 0 && this.node.angle > 270) {
-                    this.node.angle -= 0.5
+                    this.node.angle -= moveCount
                     break;
                 }
                 if (this.node.angle < 360 && this.node.angle > 270) {
-                    this.node.angle -= 0.5
+                    this.node.angle -= moveCount
                     break;
                 }
 
 
                 if (this.node.angle < 90 && this.node.angle > 0) {
-                    this.node.angle -= 0.5
+                    this.node.angle -= moveCount
                     break;
                 }
 
                 if (this.node.angle >= 90 && this.node.angle <= 180) {
-                    this.node.angle += 0.5
+                    this.node.angle += moveCount
                     break;
                 }
 
@@ -356,7 +356,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle += 0.5
+                    this.node.angle += moveCount
                     break;
                 }
                 if (this.node.angle > 270 && this.node.angle <= 360) {
@@ -364,7 +364,7 @@ export default class ItemLine extends ItemBase {
                     //     this.node.angle+=0.5
                     //     this.node.angle = 0
                     // }
-                    this.node.angle -= 0.5
+                    this.node.angle -= moveCount
                     break;
                 }
 

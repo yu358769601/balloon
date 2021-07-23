@@ -140,6 +140,7 @@ export default class LuckGameDialog extends BaseDialog {
 
 
     async endLuckGame(){
+        this.扎气球_吞噬.active = true
         let golds : cc.Node[] = []
         let listComponents =  this.扎气球_金币区.getComponentsInChildren("itemGold")
         for (let i = 0; i <listComponents.length ; i++) {
@@ -159,7 +160,7 @@ export default class LuckGameDialog extends BaseDialog {
 
         this.扎气球_得到金币.string = gold+""
 
-        this.扎气球_吞噬.active = true
+
 
 
 
@@ -172,15 +173,32 @@ export default class LuckGameDialog extends BaseDialog {
         }
         UtilsDB.addAssets(addGemData)
 
-        await  Utils.setTimerOnce(this,5)
+        let cllbacks = {
+            // self : this,
+            successfulCallback: this.successfulCallback,
+            // failureCallback: this.failureCallback
+        }
+        let data = {
+            self : this,
+            gold : gold
+        }
+
+        Emitter.fire("onOpenDialog", {name: DialogType.扎气球得到奖励, zIndex: 100,data : data}, cllbacks)
+        // await  Utils.setTimerOnce(this,5)
         ccLog.log("扎气球游戏完毕")
-        this.node.destroy()
-        Emitter.fire("onNextPass",this.data.data)
+        // this.node.destroy()
+        // Emitter.fire("onNextPass",this.data.data)
 
     }
 
 
+    successfulCallback(self){
+        // this.node.destroy()
+        // Emitter.fire("onNextPass",this.data.data)
 
+        self.node.destroy()
+
+    }
 
 
     setData(data) {
