@@ -52,7 +52,8 @@ export default class JsonManager extends cc.Component {
         let passData = await LoadManage.getJsonForName("passData");
         // JsonManager.passData
         this.passData =  passData.json
-        // this.rubberjson = await LoadManage.getJsonForName("rubberjson");
+        this.rubberjson = await LoadManage.getJsonForName("rubberjson");
+
         // this.passpager = await LoadManage.getJsonForName("passpager");
         // this.passGameOver = await LoadManage.getJsonForName("passGameOver");
 

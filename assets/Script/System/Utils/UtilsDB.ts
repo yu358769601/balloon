@@ -1844,7 +1844,7 @@ export default class UtilsDB extends cc.Component {
             //快速战斗的随机值
             // UtilsDB.getRandom().fastGameRandom
             //默认橡皮
-            list: {"mr_1": 1}
+            list: {"ma_1": 1}
         })
         return this.getJson("myRubber")
     }
@@ -2921,6 +2921,9 @@ export default class UtilsDB extends cc.Component {
             return false
         }
     }
+
+
+
 
 
 }

@@ -10,49 +10,49 @@
           "typeName": "itemPoint",
           "isStart": false,
           "index": 0,
+          "x": -238.12143478260867,
+          "y": -259.77743478260874,
+          "zIndex": 0,
           "allowInOutIndexs": [
             "1",
             "3"
-          ],
-          "x": -238.12143478260867,
-          "y": -259.77743478260874,
-          "zIndex": 0
+          ]
         },
         {
           "typeName": "itemPoint",
           "isStart": true,
           "index": 1,
+          "x": -242.1403913043477,
+          "y": 236.45921304347826,
+          "zIndex": 0,
           "allowInOutIndexs": [
             "2",
             "0"
-          ],
-          "x": -242.1403913043477,
-          "y": 236.45921304347826,
-          "zIndex": 0
+          ]
         },
         {
           "typeName": "itemPoint",
           "isStart": false,
           "index": 2,
+          "x": 244.17070434782602,
+          "y": 241.32890000000023,
+          "zIndex": 0,
           "allowInOutIndexs": [
             "1",
             "3"
-          ],
-          "x": 244.17070434782602,
-          "y": 241.32890000000023,
-          "zIndex": 0
+          ]
         },
         {
           "typeName": "itemPoint",
           "isStart": false,
           "index": 3,
+          "x": 248.28005217391313,
+          "y": -267.0608260869565,
+          "zIndex": 0,
           "allowInOutIndexs": [
             "0",
             "2"
-          ],
-          "x": 248.28005217391313,
-          "y": -267.0608260869565,
-          "zIndex": 0
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -118,41 +118,45 @@
       ]
     },
     {
+      "index": 2,
+      "passName": "pass_2",
+      "itemName": "pass_2",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "0"
-          ],
           "index": 1,
           "isStart": false,
           "x": 255.026,
           "y": 236.5356,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "0"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "0",
-            "1"
-          ],
           "index": 2,
           "isStart": false,
           "x": 249.53739130434775,
           "y": -250.30956521739125,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "0",
+            "1"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "2"
-          ],
           "index": 0,
           "isStart": true,
           "x": -227.79030434782612,
           "y": 241.75294347826076,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "1",
+            "2"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -200,10 +204,6 @@
           "zIndex": 0
         }
       ],
-      "index": 2,
-      "passName": "pass_2",
-      "itemName": "pass_2",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -212,54 +212,58 @@
       ]
     },
     {
+      "index": 3,
+      "passName": "pass_3",
+      "itemName": "pass_3",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": true,
           "x": -352.1739130434779,
           "y": -20.869660869564882,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4"
-          ],
           "index": 2,
           "isStart": false,
           "x": -10.434852173912986,
           "y": -357.39130434782606,
-          "zIndex": 2
-        },
-        {
-          "typeName": "itemPoint",
+          "zIndex": 2,
           "allowInOutIndexs": [
             "1",
             "4"
-          ],
+          ]
+        },
+        {
+          "typeName": "itemPoint",
           "index": 3,
           "isStart": false,
           "x": 5.684341886080802e-14,
           "y": 323.47882608695636,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 4,
           "isStart": false,
           "x": 344.34775652173926,
           "y": -10.434217391304742,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -319,10 +323,6 @@
           "zIndex": 0
         }
       ],
-      "index": 3,
-      "passName": "pass_3",
-      "itemName": "pass_3",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -331,102 +331,106 @@
       ]
     },
     {
+      "index": 4,
+      "passName": "pass_4",
+      "itemName": "pass_4",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -232.17391304347814,
           "y": 234.78260869565202,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -0.00000826086962035788,
           "y": 245.21739130434798,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": 250.43471304347827,
           "y": 234.78251739130425,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -130.43321739130437,
           "y": 127.55470869565212,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": 143.74952608695673,
           "y": 127.82601739130436,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "5",
-            "4"
-          ],
           "index": 6,
           "isStart": false,
           "x": 4.946084347826016,
           "y": -6.0313047826087285,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "7",
+            "5",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 2.608694000000014,
           "y": -195.65178260869575,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7"
-          ],
           "index": 8,
           "isStart": true,
           "x": 2.608694695652016,
           "y": -367.8253913043479,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "7"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -524,10 +528,6 @@
           "zIndex": 0
         }
       ],
-      "index": 4,
-      "passName": "pass_4",
-      "itemName": "pass_4",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -536,102 +536,106 @@
       ]
     },
     {
+      "index": 5,
+      "passName": "pass_5",
+      "itemName": "pass_5",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -148.69508695652175,
           "y": 237.39120434782603,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "3",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 2,
           "isStart": false,
           "x": 156.52170434782613,
           "y": 245.21738695652175,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "2"
-          ],
           "index": 3,
           "isStart": true,
           "x": 5.217390347826125,
           "y": 135.65210434782625,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "2"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -318.260652173913,
           "y": 62.608693478261216,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "7"
-          ],
           "index": 5,
           "isStart": false,
           "x": 323.4781739130435,
           "y": 67.82607478260863,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "2",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "8"
-          ],
           "index": 6,
           "isStart": false,
           "x": -198.26039130434782,
           "y": -161.73821739130437,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "4",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 198.2607173913044,
           "y": -161.73821739130437,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": 2.6086946956521295,
           "y": -323.47739130434775,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "6",
+            "7"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -729,10 +733,6 @@
           "zIndex": 0
         }
       ],
-      "index": 5,
-      "passName": "pass_5",
-      "itemName": "pass_5",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -741,164 +741,168 @@
       ]
     },
     {
+      "index": 6,
+      "passName": "pass_6",
+      "itemName": "pass_6",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": 120,
           "y": 292.1739,
-          "zIndex": 0
+          "zIndex": 0,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "10"
-          ],
           "index": 8,
           "isStart": false,
           "x": 161.7391,
           "y": -5.21739,
-          "zIndex": 0
+          "zIndex": 0,
+          "allowInOutIndexs": [
+            "6",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -177.391,
           "y": 276.5217,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -26.0869,
           "y": 253.0434,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -140.869,
           "y": 161.7391,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": 83.47826,
           "y": 177.3913,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 6,
+          "isStart": true,
+          "x": 0,
+          "y": 88.69565,
+          "zIndex": 6,
           "allowInOutIndexs": [
             "4",
             "5",
             "8",
             "7"
-          ],
-          "index": 6,
-          "isStart": true,
-          "x": 0,
-          "y": 88.69565,
-          "zIndex": 6
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "9"
-          ],
           "index": 7,
           "isStart": false,
           "x": -125.217,
           "y": 7.826086,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "11"
-          ],
           "index": 9,
           "isStart": false,
           "x": -234.782,
           "y": -177.391,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "7",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "12"
-          ],
           "index": 10,
           "isStart": false,
           "x": 260.8695,
           "y": -122.608,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "8",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "13"
-          ],
           "index": 11,
           "isStart": false,
           "x": -127.826,
           "y": -367.826,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "9",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "13",
-            "10"
-          ],
           "index": 12,
           "isStart": false,
           "x": 258.2608,
           "y": -250.434,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "13",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "11",
-            "12"
-          ],
           "index": 13,
           "isStart": false,
           "x": 60,
           "y": -399.13,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "11",
+            "12"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -1058,10 +1062,6 @@
           "zIndex": 0
         }
       ],
-      "index": 6,
-      "passName": "pass_6",
-      "itemName": "pass_6",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -1070,78 +1070,82 @@
       ]
     },
     {
+      "index": 7,
+      "passName": "pass_7",
+      "itemName": "pass_7",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": true,
           "x": 2.608695,
           "y": 318.2608,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4"
-          ],
           "index": 2,
           "isStart": false,
           "x": -140.869,
           "y": 169.5652,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": 153.913,
           "y": 172.1739,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -138.26,
           "y": -206.086,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "5"
-          ],
           "index": 6,
           "isStart": false,
           "x": 13.04347,
           "y": -359.99939130434774,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": 153.913,
           "y": -203.478,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -1221,10 +1225,6 @@
           "zIndex": 0
         }
       ],
-      "index": 7,
-      "passName": "pass_7",
-      "itemName": "pass_7",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -1233,164 +1233,168 @@
       ]
     },
     {
+      "index": 8,
+      "passName": "pass_8",
+      "itemName": "pass_8",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": 88.69565,
           "y": 206.0869,
-          "zIndex": 0
+          "zIndex": 0,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4"
-          ],
           "index": 2,
           "isStart": false,
           "x": -138.26,
           "y": 211.3043,
-          "zIndex": 0
+          "zIndex": 0,
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "10",
-            "11"
-          ],
           "index": 9,
           "isStart": false,
           "x": -13.0434,
           "y": 86.08695,
-          "zIndex": 0
+          "zIndex": 0,
+          "allowInOutIndexs": [
+            "10",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": -23.4782,
           "y": 258.2608,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -273.913,
           "y": -36.5217,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "2",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "7"
-          ],
           "index": 5,
           "isStart": false,
           "x": 242.6086,
           "y": -28.6956,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "8"
-          ],
           "index": 6,
           "isStart": false,
           "x": -177.391,
           "y": -300,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "4",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 166.9565,
           "y": -294.782,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 8,
+          "isStart": true,
+          "x": 0.000001,
+          "y": -375.651,
+          "zIndex": 8,
           "allowInOutIndexs": [
             "6",
             "7",
             "12",
             "13"
-          ],
-          "index": 8,
-          "isStart": true,
-          "x": 0.000001,
-          "y": -375.651,
-          "zIndex": 8
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "13"
-          ],
           "index": 11,
           "isStart": false,
           "x": 91.30434,
           "y": -20.8695,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "9",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "12"
-          ],
           "index": 10,
           "isStart": false,
           "x": -114.782,
           "y": -23.4782,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "9",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "10",
-            "8"
-          ],
           "index": 12,
           "isStart": false,
           "x": -109.565,
           "y": -268.695,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "10",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "11",
-            "8"
-          ],
           "index": 13,
           "isStart": false,
           "x": 96.52172434782612,
           "y": -266.086,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "11",
+            "8"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -1550,10 +1554,6 @@
           "zIndex": 0
         }
       ],
-      "index": 8,
-      "passName": "pass_8",
-      "itemName": "pass_8",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -1562,164 +1562,168 @@
       ]
     },
     {
+      "index": 9,
+      "passName": "pass_9",
+      "itemName": "pass_9",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "10",
-            "12"
-          ],
           "index": 11,
           "isStart": false,
           "x": -208.69530434782607,
           "y": -151.304,
-          "zIndex": 0
+          "zIndex": 0,
+          "allowInOutIndexs": [
+            "10",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "13"
-          ],
           "index": 1,
           "isStart": false,
           "x": -344.347,
           "y": 36.52173,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -219.13,
           "y": 114.7826,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 3,
           "isStart": false,
           "x": -36.5217,
           "y": 213.913,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": 106.9565,
           "y": 109.5652,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 5,
+          "isStart": true,
+          "x": 221.7391,
+          "y": 10.43477,
+          "zIndex": 5,
           "allowInOutIndexs": [
             "4",
             "6",
             "8",
             "9"
-          ],
-          "index": 5,
-          "isStart": true,
-          "x": 221.7391,
-          "y": 10.43477,
-          "zIndex": 5
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 6,
           "isStart": false,
           "x": 331.3043,
           "y": 195.6521,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 331.3043,
           "y": 23.47826,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "10"
-          ],
           "index": 9,
           "isStart": false,
           "x": 109.5652,
           "y": -93.913,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "5",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": 333.913,
           "y": -146.086,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "11"
-          ],
           "index": 10,
           "isStart": false,
           "x": -10.4347,
           "y": -221.739,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "9",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "11",
-            "13"
-          ],
           "index": 12,
           "isStart": false,
           "x": -344.34730434782625,
           "y": -96.52169130434787,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "11",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "12"
-          ],
           "index": 13,
           "isStart": false,
           "x": -307.826,
           "y": -31.3043,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "1",
+            "12"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -1870,10 +1874,6 @@
           "zIndex": 0
         }
       ],
-      "index": 9,
-      "passName": "pass_9",
-      "itemName": "pass_9",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -1882,140 +1882,144 @@
       ]
     },
     {
+      "index": 10,
+      "passName": "pass_10",
+      "itemName": "pass_10",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -138.26,
           "y": 313.0434,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": 15.652165652173878,
           "y": 318.260795652174,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": 166.9565,
           "y": 318.2608,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -60,
           "y": 182.6086,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": 91.30434,
           "y": 182.6086,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 6,
+          "isStart": true,
+          "x": 18.26086,
+          "y": 78.26086,
+          "zIndex": 6,
           "allowInOutIndexs": [
             "4",
             "5",
             "7",
             "8"
-          ],
-          "index": 6,
-          "isStart": true,
-          "x": 18.26086,
-          "y": 78.26086,
-          "zIndex": 6
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "9"
-          ],
           "index": 7,
           "isStart": false,
           "x": -104.347,
           "y": -112.173,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "11"
-          ],
           "index": 8,
           "isStart": false,
           "x": 138.2608,
           "y": -114.782,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "6",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "10"
-          ],
           "index": 9,
           "isStart": false,
           "x": -206.086,
           "y": -310.434,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "7",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "11"
-          ],
           "index": 10,
           "isStart": false,
           "x": 20.86955,
           "y": -313.042,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "9",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "10",
-            "8"
-          ],
           "index": 11,
           "isStart": false,
           "x": 237.3913,
           "y": -313.043,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "10",
+            "8"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -2155,10 +2159,6 @@
           "zIndex": 0
         }
       ],
-      "index": 10,
-      "passName": "pass_10",
-      "itemName": "pass_10",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -2167,116 +2167,120 @@
       ]
     },
     {
+      "index": 11,
+      "passName": "pass_11",
+      "itemName": "pass_11",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -242.608,
           "y": 276.5216,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": 15.65224,
           "y": 352.1738,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "8"
-          ],
           "index": 3,
           "isStart": false,
           "x": 276.5216,
           "y": 271.3043,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": -250.43300000000005,
           "y": 70.43477130434776,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "6",
-            "9"
-          ],
           "index": 5,
           "isStart": true,
           "x": -166.955,
           "y": 49.5652,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "4",
+            "6",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 6,
           "isStart": false,
           "x": 13.04347,
           "y": 5.217383,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8",
-            "9"
-          ],
           "index": 7,
           "isStart": false,
           "x": 190.4346,
           "y": 39.13043,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "8",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": 273.913,
           "y": 67.82608,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 9,
           "isStart": false,
           "x": 10.43478,
           "y": -346.956,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -2406,10 +2410,6 @@
           "zIndex": 0
         }
       ],
-      "index": 11,
-      "passName": "pass_11",
-      "itemName": "pass_11",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -2418,92 +2418,96 @@
       ]
     },
     {
+      "index": 12,
+      "passName": "pass_12",
+      "itemName": "pass_12",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "7"
-          ],
           "index": 1,
           "isStart": false,
           "x": -284.347,
           "y": -10.4347,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -226.956,
           "y": 156.5216,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 3,
+          "isStart": true,
+          "x": -2.60869,
+          "y": -2.6087,
+          "zIndex": 3,
           "allowInOutIndexs": [
             "2",
             "4",
             "7",
             "6"
-          ],
-          "index": 3,
-          "isStart": true,
-          "x": -2.60869,
-          "y": -2.6087,
-          "zIndex": 3
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": 234.7825,
           "y": 153.9129,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": 292.1738,
           "y": -10.4347,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 6,
           "isStart": false,
           "x": 221.739,
           "y": -166.956,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 7,
           "isStart": false,
           "x": -221.738,
           "y": -166.955,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -2603,10 +2607,6 @@
           "zIndex": 0
         }
       ],
-      "index": 12,
-      "passName": "pass_12",
-      "itemName": "pass_12",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -2615,140 +2615,144 @@
       ]
     },
     {
+      "index": 13,
+      "passName": "pass_13",
+      "itemName": "pass_13",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 1,
           "isStart": false,
           "x": -237.39,
           "y": 362.6086,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": 49.56521,
           "y": 362.6086,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 3,
           "isStart": false,
           "x": 203.4782,
           "y": 268.6956,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": 198.2608,
           "y": 112.1738,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 5,
+          "isStart": true,
+          "x": -239.999,
+          "y": -13.0434,
+          "zIndex": 5,
           "allowInOutIndexs": [
             "1",
             "6",
             "7",
             "10"
-          ],
-          "index": 5,
-          "isStart": true,
-          "x": -239.999,
-          "y": -13.0434,
-          "zIndex": 5
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "5"
-          ],
           "index": 6,
           "isStart": false,
           "x": 44.34781,
           "y": 13.04347,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 44.34782,
           "y": -54.7816,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "9"
-          ],
           "index": 8,
           "isStart": false,
           "x": 193.04340000000022,
           "y": -138.26030434782612,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "7",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "11"
-          ],
           "index": 9,
           "isStart": false,
           "x": 193.04330869565214,
           "y": -284.347,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "8",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "11"
-          ],
           "index": 10,
           "isStart": false,
           "x": -237.391,
           "y": -380.868,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "5",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "10"
-          ],
           "index": 11,
           "isStart": false,
           "x": 33.91304,
           "y": -391.304,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "9",
+            "10"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -2888,10 +2892,6 @@
           "zIndex": 0
         }
       ],
-      "index": 13,
-      "passName": "pass_13",
-      "itemName": "pass_13",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -2900,188 +2900,192 @@
       ]
     },
     {
+      "index": 14,
+      "passName": "pass_14",
+      "itemName": "pass_14",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "15"
-          ],
           "index": 1,
           "isStart": false,
           "x": -237.39030434782606,
           "y": 255.65210869565226,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "1",
+            "15"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "15",
-            "13"
-          ],
           "index": 2,
           "isStart": false,
           "x": -2.60861,
           "y": 242.6084,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "15",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "13",
-            "14"
-          ],
           "index": 3,
           "isStart": false,
           "x": 151.30430869565203,
           "y": 232.17388695652153,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "13",
+            "14"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "14",
-            "7"
-          ],
           "index": 4,
           "isStart": false,
           "x": 320.86945652173915,
           "y": 224.34769999999997,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "14",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "8"
-          ],
           "index": 5,
           "isStart": false,
           "x": -349.56330434782626,
           "y": 133.04341739130447,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "1",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "13",
-            "9"
-          ],
           "index": 6,
           "isStart": false,
           "x": 117.39129130434799,
           "y": 41.739125652173875,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "13",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "10"
-          ],
           "index": 7,
           "isStart": false,
           "x": 339.1304,
           "y": 80.86955260869574,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "4",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "11"
-          ],
           "index": 8,
           "isStart": false,
           "x": -318.26000000000016,
           "y": -73.04340000000012,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "5",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "11",
-            "12"
-          ],
           "index": 9,
           "isStart": false,
           "x": 10.434794347826113,
           "y": -93.91252173913061,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "6",
+            "11",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "12"
-          ],
           "index": 10,
           "isStart": false,
           "x": 336.52169130434777,
           "y": -93.9125217391304,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "7",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "9"
-          ],
           "index": 11,
           "isStart": false,
           "x": -164.34660869565212,
           "y": -331.3035652173913,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "8",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "10"
-          ],
           "index": 12,
           "isStart": false,
           "x": 117.39121304347813,
           "y": -307.8251739130435,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "9",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3",
-            "6"
-          ],
           "index": 13,
           "isStart": true,
           "x": 73.04346,
           "y": 200.8694,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "4"
-          ],
           "index": 14,
           "isStart": false,
           "x": 245.21726521739126,
           "y": 140.869552173913,
-          "zIndex": 14
+          "zIndex": 14,
+          "allowInOutIndexs": [
+            "3",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "2"
-          ],
           "index": 15,
           "isStart": false,
           "x": -138.25978260869562,
           "y": 190.43467826086953,
-          "zIndex": 15
+          "zIndex": 15,
+          "allowInOutIndexs": [
+            "1",
+            "2"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -3261,10 +3265,6 @@
           "zIndex": 0
         }
       ],
-      "index": 14,
-      "passName": "pass_14",
-      "itemName": "pass_14",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -3273,57 +3273,66 @@
       ]
     },
     {
+      "index": 15,
+      "passName": "pass_15",
+      "itemName": "pass_15",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "5"
-          ],
           "index": 1,
           "isStart": false,
           "x": -305.216,
           "y": 286.9565,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 2,
           "isStart": false,
           "x": 7.826086,
           "y": 292.1739,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": 289.5651,
           "y": 284.3477,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": -305.217,
           "y": -13.0433,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 5,
+          "isStart": true,
+          "x": 5.21736,
+          "y": -15.6521,
+          "zIndex": 5,
           "allowInOutIndexs": [
             "1",
             "2",
@@ -3333,60 +3342,55 @@
             "7",
             "8",
             "9"
-          ],
-          "index": 5,
-          "isStart": true,
-          "x": 5.21736,
-          "y": -15.6521,
-          "zIndex": 5
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "9"
-          ],
           "index": 6,
           "isStart": false,
           "x": 307.826,
           "y": -20.8694,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "5",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": -279.129,
           "y": -299.999,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": 10.43477,
           "y": -310.434,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "6"
-          ],
           "index": 9,
           "isStart": false,
           "x": 305.2173,
           "y": -294.782,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "5",
+            "6"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -3526,10 +3530,6 @@
           "zIndex": 0
         }
       ],
-      "index": 15,
-      "passName": "pass_15",
-      "itemName": "pass_15",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -3538,92 +3538,96 @@
       ]
     },
     {
+      "index": 16,
+      "passName": "pass_16",
+      "itemName": "pass_16",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 1,
           "isStart": false,
           "x": 20.86956,
           "y": 349.5651,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -294.782,
           "y": 44.34782,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4",
-            "6"
-          ],
           "index": 3,
           "isStart": true,
           "x": -86.0868,
           "y": 41.73911,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5",
-            "7"
-          ],
           "index": 4,
           "isStart": false,
           "x": 106.9564,
           "y": 41.73911,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "3",
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4"
-          ],
           "index": 5,
           "isStart": false,
           "x": 318.2608,
           "y": 46.95651,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "7"
-          ],
           "index": 6,
           "isStart": false,
           "x": -224.347,
           "y": -365.217,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "6"
-          ],
           "index": 7,
           "isStart": false,
           "x": 247.826,
           "y": -365.216,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -3723,10 +3727,6 @@
           "zIndex": 0
         }
       ],
-      "index": 16,
-      "passName": "pass_16",
-      "itemName": "pass_16",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -3735,108 +3735,112 @@
       ]
     },
     {
+      "index": 17,
+      "passName": "pass_17",
+      "itemName": "pass_17",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3",
-            "4",
-            "6"
-          ],
           "index": 2,
           "isStart": false,
           "x": -146.086,
           "y": 143.4782,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": 15.65216,
           "y": 341.739,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 3,
+          "isStart": false,
+          "x": 164.3477,
+          "y": 148.6956,
+          "zIndex": 3,
           "allowInOutIndexs": [
             "1",
             "2",
             "5",
             "7"
-          ],
-          "index": 3,
-          "isStart": false,
-          "x": 164.3477,
-          "y": 148.6956,
-          "zIndex": 3
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -359.999,
           "y": 33.91304,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "7"
-          ],
           "index": 5,
           "isStart": false,
           "x": 362.6086,
           "y": 18.26086,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4",
-            "8"
-          ],
           "index": 6,
           "isStart": true,
           "x": -211.303,
           "y": -164.347,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "2",
+            "4",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 239.9999,
           "y": -146.086,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "3",
+            "5",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": 13.04346,
           "y": -315.651,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "6",
+            "7"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -3966,10 +3970,6 @@
           "zIndex": 0
         }
       ],
-      "index": 17,
-      "passName": "pass_17",
-      "itemName": "pass_17",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -3978,128 +3978,132 @@
       ]
     },
     {
+      "index": 18,
+      "passName": "pass_18",
+      "itemName": "pass_18",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": 23.47825,
           "y": 375.652,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -166.956,
           "y": 172.1738,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 3,
+          "isStart": false,
+          "x": 13.04346,
+          "y": 161.739,
+          "zIndex": 3,
           "allowInOutIndexs": [
             "2",
             "4",
             "5",
             "6"
-          ],
-          "index": 3,
-          "isStart": false,
-          "x": 13.04346,
-          "y": 161.739,
-          "zIndex": 3
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 4,
           "isStart": false,
           "x": 203.4782,
           "y": 164.3478,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "7"
-          ],
           "index": 5,
           "isStart": false,
           "x": -88.6953,
           "y": 0,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "9"
-          ],
           "index": 6,
           "isStart": false,
           "x": 122.6086,
           "y": 0,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": -234.782,
           "y": -198.259,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "9",
-            "10"
-          ],
           "index": 8,
           "isStart": false,
           "x": 10.43477,
           "y": -198.259,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "7",
+            "9",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8"
-          ],
           "index": 9,
           "isStart": false,
           "x": 258.2607,
           "y": -198.26,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8"
-          ],
           "index": 10,
           "isStart": true,
           "x": 7.826086,
           "y": -378.26,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "8"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -4229,10 +4233,6 @@
           "zIndex": 0
         }
       ],
-      "index": 18,
-      "passName": "pass_18",
-      "itemName": "pass_18",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -4241,94 +4241,98 @@
       ]
     },
     {
+      "index": 19,
+      "passName": "pass_19",
+      "itemName": "pass_19",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "5"
-          ],
           "index": 1,
           "isStart": true,
           "x": -326.086,
           "y": 195.652,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "6"
-          ],
           "index": 2,
           "isStart": false,
           "x": 13.04347,
           "y": 182.6086,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "5",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "7"
-          ],
           "index": 3,
           "isStart": false,
           "x": 326.0869,
           "y": 187.826,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "6",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": -328.694,
           "y": -229.564,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 5,
+          "isStart": false,
+          "x": -140.869,
+          "y": -232.173,
+          "zIndex": 5,
           "allowInOutIndexs": [
             "1",
             "2",
             "4",
             "6"
-          ],
-          "index": 5,
-          "isStart": false,
-          "x": -140.869,
-          "y": -232.173,
-          "zIndex": 5
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 6,
+          "isStart": false,
+          "x": 146.0869,
+          "y": -234.781,
+          "zIndex": 6,
           "allowInOutIndexs": [
             "2",
             "3",
             "5",
             "7"
-          ],
-          "index": 6,
-          "isStart": false,
-          "x": 146.0869,
-          "y": -234.781,
-          "zIndex": 6
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "6"
-          ],
           "index": 7,
           "isStart": false,
           "x": 333.913,
           "y": -234.781,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -4438,10 +4442,6 @@
           "zIndex": 0
         }
       ],
-      "index": 19,
-      "passName": "pass_19",
-      "itemName": "pass_19",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -4450,80 +4450,84 @@
       ]
     },
     {
+      "index": 20,
+      "passName": "pass_20",
+      "itemName": "pass_20",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": 20.86956,
           "y": 380.8695,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3",
-            "4"
-          ],
           "index": 2,
           "isStart": true,
           "x": -148.695,
           "y": 73.04347,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "2",
-            "6"
-          ],
           "index": 3,
           "isStart": false,
           "x": 166.9565,
           "y": 75.65217,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": -307.826,
           "y": -328.695,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": -2.60869,
           "y": -331.304,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 6,
           "isStart": false,
           "x": 307.826,
           "y": -331.304,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -4613,10 +4617,6 @@
           "zIndex": 0
         }
       ],
-      "index": 20,
-      "passName": "pass_20",
-      "itemName": "pass_20",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -4625,140 +4625,144 @@
       ]
     },
     {
+      "index": 21,
+      "passName": "pass_21",
+      "itemName": "pass_21",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
+          "index": 1,
+          "isStart": true,
+          "x": -289.564,
+          "y": -5.21738,
+          "zIndex": 1,
           "allowInOutIndexs": [
             "2",
             "11",
             "6",
             "7"
-          ],
-          "index": 1,
-          "isStart": true,
-          "x": -289.564,
-          "y": -5.21738,
-          "zIndex": 1
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -250.434,
           "y": 206.0869,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 3,
           "isStart": false,
           "x": -5.21739,
           "y": 336.5216,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": 187.826,
           "y": 284.3477,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": 320.8694,
           "y": 187.8259,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "1"
-          ],
           "index": 6,
           "isStart": false,
           "x": 200.8695,
           "y": 91.30434,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "5",
+            "1"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 200.8694,
           "y": -99.1304,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "1",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "9"
-          ],
           "index": 8,
           "isStart": false,
           "x": 315.6521,
           "y": -211.303,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "7",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "10"
-          ],
           "index": 9,
           "isStart": false,
           "x": 190.4347,
           "y": -294.782,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "8",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "11"
-          ],
           "index": 10,
           "isStart": false,
           "x": -15.6521,
           "y": -346.955,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "9",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "10"
-          ],
           "index": 11,
           "isStart": false,
           "x": -250.433,
           "y": -216.521,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "1",
+            "10"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -4898,10 +4902,6 @@
           "zIndex": 0
         }
       ],
-      "index": 21,
-      "passName": "pass_21",
-      "itemName": "pass_21",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -4910,190 +4910,194 @@
       ]
     },
     {
+      "index": 22,
+      "passName": "pass_22",
+      "itemName": "pass_22",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 1,
           "isStart": false,
           "x": -266.086,
           "y": 271.3043,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 2,
           "isStart": false,
           "x": -83.4782,
           "y": 266.086,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "7"
-          ],
           "index": 3,
           "isStart": false,
           "x": 91.30434,
           "y": 266.0869,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "4",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "8"
-          ],
           "index": 4,
           "isStart": false,
           "x": 266.0869,
           "y": 263.4782,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "3",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "9"
-          ],
           "index": 5,
           "isStart": false,
           "x": -263.477,
           "y": 46.95651434782612,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "1",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "10"
-          ],
           "index": 6,
           "isStart": false,
           "x": -80.8695,
           "y": 44.34782,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "2",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "11"
-          ],
           "index": 7,
           "isStart": false,
           "x": 93.91304,
           "y": 44.34782,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "3",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "12"
-          ],
           "index": 8,
           "isStart": false,
           "x": 268.6956,
           "y": 41.73912,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "4",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "13"
-          ],
           "index": 9,
           "isStart": false,
           "x": -263.477,
           "y": -172.173,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "5",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 10,
+          "isStart": false,
+          "x": -86.0869,
+          "y": -174.782,
+          "zIndex": 10,
           "allowInOutIndexs": [
             "6",
             "11",
             "13",
             "14"
-          ],
-          "index": 10,
-          "isStart": false,
-          "x": -86.0869,
-          "y": -174.782,
-          "zIndex": 10
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 11,
+          "isStart": true,
+          "x": 96.52165,
+          "y": -169.564,
+          "zIndex": 11,
           "allowInOutIndexs": [
             "7",
             "10",
             "14",
             "15"
-          ],
-          "index": 11,
-          "isStart": true,
-          "x": 96.52165,
-          "y": -169.564,
-          "zIndex": 11
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "15"
-          ],
           "index": 12,
           "isStart": false,
           "x": 266.0868,
           "y": -177.39,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "8",
+            "15"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "10"
-          ],
           "index": 13,
           "isStart": false,
           "x": -182.60769565217387,
           "y": -302.60760869565223,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "9",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "10",
-            "11"
-          ],
           "index": 14,
           "isStart": false,
           "x": 0.000001,
           "y": -310.434,
-          "zIndex": 14
+          "zIndex": 14,
+          "allowInOutIndexs": [
+            "10",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "11",
-            "12"
-          ],
           "index": 15,
           "isStart": false,
           "x": 179.9999,
           "y": -313.042,
-          "zIndex": 15
+          "zIndex": 15,
+          "allowInOutIndexs": [
+            "11",
+            "12"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -5283,10 +5287,6 @@
           "zIndex": 0
         }
       ],
-      "index": 22,
-      "passName": "pass_22",
-      "itemName": "pass_22",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -5295,82 +5295,86 @@
       ]
     },
     {
+      "index": 23,
+      "passName": "pass_23",
+      "itemName": "pass_23",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": 13.04347,
           "y": 336.5217,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4",
-            "5"
-          ],
           "index": 2,
           "isStart": true,
           "x": -263.478,
           "y": 13.04347,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "4",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5",
-            "6"
-          ],
           "index": 3,
           "isStart": false,
           "x": 294.7826,
           "y": 7.826086,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "5",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": -266.086,
           "y": -326.086,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 5,
+          "isStart": false,
+          "x": 13.04347,
+          "y": -331.304,
+          "zIndex": 5,
           "allowInOutIndexs": [
             "2",
             "3",
             "4",
             "6"
-          ],
-          "index": 5,
-          "isStart": false,
-          "x": 13.04347,
-          "y": -331.304,
-          "zIndex": 5
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 6,
           "isStart": false,
           "x": 294.7826,
           "y": -328.695,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -5470,10 +5474,6 @@
           "zIndex": 0
         }
       ],
-      "index": 23,
-      "passName": "pass_23",
-      "itemName": "pass_23",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -5482,140 +5482,144 @@
       ]
     },
     {
+      "index": 24,
+      "passName": "pass_24",
+      "itemName": "pass_24",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": 13.04347,
           "y": 373.0434,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4"
-          ],
           "index": 2,
           "isStart": false,
           "x": -96.5217,
           "y": 195.6521,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 3,
           "isStart": false,
           "x": 153.9129,
           "y": 211.3043,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": -208.695,
           "y": 5.217391,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "6",
-            "8"
-          ],
           "index": 5,
           "isStart": false,
           "x": 7.826074,
           "y": 2.608694,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "4",
+            "6",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 6,
           "isStart": false,
           "x": 276.5217,
           "y": 5.217391,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "10"
-          ],
           "index": 7,
           "isStart": false,
           "x": -331.303,
           "y": -161.738,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "8",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7",
-            "9"
-          ],
           "index": 8,
           "isStart": true,
           "x": 7.825994,
           "y": -153.912,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "5",
+            "7",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "11"
-          ],
           "index": 9,
           "isStart": false,
           "x": 315.652,
           "y": -161.738,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "8",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "11"
-          ],
           "index": 10,
           "isStart": false,
           "x": -263.477,
           "y": -320.869,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "7",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "10"
-          ],
           "index": 11,
           "isStart": false,
           "x": 247.826,
           "y": -328.694,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "9",
+            "10"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -5755,10 +5759,6 @@
           "zIndex": 0
         }
       ],
-      "index": 24,
-      "passName": "pass_24",
-      "itemName": "pass_24",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -5767,68 +5767,72 @@
       ]
     },
     {
+      "index": 25,
+      "passName": "pass_25",
+      "itemName": "pass_25",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3",
-            "4"
-          ],
           "index": 1,
           "isStart": true,
           "x": 7.826086,
           "y": 281.7391,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -297.391,
           "y": -31.3043,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 3,
+          "isStart": false,
+          "x": 13.04347,
+          "y": -23.4782,
+          "zIndex": 3,
           "allowInOutIndexs": [
             "1",
             "2",
             "4",
             "5"
-          ],
-          "index": 3,
-          "isStart": false,
-          "x": 13.04347,
-          "y": -23.4782,
-          "zIndex": 3
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 4,
           "isStart": false,
           "x": 313.0434,
           "y": -23.4782,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3"
-          ],
           "index": 5,
           "isStart": false,
           "x": 13.04347,
           "y": -360,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -5908,10 +5912,6 @@
           "zIndex": 0
         }
       ],
-      "index": 25,
-      "passName": "pass_25",
-      "itemName": "pass_25",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -5920,154 +5920,158 @@
       ]
     },
     {
+      "index": 26,
+      "passName": "pass_26",
+      "itemName": "pass_26",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": -7.82608,
           "y": 313.0434,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4"
-          ],
           "index": 2,
           "isStart": false,
           "x": -140.869,
           "y": 195.6521,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 3,
           "isStart": false,
           "x": 125.2173,
           "y": 190.4347,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5",
-            "7"
-          ],
           "index": 4,
           "isStart": false,
           "x": -310.434,
           "y": 18.26086,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": -5.21739,
           "y": 13.04347,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 6,
+          "isStart": false,
+          "x": 302.6086,
+          "y": 15.65217,
+          "zIndex": 6,
           "allowInOutIndexs": [
             "3",
             "5",
             "8",
             "9"
-          ],
-          "index": 6,
-          "isStart": false,
-          "x": 302.6086,
-          "y": 15.65217,
-          "zIndex": 6
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "11"
-          ],
           "index": 7,
           "isStart": false,
           "x": -315.652,
           "y": -166.956,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "4",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "11"
-          ],
           "index": 8,
           "isStart": false,
           "x": 5.217391,
           "y": -164.347,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "6",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "13"
-          ],
           "index": 9,
           "isStart": false,
           "x": 310.4347,
           "y": -172.173,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "6",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "8",
-            "12"
-          ],
           "index": 11,
           "isStart": true,
           "x": -318.26,
           "y": -349.565,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "7",
+            "8",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "11",
-            "13"
-          ],
           "index": 12,
           "isStart": false,
           "x": -7.82608,
           "y": -360,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "11",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "12"
-          ],
           "index": 13,
           "isStart": false,
           "x": 305.2173,
           "y": -354.782,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "9",
+            "12"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -6227,10 +6231,6 @@
           "zIndex": 0
         }
       ],
-      "index": 26,
-      "passName": "pass_26",
-      "itemName": "pass_26",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -6239,146 +6239,150 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_27",
+      "itemName": "pass_27",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
+          "index": 1,
+          "isStart": false,
+          "x": 0,
+          "y": 388.6956,
+          "zIndex": 1,
           "allowInOutIndexs": [
             "2",
             "3",
             "4",
             "5"
-          ],
-          "index": 1,
-          "isStart": false,
-          "x": 0,
-          "y": 388.6956,
-          "zIndex": 1
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 2,
+          "isStart": true,
+          "x": -360,
+          "y": 33.91304,
+          "zIndex": 2,
           "allowInOutIndexs": [
             "1",
             "3",
             "6",
             "9"
-          ],
-          "index": 2,
-          "isStart": true,
-          "x": -360,
-          "y": 33.91304,
-          "zIndex": 2
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 3,
+          "isStart": false,
+          "x": -106.956,
+          "y": 33.91304,
+          "zIndex": 3,
           "allowInOutIndexs": [
             "1",
             "2",
             "4",
             "6"
-          ],
-          "index": 3,
-          "isStart": false,
-          "x": -106.956,
-          "y": 33.91304,
-          "zIndex": 3
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 4,
+          "isStart": false,
+          "x": 104.3478,
+          "y": 31.30434,
+          "zIndex": 4,
           "allowInOutIndexs": [
             "1",
             "3",
             "5",
             "7"
-          ],
-          "index": 4,
-          "isStart": false,
-          "x": 104.3478,
-          "y": 31.30434,
-          "zIndex": 4
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 5,
+          "isStart": false,
+          "x": 339.1304,
+          "y": 36.52173,
+          "zIndex": 5,
           "allowInOutIndexs": [
             "1",
             "4",
             "7",
             "10"
-          ],
-          "index": 5,
-          "isStart": false,
-          "x": 339.1304,
-          "y": 36.52173,
-          "zIndex": 5
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 6,
+          "isStart": false,
+          "x": -156.521,
+          "y": -101.739,
+          "zIndex": 6,
           "allowInOutIndexs": [
             "2",
             "3",
             "8",
             "9"
-          ],
-          "index": 6,
-          "isStart": false,
-          "x": -156.521,
-          "y": -101.739,
-          "zIndex": 6
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 7,
+          "isStart": false,
+          "x": 148.6956,
+          "y": -109.565,
+          "zIndex": 7,
           "allowInOutIndexs": [
             "4",
             "5",
             "8",
             "10"
-          ],
-          "index": 7,
-          "isStart": false,
-          "x": 148.6956,
-          "y": -109.565,
-          "zIndex": 7
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 8,
+          "isStart": false,
+          "x": -2.60869,
+          "y": -208.695,
+          "zIndex": 8,
           "allowInOutIndexs": [
             "6",
             "7",
             "9",
             "10"
-          ],
-          "index": 8,
-          "isStart": false,
-          "x": -2.60869,
-          "y": -208.695,
-          "zIndex": 8
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 9,
+          "isStart": false,
+          "x": -258.26,
+          "y": -393.913,
+          "zIndex": 9,
           "allowInOutIndexs": [
             "2",
             "6",
             "8",
             "10"
-          ],
-          "index": 9,
-          "isStart": false,
-          "x": -258.26,
-          "y": -393.913,
-          "zIndex": 9
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 10,
+          "isStart": false,
+          "x": 242.6086,
+          "y": -388.695,
+          "zIndex": 10,
           "allowInOutIndexs": [
             "5",
             "7",
             "8",
             "9"
-          ],
-          "index": 10,
-          "isStart": false,
-          "x": 242.6086,
-          "y": -388.695,
-          "zIndex": 10
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -6598,10 +6602,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_27",
-      "itemName": "pass_27",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -6610,168 +6610,172 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_28",
+      "itemName": "pass_28",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -106.956,
           "y": 349.5652,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 2,
           "isStart": false,
           "x": -310.434,
           "y": 140.8695,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "7"
-          ],
           "index": 3,
           "isStart": false,
           "x": 117.3913,
           "y": 349.5652,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "4",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 4,
+          "isStart": true,
+          "x": 7.826086,
+          "y": 245.2173,
+          "zIndex": 4,
           "allowInOutIndexs": [
             "1",
             "3",
             "5",
             "8"
-          ],
-          "index": 4,
-          "isStart": true,
-          "x": 7.826086,
-          "y": 245.2173,
-          "zIndex": 4
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 5,
+          "isStart": false,
+          "x": -208.695,
+          "y": 39.13042565217388,
+          "zIndex": 5,
           "allowInOutIndexs": [
             "2",
             "4",
             "6",
             "9"
-          ],
-          "index": 5,
-          "isStart": false,
-          "x": -208.695,
-          "y": 39.13042565217388,
-          "zIndex": 5
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "10"
-          ],
           "index": 6,
           "isStart": false,
           "x": -315.652,
           "y": -73.0434,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "5",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 331.3043,
           "y": 138.2608,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "3",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 8,
+          "isStart": false,
+          "x": 224.3478,
+          "y": 33.91304,
+          "zIndex": 8,
           "allowInOutIndexs": [
             "7",
             "9",
             "4",
             "11"
-          ],
-          "index": 8,
-          "isStart": false,
-          "x": 224.3478,
-          "y": 33.91304,
-          "zIndex": 8
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "8"
-          ],
           "index": 9,
           "isStart": false,
           "x": 2.608695,
           "y": -182.608,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "13"
-          ],
           "index": 10,
           "isStart": false,
           "x": -172.173,
           "y": -224.347,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "6",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "12"
-          ],
           "index": 11,
           "isStart": false,
           "x": 331.3043,
           "y": -73.0434,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "8",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "11",
-            "13"
-          ],
           "index": 12,
           "isStart": false,
           "x": 185.2173,
           "y": -226.956,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "11",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "10",
-            "12"
-          ],
           "index": 13,
           "isStart": false,
           "x": 10.43478,
           "y": -393.913,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "10",
+            "12"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -6951,10 +6955,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_28",
-      "itemName": "pass_28",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -6963,154 +6963,158 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_29",
+      "itemName": "pass_29",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": 13.04347,
           "y": 393.9129,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4"
-          ],
           "index": 2,
           "isStart": false,
           "x": -159.13,
           "y": 216.5217,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": 174.7826,
           "y": 224.3478,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -166.956,
           "y": -33.913,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "10"
-          ],
           "index": 5,
           "isStart": false,
           "x": 182.6086,
           "y": -31.3043,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "7"
-          ],
           "index": 6,
           "isStart": false,
           "x": -302.608,
           "y": -276.521,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "4",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8",
-            "11"
-          ],
           "index": 7,
           "isStart": true,
           "x": -153.913,
           "y": -281.739,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "8",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 8,
+          "isStart": false,
+          "x": 0,
+          "y": -284.347,
+          "zIndex": 8,
           "allowInOutIndexs": [
             "7",
             "9",
             "11",
             "12"
-          ],
-          "index": 8,
-          "isStart": false,
-          "x": 0,
-          "y": -284.347,
-          "zIndex": 8
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "10",
-            "12"
-          ],
           "index": 9,
           "isStart": false,
           "x": 159.1304,
           "y": -281.739,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "8",
+            "10",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "9"
-          ],
           "index": 10,
           "isStart": false,
           "x": 320.8694956521739,
           "y": -279.13,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "5",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "8"
-          ],
           "index": 11,
           "isStart": false,
           "x": -75.6521,
           "y": -404.347,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "7",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "8",
-            "9"
-          ],
           "index": 12,
           "isStart": false,
           "x": 75.65217,
           "y": -406.95639130434785,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "8",
+            "9"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -7270,10 +7274,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_29",
-      "itemName": "pass_29",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -7282,9 +7282,18 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_30",
+      "itemName": "pass_30",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
+          "index": 1,
+          "isStart": true,
+          "x": 2.608695,
+          "y": 161.7391,
+          "zIndex": 1,
           "allowInOutIndexs": [
             "2",
             "4",
@@ -7294,180 +7303,175 @@
             "12",
             "13",
             "15"
-          ],
-          "index": 1,
-          "isStart": true,
-          "x": 2.608695,
-          "y": 161.7391,
-          "zIndex": 1
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -193.043,
           "y": 289.5652,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 3,
           "isStart": false,
           "x": -313.043,
           "y": 226.9565,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 4,
           "isStart": false,
           "x": -300,
           "y": 46.95652,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": -313.043,
           "y": -224.347,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 6,
           "isStart": false,
           "x": -206.086,
           "y": -198.26,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": -146.086,
           "y": -294.782,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": -57.391304347826065,
           "y": -54.7826,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "1",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "10"
-          ],
           "index": 9,
           "isStart": false,
           "x": 62.60869,
           "y": -57.3913,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "1",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "9",
-            "11"
-          ],
           "index": 10,
           "isStart": false,
           "x": 135.6521,
           "y": -284.347,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "9",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "10",
-            "12"
-          ],
           "index": 11,
           "isStart": false,
           "x": 211.3043,
           "y": -203.478,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "10",
+            "12"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "11"
-          ],
           "index": 12,
           "isStart": false,
           "x": 320.8695,
           "y": -221.739,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "1",
+            "11"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "14"
-          ],
           "index": 13,
           "isStart": false,
           "x": 320.8695,
           "y": 49.56521,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "1",
+            "14"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "13",
-            "15"
-          ],
           "index": 14,
           "isStart": false,
           "x": 331.3043,
           "y": 219.1304,
-          "zIndex": 14
+          "zIndex": 14,
+          "allowInOutIndexs": [
+            "13",
+            "15"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "14"
-          ],
           "index": 15,
           "isStart": false,
           "x": 208.6956,
           "y": 286.9565,
-          "zIndex": 15
+          "zIndex": 15,
+          "allowInOutIndexs": [
+            "1",
+            "14"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -7667,10 +7671,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_30",
-      "itemName": "pass_30",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -7679,130 +7679,134 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_31",
+      "itemName": "pass_31",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": true,
           "x": 164.3478,
           "y": 333.913,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 2,
           "isStart": false,
           "x": 339.1304,
           "y": 333.913,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "7"
-          ],
           "index": 3,
           "isStart": false,
           "x": -140.869,
           "y": 143.4782,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "4",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 4,
+          "isStart": false,
+          "x": 159.1304,
+          "y": 148.6956,
+          "zIndex": 4,
           "allowInOutIndexs": [
             "1",
             "3",
             "5",
             "8"
-          ],
-          "index": 4,
-          "isStart": false,
-          "x": 159.1304,
-          "y": 148.6956,
-          "zIndex": 4
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 5,
           "isStart": false,
           "x": 341.7391,
           "y": 153.913,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "9"
-          ],
           "index": 6,
           "isStart": false,
           "x": -339.13,
           "y": -164.347,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "7",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 7,
+          "isStart": false,
+          "x": -143.478,
+          "y": -161.739,
+          "zIndex": 7,
           "allowInOutIndexs": [
             "3",
             "6",
             "8",
             "10"
-          ],
-          "index": 7,
-          "isStart": false,
-          "x": -143.478,
-          "y": -161.739,
-          "zIndex": 7
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": 161.7391,
           "y": -159.13,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "4",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "10"
-          ],
           "index": 9,
           "isStart": false,
           "x": -333.913,
           "y": -352.173,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "6",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "9"
-          ],
           "index": 10,
           "isStart": false,
           "x": -143.478,
           "y": -344.347,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "7",
+            "9"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -7942,10 +7946,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_31",
-      "itemName": "pass_31",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -7954,78 +7954,82 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_32",
+      "itemName": "pass_32",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": -133.043,
           "y": 263.4782,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4"
-          ],
           "index": 2,
           "isStart": false,
           "x": 130.4347,
           "y": 216.5217,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": -140.869,
           "y": 57.3913,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": 133.0434,
           "y": 5.217391,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "4",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": -138.26,
           "y": -127.826,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5"
-          ],
           "index": 6,
           "isStart": true,
           "x": -138.26,
           "y": -341.739,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "5"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -8105,10 +8109,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_32",
-      "itemName": "pass_32",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -8117,164 +8117,168 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_33",
+      "itemName": "pass_33",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -78.2608,
           "y": 326.0869,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": 101.7391,
           "y": 328.695595652174,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "5"
-          ],
           "index": 3,
           "isStart": false,
           "x": 281.7391,
           "y": 323.4782,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -125.217,
           "y": 78.26086,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "10"
-          ],
           "index": 5,
           "isStart": false,
           "x": 237.3913,
           "y": 78.26086,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "7",
-            "9"
-          ],
           "index": 6,
           "isStart": true,
           "x": -180,
           "y": -161.739,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "4",
+            "7",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": -268.695,
           "y": -112.173,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "7",
-            "9"
-          ],
           "index": 8,
           "isStart": false,
           "x": -365.217,
           "y": -164.347,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "7",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8"
-          ],
           "index": 9,
           "isStart": false,
           "x": -271.304,
           "y": -219.13,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "11",
-            "13"
-          ],
           "index": 10,
           "isStart": false,
           "x": 190.4347,
           "y": -164.347,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "5",
+            "11",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "12",
-            "10"
-          ],
           "index": 11,
           "isStart": false,
           "x": 99.13043,
           "y": -106.956,
-          "zIndex": 11
+          "zIndex": 11,
+          "allowInOutIndexs": [
+            "12",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "11",
-            "13"
-          ],
           "index": 12,
           "isStart": false,
           "x": 2.608695,
           "y": -159.13,
-          "zIndex": 12
+          "zIndex": 12,
+          "allowInOutIndexs": [
+            "11",
+            "13"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "10",
-            "12"
-          ],
           "index": 13,
           "isStart": false,
           "x": 99.13043,
           "y": -219.13,
-          "zIndex": 13
+          "zIndex": 13,
+          "allowInOutIndexs": [
+            "10",
+            "12"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -8434,10 +8438,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_33",
-      "itemName": "pass_33",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -8446,88 +8446,92 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_34",
+      "itemName": "pass_34",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
+          "index": 1,
+          "isStart": false,
+          "x": -310.434,
+          "y": 62.60869,
+          "zIndex": 1,
           "allowInOutIndexs": [
             "2",
             "3",
             "4",
             "5"
-          ],
-          "index": 1,
-          "isStart": false,
-          "x": -310.434,
-          "y": 62.60869,
-          "zIndex": 1
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3",
-            "6"
-          ],
           "index": 2,
           "isStart": true,
           "x": 213.913,
           "y": 234.7826,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 3,
+          "isStart": false,
+          "x": 49.56521,
+          "y": 65.21739,
+          "zIndex": 3,
           "allowInOutIndexs": [
             "1",
             "2",
             "6",
             "4"
-          ],
-          "index": 3,
-          "isStart": false,
-          "x": 49.56521,
-          "y": 65.21739,
-          "zIndex": 3
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "4",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": -315.652,
           "y": -297.391,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 4,
+          "isStart": false,
+          "x": -135.652,
+          "y": -114.782,
+          "zIndex": 4,
           "allowInOutIndexs": [
             "1",
             "3",
             "5",
             "6"
-          ],
-          "index": 4,
-          "isStart": false,
-          "x": -135.652,
-          "y": -114.782,
-          "zIndex": 4
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 6,
+          "isStart": false,
+          "x": 49.56521,
+          "y": -300,
+          "zIndex": 6,
           "allowInOutIndexs": [
             "2",
             "3",
             "4",
             "5"
-          ],
-          "index": 6,
-          "isStart": false,
-          "x": 49.56521,
-          "y": -300,
-          "zIndex": 6
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -8657,10 +8661,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_34",
-      "itemName": "pass_34",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -8669,118 +8669,122 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_35",
+      "itemName": "pass_35",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -7.82608,
           "y": 401.7391,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3",
-            "8"
-          ],
           "index": 2,
           "isStart": true,
           "x": -336.521,
           "y": 73.04347,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4",
-            "5",
-            "6"
-          ],
           "index": 3,
           "isStart": false,
           "x": -28.6956,
           "y": 65.21739,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "4",
+            "5",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3",
-            "9"
-          ],
           "index": 4,
           "isStart": false,
           "x": 315.6521,
           "y": 70.43478,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "7"
-          ],
           "index": 5,
           "isStart": false,
           "x": -182.608,
           "y": -80.8695,
-          "zIndex": 5
-        },
-        {
-          "typeName": "itemPoint",
+          "zIndex": 5,
           "allowInOutIndexs": [
             "3",
             "7"
-          ],
+          ]
+        },
+        {
+          "typeName": "itemPoint",
           "index": 6,
           "isStart": false,
           "x": 125.2173,
           "y": -83.4782,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "6"
-          ],
           "index": 7,
           "isStart": false,
           "x": -33.913,
           "y": -226.956,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "5",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "9"
-          ],
           "index": 8,
           "isStart": false,
           "x": -339.13,
           "y": -365.217,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "2",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "8"
-          ],
           "index": 9,
           "isStart": false,
           "x": 320.8695,
           "y": -360,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "4",
+            "8"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -8910,10 +8914,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_35",
-      "itemName": "pass_35",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -8922,80 +8922,84 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_36",
+      "itemName": "pass_36",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -263.478,
           "y": 339.1304,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3",
-            "5"
-          ],
           "index": 2,
           "isStart": true,
           "x": 10.43478,
           "y": 276.5217,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "6"
-          ],
           "index": 3,
           "isStart": false,
           "x": 279.1304,
           "y": 333.913,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": -268.695,
           "y": -247.826,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": 7.826086,
           "y": -313.043,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 6,
           "isStart": false,
           "x": 284.3478,
           "y": -247.826,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -9085,10 +9089,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_36",
-      "itemName": "pass_36",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -9097,90 +9097,94 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_37",
+      "itemName": "pass_37",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "7"
-          ],
           "index": 1,
           "isStart": true,
           "x": -305.217,
           "y": 216.5217,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 2,
           "isStart": false,
           "x": -106.956,
           "y": 36.52173,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "4"
-          ],
           "index": 3,
           "isStart": false,
           "x": 15.65217,
           "y": 375.6521,
-          "zIndex": 3
+          "zIndex": 3,
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "5"
-          ],
           "index": 4,
           "isStart": false,
           "x": 135.6521,
           "y": 33.91304,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "6"
-          ],
           "index": 5,
           "isStart": false,
           "x": 336.5217,
           "y": 219.1304,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 6,
           "isStart": false,
           "x": 250.4347,
           "y": -300,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "6"
-          ],
           "index": 7,
           "isStart": false,
           "x": -221.739,
           "y": -300,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "1",
+            "6"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -9270,10 +9274,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_37",
-      "itemName": "pass_37",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -9282,100 +9282,104 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_38",
+      "itemName": "pass_38",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 1,
           "isStart": false,
           "x": 10.43478,
           "y": 383.4782,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 2,
+          "isStart": false,
+          "x": -229.565,
+          "y": 140.8695,
+          "zIndex": 2,
           "allowInOutIndexs": [
             "1",
             "3",
             "4",
             "5"
-          ],
-          "index": 2,
-          "isStart": false,
-          "x": -229.565,
-          "y": 140.8695,
-          "zIndex": 2
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 3,
+          "isStart": false,
+          "x": 253.0434,
+          "y": 146.0869,
+          "zIndex": 3,
           "allowInOutIndexs": [
             "1",
             "2",
             "4",
             "7"
-          ],
-          "index": 3,
-          "isStart": false,
-          "x": 253.0434,
-          "y": 146.0869,
-          "zIndex": 3
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 4,
+          "isStart": false,
+          "x": 13.04347,
+          "y": -7.82608,
+          "zIndex": 4,
           "allowInOutIndexs": [
             "2",
             "3",
             "5",
             "7"
-          ],
-          "index": 4,
-          "isStart": false,
-          "x": 13.04347,
-          "y": -7.82608,
-          "zIndex": 4
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 5,
+          "isStart": true,
+          "x": -234.782,
+          "y": -148.695,
+          "zIndex": 6,
           "allowInOutIndexs": [
             "2",
             "4",
             "7",
             "8"
-          ],
-          "index": 5,
-          "isStart": true,
-          "x": -234.782,
-          "y": -148.695,
-          "zIndex": 6
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 7,
+          "isStart": false,
+          "x": 253.0434,
+          "y": -159.13,
+          "zIndex": 7,
           "allowInOutIndexs": [
             "3",
             "4",
             "5",
             "8"
-          ],
-          "index": 7,
-          "isStart": false,
-          "x": 253.0434,
-          "y": -159.13,
-          "zIndex": 7
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": 10.43478,
           "y": -386.086,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -9515,10 +9519,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_38",
-      "itemName": "pass_38",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -9527,56 +9527,60 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_39",
+      "itemName": "pass_39",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3",
-            "4"
-          ],
           "index": 1,
           "isStart": false,
           "x": -294.782,
           "y": 213.913,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3",
-            "4"
-          ],
           "index": 2,
           "isStart": true,
           "x": 315.6521,
           "y": 213.913,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "4"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "2"
-          ],
           "index": 3,
           "isStart": false,
           "x": 10.43478,
           "y": 49.56521,
-          "zIndex": 3
-        },
-        {
-          "typeName": "itemPoint",
+          "zIndex": 3,
           "allowInOutIndexs": [
             "1",
             "2"
-          ],
+          ]
+        },
+        {
+          "typeName": "itemPoint",
           "index": 4,
           "isStart": false,
           "x": 15.65217,
           "y": -323.478,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "1",
+            "2"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -9646,10 +9650,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_39",
-      "itemName": "pass_39",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",
@@ -9658,128 +9658,132 @@
       ]
     },
     {
+      "index": 0,
+      "passName": "pass_40",
+      "itemName": "pass_40",
+      "isPlay": true,
       "passData": [
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "9"
-          ],
           "index": 1,
           "isStart": false,
           "x": -106.95569565217392,
           "y": 365.21730434782603,
-          "zIndex": 1
+          "zIndex": 1,
+          "allowInOutIndexs": [
+            "2",
+            "9"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "10"
-          ],
           "index": 2,
           "isStart": true,
           "x": 127.826,
           "y": 370.4347,
-          "zIndex": 2
+          "zIndex": 2,
+          "allowInOutIndexs": [
+            "1",
+            "10"
+          ]
         },
         {
           "typeName": "itemPoint",
+          "index": 3,
+          "isStart": false,
+          "x": 18.26086,
+          "y": 93.91304,
+          "zIndex": 3,
           "allowInOutIndexs": [
             "9",
             "10",
             "4",
             "5"
-          ],
-          "index": 3,
-          "isStart": false,
-          "x": 18.26086,
-          "y": 93.91304,
-          "zIndex": 3
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "6"
-          ],
           "index": 4,
           "isStart": false,
           "x": -75.6521,
           "y": -104.347,
-          "zIndex": 4
+          "zIndex": 4,
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "3",
-            "8"
-          ],
           "index": 5,
           "isStart": false,
           "x": 106.9565,
           "y": -99.1304,
-          "zIndex": 5
+          "zIndex": 5,
+          "allowInOutIndexs": [
+            "3",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "4",
-            "7"
-          ],
           "index": 6,
           "isStart": false,
           "x": -198.26,
           "y": -357.391,
-          "zIndex": 6
+          "zIndex": 6,
+          "allowInOutIndexs": [
+            "4",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "6",
-            "8"
-          ],
           "index": 7,
           "isStart": false,
           "x": 7.826086,
           "y": -357.391,
-          "zIndex": 7
+          "zIndex": 7,
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "5",
-            "7"
-          ],
           "index": 8,
           "isStart": false,
           "x": 234.7826,
           "y": -357.391,
-          "zIndex": 8
+          "zIndex": 8,
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "1",
-            "3"
-          ],
           "index": 9,
           "isStart": false,
           "x": -44.3478,
           "y": 226.9565,
-          "zIndex": 9
+          "zIndex": 9,
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ]
         },
         {
           "typeName": "itemPoint",
-          "allowInOutIndexs": [
-            "2",
-            "3"
-          ],
           "index": 10,
           "isStart": false,
           "x": 80.86956,
           "y": 232.1739,
-          "zIndex": 10
+          "zIndex": 10,
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ]
         },
         {
           "typeName": "itemLineBG",
@@ -9909,10 +9913,6 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
-      "passName": "pass_40",
-      "itemName": "pass_40",
-      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",

@@ -13,7 +13,7 @@ import {
     DialogType,
     ItemName,
     ActivityType,
-    ActivityUIType, ItemPreType, PassItemType, balloonType
+    ActivityUIType, ItemPreType, PassItemType, balloonName
 } from "./System/Type/enums";
 import Api from "./System/api/api";
 import GameSetting, {gameModeType} from "./System/mode/gameSetting";
@@ -140,6 +140,7 @@ export default class Helloworld extends cc.Component {
         load["passjson"] = "json/pass"
         load["passSettingjson"] = "json/passSetting"
         load["passData"] = "json/passData"
+        load["rubberjson"] = "json/rubber"
 
 
         // load["passpager"] = "json/passpager"
@@ -500,8 +501,8 @@ export default class Helloworld extends cc.Component {
         let itemPreType = this.initItemPreType()
         this.addList(load, itemPreType)
 
-        let initBalloonType = this.initBalloonType()
-        this.addList(load, initBalloonType)
+        let initBalloonName = this.initBalloonName()
+        this.addList(load, initBalloonName)
 
         let sound = this.initSound()
         this.addList(load, sound)
@@ -523,13 +524,14 @@ export default class Helloworld extends cc.Component {
         }
         return load
     }
-    initBalloonType(){
+    initBalloonName(){
         let load = {}
         // load["GameMenuActivity"] = "activity/GameMenuActivity"
         // load["GameActivity"] = "activity/GameActivity"
         // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
-        for (let itemPreType in balloonType) {
-            load[balloonType[itemPreType]] = "lineSkin/" + balloonType[itemPreType]
+        for (let itemPreType in balloonName) {
+            load["lineSkin_"+balloonName[itemPreType]] = "lineSkin/" + balloonName[itemPreType]
+            load["shopBig_"+balloonName[itemPreType]] = "shopBig/" + balloonName[itemPreType]
         }
         return load
     }

@@ -165,6 +165,7 @@ export enum ItemPreType {
     打印吐司 = "ToastItem",
     扎气球条目 = "itemBalloon",
     商品页布局 = "itemShopLayou",
+    商品页条目 = "itemShopItem",
     金币条目 = "itemGold",
     爆炸条目 = "itemBoom",
     加钱 = "addGem",
@@ -246,10 +247,38 @@ export enum PassItemType {
     编辑关卡 = "passEditor",
 }
 
-export enum balloonType {
+export enum balloonName {
+    fan_1= "fan_1",
+    fan_2= "fan_2",
+    fan_3= "fan_3",
+    fan_4= "fan_4",
+    fan_5 ="fan_5",
+    fan_6= "fan_6",
+    fan_7= "fan_7",
+    fan_8= "fan_8",
+    fan_9= "fan_9",
+    fan_10= "fan_10",
+    fan_11= "fan_11",
+    fan_12= "fan_12",
+    fan_13= "fan_13",
 
-    fan_5 = "fan_5",
+
+    ma_1= "ma_1",
+    ma_2= "ma_2",
+    ma_3= "ma_3",
+    ma_4= "ma_4",
+    ma_5= "ma_5",
+    ma_6= "ma_6",
+    ma_7= "ma_7",
+    ma_8= "ma_8",
+    ma_9= "ma_9",
 
 }
+export enum balloonType {
+   马卡龙 = "0",
+   凡尔赛 = "1",
+}
+
+
 
 

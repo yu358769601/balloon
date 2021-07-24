@@ -341,4 +341,23 @@ export default class Utils extends cc.Component {
         }
         return points;
     }
+
+    // Utils.arr1to2([],6)
+    //一维数组转二维数组
+    static arr1to2(oldArr,lenCount) {
+        // let objArray = [{a: 1}, {b: 2}, {c: 3}, {d: 4}, {e: 5}, {f: 6}, {g: 7}];
+        let objArray = oldArr;
+        let len = objArray.length;
+        // let n = 4; //假设每行显示4个
+        let n = lenCount; //假设每行显示4个
+        let lineNum = len % lenCount === 0 ? len / lenCount : Math.floor((len / lenCount) + 1);
+        let res = [];
+        for (let i = 0; i < lineNum; i++) {
+            let temp = objArray.slice(i * n, i * n + n);
+            res.push(JSON.parse(JSON.stringify(temp)));
+        }
+
+        return res
+    }
+
 }

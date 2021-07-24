@@ -12,7 +12,7 @@ import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Vec2 = cc.Vec2;
 import Size = cc.Size;
 import ItemBase from "./itemBase";
-import {balloonType, ItemPreType} from "../System/Type/enums";
+import {balloonName, balloonType, ItemPreType} from "../System/Type/enums";
 import Utils from "../System/Utils/Utils";
 import UtilsNode from "../System/Utils/UtilsNode";
 import LoadManage from "../System/Load/LoadManage";
@@ -123,7 +123,7 @@ export default class ItemLineBG extends ItemBase {
             this.中距离.opacity = 255
 
 
-        let balloonSkin =  await  LoadManage.getSpriteForName(balloonType.fan_5)
+        let balloonSkin =  await  LoadManage.getSpriteForName("lineSkin_"+balloonName.fan_5)
             this.中皮肤.getComponent(cc.Sprite).spriteFrame = balloonSkin
         }else if (this.中距离.opacity == 255) {
             ccLog.log("中距离设置多长该爆炸了")

@@ -16,6 +16,7 @@ import {ItemName, ItemPreType} from "../System/Type/enums";
 import ChannelSelectCheckPointViewPagerDialog
     from "../channel/channelSelectCheckPointViewPagerDialog";
 import GameSetting, {passModeType} from "../System/mode/gameSetting";
+import GetNode, {GetNodeType} from "../System/Utils/getNode";
 
 const {ccclass, property} = cc._decorator;
 
@@ -104,6 +105,9 @@ export default class SelectCheckPointViewPagerDialog extends BaseDialog {
     initCallback(callbacks) {
 
     }
+
+    listNode : cc.Node [] = []
+
     async setData(data) {
         this.data = data
         this.initView()
@@ -115,18 +119,8 @@ export default class SelectCheckPointViewPagerDialog extends BaseDialog {
         //
 
 
-        for (let i = 0; i < 2; i++) {
-                let itemPager = await UtilsNode.getNodeNoParent(ItemPreType.商品页布局);
 
-                itemPager.getComponent(ItemPreType.商品页布局).setData({
-                 item : {},
-                 itemPassPager : i
-                })
-                Emitter.fire("onAddPageView",itemPager)
-        }
-
-
-
+        this.setPagerView(0)
 
 
         // this.scrollViewtest.setData(data)
@@ -151,18 +145,59 @@ export default class SelectCheckPointViewPagerDialog extends BaseDialog {
 
         // Emitter.fire("onJumpIndex",data.data.pass.pass.pager)
     }
+
+    async setPagerView(index){
+
+        ccLog.log("原始数据是此时用来设置接下来显示的状态  ",this.data.list[index])
+
+
+
+
+
+        Emitter.fire("onRemoveAllPages")
+      await  Utils.setTimerOnce(this,0.01)
+
+
+        ccLog.log("切换类型的数组 ","现在类型",index,"切换数组的 所有类型",this.data)
+
+        let arr1to2 = Utils.arr1to2(this.data.list[index],6)
+        ccLog.log("切换类型的数组 ","调整之后的",arr1to2)
+
+
+
+
+        for (let i = 0; i < arr1to2.length; i++) {
+            let itemPager = await UtilsNode.getNodeNoParent(ItemPreType.商品页布局);
+
+            itemPager.getComponent(ItemPreType.商品页布局).setData({
+                list : arr1to2[i],
+                itemPassPager : i
+            })
+            Emitter.fire("onAddPageView",itemPager)
+        }
+    }
+
+
+
     initView(){
-        let data
+        // let data
         // data = {
-        //     type: ControlNodeType.纯查找,
-        //     otherData: "关卡条目父节点",
-        //     parentNode: this.node,
+        //     type: GetNodeType.纯查找,
+        //     otherData: "商店_条目类型0",
+        //     parentNode: this.node
         // }
-        // this.关卡条目父节点 = ControlNode.getNode(data)
-
-
-
-
+        // this.商店_条目类型0 = GetNode.getNode(data)
+        //
+        // data = {
+        //     type: GetNodeType.纯查找,
+        //     otherData: "商店_条目类型1",
+        //     parentNode: this.node
+        // }
+        // this.商店_条目类型1 = GetNode.getNode(data)
+        //
+        //
+        // this.listNode.push(this.商店_条目类型0)
+        // this.listNode.push(this.商店_条目类型1)
       // this.专属渠道 = this.getComponent("channelSelectCheckPointViewPagerDialog")
       // this.专属渠道.init(this)
 

@@ -9,275 +9,137 @@
 
   "list" : [
     {
+      "name" : "ma_1",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
+    {
+      "name" : "ma_2",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
+    {
+      "name" : "ma_3",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
+    {
+      "name" : "ma_4",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
+    {
+      "name" : "ma_5",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
+    {
+      "name" : "ma_6",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
+    {
+      "name" : "ma_7",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
+    {
+      "name" : "ma_8",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
+    {
+      "name" : "ma_9",
+      "type" : 0,
+      "gold" : 200,
+      "isAd" : false
+    },
 
-      "index" : 0,
-      "isPass": true,
-      "type" : 2,
-      "name" : "sj_1"
-    },
     {
-      "index" : 1,
-      "isPass": true,
-      "type" : 2,
-      "name" : "sj_2"
-    },
-    {
-      "index" : 2,
-      "isPass": true,
-      "type" : 2,
-      "name" : "sj_3"
-    },
-    {
-      "index" : 3,
-      "isPass": true,
-      "type" : 2,
-      "name" : "sj_4"
-    },
-    {
-      "index" : 4,
-      "isPass": true,
+      "name" : "fan_1",
       "type" : 1,
-      "name" : "sj_5"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 5,
-      "isPass": true,
+      "name" : "fan_2",
       "type" : 1,
-      "name" : "sj_6"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 6,
-      "isPass": true,
+      "name" : "fan_3",
       "type" : 1,
-      "name" : "sj_7"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 7,
-      "isPass": true,
+      "name" : "fan_4",
       "type" : 1,
-      "name" : "sj_8"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 8,
-      "isPass": true,
-      "type" : 0,
-      "name" : "sj_9"
-    },
-    {
-      "index" : 9,
-      "isPass": true,
-      "type" : 0,
-      "name" : "sj_10"
-    },
-    {
-      "index" : 10,
-      "isPass": true,
-      "type" : 0,
-      "name" : "sj_11"
-    },
-    {
-      "index" : 11,
-      "isPass": true,
-      "type" : 0,
-      "name" : "sj_12"
-    },
-    {
-      "index" : 12,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_1"
-    },
-    {
-      "index" : 13,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_2"
-    },
-    {
-      "index" : 14,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_3"
-    },
-    {
-      "index" : 15,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_4"
-    },
-    {
-      "index" : 16,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_5"
-    },
-    {
-      "index" : 17,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_6"
-    },
-    {
-      "index" : 18,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_9"
-    },
-    {
-      "index" : 19,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_10"
-    },
-    {
-      "index" : 20,
-      "isPass": false,
-      "type" : 0,
-      "name" : "eg_11"
-    },
-    {
-      "index" : 25,
-      "isPass": false,
+      "name" : "fan_5",
       "type" : 1,
-      "name" : "ka_1"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 26,
-      "isPass": false,
+      "name" : "fan_6",
       "type" : 1,
-      "name" : "ka_2"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 27,
-      "isPass": false,
+      "name" : "fan_7",
       "type" : 1,
-      "name" : "ka_3"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 28,
-      "isPass": false,
+      "name" : "fan_8",
       "type" : 1,
-      "name" : "ka_4"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 29,
-      "isPass": false,
+      "name" : "fan_9",
       "type" : 1,
-      "name" : "ka_5"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 30,
-      "isPass": false,
+      "name" : "fan_10",
       "type" : 1,
-      "name" : "ka_6"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 31,
-      "isPass": false,
+      "name" : "fan_11",
       "type" : 1,
-      "name" : "ka_7"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 32,
-      "isPass": false,
+      "name" : "fan_12",
       "type" : 1,
-      "name" : "ka_8"
+      "gold" : 200,
+      "isAd" : true
     },
     {
-      "index" : 33,
-      "isPass": false,
+      "name" : "fan_13",
       "type" : 1,
-      "name" : "ka_9"
-    },
-    {
-      "index" : 34,
-      "isPass": false,
-      "type" : 1,
-      "name" : "ka_10"
-    },
-    {
-      "index" : 35,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_1"
-    },
-    {
-      "index" : 36,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_2"
-    },
-    {
-      "index" : 37,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_3"
-    },
-    {
-      "index" : 38,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_4"
-    },
-    {
-      "index" : 39,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_5"
-    },
-    {
-      "index" : 40,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_6"
-    },
-    {
-      "index" : 41,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_7"
-    },
-    {
-      "index" : 42,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_8"
-    },
-    {
-      "index" : 44,
-      "isPass": false,
-      "type" : 1,
-      "name" : "mr_1"
-    },
-    {
-      "index" : 45,
-      "isPass": true,
-      "type" : 1,
-      "name" : "sj_13"
-    },
-    {
-      "index" : 46,
-      "isPass": true,
-      "type" : 1,
-      "name" : "sj_14"
-    },
-    {
-      "index" : 47,
-      "isPass": true,
-      "type" : 0,
-      "name" : "sj_15"
-    },
-    {
-      "index" : 48,
-      "isPass": true,
-      "type" : 0,
-      "name" : "sj_16"
-    },
-    {
-      "index" : 49,
-      "isPass": false,
-      "type" : 2,
-      "name" : "cr_10"
+      "gold" : 200,
+      "isAd" : true
     }
   ]
 }
