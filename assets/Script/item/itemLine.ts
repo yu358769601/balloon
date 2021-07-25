@@ -219,18 +219,28 @@ export default class ItemLine extends ItemBase {
 
     }
 
-    onJoystick(selfName, direction) {
-        let moveCount = 1
-        ccLog.log("现在棍子的 面向角度", this.node.angle, direction)
+    onJoystick(selfName, direction,_moveCount,adddelta) {
+        let moveCount = _moveCount/3
+        ccLog.log("现在棍子的 面向角度", this.node.angle, direction,"偏移量",moveCount)
 
-        if (this.node.angle == 0) {
+        if (this.node.angle <= 0) {
             this.node.angle = 360
         }
         if (this.node.angle > 360) {
             this.node.angle = 1
         }
 
-
+        // let angle =  (cc.misc.radiansToDegrees(Math.atan2(_moveCount.y,_moveCount.x))) * 1;
+        let adddeltaangle =  (cc.misc.radiansToDegrees(Math.atan2(adddelta.y,adddelta.x))) * 1;
+        ccLog.log("本次增加的角度",adddeltaangle)
+        // ccLog.log("测试棍子"," 目的角度 ",angle," 当前角度 ",this.node.angle,"相差角度",angle-this.node.angle)
+        // let move = angle-this.node.angle
+        // let moves = 5
+        // if (Math.abs(move)>=45) {
+        //     moves = 20
+        // }
+        // this.node.angle +=(move)/moves
+        // return
         // 右 0 上 90   左 180 下 270
         switch (direction) {
             case JoystickTypes.左:
@@ -510,7 +520,7 @@ export default class ItemLine extends ItemBase {
             //
             // ccLog.log("角度问题 3 ",this.node.angle)
 
-
+            // this.node.angle = (cc.misc.radiansToDegrees(Math.atan2(this.moveDir.y, this.moveDir.x))) * 1;
         }
 
 

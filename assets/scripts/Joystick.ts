@@ -207,11 +207,11 @@ export default class Joystick extends cc.Component {
       if (endX  < 0){
         //向左函数
         // ccLog.log('滑动方向 左',endX);
-        Emitter.fire("onJoystick",JoystickTypes.左)
+        Emitter.fire("onJoystick",JoystickTypes.左,Math.abs(endX),delta)
       } else {
         //向右函数
         // ccLog.log('滑动方向 右',endX);
-        Emitter.fire("onJoystick",JoystickTypes.右)
+        Emitter.fire("onJoystick",JoystickTypes.右,Math.abs(endX),delta)
       }
       // if (endY  > 0){
       //   //向左函数
@@ -228,11 +228,11 @@ export default class Joystick extends cc.Component {
       if (endY  < 0){
         //向下函数
         // ccLog.log('滑动方向 下',endY);
-        Emitter.fire("onJoystick",JoystickTypes.下)
+        Emitter.fire("onJoystick",JoystickTypes.下,Math.abs(endY),delta)
       } else {
         //向上函数
         // ccLog.log('滑动方向 上',endY);
-        Emitter.fire("onJoystick",JoystickTypes.上)
+        Emitter.fire("onJoystick",JoystickTypes.上,Math.abs(endY),delta)
       }
       // if (endX  > 0){
       //   //向左函数
@@ -280,6 +280,7 @@ export default class Joystick extends cc.Component {
       speedType: speedType,
       moveDistance: p,
     });
+    // Emitter.fire("onJoystick",JoystickTypes.上,p,delta)
   }
 
   /**
