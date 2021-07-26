@@ -7,6 +7,8 @@
 
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
+import GetNode, {GetNodeType} from "../System/Utils/getNode";
+import UtilsNode from "../System/Utils/UtilsNode";
 
 const {ccclass, property} = cc._decorator;
 
@@ -19,18 +21,21 @@ export default class Victory extends cc.Component {
         this.removeEmitter()
     }
     onLoad() {
+        this.initView()
         this.removeEmitter()
         this.registerEmitter()
-
-
     }
     礼花效果 : sp.Skeleton = null
     initView(){
-        Emitter.fire("onGetNode", "礼花效果", (node) => {
 
-            this.礼花效果 = node.getComponent(sp.Skeleton)
+        let  data
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "礼花效果",
+            parentNode: this.node,
+        }
+        this.礼花效果 = GetNode.getNode(data).getComponent(sp.Skeleton)
 
-        })
     }
 
 
@@ -42,15 +47,15 @@ export default class Victory extends cc.Component {
         Emitter.remove('onVictory', this.onVictory,this)
     }
     onVictory(){
-        this.node.active = true
+        UtilsNode.show(this.node,true)
         ccLog.log("现在有东西吗",this,this.礼花效果)
         this.礼花效果.setAnimation(0,"victory",false)
     }
 
 
     start() {
-        this.initView()
-        this.node.active = false
+        // this.initView()
+        // this.node.active = false
     }
 
     // update (dt) {}

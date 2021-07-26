@@ -183,6 +183,10 @@ export enum ItemPreType {
     工具箱材料按钮 = "itemMaterialBtn",
 
     具体编辑条目提示 = "itemEditTip",
+    特效条目 = "itemEffects",
+
+
+
 }
 
 

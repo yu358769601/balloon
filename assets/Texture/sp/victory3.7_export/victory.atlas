@@ -1,0 +1,174 @@
+
+victory.png
+size: 769,159
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+color_0_color
+  rotate: true
+  xy: 718, 109
+  size: 48, 49
+  orig: 48, 49
+  offset: 0, 0
+  index: -1
+color_10_color
+  rotate: false
+  xy: 305, 5
+  size: 93, 43
+  orig: 93, 44
+  offset: 0, 0
+  index: -1
+color_11_color
+  rotate: true
+  xy: 489, 73
+  size: 84, 42
+  orig: 84, 42
+  offset: 0, 0
+  index: -1
+color_12_color
+  rotate: true
+  xy: 674, 91
+  size: 66, 41
+  orig: 67, 41
+  offset: 0, 0
+  index: -1
+color_13_color
+  rotate: true
+  xy: 718, 25
+  size: 32, 35
+  orig: 32, 35
+  offset: 0, 0
+  index: -1
+color_14_color
+  rotate: false
+  xy: 140, 2
+  size: 48, 46
+  orig: 48, 46
+  offset: 0, 0
+  index: -1
+color_15_color
+  rotate: false
+  xy: 533, 81
+  size: 68, 76
+  orig: 69, 76
+  offset: 1, 0
+  index: -1
+color_16_color
+  rotate: true
+  xy: 456, 2
+  size: 69, 76
+  orig: 69, 76
+  offset: 0, 0
+  index: -1
+color_17_color
+  rotate: false
+  xy: 718, 59
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+color_18_color
+  rotate: false
+  xy: 190, 2
+  size: 48, 46
+  orig: 48, 46
+  offset: 0, 0
+  index: -1
+color_19_color
+  rotate: true
+  xy: 661, 6
+  size: 74, 55
+  orig: 74, 55
+  offset: 0, 0
+  index: -1
+color_1_color
+  rotate: false
+  xy: 603, 82
+  size: 69, 75
+  orig: 69, 76
+  offset: 0, 1
+  index: -1
+color_20_color
+  rotate: false
+  xy: 124, 50
+  size: 107, 107
+  orig: 107, 107
+  offset: 0, 0
+  index: -1
+color_21_color
+  rotate: false
+  xy: 74, 2
+  size: 64, 44
+  orig: 64, 44
+  offset: 0, 0
+  index: -1
+color_22_color
+  rotate: false
+  xy: 534, 3
+  size: 68, 76
+  orig: 69, 76
+  offset: 1, 0
+  index: -1
+color_23_color
+  rotate: false
+  xy: 400, 9
+  size: 54, 58
+  orig: 54, 58
+  offset: 0, 0
+  index: -1
+color_2_color
+  rotate: true
+  xy: 233, 50
+  size: 107, 106
+  orig: 107, 106
+  offset: 0, 0
+  index: -1
+color_3_color
+  rotate: true
+  xy: 341, 66
+  size: 91, 54
+  orig: 91, 54
+  offset: 0, 0
+  index: -1
+color_4_color
+  rotate: true
+  xy: 604, 5
+  size: 75, 55
+  orig: 75, 55
+  offset: 0, 0
+  index: -1
+color_5_color
+  rotate: false
+  xy: 240, 4
+  size: 63, 44
+  orig: 64, 44
+  offset: 0, 0
+  index: -1
+color_6_color
+  rotate: true
+  xy: 2, 21
+  size: 136, 70
+  orig: 137, 70
+  offset: 1, 0
+  index: -1
+color_7_color
+  rotate: true
+  xy: 397, 69
+  size: 88, 41
+  orig: 88, 41
+  offset: 0, 0
+  index: -1
+color_8_color
+  rotate: true
+  xy: 74, 48
+  size: 109, 48
+  orig: 109, 48
+  offset: 0, 0
+  index: -1
+color_9_color
+  rotate: true
+  xy: 440, 73
+  size: 84, 47
+  orig: 84, 47
+  offset: 0, 0
+  index: -1

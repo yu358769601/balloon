@@ -48,7 +48,6 @@ export default class ItemShopItem extends cc.Component {
 
 
 
-
         this.setType(this.type)
 
 
@@ -78,9 +77,11 @@ export default class ItemShopItem extends cc.Component {
     initOnClick(){
         this.条目气球_使用.on(cc.Node.EventType.TOUCH_END,()=>{
                 ccLog.log("条目气球 点击使用")
+
             Emitter.fire("onShowModel",this.data.item.name)
             this.setType(ItemShopItemType.使用中的)
             Emitter.fire("onDefultItemShopItem",this.data.item.name)
+            UtilsDB.setUseRubber(this.data.item.name)
         },this)
         this.条目气球_条目.on(cc.Node.EventType.TOUCH_END,()=>{
             Emitter.fire("onShowModel",this.data.item.name)
@@ -116,6 +117,21 @@ export default class ItemShopItem extends cc.Component {
 
 
         },this)
+
+
+
+        let  useRubber = UtilsDB.getUseRubber()
+        ccLog.log("现在要设置我正在使用的 气球","本条目",this.data.item.name,"正在使用的名字",useRubber)
+        if (this.data.item.name ==useRubber.rubber ) {
+
+            Emitter.fire("onShowModel",this.data.item.name)
+            this.setType(ItemShopItemType.使用中的)
+            Emitter.fire("onDefultItemShopItem",this.data.item.name)
+            UtilsDB.setUseRubber(this.data.item.name)
+        }
+
+
+
     }
 
     lookDialogsuccessfulCallback(data){
@@ -125,6 +141,8 @@ export default class ItemShopItem extends cc.Component {
         data.data.self.setType(ItemShopItemType.使用中的)
         Emitter.fire("onDefultItemShopItem",data.data.self.data.item.name)
 
+        Emitter.fire("onVictory")
+        UtilsDB.setUseRubber(data.data.self.data.item.name)
     }
     lookDialogfailureCallback(data){
 
@@ -147,9 +165,12 @@ export default class ItemShopItem extends cc.Component {
         data.self.setType(ItemShopItemType.使用中的)
         Emitter.fire("onShowModel",data.self.data.item.name)
 
-    
+        Emitter.fire("onVictory")
 
         Emitter.fire("onDefultItemShopItem",data.self.data.item.name)
+
+        UtilsDB.setUseRubber(data.self.data.item.name)
+
     }
 
     onLoad() {
@@ -268,6 +289,7 @@ export default class ItemShopItem extends cc.Component {
 
 
 
+
         switch (this.type){
             case ItemShopItemType.需要购买的:
                 UtilsNode.show(this.条目气球_使用中,false)
@@ -304,8 +326,8 @@ export default class ItemShopItem extends cc.Component {
         ccLog.log("现在设置的类型是",type , this)
     }
 
-    
-    
+
+
 
     removeEmitter() {
         Emitter.remove('onDefultItemShopItem', this.onDefultItemShopItem, this)

@@ -531,6 +531,7 @@ export default class Helloworld extends cc.Component {
         // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
         for (let itemPreType in balloonName) {
             load["lineSkin_"+balloonName[itemPreType]] = "lineSkin/" + balloonName[itemPreType]
+            load["lineSkinItem_"+balloonName[itemPreType]] = "lineSkinItem/" + balloonName[itemPreType]
             load["shopBig_"+balloonName[itemPreType]] = "shopBig/" + balloonName[itemPreType]
         }
         return load

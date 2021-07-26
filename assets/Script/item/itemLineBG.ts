@@ -88,6 +88,7 @@ export default class ItemLineBG extends ItemBase {
 
     中距离: cc.Node = null
     中皮肤: cc.Node = null
+    对号: cc.Node = null
 
     线数字提示1 : cc.Label = null
     线数字提示2 : cc.Label = null
@@ -114,7 +115,7 @@ export default class ItemLineBG extends ItemBase {
 
         this.中距离.opacity = 250
 
-
+        this.对号.x =  this.中距离.width/2
     }
 
 
@@ -125,12 +126,23 @@ export default class ItemLineBG extends ItemBase {
 
         let balloonSkin =  await  LoadManage.getSpriteForName("lineSkin_"+balloonName.fan_5)
             this.中皮肤.getComponent(cc.Sprite).spriteFrame = balloonSkin
+
+            // UtilsNode.show(this.对号,true)
+            this.对号.angle-=this.node.angle
+            ccLog.log("我的角度",this.node.angle,"对号的角度",this.对号.angle)
+
+
         }else if (this.中距离.opacity == 255) {
             ccLog.log("中距离设置多长该爆炸了")
 
             Emitter.fire("onPlayAgainGameOverCall")
         }
     }
+
+    onDuiHao(){
+        UtilsNode.show(this.对号,true)
+    }
+
 
 
     setData(data){
@@ -270,13 +282,23 @@ export default class ItemLineBG extends ItemBase {
         }
         this.线数字提示2 = GetNode.getNode(data).getComponent(cc.Label)
 
+
+        data = {
+            type : GetNodeType.开始隐藏通过参数显示,
+            otherData : "对号",
+            parentNode : this.node
+        }
+        this.对号 = GetNode.getNode(data)
+
     }
 
 
     removeEmitter() {
+        Emitter.remove('onDuiHao', this.onDuiHao, this)
     }
 
     registerEmitter() {
+        Emitter.register('onDuiHao', this.onDuiHao, this)
     }
 
     start() {

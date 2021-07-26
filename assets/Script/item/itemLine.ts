@@ -13,6 +13,8 @@ import Vec2 = cc.Vec2;
 import Size = cc.Size;
 import {DialogType, ItemPreType} from "../System/Type/enums";
 import ItemBase from "./itemBase";
+import UtilsNode from "../System/Utils/UtilsNode";
+import Tools from "../System/Utils/Tools";
 
 const {ccclass, property} = cc._decorator;
 
@@ -481,16 +483,26 @@ export default class ItemLine extends ItemBase {
         //进入范围提示
         // sendData.self.node.getComponent("itemPoint").标记.active = true
 
-        ccLog.log("突然闯入", sendData.self.node.getComponent("itemPoint").标记.active)
+        ccLog.log("突然闯入 进入", sendData.self.node.getComponent("itemPoint").标记.active)
         if (sendData.self.node.getComponent("itemPoint").标记.active == true) {
             this.endNode = sendData.self.node
         }
 
     }
-
+    tempTimeCount : number = 0
+    tempTimeCountMax : number = 20
     onCollisionStayByControlCheckLineCollision(selfName, sendData) {
         if (sendData.self.node.getComponent("itemPoint").标记.active == true) {
             this.endNode = sendData.self.node
+            if ( this.tempTimeCount == 0) {
+                Emitter.fire("onPassItemEffects",sendData.self.node )
+            }
+            this.tempTimeCount+=1
+            if (this.tempTimeCount>this.tempTimeCountMax) {
+                Emitter.fire("onPassItemEffects",sendData.self.node )
+                this.tempTimeCount = 0
+            }
+
         }
     }
 
@@ -501,7 +513,11 @@ export default class ItemLine extends ItemBase {
 
         if (sendData.self.node.getComponent("itemPoint").标记.active == true) {
             this.endNode = null
+
         }
+        this.tempTimeCount = 0
+        Emitter.fire("onPassItemEffectsAllDie" )
+        ccLog.log("突然闯入 出去", sendData.self.node.getComponent("itemPoint").标记.active)
     }
 
     move() {

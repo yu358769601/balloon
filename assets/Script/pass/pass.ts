@@ -12,6 +12,9 @@ import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import {DialogType, ItemPreType} from "../System/Type/enums";
 import UtilsNode from "../System/Utils/UtilsNode";
 import JsonManager from "../System/manage/JsonManager";
+import Tools from "../System/Utils/Tools";
+import ItemEffects from "../item/itemEffects";
+import Utils from "../System/Utils/Utils";
 
 const {ccclass, property} = cc._decorator;
 
@@ -39,6 +42,7 @@ export default class Pass extends BasePass {
     lineNode: cc.Node = null
 
     关卡_返回按钮: cc.Node = null
+    关卡吞噬: cc.Node = null
 
     getitemNames: string[] = []
 
@@ -59,12 +63,30 @@ export default class Pass extends BasePass {
     registerEmitter() {
         Emitter.register('onGameOverCall', this.onGameOverCall, this)
         Emitter.register('onPlayAgainGameOverCall', this.onPlayAgainGameOverCall, this)
+        Emitter.register('onPassItemEffects', this.onPassItemEffects, this)
     }
 
     removeEmitter() {
         Emitter.remove('onGameOverCall', this.onGameOverCall, this)
         Emitter.remove('onPlayAgainGameOverCall', this.onPlayAgainGameOverCall, this)
+        Emitter.remove('onPassItemEffects', this.onPassItemEffects, this)
     }
+
+
+
+   async onPassItemEffects(selfName,node){
+       if (this.游乐场) {
+           let vec2 = Tools.convetOtherNodeSpace(node,this.游乐场);
+           let itemPointNode = await UtilsNode.getNode(ItemPreType.特效条目,this.游乐场)
+           // ccLog.log("有是没有啊",itemPointNode)
+           itemPointNode.setPosition(vec2)
+       }
+
+    }
+
+
+
+
 
     startGame() {
         this.startGameView()
@@ -98,7 +120,10 @@ export default class Pass extends BasePass {
 
 
     }
-    onGameOverCall(){
+   async onGameOverCall(){
+        UtilsNode.show(this.关卡吞噬,true)
+       Emitter.fire("onDuiHao")
+        await Utils.setTimerOnce(this,3)
         Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
     }
     onPlayAgainGameOverCall(){
@@ -197,6 +222,12 @@ export default class Pass extends BasePass {
             parentNode: this.node
         }
         this.关卡_返回按钮 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "关卡吞噬",
+            parentNode: this.node
+        }
+        this.关卡吞噬 = GetNode.getNode(data)
 
 
     }

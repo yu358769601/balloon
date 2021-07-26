@@ -58,142 +58,146 @@ export default class ShoppingDialog extends BaseDialog {
         this.initView()
         this.initOnClick()
 
-        this.data = [
-            {
-                name : "ma_1",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
-            {
-                name : "ma_2",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
-            {
-                name : "ma_3",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
-            {
-                name : "ma_4",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
-            {
-                name : "ma_5",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
-            {
-                name : "ma_6",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
-            {
-                name : "ma_7",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
-            {
-                name : "ma_8",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
-            {
-                name : "ma_9",
-                type : 0,
-                gold : 200,
-                isAd : false
-            },
+        // this.data = [
+        //     {
+        //         name : "ma_1",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //     {
+        //         name : "ma_2",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //     {
+        //         name : "ma_3",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //     {
+        //         name : "ma_4",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //     {
+        //         name : "ma_5",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //     {
+        //         name : "ma_6",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //     {
+        //         name : "ma_7",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //     {
+        //         name : "ma_8",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //     {
+        //         name : "ma_9",
+        //         type : 0,
+        //         gold : 200,
+        //         isAd : false
+        //     },
+        //
+        //     {
+        //         name : "fan_1",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_2",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_3",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_4",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_5",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_6",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_7",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_8",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_9",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_10",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_11",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_12",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        //     {
+        //         name : "fan_13",
+        //         type : 1,
+        //         gold : 200,
+        //         isAd : true
+        //     },
+        // ]
 
-            {
-                name : "fan_1",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_2",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_3",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_4",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_5",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_6",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_7",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_8",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_9",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_10",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_11",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_12",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-            {
-                name : "fan_13",
-                type : 1,
-                gold : 200,
-                isAd : true
-            },
-        ]
 
+        this.data = JsonManager.getRubbers()
+
+        // Emitter.fire("onVictory")
         //订单写入
         for (let i = 0; i <this.data.length ; i++) {
             this.data[i].shopPingType = 1
