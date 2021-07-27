@@ -1,4 +1,5 @@
 import ListView, {AbsAdapter} from "./ListView";
+import JsonManager from "../System/manage/JsonManager";
 
 const {ccclass, property} = cc._decorator;
 
@@ -14,11 +15,14 @@ export default class ListViewDemo extends cc.Component {
 
         //做到这里了
 
+       let rubbers = JsonManager.getRubbers()
+        // const dataSet = Array(100)
+        // for (let i = 0; i < 100; i++) {
+        //     dataSet[i] = "==" + i;
+        // }
 
-        const dataSet = Array(100)
-        for (let i = 0; i < 100; i++) {
-            dataSet[i] = "==" + i;
-        }
+        const dataSet = rubbers
+
         const adapter = new MyDataListAdapter()
         adapter.setDataSet(dataSet);
 

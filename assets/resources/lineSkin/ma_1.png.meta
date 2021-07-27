@@ -7,13 +7,17 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
-  "width": 33,
+  "width": 35,
   "height": 53,
-  "platformSettings": {},
+  "platformSettings": {
+    "default": {
+      "formats": []
+    }
+  },
   "subMetas": {
     "ma_1": {
       "ver": "1.0.4",
-      "uuid": "9b801b9d-90f4-4067-b1a0-a4998a73e5fa",
+      "uuid": "ea020dba-9416-455e-aec6-675df7671e09",
       "rawTextureUuid": "a016b5fd-6efa-4b79-81e1-4324325b47ca",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -22,14 +26,14 @@
       "offsetY": 0,
       "trimX": 0,
       "trimY": 0,
-      "width": 33,
+      "width": 35,
       "height": 53,
-      "rawWidth": 33,
+      "rawWidth": 35,
       "rawHeight": 53,
       "borderTop": 0,
       "borderBottom": 0,
-      "borderLeft": 0,
-      "borderRight": 0,
+      "borderLeft": 3,
+      "borderRight": 3,
       "subMetas": {}
     }
   }

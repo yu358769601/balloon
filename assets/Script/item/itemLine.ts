@@ -15,6 +15,9 @@ import {DialogType, ItemPreType} from "../System/Type/enums";
 import ItemBase from "./itemBase";
 import UtilsNode from "../System/Utils/UtilsNode";
 import Tools from "../System/Utils/Tools";
+import LoadManage from "../System/Load/LoadManage";
+import UtilsDB from "../System/Utils/UtilsDB";
+import Utils from "../System/Utils/Utils";
 
 const {ccclass, property} = cc._decorator;
 
@@ -74,7 +77,9 @@ export default class ItemLine extends ItemBase {
     中皮肤: cc.Node = null
     外皮: cc.Node = null
 
-
+    头皮肤: cc.Sprite = null
+    尾皮肤: cc.Sprite = null
+    尾: cc.Node = null
     private moveDir: cc.Vec2;
 
     //开始游戏
@@ -90,6 +95,17 @@ export default class ItemLine extends ItemBase {
 
     }
 
+   async onSetSkinLine(selfName,name){
+        this.中皮肤.getComponent(cc.Sprite).spriteFrame = await LoadManage.getSpriteForName("lineSkin_"+name)
+
+       let balloonSkin_1 =  await  LoadManage.getSpriteForName("lineSkinOther_"+name+'_left')
+       this.头皮肤.spriteFrame = balloonSkin_1
+       let balloonSkin_2 =  await  LoadManage.getSpriteForName("lineSkinOther_"+name+'_right')
+       this.尾皮肤.spriteFrame = balloonSkin_2
+
+
+    }
+
     //
     setData(data) {
         this.data = data
@@ -98,6 +114,9 @@ export default class ItemLine extends ItemBase {
         this.initNode()
 
         ccLog.log("setData 我是操作棍我现在的data是 ", this.data)
+        let  useRubber = UtilsDB.getUseRubber()
+        Emitter.fire("onSetSkinLine", useRubber.rubber)
+
     }
 
     initNode() {
@@ -110,7 +129,7 @@ export default class ItemLine extends ItemBase {
 
 
     //设置宽高
-    onSetWideth(selfName, data) {
+    async onSetWideth(selfName, data) {
         if (data) {
             this.groupWidthLength = data.width
             this.groupHeightLength = data.height
@@ -127,6 +146,8 @@ export default class ItemLine extends ItemBase {
         boxCollider.size = new Size(this.中距离.width, this.中距离.height)
 
 
+
+
         let newdata = {
             index2: this.index,
         }
@@ -135,6 +156,10 @@ export default class ItemLine extends ItemBase {
 
         ccLog.log("关于长度", " 整体长度 ", this.node.width, " 中距离长度 ", this.中距离.width, " 中皮肤长度 ", this.中皮肤.width, " 外皮长度 ", this.外皮.width)
 
+
+        ccLog.log("长度疑问",this.groupHeightLength*1 + this.中距离.width)
+        // await Utils.setTimerOnce(this,0.01)
+        this.尾.setPosition(this.中距离.width+this.groupWidthLength*0.5,0)
 
     }
 
@@ -188,6 +213,27 @@ export default class ItemLine extends ItemBase {
             parentNode: this.node
         }
         this.外皮 = GetNode.getNode(data)
+
+
+        data = {
+            type : GetNodeType.纯查找,
+            otherData : "头皮肤",
+            parentNode : this.node
+        }
+        this.头皮肤 = GetNode.getNode(data).getComponent(cc.Sprite)
+        data = {
+            type : GetNodeType.纯查找,
+            otherData : "尾皮肤",
+            parentNode : this.node
+        }
+        this.尾皮肤 = GetNode.getNode(data).getComponent(cc.Sprite)
+        data = {
+            type : GetNodeType.纯查找,
+            otherData : "尾",
+            parentNode : this.node
+        }
+        this.尾 = GetNode.getNode(data)
+
     }
 
 
@@ -203,6 +249,7 @@ export default class ItemLine extends ItemBase {
         Emitter.remove('onAddGroup', this.onAddGroup, this)
         Emitter.remove('onSetGroup', this.onSetGroup, this)
         Emitter.remove('onJoystick', this.onJoystick, this)
+        Emitter.remove('onSetSkinLine', this.onSetSkinLine, this)
 
     }
 
@@ -218,12 +265,13 @@ export default class ItemLine extends ItemBase {
         Emitter.register('onAddGroup', this.onAddGroup, this)
         Emitter.register('onSetGroup', this.onSetGroup, this)
         Emitter.register('onJoystick', this.onJoystick, this)
+        Emitter.register('onSetSkinLine', this.onSetSkinLine, this)
 
     }
 
     onJoystick(selfName, direction,_moveCount,adddelta) {
         let moveCount = _moveCount/3
-        ccLog.log("现在棍子的 面向角度", this.node.angle, direction,"偏移量",moveCount)
+        // ccLog.log("现在棍子的 面向角度", this.node.angle, direction,"偏移量",moveCount)
 
         if (this.node.angle <= 0) {
             this.node.angle = 360
@@ -234,7 +282,7 @@ export default class ItemLine extends ItemBase {
 
         // let angle =  (cc.misc.radiansToDegrees(Math.atan2(_moveCount.y,_moveCount.x))) * 1;
         let adddeltaangle =  (cc.misc.radiansToDegrees(Math.atan2(adddelta.y,adddelta.x))) * 1;
-        ccLog.log("本次增加的角度",adddeltaangle)
+        // ccLog.log("本次增加的角度",adddeltaangle)
         // ccLog.log("测试棍子"," 目的角度 ",angle," 当前角度 ",this.node.angle,"相差角度",angle-this.node.angle)
         // let move = angle-this.node.angle
         // let moves = 5

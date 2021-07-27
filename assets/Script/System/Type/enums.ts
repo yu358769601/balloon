@@ -136,6 +136,7 @@ export enum ZindexType {
 
 export enum DialogType {
     结算界面 = "gameOverDialog",
+    获得新皮肤 = "getNewSkin",
     重玩界面 = "playAgainGameOverDialog",
     提示对话框 = "tipsDialog",
     转盘 = "luckDialog",

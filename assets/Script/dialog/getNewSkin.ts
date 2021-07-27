@@ -16,11 +16,12 @@ import {DialogType, ItemPreType} from "../System/Type/enums";
 import ControlGoLuckGame from "../control/controlGoLuckGame";
 import LoadManage from "../System/Load/LoadManage";
 import Tween from "../System/Utils/Tween";
+import {ItemShopItemType} from "../item/itemShopItem";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class GameOverDialog extends BaseDialog {
+export default class GetNewSkin extends BaseDialog {
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -57,12 +58,15 @@ export default class GameOverDialog extends BaseDialog {
 
     }
 
-    setData(data) {
+   async setData(data) {
         this.data = data
         this.initView()
         this.initOnClick()
 
-        this.initLoad()
+        // this.initLoad()
+
+
+        this.结算_送橡皮底板展示3.spriteFrame = await LoadManage.getSpriteForName("lineSkinItem_"+this.data.data.newSkin)
     }
 
     num: number = 0
@@ -113,10 +117,6 @@ export default class GameOverDialog extends BaseDialog {
 
 
     }
-
-    newSkin100 : any = null
-
-
     lvMaxCallback() {
         // ccLog.log("进度条变动结束", this.num, "要保存的一些数据", this.data.data.myNowPassRubber)
         // 进度条变动结束 40 要保存的一些数据
@@ -137,12 +137,8 @@ export default class GameOverDialog extends BaseDialog {
             //在这个页面满了
             // this.data.IndexMax = true
             // this.data.newSkin100 = data.rubber.name
-            ccLog.log("现在要送气球了",data)
-            this.newSkin100 = {
-                newSkin : data.rubber.name,
-                passData : this.data.data
-            }
-
+            ccLog.log("现在要送气球了")
+            
 
         }
 
@@ -158,20 +154,30 @@ export default class GameOverDialog extends BaseDialog {
     initOnClick(){
         this.胜利_普通领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
             ccLog.log("要给过去的数据是 0 ",this.data.data)
-            Emitter.fire("onNextPass",this.data.data)
-
-            let  dataItem = {
-                self : this,
-                rootNode : this.node,
-                count : JsonManager.passSettingjson.diamond
-            }
-            let cllbacks = {
-                ItemPreTypesuccessfulCallback: this.ItemPreTypesuccessfulCallback,
-                // lookDialogfailureCallback: this.lookDialogfailureCallback
-            }
-            Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
+            Emitter.fire("onNextPass",this.data.data.passData)
+            // let addGemData = {
+            //     type : AssetsType.钻石,
+            //     count : JsonManager.passSettingjson.diamond,
+            //     // callbackGem_donthave : this.callbackGem_donthaveAdd,
+            //     // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+            //     // callbackGem_subsucceed : this.callbackGem_subsucceed
+            // }
+            // UtilsDB.addAssets(addGemData)
+            // let  dataItem = {
+            //     self : this,
+            //     rootNode : this.node,
+            //     count : JsonManager.passSettingjson.diamond
+            // }
+            // let cllbacks = {
+            //     ItemPreTypesuccessfulCallback: this.ItemPreTypesuccessfulCallback,
+            //     // lookDialogfailureCallback: this.lookDialogfailureCallback
+            // }
+            // Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
 
             this.胜利_吞噬层.active = true
+
+            this.node.destroy()
+
         },this)
         this.胜利_看广告领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
             ccLog.log("要给过去的数据是 0 ",this.data.data)
@@ -193,44 +199,37 @@ export default class GameOverDialog extends BaseDialog {
     }
 
     lookDialogsuccessfulCallback(data){
+        // let addGemData = {
+        //     type : AssetsType.钻石,
+        //     count : JsonManager.passSettingjson.passGetGem,
+        //     // callbackGem_donthave : this.callbackGem_donthaveAdd,
+        //     // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+        //     // callbackGem_subsucceed : this.callbackGem_subsucceed
+        // }
+        // // Emitter.fire("onEduShowIndex",2)
+        // UtilsDB.addAssets(addGemData)
+        // // ccLog.log("准备去加钱成功",data.data.self,data.data.self.callbacks.successfulCallback == true)
+        // // if (data.data.self.callbacks.successfulCallback) {
+        // //     data.data.self.callbacks.successfulCallback(data.data.self.data.data)
+        // // }
+        //
+        // let  dataItem = {
+        //     self : data.data.self,
+        //     rootNode : data.data.self.node,
+        //     count : JsonManager.passSettingjson.diamond
+        // }
+        // let cllbacks = {
+        //     ItemPreTypesuccessfulCallback: data.data.self.ItemPreTypesuccessfulCallback,
+        //     // lookDialogfailureCallback: this.lookDialogfailureCallback
+        // }
+        // Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
 
-        if (data.data.self.newSkin100) {
-            data.data.self.goGetNewSkin()
-            let addGemData = {
-                type : AssetsType.钻石,
-                count : JsonManager.passSettingjson.passGetGem,
-                // callbackGem_donthave : this.callbackGem_donthaveAdd,
-                // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
-                // callbackGem_subsucceed : this.callbackGem_subsucceed
-            }
-            // Emitter.fire("onEduShowIndex",2)
-            UtilsDB.addAssets(addGemData)
-        }else{
+        data.data.self.胜利_吞噬层.active = true
 
-            // ccLog.log("准备去加钱成功",data.data.self,data.data.self.callbacks.successfulCallback == true)
-            // if (data.data.self.callbacks.successfulCallback) {
-            //     data.data.self.callbacks.successfulCallback(data.data.self.data.data)
-            // }
+        UtilsDB.addMyRubber(data.data.self.data.data.newSkin)
+        UtilsDB.setUseRubber(data.data.self.data.data.newSkin)
 
-            let  dataItem = {
-                self : data.data.self,
-                rootNode : data.data.self.node,
-                count : JsonManager.passSettingjson.diamond
-            }
-            let cllbacks = {
-                ItemPreTypesuccessfulCallback: data.data.self.ItemPreTypesuccessfulCallback,
-                // lookDialogfailureCallback: this.lookDialogfailureCallback
-            }
-            Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
-
-            data.data.self.胜利_吞噬层.active = true
-        }
-
-
-
-
-
-        // data.data.self.node.destroy()
+        data.data.self.node.destroy()
     }
     lookDialogfailureCallback(){
 
@@ -238,48 +237,12 @@ export default class GameOverDialog extends BaseDialog {
 
 
     ItemPreTypesuccessfulCallback(data){
+        data.data.self.node.destroy()
 
-        let addGemData = {
-            type : AssetsType.钻石,
-            count : JsonManager.passSettingjson.diamond,
-            // callbackGem_donthave : this.callbackGem_donthaveAdd,
-            // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
-            // callbackGem_subsucceed : this.callbackGem_subsucceed
-        }
-        UtilsDB.addAssets(addGemData)
-
-
-
-        if (data.data.self.newSkin100) {
-            data.data.self.goGetNewSkin()
-        }else{
-            data.data.self.node.destroy()
-
-            data.data.self.goLuckGame(data.data.self.data.data)
-        }
-
+        data.data.self.goLuckGame(data.data.self.data.data)
 
 
     }
-
-
-    goGetNewSkin(){
-        Emitter.fire("onOpenDialog", {name: DialogType.获得新皮肤, zIndex: 100,data : this.newSkin100}, null)
-
-        // let addGemData = {
-        //     type : AssetsType.钻石,
-        //     count : JsonManager.passSettingjson.diamond,
-        //     // callbackGem_donthave : this.callbackGem_donthaveAdd,
-        //     // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
-        //     // callbackGem_subsucceed : this.callbackGem_subsucceed
-        // }
-        // UtilsDB.addAssets(addGemData)
-
-        //关闭自己
-        this.node.destroy()
-    }
-
-
 
 
     //先判断去扎气球
@@ -338,24 +301,24 @@ export default class GameOverDialog extends BaseDialog {
         this.胜利_吞噬层 = GetNode.getNode(data)
 
 
-       data = {
-           type: GetNodeType.纯查找,
-           otherData: "结算_送橡皮变化2",
-           parentNode: this.node,
-       }
-       this.结算_送橡皮变化2 = GetNode.getNode(data)
+       // data = {
+       //     type: GetNodeType.纯查找,
+       //     otherData: "结算_送橡皮变化2",
+       //     parentNode: this.node,
+       // }
+       // this.结算_送橡皮变化2 = GetNode.getNode(data)
        data = {
            type: GetNodeType.纯查找,
            otherData: "结算_送橡皮底板展示3",
            parentNode: this.node,
        }
        this.结算_送橡皮底板展示3 = GetNode.getNode(data).getComponent(cc.Sprite)
-       data = {
-           type: GetNodeType.纯查找,
-           otherData: "结算_送橡皮底板1",
-           parentNode: this.node,
-       }
-       this.结算_送橡皮底板1 = GetNode.getNode(data).getComponent(cc.Sprite)
+       // data = {
+       //     type: GetNodeType.纯查找,
+       //     otherData: "结算_送橡皮底板1",
+       //     parentNode: this.node,
+       // }
+       // this.结算_送橡皮底板1 = GetNode.getNode(data).getComponent(cc.Sprite)
 
 
         // this.胜利_结算.getComponent(cc.Widget).enabled = true

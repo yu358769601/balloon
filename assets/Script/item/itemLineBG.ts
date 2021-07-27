@@ -16,6 +16,7 @@ import {balloonName, balloonType, ItemPreType} from "../System/Type/enums";
 import Utils from "../System/Utils/Utils";
 import UtilsNode from "../System/Utils/UtilsNode";
 import LoadManage from "../System/Load/LoadManage";
+import UtilsDB from "../System/Utils/UtilsDB";
 
 const {ccclass, property} = cc._decorator;
 
@@ -89,12 +90,20 @@ export default class ItemLineBG extends ItemBase {
     中距离: cc.Node = null
     中皮肤: cc.Node = null
     对号: cc.Node = null
+    头皮肤: cc.Sprite = null
+    尾皮肤: cc.Sprite = null
 
     线数字提示1 : cc.Label = null
     线数字提示2 : cc.Label = null
 
+    头: cc.Node = null
+    尾: cc.Node = null
+
+
 
     private moveDir: cc.Vec2;
+
+    show : boolean = false
 
 
     onSetWideth(selfName,data){
@@ -113,26 +122,33 @@ export default class ItemLineBG extends ItemBase {
         boxCollider.offset = new Vec2(this.中距离.width/2,0)
         boxCollider.size = new Size(this.中距离.width,this.中距离.height)
 
-        this.中距离.opacity = 250
+        // this.中距离.opacity = 250
+        this.show = false
 
+        this.尾.setPosition(this.中距离.width+this.groupWidthLength*0.6,0)
         this.对号.x =  this.中距离.width/2
     }
 
 
    async showNode(){
-        if (this.中距离.opacity == 250) {
+        if ( this.show == false) {
             this.中距离.opacity = 255
-
-
-        let balloonSkin =  await  LoadManage.getSpriteForName("lineSkin_"+balloonName.fan_5)
+            this.show = true
+            let  useRubber = UtilsDB.getUseRubber()
+        let balloonSkin =  await  LoadManage.getSpriteForName("lineSkin_"+useRubber.rubber)
             this.中皮肤.getComponent(cc.Sprite).spriteFrame = balloonSkin
+
+            let balloonSkin_1 =  await  LoadManage.getSpriteForName("lineSkinOther_"+useRubber.rubber+'_left')
+            this.头皮肤.spriteFrame = balloonSkin_1
+            let balloonSkin_2 =  await  LoadManage.getSpriteForName("lineSkinOther_"+useRubber.rubber+'_right')
+            this.尾皮肤.spriteFrame = balloonSkin_2
 
             // UtilsNode.show(this.对号,true)
             this.对号.angle-=this.node.angle
             ccLog.log("我的角度",this.node.angle,"对号的角度",this.对号.angle)
 
 
-        }else if (this.中距离.opacity == 255) {
+        }else if (this.show == true) {
             ccLog.log("中距离设置多长该爆炸了")
 
             Emitter.fire("onPlayAgainGameOverCall")
@@ -289,6 +305,33 @@ export default class ItemLineBG extends ItemBase {
             parentNode : this.node
         }
         this.对号 = GetNode.getNode(data)
+
+        data = {
+            type : GetNodeType.纯查找,
+            otherData : "头皮肤",
+            parentNode : this.node
+        }
+        this.头皮肤 = GetNode.getNode(data).getComponent(cc.Sprite)
+        data = {
+            type : GetNodeType.纯查找,
+            otherData : "尾皮肤",
+            parentNode : this.node
+        }
+        this.尾皮肤 = GetNode.getNode(data).getComponent(cc.Sprite)
+
+
+        data = {
+            type : GetNodeType.纯查找,
+            otherData : "头",
+            parentNode : this.node
+        }
+        this.头 = GetNode.getNode(data)
+        data = {
+            type : GetNodeType.纯查找,
+            otherData : "尾",
+            parentNode : this.node
+        }
+        this.尾 = GetNode.getNode(data)
 
     }
 

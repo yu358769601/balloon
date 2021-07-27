@@ -2051,7 +2051,7 @@ export default class UtilsDB extends cc.Component {
                     count = 1
                 }
             }
-            if (count == 0 && item.isPass == true) {
+            if (count == 0 ) {
                 returnList.push({item: item, isCheck: isCheck})
             }
 

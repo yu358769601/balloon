@@ -43,6 +43,8 @@ export default class Pass extends BasePass {
 
     关卡_返回按钮: cc.Node = null
     关卡吞噬: cc.Node = null
+    关卡_商城: cc.Node = null
+    关卡_跳过: cc.Node = null
 
     getitemNames: string[] = []
 
@@ -228,6 +230,19 @@ export default class Pass extends BasePass {
             parentNode: this.node
         }
         this.关卡吞噬 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "关卡_商城",
+            parentNode: this.node
+        }
+        this.关卡_商城 = GetNode.getNode(data)
+
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "关卡_跳过",
+            parentNode: this.node
+        }
+        this.关卡_跳过 = GetNode.getNode(data)
 
 
     }
@@ -243,6 +258,29 @@ export default class Pass extends BasePass {
             this.node.destroy()
             Emitter.fire("onShowAll", true)
         }, this)
+        this.关卡_商城.on(cc.Node.EventType.TOUCH_START, () => {
+            Emitter.fire("onOpenDialog", {name: DialogType.商店, zIndex: 100,data : null}, null)
+        }, this)
+        this.关卡_跳过.on(cc.Node.EventType.TOUCH_START, () => {
+            let  data = {
+                self : this,
+            }
+            let cllbacks = {
+                lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
+                lookDialogfailureCallback: this.lookDialogfailureCallback
+            }
+            Emitter.fire("onOpenDialog",{name : DialogType.广告,zIndex : 100,data:data},cllbacks)
+        }, this)
 
     }
+    lookDialogsuccessfulCallback(data){
+        Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : data.data.self.data}, null)
+
+        data.data.self.node.destroy()
+    }
+    lookDialogfailureCallback(){
+
+    }
+
+
 }
