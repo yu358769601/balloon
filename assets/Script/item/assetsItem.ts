@@ -66,6 +66,7 @@ export default class AssetsItem extends cc.Component {
         this.资源_钻石数字.string = gemString
     }
     //显示资源预制体
+    // Emitter.fire("onAssetsShowHide",true)
     onAssetsShowHide(selfName,b){
         if (b == true) {
             this.node.opacity = 255

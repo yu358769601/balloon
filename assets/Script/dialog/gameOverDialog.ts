@@ -16,6 +16,7 @@ import {DialogType, ItemPreType} from "../System/Type/enums";
 import ControlGoLuckGame from "../control/controlGoLuckGame";
 import LoadManage from "../System/Load/LoadManage";
 import Tween from "../System/Utils/Tween";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -48,13 +49,33 @@ export default class GameOverDialog extends BaseDialog {
     initCallback(callbacks) {
 
     }
-
     registerEmitter() {
-
+        Emitter.register('onBackLuckGame', this.onBackLuckGame, this)
+        Emitter.register('onBackNewSkin', this.onBackNewSkin, this)
     }
 
     removeEmitter() {
+        Emitter.remove('onBackLuckGame', this.onBackLuckGame, this)
+        Emitter.remove('onBackNewSkin', this.onBackNewSkin, this)
+    }
 
+    onBackLuckGame(){
+
+        ccLog.log("气球回来去做事情"," 是否有100 ",this.newSkin100," 下一关的数据是 ",this.data.data)
+
+        // //气球回来的
+        // if (this.newSkin100) {
+        //     this.goGetNewSkin()
+        // }else{
+        //     Emitter.fire("onNextPass",this.data.data)
+        //     this.node.destroy()
+        //
+        // }
+        Emitter.fire("onNextPass",this.data.data)
+        this.node.destroy()
+    }
+    onBackNewSkin(){
+        this.goLuckGame(this.data.data)
     }
 
     setData(data) {
@@ -63,6 +84,8 @@ export default class GameOverDialog extends BaseDialog {
         this.initOnClick()
 
         this.initLoad()
+        Emitter.fire("onPlaySound",SoundType.胜利界面,1)
+
     }
 
     num: number = 0
@@ -74,7 +97,7 @@ export default class GameOverDialog extends BaseDialog {
       let nowPassRubber =  UtilsDB.getMyNowPassRubber()
 
       this._nowPassRubber = nowPassRubber
-
+        ccLog.log("气球数据是",nowPassRubber)
 
         let myheight = this.结算_送橡皮底板展示3.node.height
       //   // this.结算_过关广告领取钻石.string = JsonManager.passSettingjson.json.passGetGem
@@ -158,8 +181,8 @@ export default class GameOverDialog extends BaseDialog {
     initOnClick(){
         this.胜利_普通领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
             ccLog.log("要给过去的数据是 0 ",this.data.data)
-            Emitter.fire("onNextPass",this.data.data)
 
+            Emitter.fire("onPlaySound",SoundType.结算页面按钮点击时,1)
             let  dataItem = {
                 self : this,
                 rootNode : this.node,
@@ -174,6 +197,7 @@ export default class GameOverDialog extends BaseDialog {
             this.胜利_吞噬层.active = true
         },this)
         this.胜利_看广告领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
+            Emitter.fire("onPlaySound",SoundType.结算页面按钮点击时,1)
             ccLog.log("要给过去的数据是 0 ",this.data.data)
             let  data = {
                 self : this,
@@ -253,7 +277,7 @@ export default class GameOverDialog extends BaseDialog {
         if (data.data.self.newSkin100) {
             data.data.self.goGetNewSkin()
         }else{
-            data.data.self.node.destroy()
+            // data.data.self.node.destroy()
 
             data.data.self.goLuckGame(data.data.self.data.data)
         }
@@ -275,8 +299,10 @@ export default class GameOverDialog extends BaseDialog {
         // }
         // UtilsDB.addAssets(addGemData)
 
-        //关闭自己
-        this.node.destroy()
+        // //关闭自己
+        // this.node.destroy()
+
+        // Emitter.fire("onNextPass",this.data.data)
     }
 
 
@@ -307,6 +333,7 @@ export default class GameOverDialog extends BaseDialog {
         
         ccLog.log("扎气球数据 ",data)
         Emitter.fire("onNextPass",data)
+        this.node.destroy()
     }
 
    async initView() {

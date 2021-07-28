@@ -97,8 +97,8 @@
         {
           "typeName": "itemLuckKey",
           "index": 2,
-          "x": 353.6877304347825,
-          "y": 379.59047826086953,
+          "x": 238.90512173913038,
+          "y": 230.89482608695653,
           "zIndex": 0
         },
         {
@@ -131,7 +131,8 @@
           "y": 236.5356,
           "zIndex": 1,
           "allowInOutIndexs": [
-            "0"
+            "0",
+            "2"
           ]
         },
         {
@@ -191,8 +192,8 @@
         {
           "typeName": "itemLuckKey",
           "index": 1,
-          "x": 252.9808,
-          "y": 226.03823913043453,
+          "x": 453.85036521739136,
+          "y": 366.9078043478258,
           "zIndex": 11
         },
         {
@@ -400,9 +401,9 @@
           "typeName": "itemPoint",
           "index": 6,
           "isStart": false,
-          "x": 4.946084347826016,
-          "y": -6.0313047826087285,
-          "zIndex": 6,
+          "x": 4.946084,
+          "y": -6.0313,
+          "zIndex": 7,
           "allowInOutIndexs": [
             "7",
             "5",
@@ -515,8 +516,8 @@
         {
           "typeName": "itemLuckKey",
           "index": 6,
-          "x": 328.6957826086956,
-          "y": -91.30433043478263,
+          "x": 0.00013043478259078256,
+          "y": 0.000017391304254488205,
           "zIndex": 0
         },
         {
@@ -629,9 +630,9 @@
           "typeName": "itemPoint",
           "index": 8,
           "isStart": false,
-          "x": 2.6086946956521295,
-          "y": -323.47739130434775,
-          "zIndex": 8,
+          "x": 2.608694,
+          "y": -323.477,
+          "zIndex": 9,
           "allowInOutIndexs": [
             "6",
             "7"
@@ -720,8 +721,8 @@
         {
           "typeName": "itemLuckKey",
           "index": 8,
-          "x": -15.651565217391294,
-          "y": -547.8261826086955,
+          "x": 2.6093043478260824,
+          "y": -318.2609652173911,
           "zIndex": 0
         },
         {
@@ -1541,8 +1542,8 @@
           "index": 9,
           "index1": 0,
           "index2": 0,
-          "x": 404.34779999999995,
-          "y": 221.73906086956546,
+          "x": -7.826113043478188,
+          "y": 75.65210434782648,
           "zIndex": 0
         },
         {
@@ -1864,6 +1865,15 @@
           "x": 221.7389,
           "y": 13.04336,
           "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 5,
+          "index1": 0,
+          "index2": 0,
+          "x": 211.30434695652175,
+          "y": 15.65211304347838,
+          "zIndex": 10
         },
         {
           "typeName": "itemLine",
@@ -2340,16 +2350,6 @@
           "rotation": 10,
           "x": 187.8259,
           "y": 44.34778,
-          "zIndex": 0
-        },
-        {
-          "typeName": "itemLineBG",
-          "group": 5,
-          "indexStart": 0,
-          "indexEnd": 0,
-          "rotation": 0,
-          "x": 490.4347826086955,
-          "y": -793.0434782608695,
           "zIndex": 0
         },
         {
@@ -6239,7 +6239,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 27,
       "passName": "pass_27",
       "itemName": "pass_27",
       "isPlay": true,
@@ -6610,7 +6610,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 28,
       "passName": "pass_28",
       "itemName": "pass_28",
       "isPlay": true,
@@ -6963,7 +6963,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 29,
       "passName": "pass_29",
       "itemName": "pass_29",
       "isPlay": true,
@@ -7282,7 +7282,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 30,
       "passName": "pass_30",
       "itemName": "pass_30",
       "isPlay": true,
@@ -7679,7 +7679,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 31,
       "passName": "pass_31",
       "itemName": "pass_31",
       "isPlay": true,
@@ -7954,7 +7954,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 32,
       "passName": "pass_32",
       "itemName": "pass_32",
       "isPlay": true,
@@ -8117,7 +8117,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 33,
       "passName": "pass_33",
       "itemName": "pass_33",
       "isPlay": true,
@@ -8446,7 +8446,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 34,
       "passName": "pass_34",
       "itemName": "pass_34",
       "isPlay": true,
@@ -8669,7 +8669,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 35,
       "passName": "pass_35",
       "itemName": "pass_35",
       "isPlay": true,
@@ -8922,7 +8922,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 36,
       "passName": "pass_36",
       "itemName": "pass_36",
       "isPlay": true,
@@ -9097,7 +9097,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 37,
       "passName": "pass_37",
       "itemName": "pass_37",
       "isPlay": true,
@@ -9282,7 +9282,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 38,
       "passName": "pass_38",
       "itemName": "pass_38",
       "isPlay": true,
@@ -9527,7 +9527,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 39,
       "passName": "pass_39",
       "itemName": "pass_39",
       "isPlay": true,
@@ -9658,7 +9658,7 @@
       ]
     },
     {
-      "index": 0,
+      "index": 40,
       "passName": "pass_40",
       "itemName": "pass_40",
       "isPlay": true,
@@ -9913,6 +9913,4527 @@
           "zIndex": 0
         }
       ],
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "8"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": -344.347,
+          "y": 46.95652,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -26.0869,
+          "y": 195.6521,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "4",
+            "5",
+            "6"
+          ],
+          "index": 3,
+          "isStart": true,
+          "x": 169.5652,
+          "y": -28.6956,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 310.4347,
+          "y": 120,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "4"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 310.4347,
+          "y": -182.608,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": -23.4782,
+          "y": -271.304,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": -352.173,
+          "y": -106.956,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "7"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": -159.13,
+          "y": -31.3043,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 25,
+          "x": -354.781,
+          "y": 41.7391,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 1,
+          "indexEnd": 8,
+          "rotation": 340,
+          "x": -354.78,
+          "y": 44.34781,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 7,
+          "indexEnd": 8,
+          "rotation": 20,
+          "x": -359.999,
+          "y": -112.173,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 335,
+          "x": -357.389,
+          "y": -109.563,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 310,
+          "x": -24.95,
+          "y": 200.8694,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 3,
+          "indexEnd": 6,
+          "rotation": 50,
+          "x": -26.0869,
+          "y": -279.129,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 90,
+          "x": 318.2608,
+          "y": -187.825,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 50,
+          "x": 172.1738,
+          "y": -41.7392,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 310,
+          "x": 169.5651,
+          "y": -23.4782,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 8,
+          "index1": 0,
+          "index2": 0,
+          "x": -151.303,
+          "y": -31.3043,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": -49.56521739130437,
+          "y": 323.478260869565,
+          "zIndex": 0
+        }
+      ],
+      "index": 41,
+      "passName": "pass_41",
+      "itemName": "pass_41",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ],
+          "index": 1,
+          "isStart": true,
+          "x": -331.304,
+          "y": 143.4782,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -331.304,
+          "y": -153.913,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4",
+            "2",
+            "5"
+          ],
+          "index": 3,
+          "isStart": true,
+          "x": -180,
+          "y": -2.60869,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": -83.4782,
+          "y": 143.4782,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": -91.3043,
+          "y": -169.565,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "8"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 106.9565,
+          "y": 140.8695,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": 104.34780869565213,
+          "y": -166.95630434782612,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "6",
+            "7",
+            "9",
+            "10"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": 193.0434,
+          "y": -7.82608,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "8",
+            "10"
+          ],
+          "index": 9,
+          "isStart": false,
+          "x": 318.2608,
+          "y": 127.826,
+          "zIndex": 9
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "8",
+            "9"
+          ],
+          "index": 10,
+          "isStart": false,
+          "x": 318.2608,
+          "y": -148.695,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 90,
+          "x": -331.303,
+          "y": -166.956,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 9,
+          "indexEnd": 10,
+          "rotation": 90,
+          "x": 323.4781,
+          "y": -166.956,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 4,
+          "indexEnd": 6,
+          "rotation": 0,
+          "x": -96.5217,
+          "y": 140.8695,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 5,
+          "indexEnd": 7,
+          "rotation": 0,
+          "x": -101.739,
+          "y": -161.739,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 45,
+          "x": -326.086,
+          "y": -159.13,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 315,
+          "x": -328.694,
+          "y": 151.3044,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 4,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 60,
+          "x": -177.389,
+          "y": -10.4347,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 4,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 300,
+          "x": -174.782,
+          "y": -10.4345,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 8,
+          "indexEnd": 9,
+          "rotation": 45,
+          "x": 169.5651,
+          "y": -20.8696,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 8,
+          "indexEnd": 10,
+          "rotation": 315,
+          "x": 169.5652,
+          "y": 0.00026,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 4,
+          "indexStart": 7,
+          "indexEnd": 8,
+          "rotation": 60,
+          "x": 93.91309,
+          "y": -172.173,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 4,
+          "indexStart": 6,
+          "indexEnd": 8,
+          "rotation": 300,
+          "x": 99.13069,
+          "y": 148.6955,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 8,
+          "index1": 0,
+          "index2": 0,
+          "x": 190.4347,
+          "y": -5.21739,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": -318.2608695652174,
+          "y": 380.869565217391,
+          "zIndex": 0
+        }
+      ],
+      "index": 42,
+      "passName": "pass_42",
+      "itemName": "pass_42",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ],
+          "index": 1,
+          "isStart": true,
+          "x": 20.86956,
+          "y": 305.2173,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -101.739,
+          "y": -83.4782,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 146.0869,
+          "y": -80.8695,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": -289.565,
+          "y": -289.565,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "4",
+            "6"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 18.26086,
+          "y": -294.782,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 331.3043,
+          "y": -292.173,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 0,
+          "x": -297.39,
+          "y": -289.564,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 0,
+          "x": 18.26082,
+          "y": -289.565,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 20,
+          "indexStart": 1,
+          "indexEnd": 4,
+          "rotation": 62,
+          "x": -302.606,
+          "y": -302.607,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 20,
+          "indexStart": 1,
+          "indexEnd": 6,
+          "rotation": 298,
+          "x": 15.65207,
+          "y": 318.2607,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 0,
+          "x": -109.565,
+          "y": -83.4782,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 2,
+          "indexEnd": 5,
+          "rotation": 300,
+          "x": -114.782,
+          "y": -83.4782,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 60,
+          "x": 28.6956,
+          "y": -302.608,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 5,
+          "index1": 0,
+          "index2": 0,
+          "x": 18.26086,
+          "y": -294.782,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": 57.39130434782601,
+          "y": 503.478260869565,
+          "zIndex": 0
+        }
+      ],
+      "index": 43,
+      "passName": "pass_43",
+      "itemName": "pass_43",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "5",
+            "6"
+          ],
+          "index": 1,
+          "isStart": true,
+          "x": 7.826086,
+          "y": 331.3043,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -219.13,
+          "y": 135.6521,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "4",
+            "7"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": -106.95569565217386,
+          "y": 41.73913000000012,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 2.608695,
+          "y": -41.7391,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4",
+            "6",
+            "8"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 114.7826,
+          "y": 46.95652,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 226.9565,
+          "y": 143.4782,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "9"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": -169.565,
+          "y": -138.26,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "9"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": 187.826,
+          "y": -140.869,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "7",
+            "8"
+          ],
+          "index": 9,
+          "isStart": false,
+          "x": 7.826086,
+          "y": -453.913,
+          "zIndex": 9
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 1,
+          "indexEnd": 6,
+          "rotation": 320,
+          "x": -2.60869,
+          "y": 339.1304,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 220,
+          "x": 15.65273,
+          "y": 336.5216,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 320,
+          "x": -234.782,
+          "y": 143.4782,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 220,
+          "x": 242.6086,
+          "y": 146.0876,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 250,
+          "x": 0,
+          "y": 336.5215,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 1,
+          "indexEnd": 5,
+          "rotation": 110,
+          "x": 119.9999,
+          "y": 44.3493,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 320,
+          "x": -114.78169565217388,
+          "y": 49.56526,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 220,
+          "x": 125.2173,
+          "y": 49.56573,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 3,
+          "indexEnd": 7,
+          "rotation": 250,
+          "x": -99.1294,
+          "y": 54.78343,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 5,
+          "indexEnd": 8,
+          "rotation": 110,
+          "x": 195.6521,
+          "y": -156.52,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 7,
+          "indexEnd": 9,
+          "rotation": 300,
+          "x": -177.391,
+          "y": -135.652,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 8,
+          "indexEnd": 9,
+          "rotation": 60,
+          "x": 10.43473,
+          "y": -459.129,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 9,
+          "index1": 0,
+          "index2": 0,
+          "x": 7.826021739130368,
+          "y": -459.12978260869585,
+          "zIndex": 12
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": 112.17391304347825,
+          "y": 453.91304347826076,
+          "zIndex": 0
+        }
+      ],
+      "index": 44,
+      "passName": "pass_44",
+      "itemName": "pass_44",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": -200.869,
+          "y": 333.913,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -211.304,
+          "y": 83.47826,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": -206.086,
+          "y": -104.347,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": -203.477,
+          "y": -362.608,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "index": 5,
+          "isStart": true,
+          "x": 10.43478,
+          "y": -13.0434,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 211.3043,
+          "y": 323.4782,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "6"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": 213.913,
+          "y": 75.65217,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "9"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": 232.1739,
+          "y": -112.173,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ],
+          "index": 9,
+          "isStart": false,
+          "x": 224.3478,
+          "y": -360,
+          "zIndex": 9
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 1,
+          "indexEnd": 5,
+          "rotation": 300,
+          "x": -200.867,
+          "y": 341.739,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 60,
+          "x": -195.651,
+          "y": -373.042,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 60,
+          "x": 7.826039,
+          "y": -20.8695,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 5,
+          "indexEnd": 9,
+          "rotation": 300,
+          "x": 10.43478,
+          "y": -13.043,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 90,
+          "x": -206.085,
+          "y": 54.7825,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 90,
+          "x": 219.1303,
+          "y": 52.1739,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 8,
+          "indexEnd": 9,
+          "rotation": 90,
+          "x": 232.1738,
+          "y": -383.477,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 90,
+          "x": -200.868,
+          "y": -373.042,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 2,
+          "indexEnd": 5,
+          "rotation": 335,
+          "x": -219.129,
+          "y": 91.30433,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 5,
+          "indexEnd": 8,
+          "rotation": 335,
+          "x": 7.827034,
+          "y": -10.4346,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 5,
+          "indexEnd": 7,
+          "rotation": 25,
+          "x": 5.217736,
+          "y": -18.2608,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 25,
+          "x": -216.521,
+          "y": -120,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 1,
+          "index1": 0,
+          "index2": 0,
+          "x": -203.47726086956513,
+          "y": 326.08685652173904,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": -80.86956521739148,
+          "y": 558.2608695652173,
+          "zIndex": 0
+        }
+      ],
+      "index": 45,
+      "passName": "pass_45",
+      "itemName": "pass_45",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "7"
+          ],
+          "index": 1,
+          "isStart": true,
+          "x": -328.695,
+          "y": -49.5652,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -169.565,
+          "y": 232.1739,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 15.65217,
+          "y": -54.7826,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 195.6521,
+          "y": 237.3913,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "3",
+            "6"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 357.3913,
+          "y": -57.3913,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 193.0434,
+          "y": -352.173,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": -164.347,
+          "y": -346.956,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 0,
+          "x": -336.521,
+          "y": -54.7826,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 0,
+          "x": 13.04346,
+          "y": -54.7826,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 60,
+          "x": -333.913,
+          "y": -54.7826,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 300,
+          "x": -172.171,
+          "y": 245.2172,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 60,
+          "x": 20.86955,
+          "y": -60,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 3,
+          "indexEnd": 7,
+          "rotation": 60,
+          "x": -166.956,
+          "y": -357.391,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 300,
+          "x": 195.652,
+          "y": 245.2173,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 60,
+          "x": 182.6092,
+          "y": -365.217,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 1,
+          "indexEnd": 7,
+          "rotation": 300,
+          "x": -333.912,
+          "y": -54.7826,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 3,
+          "indexEnd": 6,
+          "rotation": 300,
+          "x": 20.87039,
+          "y": -57.3913,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 5,
+          "index1": 0,
+          "index2": 0,
+          "x": 362.6086869565215,
+          "y": -54.78259999999989,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": -125.21739130434781,
+          "y": 323.478260869565,
+          "zIndex": 0
+        }
+      ],
+      "index": 46,
+      "passName": "pass_46",
+      "itemName": "pass_46",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": -263.478,
+          "y": 341.7391,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": 284.3478,
+          "y": 339.1304,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 10.434780000000003,
+          "y": 67.82607739130407,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "6"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 10.43478,
+          "y": -88.6956,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4",
+            "6"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": -263.477,
+          "y": -357.391,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "4",
+            "5"
+          ],
+          "index": 6,
+          "isStart": true,
+          "x": 284.3478,
+          "y": -362.608,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 16,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 0,
+          "x": -268.6946086956522,
+          "y": -365.2166956521732,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 20,
+          "indexStart": 1,
+          "indexEnd": 5,
+          "rotation": 90,
+          "x": -268.695,
+          "y": -359.998,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 20,
+          "indexStart": 2,
+          "indexEnd": 6,
+          "rotation": 90,
+          "x": 281.7391173913044,
+          "y": -359.9993043478261,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 315,
+          "x": -268.6953913043479,
+          "y": 346.95640434782604,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 45,
+          "x": 2.608686956521865,
+          "y": 57.39120434782626,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 45,
+          "x": -260.868,
+          "y": -375.652,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 4,
+          "indexEnd": 6,
+          "rotation": 315,
+          "x": 0,
+          "y": -86.0863,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 4,
+          "index1": 0,
+          "index2": 0,
+          "x": 13.04347,
+          "y": -91.3043,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": -33.91304347826099,
+          "y": -490.43478260869597,
+          "zIndex": 0
+        }
+      ],
+      "index": 47,
+      "passName": "pass_47",
+      "itemName": "pass_47",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "8"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": -294.782,
+          "y": 195.6521,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "4",
+            "8"
+          ],
+          "index": 2,
+          "isStart": true,
+          "x": -99.1304,
+          "y": 65.21739,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 234.7826,
+          "y": 263.4782,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "5",
+            "6"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 114.7825,
+          "y": 62.60868,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 305.2173,
+          "y": -279.13,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "5",
+            "7",
+            "8"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 104.3478,
+          "y": -148.695,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": -224.347,
+          "y": -346.956,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "6",
+            "7"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": -101.739,
+          "y": -146.086,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 2,
+          "indexEnd": 4,
+          "rotation": 0,
+          "x": -104.347,
+          "y": 60,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 2,
+          "indexEnd": 8,
+          "rotation": 90,
+          "x": -93.9125,
+          "y": -159.13,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 6,
+          "indexEnd": 8,
+          "rotation": 0,
+          "x": -106.956,
+          "y": -151.304,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 4,
+          "indexEnd": 6,
+          "rotation": 90,
+          "x": 106.9564,
+          "y": -161.739,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 30,
+          "x": -112.173,
+          "y": 62.60868,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 55,
+          "x": 101.739,
+          "y": 59.99998,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 1,
+          "indexEnd": 8,
+          "rotation": 120,
+          "x": -96.5211,
+          "y": -159.129,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 145,
+          "x": -86.0865,
+          "y": 60.00076,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 30,
+          "x": -234.782,
+          "y": -362.607,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 7,
+          "indexEnd": 8,
+          "rotation": 55,
+          "x": -232.173,
+          "y": -357.39,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 120,
+          "x": 320.8695,
+          "y": -286.956,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 145,
+          "x": 310.4347,
+          "y": -289.565,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 6,
+          "index1": 0,
+          "index2": 0,
+          "x": 109.56519130434788,
+          "y": -156.5213913043478,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": -330.94600000000025,
+          "y": 347.539,
+          "zIndex": 0
+        }
+      ],
+      "index": 48,
+      "passName": "pass_48",
+      "itemName": "pass_48",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": -346.956,
+          "y": 286.9565,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "4",
+            "5"
+          ],
+          "index": 2,
+          "isStart": true,
+          "x": 13.04347,
+          "y": 260.8695,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 370.4347,
+          "y": 294.7826,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "6",
+            "7"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": -242.608,
+          "y": -5.21739,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "2",
+            "6",
+            "8"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 273.913,
+          "y": -1.13686,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": -2.60869,
+          "y": -187.826,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "8"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": -250.434,
+          "y": -336.521,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": 268.6956,
+          "y": -336.521,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 15,
+          "indexStart": 7,
+          "indexEnd": 8,
+          "rotation": 0,
+          "x": -260.869,
+          "y": -336.521,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 4,
+          "indexEnd": 7,
+          "rotation": 90,
+          "x": -242.608,
+          "y": -341.738,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 5,
+          "indexEnd": 8,
+          "rotation": 90,
+          "x": 271.3042,
+          "y": -344.346,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 2,
+          "indexEnd": 4,
+          "rotation": 45,
+          "x": -250.434,
+          "y": -16.789,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 2,
+          "indexEnd": 5,
+          "rotation": 315,
+          "x": 13.04346,
+          "y": 268.6954,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 1,
+          "indexEnd": 4,
+          "rotation": 110,
+          "x": -239.999,
+          "y": -11.5716,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 355,
+          "x": -359.999,
+          "y": 299.9999,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 250,
+          "x": 378.2608,
+          "y": 294.7826,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 5,
+          "x": 7.826095,
+          "y": 260.8695,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 4,
+          "indexEnd": 6,
+          "rotation": 320,
+          "x": -237.387,
+          "y": 5.217387,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 35,
+          "x": -7.82609,
+          "y": -198.259,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 6,
+          "index1": 0,
+          "index2": 0,
+          "x": 0.0000013043478706009637,
+          "y": -182.6078260869565,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": 52.17391304347825,
+          "y": 472.17391304347825,
+          "zIndex": 0
+        }
+      ],
+      "index": 49,
+      "passName": "pass_49",
+      "itemName": "pass_49",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "5"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": -318.26,
+          "y": 226.9565,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -333.912,
+          "y": -242.608,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": -258.26,
+          "y": 41.73904,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": -260.869,
+          "y": -73.0431,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "index": 5,
+          "isStart": true,
+          "x": -20.8694,
+          "y": -20.8695,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 226.9564,
+          "y": 39.13134,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "6"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": 226.95640434782612,
+          "y": -75.65220434782601,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "9"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": 292.1738,
+          "y": 213.9124,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "8"
+          ],
+          "index": 9,
+          "isStart": false,
+          "x": 292.1739,
+          "y": -229.565,
+          "zIndex": 9
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 13,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 90,
+          "x": -326.086,
+          "y": -245.216,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 13,
+          "indexStart": 8,
+          "indexEnd": 9,
+          "rotation": 90,
+          "x": 297.3913,
+          "y": -250.434,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 1,
+          "indexEnd": 5,
+          "rotation": 320,
+          "x": -313.041,
+          "y": 229.5647,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 2,
+          "indexEnd": 5,
+          "rotation": 36,
+          "x": -328.695,
+          "y": -247.825,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 5,
+          "indexEnd": 8,
+          "rotation": 36,
+          "x": -31.3043,
+          "y": -28.6956,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 5,
+          "indexEnd": 9,
+          "rotation": 325,
+          "x": -23.4773,
+          "y": -18.2609,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 12,
+          "x": -18.2608,
+          "y": -18.2608,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 5,
+          "indexEnd": 7,
+          "rotation": 348,
+          "x": -20.8695,
+          "y": -23.4775,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 90,
+          "x": 224.348,
+          "y": -86.0868,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 12,
+          "x": -266.086,
+          "y": -75.6521,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 90,
+          "x": -260.868,
+          "y": -83.4782,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 348,
+          "x": -266.086,
+          "y": 39.13041,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 9,
+          "index1": 0,
+          "index2": 0,
+          "x": 289.5652,
+          "y": -229.565,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": 0,
+          "y": 383.478260869565,
+          "zIndex": 0
+        }
+      ],
+      "index": 50,
+      "passName": "pass_50",
+      "itemName": "pass_50",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": 86.08695,
+          "y": 386.0869,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": 281.7391,
+          "y": 380.8695,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4",
+            "6"
+          ],
+          "index": 3,
+          "isStart": true,
+          "x": -13.0434,
+          "y": 279.1304,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 195.6521,
+          "y": 276.5217,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": -273.913,
+          "y": -28.6956,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5",
+            "7"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": -13.0434,
+          "y": -31.3043,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "6",
+            "9"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": 294.7826,
+          "y": -31.3043,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "9"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": -229.565,
+          "y": -331.304,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "7",
+            "8"
+          ],
+          "index": 9,
+          "isStart": false,
+          "x": 245.2172,
+          "y": -333.912,
+          "zIndex": 9
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 13,
+          "indexStart": 8,
+          "indexEnd": 9,
+          "rotation": 0,
+          "x": -234.782,
+          "y": -336.52,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 0,
+          "x": -289.565,
+          "y": -31.3044,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 5,
+          "indexEnd": 8,
+          "rotation": 280,
+          "x": -281.738,
+          "y": -26.0869,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 7,
+          "indexEnd": 9,
+          "rotation": 80,
+          "x": 250.4348,
+          "y": -339.13,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 3,
+          "indexEnd": 6,
+          "rotation": 90,
+          "x": -10.4339,
+          "y": -36.5217,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 0,
+          "x": -13.0427,
+          "y": -31.3042,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 0,
+          "x": -15.6521,
+          "y": 271.3043,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 45,
+          "x": -15.652,
+          "y": 276.5216,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 0,
+          "x": 73.04347,
+          "y": 380.8695,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 2,
+          "indexEnd": 4,
+          "rotation": 45,
+          "x": 185.2177,
+          "y": 268.6955,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 9,
+          "index1": 0,
+          "index2": 0,
+          "x": 237.3913,
+          "y": -333.913,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 100,
+          "x": -318.2608695652174,
+          "y": 349.56521739130426,
+          "zIndex": 0
+        }
+      ],
+      "index": 51,
+      "passName": "pass_51",
+      "itemName": "pass_51",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": -292.173,
+          "y": 315.6521,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "5"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -297.391,
+          "y": -326.086,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": -185.217,
+          "y": -2.60869,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "5",
+            "6",
+            "7"
+          ],
+          "index": 4,
+          "isStart": true,
+          "x": 5.217391,
+          "y": 159.1304,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "4",
+            "6",
+            "8"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 2.608695,
+          "y": -161.739,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 195.6521,
+          "y": 2.608695,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "8"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": 307.826,
+          "y": 318.2608,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": 300,
+          "y": -328.695,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 19,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 90,
+          "x": -294.781,
+          "y": -346.955,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 19,
+          "indexStart": 7,
+          "indexEnd": 8,
+          "rotation": 90,
+          "x": 307.8259,
+          "y": -344.347,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 90,
+          "x": 10.4348,
+          "y": -166.956,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 1,
+          "indexEnd": 4,
+          "rotation": 330,
+          "x": -294.782,
+          "y": 320.8695,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 5,
+          "indexEnd": 8,
+          "rotation": 330,
+          "x": 2.608743,
+          "y": -156.521,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 4,
+          "indexEnd": 7,
+          "rotation": 30,
+          "x": 7.826139,
+          "y": 143.4781,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 2,
+          "indexEnd": 5,
+          "rotation": 30,
+          "x": -294.781,
+          "y": -333.912,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 4,
+          "indexEnd": 6,
+          "rotation": 320,
+          "x": 5.217391,
+          "y": 159.1304,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 40,
+          "x": 7.826081,
+          "y": -166.955,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 40,
+          "x": -190.433,
+          "y": -5.21738,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 6,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 320,
+          "x": -195.651,
+          "y": -7.82563,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 5,
+          "index1": 0,
+          "index2": 0,
+          "x": 15.652173260869507,
+          "y": -161.73869565217387,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 25,
+          "x": -145.72860869565233,
+          "y": 496.2346521739132,
+          "zIndex": 0
+        }
+      ],
+      "index": 52,
+      "passName": "pass_52",
+      "itemName": "pass_52",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "4"
+          ],
+          "index": 1,
+          "isStart": true,
+          "x": 10.43478,
+          "y": 320.8695,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -200.8686086956522,
+          "y": 146.0868782608695,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 221.73897826086966,
+          "y": 101.739095652174,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 2.6086930434781266,
+          "y": -96.52169130434788,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "7"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": -151.304,
+          "y": -237.391,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "7"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 140.86949130434775,
+          "y": -263.477695652174,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "6"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": -20.8695,
+          "y": -404.347,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 220,
+          "x": 18.26086,
+          "y": 328.6954,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 310,
+          "x": 10.43477,
+          "y": 333.913,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 2,
+          "indexEnd": 4,
+          "rotation": 310,
+          "x": -211.303,
+          "y": 143.4782,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 220,
+          "x": 237.39127826086963,
+          "y": 99.13060130434788,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 4,
+          "indexEnd": 6,
+          "rotation": 310,
+          "x": 7.826081304347866,
+          "y": -101.73898695652163,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 5,
+          "indexEnd": 7,
+          "rotation": 310,
+          "x": -156.52,
+          "y": -237.39,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 220,
+          "x": 10.435651304347871,
+          "y": -93.91200869565213,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 220,
+          "x": 151.3042,
+          "y": -263.478,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 1,
+          "indexEnd": 4,
+          "rotation": 90,
+          "x": 2.609113043478251,
+          "y": -91.3037,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 7,
+          "index1": 0,
+          "index2": 0,
+          "x": -15.652108695652242,
+          "y": -393.913,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": 138.26086956521738,
+          "y": 375.6521739130435,
+          "zIndex": 0
+        }
+      ],
+      "index": 53,
+      "passName": "pass_53",
+      "itemName": "pass_53",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "index": 1,
+          "isStart": true,
+          "x": 31.30434,
+          "y": 360,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -315.652,
+          "y": -156.521,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "4",
+            "6"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": -169.565,
+          "y": -161.739,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "5",
+            "7"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 180,
+          "y": -164.347,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 341.7391,
+          "y": -164.347,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": -106.956,
+          "y": -362.608,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": 117.3913,
+          "y": -362.608,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 0,
+          "x": -101.738,
+          "y": -362.608,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 0,
+          "x": -179.999,
+          "y": -166.956,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 4,
+          "indexEnd": 7,
+          "rotation": 250,
+          "x": 198.2608,
+          "y": -161.738,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 3,
+          "indexEnd": 6,
+          "rotation": 110,
+          "x": -99.1296,
+          "y": -378.26,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 0,
+          "x": -331.304,
+          "y": -164.347,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 0,
+          "x": 190.4347,
+          "y": -166.956,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 18,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 55,
+          "x": -323.477,
+          "y": -156.521,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 18,
+          "indexStart": 1,
+          "indexEnd": 5,
+          "rotation": 300,
+          "x": 31.30429,
+          "y": 375.6518,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 16,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 69,
+          "x": -169.565,
+          "y": -161.738,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 16,
+          "indexStart": 1,
+          "indexEnd": 4,
+          "rotation": 285.9824,
+          "x": 28.69572,
+          "y": 378.2608,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 4,
+          "index1": 0,
+          "index2": 0,
+          "x": 177.3913,
+          "y": -166.956,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": 96.52173913043475,
+          "y": 446.086956521739,
+          "zIndex": 0
+        }
+      ],
+      "index": 54,
+      "passName": "pass_54",
+      "itemName": "pass_54",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "14"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": -190.434,
+          "y": 360,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "7"
+          ],
+          "index": 2,
+          "isStart": true,
+          "x": 5.217391,
+          "y": 281.7391,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "15"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 213.913,
+          "y": 362.6086,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "14",
+            "7"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": -302.608,
+          "y": 101.7391,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "15",
+            "7"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 315.6521,
+          "y": 109.5652,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "7",
+            "9"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": -276.521,
+          "y": -39.1304,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "5",
+            "6",
+            "8",
+            "12",
+            "2"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": 5.217391,
+          "y": -39.1304,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "7",
+            "10"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": 336.5217,
+          "y": -39.1304,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "6",
+            "11"
+          ],
+          "index": 9,
+          "isStart": false,
+          "x": -195.652,
+          "y": -224.347,
+          "zIndex": 9
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "8",
+            "13"
+          ],
+          "index": 10,
+          "isStart": false,
+          "x": 247.826,
+          "y": -211.304,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "9",
+            "12"
+          ],
+          "index": 11,
+          "isStart": false,
+          "x": -318.26,
+          "y": -393.913,
+          "zIndex": 11
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "7",
+            "11",
+            "13"
+          ],
+          "index": 12,
+          "isStart": false,
+          "x": 5.217391,
+          "y": -297.391,
+          "zIndex": 12
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "10",
+            "12"
+          ],
+          "index": 13,
+          "isStart": false,
+          "x": 326.0869,
+          "y": -401.739,
+          "zIndex": 13
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "4"
+          ],
+          "index": 14,
+          "isStart": false,
+          "x": -109.565,
+          "y": 187.826,
+          "zIndex": 14
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 15,
+          "isStart": false,
+          "x": 133.0434,
+          "y": 190.4347,
+          "zIndex": 15
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 2,
+          "indexEnd": 7,
+          "rotation": 90,
+          "x": 7.826165,
+          "y": -33.9131,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 7,
+          "indexEnd": 12,
+          "rotation": 90,
+          "x": 7.826086,
+          "y": -318.26,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 7,
+          "indexEnd": 8,
+          "rotation": 0,
+          "x": 2.608695,
+          "y": -36.5217,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 0,
+          "x": -294.781,
+          "y": -39.1302,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 25,
+          "x": 13.04347,
+          "y": 279.1304,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 155,
+          "x": 0.000915,
+          "y": 273.9128,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 5,
+          "indexEnd": 7,
+          "rotation": 25,
+          "x": 5.21739,
+          "y": -41.739,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 4,
+          "indexEnd": 7,
+          "rotation": 155,
+          "x": 5.217826,
+          "y": -44.3478,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 1,
+          "indexEnd": 14,
+          "rotation": 300,
+          "x": -203.478,
+          "y": 362.6086,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 4,
+          "indexEnd": 14,
+          "rotation": 20,
+          "x": -307.825,
+          "y": 109.5652,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 3,
+          "indexEnd": 15,
+          "rotation": 240,
+          "x": 232.1738,
+          "y": 365.2173,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 5,
+          "indexEnd": 15,
+          "rotation": 340,
+          "x": 120.0005,
+          "y": 187.8259,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 12,
+          "indexEnd": 13,
+          "rotation": 340,
+          "x": 2.608695,
+          "y": -289.565,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 11,
+          "indexEnd": 12,
+          "rotation": 200,
+          "x": 2.609481,
+          "y": -289.563,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 6,
+          "indexEnd": 9,
+          "rotation": 300,
+          "x": -289.565,
+          "y": -36.5217,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 9,
+          "indexEnd": 11,
+          "rotation": 50,
+          "x": -328.695,
+          "y": -399.13,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 8,
+          "indexEnd": 10,
+          "rotation": 240,
+          "x": 352.1738,
+          "y": -36.5209,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 5,
+          "indexStart": 10,
+          "indexEnd": 13,
+          "rotation": 300,
+          "x": 239.9999,
+          "y": -213.912,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLuckKey",
+          "index": 13,
+          "index1": 0,
+          "index2": 0,
+          "x": 331.3043,
+          "y": -412.173,
+          "zIndex": 100
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": 10.434782608695627,
+          "y": 513.913043478261,
+          "zIndex": 0
+        }
+      ],
+      "index": 55,
+      "passName": "pass_55",
+      "itemName": "pass_55",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": 0,
+          "y": 341.7391,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3",
+            "4",
+            "7"
+          ],
+          "index": 2,
+          "isStart": true,
+          "x": -258.26,
+          "y": 83.47826,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "4",
+            "8"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 247.826,
+          "y": 83.47826,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "5",
+            "6"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 0,
+          "y": -65.2173,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": -125.217,
+          "y": -143.478,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "5"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 114.7826,
+          "y": -146.086,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "8"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": -268.695,
+          "y": -346.956,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "7"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": 250.4347,
+          "y": -349.565,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 15,
+          "indexStart": 7,
+          "indexEnd": 8,
+          "rotation": 0,
+          "x": -279.129,
+          "y": -352.173,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 12,
+          "indexStart": 2,
+          "indexEnd": 7,
+          "rotation": 90,
+          "x": -266.086,
+          "y": -362.608,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 12,
+          "indexStart": 3,
+          "indexEnd": 8,
+          "rotation": 90,
+          "x": 255.652,
+          "y": -365.217,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 15,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 0,
+          "x": -273.912,
+          "y": 83.47825,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 45,
+          "x": -271.303,
+          "y": 83.47818,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 10,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 315,
+          "x": -2.6087,
+          "y": 354.7825,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 2,
+          "indexEnd": 4,
+          "rotation": 330,
+          "x": -271.304,
+          "y": 83.47826,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 30,
+          "x": -10.434725217391255,
+          "y": -75.65156521739125,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 0,
+          "x": -151.304,
+          "y": -159.129,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 4,
+          "indexEnd": 6,
+          "rotation": 330,
+          "x": -7.82608,
+          "y": -62.6086,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 5,
+          "indexEnd": 4,
+          "rotation": 30,
+          "x": -138.26030434782606,
+          "y": -153.91069565217387,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": 271.3043478260869,
+          "y": 224.34782608695673,
+          "zIndex": 0
+        }
+      ],
+      "index": 56,
+      "passName": "pass_56",
+      "itemName": "pass_56",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "10",
+            "11",
+            "2"
+          ],
+          "index": 1,
+          "isStart": true,
+          "x": 20.86956,
+          "y": 253.04339999999956,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": 122.6086,
+          "y": 331.304304347826,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "4"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 253.0434,
+          "y": 320.8695,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "5"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 333.9129,
+          "y": 247.826,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "4",
+            "6"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 336.5217,
+          "y": -65.2173,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": 20.86956,
+          "y": -341.739,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "6",
+            "8"
+          ],
+          "index": 7,
+          "isStart": false,
+          "x": -305.217,
+          "y": -67.826,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "7",
+            "9"
+          ],
+          "index": 8,
+          "isStart": false,
+          "x": -305.217,
+          "y": 234.7826,
+          "zIndex": 8
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "8",
+            "10"
+          ],
+          "index": 9,
+          "isStart": false,
+          "x": -206.0862173913043,
+          "y": 307.82601304347827,
+          "zIndex": 9
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "9"
+          ],
+          "index": 10,
+          "isStart": false,
+          "x": -75.65210434782607,
+          "y": 318.26020434782623,
+          "zIndex": 10
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "12",
+            "18"
+          ],
+          "index": 11,
+          "isStart": false,
+          "x": 23.478251304347758,
+          "y": 109.56521260869563,
+          "zIndex": 11
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "11",
+            "13"
+          ],
+          "index": 12,
+          "isStart": false,
+          "x": 119.999904347826,
+          "y": 164.34780434782624,
+          "zIndex": 12
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "12",
+            "14"
+          ],
+          "index": 13,
+          "isStart": false,
+          "x": 226.9564,
+          "y": 164.3478,
+          "zIndex": 13
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "13",
+            "15"
+          ],
+          "index": 14,
+          "isStart": false,
+          "x": 229.5651,
+          "y": 23.47825,
+          "zIndex": 14
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "14",
+            "16"
+          ],
+          "index": 15,
+          "isStart": false,
+          "x": 28.69564,
+          "y": -140.869,
+          "zIndex": 15
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "15",
+            "17"
+          ],
+          "index": 16,
+          "isStart": false,
+          "x": -190.434,
+          "y": 26.08695,
+          "zIndex": 16
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "16",
+            "18"
+          ],
+          "index": 17,
+          "isStart": false,
+          "x": -187.826,
+          "y": 172.1739,
+          "zIndex": 17
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "11",
+            "17"
+          ],
+          "index": 18,
+          "isStart": false,
+          "x": -80.86949130434776,
+          "y": 161.73911739130426,
+          "zIndex": 18
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 12,
+          "indexStart": 7,
+          "indexEnd": 6,
+          "rotation": 320,
+          "x": -320.869,
+          "y": -67.8254,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 12,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 40,
+          "x": 10.43478,
+          "y": -354.782,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 7,
+          "indexEnd": 8,
+          "rotation": 90,
+          "x": -307.826,
+          "y": -75.6521,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 4,
+          "indexEnd": 5,
+          "rotation": 90,
+          "x": 339.1303,
+          "y": -73.0434,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 8,
+          "indexEnd": 9,
+          "rotation": 40,
+          "x": -310.43439130434814,
+          "y": 232.17374347826075,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 320,
+          "x": 245.21726521739134,
+          "y": 326.0867782608695,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 9,
+          "indexEnd": 10,
+          "rotation": 0,
+          "x": -221.73778260869562,
+          "y": 307.825952173913,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 0,
+          "x": 109.56520869565225,
+          "y": 318.26072173913025,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 10,
+          "indexEnd": 1,
+          "rotation": 320,
+          "x": -67.8256086956523,
+          "y": 323.47801739130426,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 40,
+          "x": 23.478480000000005,
+          "y": 247.82591739130424,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 1,
+          "indexEnd": 11,
+          "rotation": 90,
+          "x": 23.478650000000002,
+          "y": 96.52173565217399,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 11,
+          "indexEnd": 12,
+          "rotation": 40,
+          "x": 31.304333478260872,
+          "y": 99.13040956521738,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 11,
+          "indexEnd": 18,
+          "rotation": 320,
+          "x": -91.30282608695656,
+          "y": 182.60859130434787,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 12,
+          "indexEnd": 13,
+          "rotation": 0,
+          "x": 104.34853913043486,
+          "y": 161.73960869565212,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 16,
+          "indexEnd": 17,
+          "rotation": 90,
+          "x": -193.04226086956524,
+          "y": 13.044434782608619,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 13,
+          "indexEnd": 14,
+          "rotation": 90,
+          "x": 232.1738217391304,
+          "y": 5.217373913043389,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 15,
+          "indexEnd": 16,
+          "rotation": 320,
+          "x": -195.651,
+          "y": 28.69573,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 7,
+          "indexStart": 15,
+          "indexEnd": 14,
+          "rotation": 40,
+          "x": 20.86955434782601,
+          "y": -161.73808695652198,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 2,
+          "indexStart": 17,
+          "indexEnd": 18,
+          "rotation": 0,
+          "x": -216.5217334782609,
+          "y": 166.957260869565,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 90,
+          "x": 140.86956521739125,
+          "y": 834.7826086956522,
+          "zIndex": 0
+        }
+      ],
+      "index": 57,
+      "passName": "pass_57",
+      "itemName": "pass_57",
+      "isPlay": true,
+      "getitemNames": [
+        "itemPoint",
+        "itemLineBG",
+        "itemLuckKey",
+        "itemLine"
+      ]
+    },
+    {
+      "passData": [
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "2",
+            "3",
+            "4"
+          ],
+          "index": 1,
+          "isStart": false,
+          "x": 13.04347,
+          "y": 333.913,
+          "zIndex": 1
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 2,
+          "isStart": false,
+          "x": -281.739,
+          "y": -49.5652,
+          "zIndex": 2
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "2",
+            "4",
+            "5"
+          ],
+          "index": 3,
+          "isStart": false,
+          "x": 10.43478,
+          "y": -52.1739,
+          "zIndex": 3
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "1",
+            "3"
+          ],
+          "index": 4,
+          "isStart": false,
+          "x": 305.2173,
+          "y": -46.9565,
+          "zIndex": 4
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "3",
+            "6"
+          ],
+          "index": 5,
+          "isStart": false,
+          "x": 7.826086,
+          "y": -380.869,
+          "zIndex": 5
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "5",
+            "7"
+          ],
+          "index": 6,
+          "isStart": false,
+          "x": -133.04260869565212,
+          "y": -386.0863913043479,
+          "zIndex": 6
+        },
+        {
+          "typeName": "itemPoint",
+          "allowInOutIndexs": [
+            "6"
+          ],
+          "index": 7,
+          "isStart": true,
+          "x": -138.26069565217392,
+          "y": -313.0434782608696,
+          "zIndex": 7
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 2,
+          "indexEnd": 3,
+          "rotation": 0,
+          "x": -299.998,
+          "y": -50.7019,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 8,
+          "indexStart": 3,
+          "indexEnd": 4,
+          "rotation": 0,
+          "x": 10.43476,
+          "y": -49.5652,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 11,
+          "indexStart": 1,
+          "indexEnd": 3,
+          "rotation": 90,
+          "x": 13.04347,
+          "y": -67.8259,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 9,
+          "indexStart": 3,
+          "indexEnd": 5,
+          "rotation": 90,
+          "x": 7.826078,
+          "y": -393.911,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 3,
+          "indexStart": 5,
+          "indexEnd": 6,
+          "rotation": 0,
+          "x": -153.912,
+          "y": -388.695,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 1,
+          "indexStart": 6,
+          "indexEnd": 7,
+          "rotation": 90,
+          "x": -133.043,
+          "y": -388.695,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 14,
+          "indexStart": 1,
+          "indexEnd": 2,
+          "rotation": 53,
+          "x": -299.999,
+          "y": -52.1738,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLineBG",
+          "group": 14,
+          "indexStart": 1,
+          "indexEnd": 4,
+          "rotation": 307,
+          "x": 15.652057391304371,
+          "y": 359.9999,
+          "zIndex": 0
+        },
+        {
+          "typeName": "itemLine",
+          "index": 0,
+          "rotation": 0,
+          "x": 213.91304347826087,
+          "y": 315.6521739130434,
+          "zIndex": 0
+        }
+      ],
+      "index": 58,
+      "passName": "pass_58",
+      "itemName": "pass_58",
+      "isPlay": true,
       "getitemNames": [
         "itemPoint",
         "itemLineBG",

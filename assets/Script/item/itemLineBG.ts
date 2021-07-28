@@ -17,6 +17,7 @@ import Utils from "../System/Utils/Utils";
 import UtilsNode from "../System/Utils/UtilsNode";
 import LoadManage from "../System/Load/LoadManage";
 import UtilsDB from "../System/Utils/UtilsDB";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -99,6 +100,8 @@ export default class ItemLineBG extends ItemBase {
     头: cc.Node = null
     尾: cc.Node = null
 
+    中皮肤_白点: cc.Node = null
+
 
 
     private moveDir: cc.Vec2;
@@ -125,7 +128,7 @@ export default class ItemLineBG extends ItemBase {
         // this.中距离.opacity = 250
         this.show = false
 
-        this.尾.setPosition(this.中距离.width+this.groupWidthLength*0.6,0)
+        this.尾.setPosition(this.中距离.width+this.groupWidthLength*1-3,0)
         this.对号.x =  this.中距离.width/2
     }
 
@@ -138,6 +141,10 @@ export default class ItemLineBG extends ItemBase {
         let balloonSkin =  await  LoadManage.getSpriteForName("lineSkin_"+useRubber.rubber)
             this.中皮肤.getComponent(cc.Sprite).spriteFrame = balloonSkin
 
+
+            // UtilsNode.show(this.中皮肤_白点,true)
+
+
             let balloonSkin_1 =  await  LoadManage.getSpriteForName("lineSkinOther_"+useRubber.rubber+'_left')
             this.头皮肤.spriteFrame = balloonSkin_1
             let balloonSkin_2 =  await  LoadManage.getSpriteForName("lineSkinOther_"+useRubber.rubber+'_right')
@@ -147,10 +154,12 @@ export default class ItemLineBG extends ItemBase {
             this.对号.angle-=this.node.angle
             ccLog.log("我的角度",this.node.angle,"对号的角度",this.对号.angle)
 
+            //连上了
+            Emitter.fire("onPlaySound",SoundType.气球连上时,1)
 
         }else if (this.show == true) {
             ccLog.log("中距离设置多长该爆炸了")
-
+            Emitter.fire("onPlaySound",SoundType.气球爆了扎气球时,1)
             Emitter.fire("onPlayAgainGameOverCall")
         }
     }
@@ -332,6 +341,12 @@ export default class ItemLineBG extends ItemBase {
             parentNode : this.node
         }
         this.尾 = GetNode.getNode(data)
+        data = {
+            type : GetNodeType.开始隐藏通过参数显示,
+            otherData : "中皮肤_白点",
+            parentNode : this.node
+        }
+        this.中皮肤_白点 = GetNode.getNode(data)
 
     }
 

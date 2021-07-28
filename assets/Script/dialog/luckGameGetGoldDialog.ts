@@ -47,17 +47,21 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
     removeEmitter() {
 
     }
-
+    index : number = 0
     setData(data) {
         this.data = data
         this.initView()
         this.initOnClick()
+        ccLog.log("要设置的呢 ",this.data)
+        ccLog.log("要设置的呢下一关 ",this.data.data.self.data.data.index)
+        this.index = this.data.data.self.data.data.index
 
-
-        this.气球获得_获得奖励.string = this.data.data.gold
-
+        this.气球获得_获得奖励.string =  this.data.data.gold
+        Emitter.fire("onAssetsShowHide",true)
 
     }
+
+
 
     subclassCall(): any {
 
@@ -65,16 +69,12 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
 
     initOnClick(){
         this.气球获得_普通领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
-            ccLog.log("要给过去的数据是 0 ",this.data.data)
-            Emitter.fire("onNextPass",this.data.data)
-            let addGemData = {
-                type : AssetsType.钻石,
-                count : this.data.data.gold,
-                // callbackGem_donthave : this.callbackGem_donthaveAdd,
-                // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
-                // callbackGem_subsucceed : this.callbackGem_subsucceed
-            }
-            UtilsDB.addAssets(addGemData)
+            ccLog.log("要给过去的数据是 我是奖励给的 ",this.data.data)
+
+
+
+            this.addGold = this.data.data.gold
+
             let  dataItem = {
                 self : this,
                 rootNode : this.node,
@@ -90,6 +90,9 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
         },this)
         this.气球获得_看广告领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
             ccLog.log("要给过去的数据是 0 ",this.data.data)
+
+            // Emitter.fire("onNextPass",this.data.data.self.data.index)
+
             let  data = {
                 self : this,
             }
@@ -107,16 +110,13 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
         },this)
     }
 
+    addGold : number = 0
+
     lookDialogsuccessfulCallback(data){
-        let addGemData = {
-            type : AssetsType.钻石,
-            count :  data.data.self.data.data.gold*2,
-            // callbackGem_donthave : this.callbackGem_donthaveAdd,
-            // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
-            // callbackGem_subsucceed : this.callbackGem_subsucceed
-        }
-        // Emitter.fire("onEduShowIndex",2)
-        UtilsDB.addAssets(addGemData)
+
+        data.data.self.addGold = data.data.self.data.data.gold*2
+
+
         // ccLog.log("准备去加钱成功",data.data.self,data.data.self.callbacks.successfulCallback == true)
         // if (data.data.self.callbacks.successfulCallback) {
         //     data.data.self.callbacks.successfulCallback(data.data.self.data.data)
@@ -145,7 +145,14 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
 
     ItemPreTypesuccessfulCallback(data){
         ccLog.log("回来什么呢加钱结束",data)
-
+        let addGemData = {
+            type : AssetsType.钻石,
+            count : data.data.self.addGold,
+            // callbackGem_donthave : this.callbackGem_donthaveAdd,
+            // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+            // callbackGem_subsucceed : this.callbackGem_subsucceed
+        }
+        UtilsDB.addAssets(addGemData)
 
         // data.data.self.goLuckGame(data.data.self.data.data)
 
@@ -155,6 +162,11 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
             }
         }
         data.data.self.node.destroy()
+
+        // Emitter.fire("onNextPass",data.data.self.index)
+
+        Emitter.fire("onBackLuckGame")
+
     }
 
 

@@ -46,6 +46,8 @@ export default class Pass extends BasePass {
     关卡_商城: cc.Node = null
     关卡_跳过: cc.Node = null
 
+    关卡_数字: cc.Label = null
+
     getitemNames: string[] = []
 
     onDestroy() {
@@ -101,6 +103,8 @@ export default class Pass extends BasePass {
     }
 
     async setData(data) {
+        Emitter.fire("onAssetsShowHide",true)
+
         this.getitemNames = [
             ItemPreType.点, ItemPreType.线, ItemPreType.钥匙,ItemPreType.操作棍
         ]
@@ -120,10 +124,12 @@ export default class Pass extends BasePass {
 
             await this.addLine(passData)
 
-
+        this.关卡_数字.string =  this.data.index
     }
    async onGameOverCall(){
         UtilsNode.show(this.关卡吞噬,true)
+       Emitter.fire("onVictory")
+
        Emitter.fire("onDuiHao")
         await Utils.setTimerOnce(this,3)
         Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
@@ -243,6 +249,13 @@ export default class Pass extends BasePass {
             parentNode: this.node
         }
         this.关卡_跳过 = GetNode.getNode(data)
+
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "关卡_数字",
+            parentNode: this.node
+        }
+        this.关卡_数字 = GetNode.getNode(data).getComponent(cc.Label)
 
 
     }

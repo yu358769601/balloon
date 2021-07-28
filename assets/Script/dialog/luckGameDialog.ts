@@ -16,6 +16,7 @@ import UtilsNode from "../System/Utils/UtilsNode";
 import Utils from "../System/Utils/Utils";
 import UtilsTime from "../System/Utils/UtilsTime";
 import UtilsAction from "../System/Utils/UtilsAction";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -65,7 +66,7 @@ export default class LuckGameDialog extends BaseDialog {
 
        //掉皮皮
        let tempList =  Utils.getCirclePoints(1000,new cc.Vec2(0,0),Utils.random(6,10),1000)
-
+       Emitter.fire("onPlaySound",SoundType.气球爆了扎气球时,1)
        for (let i = 0; i < tempList.length; i++) {
            let item =  await UtilsNode.getNode(ItemPreType.爆炸条目,this.扎气球_金币区)
            // item.setPosition(temp[i])
@@ -74,6 +75,10 @@ export default class LuckGameDialog extends BaseDialog {
            addGemItem.node.setPosition(position)
            addGemItem.startAction(tempList[i])
        }
+
+       Emitter.fire("onPlaySound",SoundType.超级奖励金币向上飞的时候2跟在1后播放,1)
+
+
         //掉金币
         for (let i = 0; i < 5; i++) {
             let item =  await UtilsNode.getNode(ItemPreType.金币条目,this.扎气球_金币区)
@@ -84,7 +89,7 @@ export default class LuckGameDialog extends BaseDialog {
             addGemItem.startAction(this.扎气球_金币下限Y)
           await  Utils.setTimerOnce(this,0.02)
         }
-
+       Emitter.fire("onPlaySound",SoundType.超级奖励金币向上飞的时候1,1)
        this.isItemBalloons()
 
     }
@@ -211,6 +216,10 @@ export default class LuckGameDialog extends BaseDialog {
         // GoLuckGameCountdown
 
         this.addItem()
+
+        Emitter.fire("onAssetsShowHide",false)
+
+
     }
 
     setTime(){

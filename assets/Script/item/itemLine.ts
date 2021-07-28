@@ -159,7 +159,7 @@ export default class ItemLine extends ItemBase {
 
         ccLog.log("长度疑问",this.groupHeightLength*1 + this.中距离.width)
         // await Utils.setTimerOnce(this,0.01)
-        this.尾.setPosition(this.中距离.width+this.groupWidthLength*0.5,0)
+        this.尾.setPosition(this.中距离.width+this.groupWidthLength*1,0)
 
     }
 
@@ -598,6 +598,7 @@ export default class ItemLine extends ItemBase {
             ccLog.log("游戏结束")
             this.group += group
             this.onSetWideth(null, null)
+
             // let cllbacks = {
             //     // self : this,
             //     successfulCallback: this.successfulCallback,
@@ -608,6 +609,8 @@ export default class ItemLine extends ItemBase {
             // data.self = this
             // Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
             Emitter.fire("onGameOverCall")
+
+            this.node.destroy()
         } else {
             this.group += group
             this.onSetWideth(null, null)

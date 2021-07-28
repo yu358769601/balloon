@@ -82,6 +82,11 @@ export default class ItemShopItem extends cc.Component {
             this.setType(ItemShopItemType.使用中的)
             Emitter.fire("onDefultItemShopItem",this.data.item.name)
             UtilsDB.setUseRubber(this.data.item.name)
+
+            Emitter.fire("onDefultListItem",this.data.item.name)
+            Emitter.fire("onSetSkinLine", this.data.item.name)
+
+
         },this)
         this.条目气球_条目.on(cc.Node.EventType.TOUCH_END,()=>{
             Emitter.fire("onShowModel",this.data.item.name)
@@ -143,6 +148,11 @@ export default class ItemShopItem extends cc.Component {
 
         Emitter.fire("onVictory")
         UtilsDB.setUseRubber(data.data.self.data.item.name)
+
+
+        Emitter.fire("onDefultListItem",data.data.self.data.item.name)
+        Emitter.fire("onSetSkinLine", data.data.self.data.item.name)
+
     }
     lookDialogfailureCallback(data){
 
@@ -170,6 +180,11 @@ export default class ItemShopItem extends cc.Component {
         Emitter.fire("onDefultItemShopItem",data.self.data.item.name)
 
         UtilsDB.setUseRubber(data.self.data.item.name)
+
+
+        Emitter.fire("onDefultListItem",data.self.data.item.name)
+        Emitter.fire("onSetSkinLine", data.self.data.item.name)
+
 
     }
 

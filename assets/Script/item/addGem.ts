@@ -14,6 +14,7 @@ import {ItemPreType} from "../System/Type/enums";
 import Utils from "../System/Utils/Utils";
 import Vec2 = cc.Vec2;
 import Emitter from "../System/Msg/Emitter";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -107,7 +108,9 @@ export default class AddGem extends BaseDialogNoAd {
 
             }
             // this.goldNodeList.sort(node => node.dis);
+            Emitter.fire("onPlaySound",SoundType.超级奖励金币向上飞的时候1,1)
 
+            Emitter.fire("onPlaySound",SoundType.超级奖励金币向上飞的时候2跟在1后播放,1)
             this.goldNodeList.forEach((node, idx) => {
                 let addGemItem = node.getComponent(ItemPreType.加钱条目)
 

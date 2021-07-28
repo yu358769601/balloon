@@ -333,6 +333,7 @@ export default class GameMenuActivity extends Activity {
     // Emitter.fire("onSetPassByName",data)
     async onSetPassByName(selfName, data) {
         ccLog.log("当前设置关卡 本关所有内容", data)
+        Emitter.fire("onAssetsShowHide",true)
         if (data != null) {
             if (this.currentNode != null) {
                 this.currentNode.destroy()
@@ -359,13 +360,13 @@ export default class GameMenuActivity extends Activity {
             //     passName: "pass_101"
             //     tip: "pass_101_tip"
 
-            // let myPassSave = UtilsDB.getMyPassSave()
+            let myPassSave = UtilsDB.getMyPassSave()
             // myPassSave.index =data.pass.index
             // let passName = data.pass.passName
-            //
-            // myPassSave.index =data.pass.index
-            // myPassSave.passName =data.pass.passName
-            // UtilsDB.setMyPassSave(myPassSave)
+
+            myPassSave.index =data.index
+            myPassSave.passName =data.passName
+            UtilsDB.setMyPassSave(myPassSave)
 
             // this.loadPass(data.pass.index)
             // UtilsDB.addCheckpointRecords(passName,SelectCheckPointType.已解锁未通关)

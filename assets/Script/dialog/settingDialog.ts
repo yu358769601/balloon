@@ -12,6 +12,7 @@ import Emitter from "../System/Msg/Emitter";
 import {DialogType, ItemPreType} from "../System/Type/enums";
 import UtilsDB, {AssetsType} from "../System/Utils/UtilsDB";
 import JsonManager from "../System/manage/JsonManager";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -125,19 +126,24 @@ export default class SettingDialog extends BaseDialog {
         // },this)
 
         this.设置_关闭.on(cc.Node.EventType.TOUCH_START,()=>{
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             this.node.destroy()
         },this)
 
         this.设置_音效_开.on(cc.Node.EventType.TOUCH_START,()=>{
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             this.setOnOffyinxiao()
         },this)
         this.设置_音效_关.on(cc.Node.EventType.TOUCH_START,()=>{
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             this.setOnOffyinxiao()
         },this)
         this.设置_音乐_开.on(cc.Node.EventType.TOUCH_START,()=>{
             this.setOnOffyinyue()
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
         },this)
         this.设置_音乐_关.on(cc.Node.EventType.TOUCH_START,()=>{
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             this.setOnOffyinyue()
         },this)
     }

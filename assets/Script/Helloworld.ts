@@ -687,6 +687,7 @@ export default class Helloworld extends cc.Component {
     //别的组件调用的
     async startLoad() {
         UIActivity.initView(this.主节点)
+        Emitter.fire("onAssetsShowHide",false)
         await LoadManage.starLoad(this.initJsonLoad(), {
             schedule: (currentCount, count) => {
                 // cc.log("回调进度",currentCount,"/",count);

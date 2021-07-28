@@ -57,7 +57,7 @@ export default class ShoppingDialog extends BaseDialog {
         this.data = data
         this.initView()
         this.initOnClick()
-
+        Emitter.fire("onAssetsShowHide",true)
         // this.data = [
         //     {
         //         name : "ma_1",
@@ -233,6 +233,10 @@ export default class ShoppingDialog extends BaseDialog {
 
 
         this.商店_viewPager.setData({data : null,list : datass})
+
+        let  useRubber = UtilsDB.getUseRubber()
+        Emitter.fire("onShowModel",useRubber.rubber)
+
 
     }
     subclassCall(): any {

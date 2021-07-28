@@ -13,6 +13,7 @@ import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import UtilsAction from "../System/Utils/UtilsAction";
 import Utils from "../System/Utils/Utils";
 import {DialogType} from "../System/Type/enums";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -179,19 +180,19 @@ export default class Menu extends cc.Component {
     initClick() {
         this.菜单_开始按钮.on(cc.Node.EventType.TOUCH_END, async () => {
             ccLog.log("准备去开始去了")
-
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             await this.onShowAll("",false)
             let pass = await JsonManager.getPassByIndex(UtilsDB.getMyPassSave().index)
             ccLog.log("关卡信息",pass)
             Emitter.fire("onSetPassByName", pass)
         }, this)
         this.菜单_设置按钮.on(cc.Node.EventType.TOUCH_END, async () => {
-
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             Emitter.fire("onOpenDialog", {name: DialogType.设置, zIndex: 100,data : this.data}, null)
         }, this)
 
         this.菜单_商城按钮.on(cc.Node.EventType.TOUCH_END, async () => {
-
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             Emitter.fire("onOpenDialog", {name: DialogType.商店, zIndex: 100,data : null}, null)
 
         }, this)

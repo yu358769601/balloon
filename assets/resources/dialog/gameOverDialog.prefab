@@ -1653,7 +1653,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "资源 583",
+    "_name": "资源 678",
     "_objFlags": 0,
     "_parent": {
       "__id__": 20
@@ -1678,8 +1678,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 224,
-      "height": 126
+      "width": 229,
+      "height": 129
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1690,8 +1690,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        94.116,
-        -186.515,
+        96.292,
+        -187.049,
         0,
         0,
         0,
@@ -1728,13 +1728,13 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_srcBlendFactor": 0,
+    "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "15ed634b-e9be-44f7-968c-4cd3935d9ec5"
+      "__uuid__": "8b9a5e7b-835d-4e35-9325-d2946f6fec62"
     },
     "_type": 0,
-    "_sizeMode": 0,
+    "_sizeMode": 1,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -1755,7 +1755,7 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "80KodN8CRFTLM2QtUoF2/l",
+    "fileId": "466L/D7ZNMULsLGJRcA/YG",
     "sync": false
   },
   {
@@ -2796,7 +2796,7 @@
     "node": {
       "__id__": 76
     },
-    "_enabled": true,
+    "_enabled": false,
     "_materials": [
       {
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
@@ -3435,7 +3435,7 @@
     "node": {
       "__id__": 93
     },
-    "_enabled": true,
+    "_enabled": false,
     "_materials": [
       {
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"

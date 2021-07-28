@@ -17,6 +17,7 @@ import ControlGoLuckGame from "../control/controlGoLuckGame";
 import LoadManage from "../System/Load/LoadManage";
 import Tween from "../System/Utils/Tween";
 import {ItemShopItemType} from "../item/itemShopItem";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -155,6 +156,7 @@ export default class GetNewSkin extends BaseDialog {
         this.胜利_普通领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
             ccLog.log("要给过去的数据是 0 ",this.data.data)
             Emitter.fire("onNextPass",this.data.data.passData)
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             // let addGemData = {
             //     type : AssetsType.钻石,
             //     count : JsonManager.passSettingjson.diamond,
@@ -178,8 +180,13 @@ export default class GetNewSkin extends BaseDialog {
 
             this.node.destroy()
 
+
+            Emitter.fire("onBackNewSkin")
+
+
         },this)
         this.胜利_看广告领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
+            Emitter.fire("onPlaySound",SoundType.按钮,1)
             ccLog.log("要给过去的数据是 0 ",this.data.data)
             let  data = {
                 self : this,
@@ -228,8 +235,11 @@ export default class GetNewSkin extends BaseDialog {
 
         UtilsDB.addMyRubber(data.data.self.data.data.newSkin)
         UtilsDB.setUseRubber(data.data.self.data.data.newSkin)
-
+        Emitter.fire("onDefultListItem",data.data.self.data.data.newSkin)
+        Emitter.fire("onSetSkinLine", data.data.self.data.data.newSkin)
         data.data.self.node.destroy()
+
+        Emitter.fire("onBackNewSkin")
     }
     lookDialogfailureCallback(){
 

@@ -2419,14 +2419,24 @@ export default class UtilsDB extends cc.Component {
             //     name: "sj_1"
             if (rubberPass.length > 0) {
 
-                let list = UtilsDB.getMyRubberByNotBuyRubberPassCheck(rubberPass)
-                ccLog.log("排除之后的数据是", list)
-                if (list.length > 0) {
-                    nowPassRubber.rubber.name = list[0].item.name
-                    nowPassRubber.rubber.index = 0
-                    UtilsDB.setNowPassRubber(nowPassRubber)
-                }
+                // let list = UtilsDB.getMyRubberByNotBuyRubberPassCheck(rubberPass)
+                // ccLog.log("排除之后的数据是", list)
+                //
+                // if (list.length > 0) {
+                //     nowPassRubber.rubber.name = list[0].item.name
+                //     nowPassRubber.rubber.index = 0
+                //     UtilsDB.setNowPassRubber(nowPassRubber)
+                // }
+              let index =  Utils.random(0,rubberPass.length)
+                nowPassRubber.rubber.name =  rubberPass[index].item.name
+                nowPassRubber.rubber.index = 0
+                UtilsDB.setNowPassRubber(nowPassRubber)
+            }else{
+               let rubber =  this.getRubberByRandom()
 
+                nowPassRubber.rubber.name =  rubber.name
+                nowPassRubber.rubber.index = 0
+                UtilsDB.setNowPassRubber(nowPassRubber)
             }
 
         } else {
@@ -2524,7 +2534,7 @@ export default class UtilsDB extends cc.Component {
             for (let o in myRubber.list) {
 
                 // ccLog.log('开始排除 index:', o, 'value:', myRubber.list[o])
-                ccLog.log('开始排除 对比 ', o, 'name:', item.name)
+                ccLog.log('开始排除 对比 ', o, 'name:', item.item.name)
                 if (o == item.item.name) {
                     count = 1
                 }
@@ -2538,10 +2548,15 @@ export default class UtilsDB extends cc.Component {
         }
 
 
-        ccLog.log("开始排除 所有的", list)
+        ccLog.log("开始排除 所有的", list,"返回的",returnList)
 
 
         return returnList
+    }
+    //获取一个随机橡皮
+    static getRubberByRandom(){
+        let list = JsonManager.getRubbers()
+        return list[Utils.random(0,list.length)]
     }
 
     //从所有的橡皮里面获取 通过名字

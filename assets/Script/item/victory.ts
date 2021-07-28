@@ -9,6 +9,7 @@ import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import UtilsNode from "../System/Utils/UtilsNode";
+import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
 
@@ -50,6 +51,7 @@ export default class Victory extends cc.Component {
         UtilsNode.show(this.node,true)
         ccLog.log("现在有东西吗",this,this.礼花效果)
         this.礼花效果.setAnimation(0,"victory",false)
+        Emitter.fire("onPlaySound",SoundType.胜利放彩带,1)
     }
 
 

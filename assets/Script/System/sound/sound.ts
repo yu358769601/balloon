@@ -24,6 +24,9 @@ export enum SoundType {
     气球连上时 = "气球连上时",
     胜利 = "胜利",
     失败 = "失败",
+    转盘 = "转盘",
+    胜利放彩带 = "胜利放彩带",
+    胜利界面 = "胜利界面",
 }
 
 @ccclass
@@ -221,10 +224,10 @@ export default class Sound extends cc.Component {
     }
 
 
-    // Emitter.fire("onPlaySound",SoundType.初始擦除音效)
-    async onPlaySound(selfName,sound){
+    // Emitter.fire("onPlaySound",SoundType.初始擦除音效,1)
+    async onPlaySound(selfName,sound,volume){
         // ccLog.log("点了购买小怪")
-        this.soundAudioClip(sound)
+        this.soundAudioClip(sound,volume)
     }
 
     // update (dt) {}
