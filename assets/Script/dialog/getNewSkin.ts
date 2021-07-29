@@ -155,7 +155,7 @@ export default class GetNewSkin extends BaseDialog {
     initOnClick(){
         this.胜利_普通领取实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
             ccLog.log("要给过去的数据是 0 ",this.data.data)
-            Emitter.fire("onNextPass",this.data.data.passData)
+            // Emitter.fire("onNextPass",this.data.data.passData)
             Emitter.fire("onPlaySound",SoundType.按钮,1)
             // let addGemData = {
             //     type : AssetsType.钻石,

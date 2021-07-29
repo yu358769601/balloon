@@ -96,6 +96,7 @@ export default class ItemLine extends ItemBase {
     }
 
    async onSetSkinLine(selfName,name){
+        ccLog.log("设置什么颜色的",name)
         this.中皮肤.getComponent(cc.Sprite).spriteFrame = await LoadManage.getSpriteForName("lineSkin_"+name)
 
        let balloonSkin_1 =  await  LoadManage.getSpriteForName("lineSkinOther_"+name+'_left')

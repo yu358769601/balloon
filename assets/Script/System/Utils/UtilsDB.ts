@@ -14,6 +14,7 @@ export enum AssetsType {
     钻石 = "钻石",
     放大镜 = "放大镜",
     跳过 = "跳过",
+    体力 = "体力",
 }
 
 @ccclass
@@ -2132,7 +2133,7 @@ export default class UtilsDB extends cc.Component {
         return this.getJson("assets")
     }
 
-    // UtilsDB.addAssets(assets)
+    // UtilsDB.setAssets(assets)
     static setAssets(assets) {
         this.setJson("assets", assets)
     }
@@ -2193,8 +2194,6 @@ export default class UtilsDB extends cc.Component {
      */
     // UtilsDB.addAssets(addData)
     static addAssets(addData) {
-
-
         ccLog.log("加钱进来的是什么", addData)
 
         // return
@@ -2291,6 +2290,92 @@ export default class UtilsDB extends cc.Component {
             }
         }
     }
+    // UtilsDB.initLifeAssets()
+    static initLifeAssets() {
+        this.setJson("lifeAssets", {
+            // 体力
+            life: 20,
+            //体力最大
+            lifeMax: 40,
+        })
+        return this.getJson("lifeAssets")
+    }
+
+    // UtilsDB.getLifeAssets()
+    static getLifeAssets() {
+        if (this.getJson("lifeAssets") == null) {
+            this.initLifeAssets()
+        }
+        // let assets = this.getJson("lifeAssets")
+        // UtilsDB.setLifeAssets(assets)
+        return this.getJson("lifeAssets")
+    }
+
+    // UtilsDB.setLifeAssets(assets)
+    static setLifeAssets(assets) {
+        this.setJson("lifeAssets", assets)
+    }
+    static addLifeAssets(addData) {
+        ccLog.log("加体力进来的是什么", addData)
+
+        // return
+        let assets = UtilsDB.getLifeAssets()
+        let myAssets
+        switch (addData.type) {
+            case AssetsType.体力:
+                myAssets = assets.life
+                break;
+        }
+        if (addData.count < 0) {
+            if (myAssets + addData.count < 0) {
+                ccLog.log("要去展示不够的", addData)
+                // 数量不够
+                if (addData.callback_donthave) {
+                    addData.callback_donthave(addData)
+                }
+            } else {
+                //仅仅是试探性判断是否满足 判断是否满足不消费
+                ccLog.log("我满足减少条件 0 ", myAssets, addData)
+                if (addData.callback_meet) {
+                    addData.callback_meet(addData)
+                    return
+                }
+                ccLog.log("我满足减少条件 1 ", myAssets, addData)
+                myAssets += addData.count
+                switch (addData.type) {
+                    case AssetsType.体力:
+                        assets.life = myAssets
+                        UtilsDB.setLifeAssets(assets)
+                        Emitter.fire("onAssetsLifeRefresh")
+                        break;
+                }
+
+                //扣钱结束
+                if (addData.callback_subsucceed) {
+                    addData.callback_subsucceed(addData)
+                }
+            }
+        } else {
+            //加钱结束
+            myAssets += addData.count
+            switch (addData.type) {
+                case AssetsType.体力:
+                    //体力超了就直接设置 最大值
+                    if (myAssets>=assets.lifeMax) {
+                        myAssets = assets.lifeMax
+                    }
+                    assets.life = myAssets
+                    UtilsDB.setLifeAssets(assets)
+                    Emitter.fire("onAssetsRefresh")
+                    break;
+            }
+            if (addData.callback_addsucceed) {
+                addData.callback_addsucceed(addData)
+            }
+        }
+    }
+
+
 
     // UtilsDB.initJump()
     static initJump() {

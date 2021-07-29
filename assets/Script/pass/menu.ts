@@ -7,12 +7,12 @@
 
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
-import UtilsDB from "../System/Utils/UtilsDB";
+import UtilsDB, {AssetsType} from "../System/Utils/UtilsDB";
 import JsonManager from "../System/manage/JsonManager";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import UtilsAction from "../System/Utils/UtilsAction";
 import Utils from "../System/Utils/Utils";
-import {DialogType} from "../System/Type/enums";
+import {DialogType, ItemPreType} from "../System/Type/enums";
 import {SoundType} from "../System/sound/sound";
 
 const {ccclass, property} = cc._decorator;
@@ -164,13 +164,13 @@ export default class Menu extends cc.Component {
         }
         this.菜单_背景 = GetNode.getNode(data)
         data = {
-            type: GetNodeType.纯查找,
+            type: GetNodeType.开始隐藏通过参数显示,
             otherData: "菜单_更多精彩",
             parentNode: this.node
         }
         this.菜单_更多精彩 = GetNode.getNode(data)
         data = {
-            type: GetNodeType.纯查找,
+            type: GetNodeType.开始隐藏通过参数显示,
             otherData: "菜单_添加桌面",
             parentNode: this.node
         }
@@ -181,10 +181,34 @@ export default class Menu extends cc.Component {
         this.菜单_开始按钮.on(cc.Node.EventType.TOUCH_END, async () => {
             ccLog.log("准备去开始去了")
             Emitter.fire("onPlaySound",SoundType.按钮,1)
-            await this.onShowAll("",false)
-            let pass = await JsonManager.getPassByIndex(UtilsDB.getMyPassSave().index)
-            ccLog.log("关卡信息",pass)
-            Emitter.fire("onSetPassByName", pass)
+
+            let addGemData = {
+                type: AssetsType.体力,
+                count: JsonManager.passSettingjson.passAddLife,
+                callback_donthave : ()=>{
+                    let  data = {
+                        txt : "没有体力了小老弟"
+                    }
+                    // let cllbacks = {
+                    //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                    //     failureCallback: this.newSkinDialogfailureCallback
+                    // }
+                    Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+                },
+                // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+                callback_subsucceed : async()=>{
+                    await this.onShowAll("",false)
+                    let pass = await JsonManager.getPassByIndex(UtilsDB.getMyPassSave().index)
+                    ccLog.log("关卡信息",pass)
+                    Emitter.fire("onSetPassByName", pass)
+                }
+            }
+            // Emitter.fire("onEduShowIndex",2)
+            UtilsDB.addLifeAssets(addGemData)
+
+
+
+
         }, this)
         this.菜单_设置按钮.on(cc.Node.EventType.TOUCH_END, async () => {
             Emitter.fire("onPlaySound",SoundType.按钮,1)

@@ -1384,7 +1384,7 @@
       "ctor": "Float64Array",
       "array": [
         392.793,
-        671.787,
+        575.345,
         0,
         0,
         0,
@@ -1713,7 +1713,7 @@
     "_alignFlags": 33,
     "_left": 0,
     "_right": 47.206999999999994,
-    "_top": 188.21299999999997,
+    "_top": 284.655,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
@@ -1805,7 +1805,7 @@
       "__id__": 40
     },
     "_enabled": true,
-    "nodeType": 1,
+    "nodeType": 0,
     "nodezIndex": 0,
     "otherData": "菜单_添加桌面",
     "_id": ""
@@ -1871,7 +1871,7 @@
       "ctor": "Float64Array",
       "array": [
         -427.00800000000004,
-        674.971,
+        578.529,
         0,
         0,
         0,
@@ -2200,7 +2200,7 @@
     "_alignFlags": 9,
     "_left": 12.992000000000019,
     "_right": 0,
-    "_top": 185.029,
+    "_top": 281.471,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
@@ -2222,7 +2222,7 @@
       "__id__": 53
     },
     "_enabled": true,
-    "nodeType": 1,
+    "nodeType": 0,
     "nodezIndex": 0,
     "otherData": "菜单_更多精彩",
     "_id": ""
@@ -7533,7 +7533,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "2e689f8e-9bc5-4c36-85e1-0aa34839bf4c"
+      "__uuid__": "b5819b5a-7f93-43a1-ae7c-2f589cc2b989"
     },
     "_type": 0,
     "_sizeMode": 1,

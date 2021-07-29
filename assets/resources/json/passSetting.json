@@ -102,7 +102,15 @@
   "GoLuckGameCountdown" : 6,
 
   "GoLuckGameGold_" : "扎气球每个气球金币数量",
-  "GoLuckGameGold" : 10
+  "GoLuckGameGold" : 10,
 
+  "countDownTime_" : "倒计时时间(毫秒) 300000",
+  "countDownTime" : 10000,
+
+  "countDownTimeAddLife_" : "每次倒计时到了增加的生命值",
+  "countDownTimeAddLife" : 1,
+
+  "passAddLife_" : "每关消耗的体力",
+  "passAddLife" : -1
 
 }

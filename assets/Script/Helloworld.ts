@@ -686,6 +686,9 @@ export default class Helloworld extends cc.Component {
 
     //别的组件调用的
     async startLoad() {
+
+
+        // ccLog.log("我是ts 我有window对象吗",window)
         UIActivity.initView(this.主节点)
         Emitter.fire("onAssetsShowHide",false)
         await LoadManage.starLoad(this.initJsonLoad(), {
@@ -731,7 +734,7 @@ export default class Helloworld extends cc.Component {
 
         UtilsNode.show(this.只有熊,false)
         Emitter.fire("onInitMusicSwitch")
-
+        Emitter.fire("onAssetsLifeRefresh")
         // LoadManage.starNotLoad(this.initNotLoad());
         //
         // LoadManage.starLoad(this.initSp(),{
