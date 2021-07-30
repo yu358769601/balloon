@@ -691,6 +691,7 @@ export default class Helloworld extends cc.Component {
         // ccLog.log("我是ts 我有window对象吗",window)
         UIActivity.initView(this.主节点)
         Emitter.fire("onAssetsShowHide",false)
+        Emitter.fire("onAssetsLifeShowHide",false)
         await LoadManage.starLoad(this.initJsonLoad(), {
             schedule: (currentCount, count) => {
                 // cc.log("回调进度",currentCount,"/",count);

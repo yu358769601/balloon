@@ -2346,6 +2346,7 @@ export default class UtilsDB extends cc.Component {
                     case AssetsType.体力:
                         assets.life = myAssets
                         UtilsDB.setLifeAssets(assets)
+                        Emitter.fire("onAssetsLifeAdd",addData.count)
                         Emitter.fire("onAssetsLifeRefresh")
                         break;
                 }
@@ -2366,7 +2367,7 @@ export default class UtilsDB extends cc.Component {
                     }
                     assets.life = myAssets
                     UtilsDB.setLifeAssets(assets)
-                    Emitter.fire("onAssetsRefresh")
+                    Emitter.fire("onAssetsLifeRefresh")
                     break;
             }
             if (addData.callback_addsucceed) {

@@ -333,7 +333,7 @@ export default class GameMenuActivity extends Activity {
     // Emitter.fire("onSetPassByName",data)
     async onSetPassByName(selfName, data) {
         ccLog.log("当前设置关卡 本关所有内容", data)
-        Emitter.fire("onAssetsShowHide",true)
+
         if (data != null) {
             if (this.currentNode != null) {
                 this.currentNode.destroy()

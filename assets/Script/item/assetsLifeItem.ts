@@ -13,6 +13,8 @@ import Tools from "../System/Utils/Tools";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import UtilsTime from "../System/Utils/UtilsTime";
 import JsonManager from "../System/manage/JsonManager";
+import UtilsNode from "../System/Utils/UtilsNode";
+import UtilsAction from "../System/Utils/UtilsAction";
 
 const {ccclass, property} = cc._decorator;
 
@@ -26,6 +28,8 @@ export default class AssetsLifeItem extends cc.Component {
     // text: string = 'hello';
     资源_钻石数字: cc.Label = null
     体力_计时: cc.Label = null
+    体力_减少: cc.Label = null
+    体力_减少P: cc.Vec2 = null
 
     // LIFE-CYCLE CALLBACKS:
     onDestroy(): void {
@@ -34,6 +38,7 @@ export default class AssetsLifeItem extends cc.Component {
 
     registerEmitter() {
         Emitter.register('onAssetsLifeRefresh', this.onAssetsLifeRefresh, this)
+        Emitter.register('onAssetsLifeAdd', this.onAssetsLifeAdd, this)
         Emitter.register('onGetAssetsLifeItem', this.onGetAssetsLifeItem, this)
         Emitter.register('onAssetsLifeShowHide', this.onAssetsLifeShowHide, this)
         Emitter.register('onAssetsLifeAddGemGetP', this.onAssetsLifeAddGemGetP, this)
@@ -41,6 +46,7 @@ export default class AssetsLifeItem extends cc.Component {
 
     removeEmitter() {
         Emitter.remove('onAssetsLifeRefresh', this.onAssetsLifeRefresh, this)
+        Emitter.remove('onAssetsLifeAdd', this.onAssetsLifeAdd, this)
         Emitter.remove('onGetAssetsLifeItem', this.onGetAssetsLifeItem, this)
         Emitter.remove('onAssetsLifeShowHide', this.onAssetsLifeShowHide, this)
         Emitter.remove('onAssetsLifeAddGemGetP', this.onAssetsLifeAddGemGetP, this)
@@ -66,11 +72,18 @@ export default class AssetsLifeItem extends cc.Component {
         }
         this.资源_钻石数字 = GetNode.getNode(data).getComponent(cc.Label)
         data = {
-            type: GetNodeType.纯查找,
+            type: GetNodeType.开始隐藏通过参数显示,
             otherData: "体力_计时",
             parentNode: this.node,
         }
         this.体力_计时 = GetNode.getNode(data).getComponent(cc.Label)
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "体力_减少",
+            parentNode: this.node,
+        }
+        this.体力_减少 = GetNode.getNode(data).getComponent(cc.Label)
+        this.体力_减少P = this.体力_减少.node.getPosition()
 
     }
 
@@ -84,11 +97,25 @@ export default class AssetsLifeItem extends cc.Component {
         if (this.checkLifeMax() == false) {
             // ccLog.log("怎么说呢",JsonManager.passSettingjson)
             this.startTimeCutDown(JsonManager.passSettingjson.countDownTime)
+        }else{
+            UtilsNode.show(this.资源_钻石数字,true)
+            ccLog.log("为什么不显示呢",this.资源_钻石数字)
+        }
+    }
+    onAssetsLifeAdd(selfName,count) {
+        if (count<0) {
+            this.体力_减少.string = count
+            UtilsNode.show(this.体力_减少.node,true)
+            UtilsAction.moveByfadeOut(this.体力_减少.node,2,0,100,()=>{
+
+                this.体力_减少.node.setPosition(this.体力_减少P)
+                UtilsNode.show(this.体力_减少.node,false)
+            })
         }
     }
 
     //显示资源预制体
-    // Emitter.fire("onAssetsShowHide",true)
+    // Emitter.fire("onAssetsLifeShowHide",true)
     onAssetsLifeShowHide(selfName, b) {
         if (b == true) {
             this.node.opacity = 255
@@ -156,11 +183,15 @@ export default class AssetsLifeItem extends cc.Component {
             if (this.资源_钻石数字.string !=  lifeAssets.life + "") {
                 this.资源_钻石数字.string = lifeAssets.life + ""
             }
-            this.体力_计时.node.active = true
+            UtilsNode.show(this.体力_计时.node,true)
+            UtilsNode.show(this.资源_钻石数字.node,false)
+            // this.体力_计时.node.active = true
             let tt = UtilsTime.dateFormat("MM:SS", new Date(nowTime))
             this.体力_计时.string = tt + ""
         }else{
-            this.体力_计时.node.active = false
+            UtilsNode.show(this.体力_计时.node,false)
+            UtilsNode.show(this.资源_钻石数字.node,true)
+            // this.体力_计时.node.active = false
         }
         return nowTime
     }

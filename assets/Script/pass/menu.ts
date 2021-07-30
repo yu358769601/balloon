@@ -14,6 +14,7 @@ import UtilsAction from "../System/Utils/UtilsAction";
 import Utils from "../System/Utils/Utils";
 import {DialogType, ItemPreType} from "../System/Type/enums";
 import {SoundType} from "../System/sound/sound";
+import {ItemSuperItemType} from "../item/itemSuperItem";
 
 const {ccclass, property} = cc._decorator;
 
@@ -24,6 +25,10 @@ export default class Menu extends cc.Component {
     // LIFE-CYCLE CALLBACKS:
     data: any
 
+
+
+
+
     onDestroy(): void {
         this.removeEmitter()
     }
@@ -32,12 +37,14 @@ export default class Menu extends cc.Component {
         Emitter.remove('onInitPass', this.onInitPass, this)
         Emitter.remove('onNextPass', this.onNextPass, this)
         Emitter.remove('onShowAll', this.onShowAll, this)
+        Emitter.remove('onCheckGo', this.onCheckGo, this)
     }
 
     registerEmitter() {
         Emitter.register('onInitPass', this.onInitPass, this)
         Emitter.register('onNextPass', this.onNextPass, this)
         Emitter.register('onShowAll', this.onShowAll, this)
+        Emitter.register('onCheckGo', this.onCheckGo, this)
     }
 
     onLoad() {
@@ -45,7 +52,8 @@ export default class Menu extends cc.Component {
         this.registerEmitter()
 
         // this.随机橡皮_图片
-
+        Emitter.fire("onAssetsShowHide",true)
+        Emitter.fire("onAssetsLifeShowHide",true)
         this.initView()
         this.initClick()
     }
@@ -97,6 +105,21 @@ export default class Menu extends cc.Component {
         }
     }
 
+    passCount : number = 0
+
+    onCheckGo(selfName,data){
+        this.passCount++
+        if (this.passCount>=JsonManager.passSettingjson.superGetCountPlayMax) {
+            this.passCount = 0
+            Emitter.fire("onOpenDialog", {name: DialogType.超级奖励, zIndex: 100,data : data}, null)
+        }else{
+            Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : data}, null)
+        }
+
+    }
+
+
+
     菜单_吞噬: cc.Node
     菜单_UI组: cc.Node
 
@@ -109,6 +132,8 @@ export default class Menu extends cc.Component {
 
     菜单_更多精彩: cc.Node
     菜单_添加桌面: cc.Node
+
+    菜单_测试按钮: cc.Node
     initView() {
         let data
 
@@ -170,6 +195,12 @@ export default class Menu extends cc.Component {
         }
         this.菜单_更多精彩 = GetNode.getNode(data)
         data = {
+            type: GetNodeType.纯查找,
+            otherData: "菜单_测试按钮",
+            parentNode: this.node
+        }
+        this.菜单_测试按钮 = GetNode.getNode(data)
+        data = {
             type: GetNodeType.开始隐藏通过参数显示,
             otherData: "菜单_添加桌面",
             parentNode: this.node
@@ -219,6 +250,10 @@ export default class Menu extends cc.Component {
             Emitter.fire("onPlaySound",SoundType.按钮,1)
             Emitter.fire("onOpenDialog", {name: DialogType.商店, zIndex: 100,data : null}, null)
 
+        }, this)
+        this.菜单_测试按钮.on(cc.Node.EventType.TOUCH_END, async () => {
+
+            // Emitter.fire("onOpenDialog", {name: DialogType.超级奖励, zIndex: 100,data : {}}, null)
         }, this)
 
 

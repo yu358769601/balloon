@@ -212,7 +212,7 @@ export default class UtilsNode extends cc.Component {
             }else{
                 node.opacity = 255
             }
-
+            // ccLog.log("执行海胆了吗 22",node.active)
         }else{
             node.opacity = 0
             node.active = false

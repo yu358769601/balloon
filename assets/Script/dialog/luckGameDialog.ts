@@ -218,7 +218,7 @@ export default class LuckGameDialog extends BaseDialog {
         this.addItem()
 
         Emitter.fire("onAssetsShowHide",false)
-
+        Emitter.fire("onAssetsLifeShowHide",false)
 
     }
 

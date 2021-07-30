@@ -58,7 +58,7 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
 
         this.气球获得_获得奖励.string =  this.data.data.gold
         Emitter.fire("onAssetsShowHide",true)
-
+        Emitter.fire("onAssetsLifeShowHide",true)
     }
 
 

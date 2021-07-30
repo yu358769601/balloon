@@ -104,7 +104,7 @@ export default class Pass extends BasePass {
 
     async setData(data) {
         Emitter.fire("onAssetsShowHide",true)
-
+        Emitter.fire("onAssetsLifeShowHide",true)
         this.getitemNames = [
             ItemPreType.点, ItemPreType.线, ItemPreType.钥匙,ItemPreType.操作棍
         ]
@@ -132,7 +132,9 @@ export default class Pass extends BasePass {
 
        Emitter.fire("onDuiHao")
         await Utils.setTimerOnce(this,3)
-        Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : this.data}, null)
+
+       Emitter.fire("onCheckGo",this.data)
+
     }
     onPlayAgainGameOverCall(){
         Emitter.fire("onOpenDialog", {name: DialogType.重玩界面, zIndex: 100,data : this.data}, null)

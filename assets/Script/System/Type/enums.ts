@@ -160,6 +160,7 @@ export enum DialogType {
     扎气球 = "luckGameDialog",
     扎气球得到奖励 = "luckGameGetGoldDialog",
     商店 = "shoppingDialog",
+    超级奖励 = "superGetDialog",
 
 }
 export enum ItemPreType {
@@ -185,6 +186,8 @@ export enum ItemPreType {
 
     具体编辑条目提示 = "itemEditTip",
     特效条目 = "itemEffects",
+    超级奖励条目 = "itemSuperItem",
+    超级奖励海胆 = "itemSuperEffects",
 
 
 

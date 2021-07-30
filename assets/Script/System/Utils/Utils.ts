@@ -32,11 +32,11 @@ export default class Utils extends cc.Component {
         let time = new Date().getTime()
         return time
     }
-
+    // Utils.sjsz(num)
     static sjsz(num) {
         let ary = [];					//创建一个空数组用来保存随机数组
         for (let i = 0; i < num; i++) {			//按照正常排序填充数组
-            ary[i] = i + 1;
+            ary[i] = i + 0;
         }
         ary.sort(function () {
             return 0.5 - Math.random();		//返回随机正负值

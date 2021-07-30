@@ -58,6 +58,7 @@ export default class ShoppingDialog extends BaseDialog {
         this.initView()
         this.initOnClick()
         Emitter.fire("onAssetsShowHide",true)
+        Emitter.fire("onAssetsLifeShowHide",true)
         // this.data = [
         //     {
         //         name : "ma_1",
