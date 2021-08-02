@@ -271,7 +271,7 @@ export default class Pass extends BasePass {
 
         this.关卡_返回按钮.on(cc.Node.EventType.TOUCH_START, () => {
             this.node.destroy()
-            Emitter.fire("onShowAll", true)
+            Emitter.fire("onShowAllByGetLuck", true)
         }, this)
         this.关卡_商城.on(cc.Node.EventType.TOUCH_START, () => {
             Emitter.fire("onOpenDialog", {name: DialogType.商店, zIndex: 100,data : null}, null)

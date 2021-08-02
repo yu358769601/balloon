@@ -95,6 +95,7 @@ export default class AssetsLifeItem extends cc.Component {
 
 
         if (this.checkLifeMax() == false) {
+
             // ccLog.log("怎么说呢",JsonManager.passSettingjson)
             this.startTimeCutDown(JsonManager.passSettingjson.countDownTime)
         }else{
@@ -103,15 +104,18 @@ export default class AssetsLifeItem extends cc.Component {
         }
     }
     onAssetsLifeAdd(selfName,count) {
+        let temp = "+"
         if (count<0) {
-            this.体力_减少.string = count
-            UtilsNode.show(this.体力_减少.node,true)
-            UtilsAction.moveByfadeOut(this.体力_减少.node,2,0,100,()=>{
-
-                this.体力_减少.node.setPosition(this.体力_减少P)
-                UtilsNode.show(this.体力_减少.node,false)
-            })
+            // temp = "-"
+            temp = ""
         }
+        this.体力_减少.string =temp+ count
+        UtilsNode.show(this.体力_减少.node,true)
+        UtilsAction.moveByfadeOut(this.体力_减少.node,2,0,100,()=>{
+
+            this.体力_减少.node.setPosition(this.体力_减少P)
+            UtilsNode.show(this.体力_减少.node,false)
+        })
     }
 
     //显示资源预制体
@@ -151,6 +155,7 @@ export default class AssetsLifeItem extends cc.Component {
 
     // 开始倒计时
     startTimeCutDown(time) {
+        ccLog.log("现在去倒计时了吗 0 ",this.timeTag,time)
         if (this.timeTag == false) {
             this.timeTag = true
             // ccLog.log("进来几次",this.timeTag)
@@ -160,7 +165,10 @@ export default class AssetsLifeItem extends cc.Component {
             this.showTime(allTime,startOsTime)
 
             let scheduleCallback = () => {
-                if ( this.showTime(allTime,startOsTime) <= 0) {
+                let newTime = this.showTime(allTime,startOsTime)
+                ccLog.log("现在去倒计时了吗 过程中 0 ",newTime)
+
+                if ( newTime<= 0) {
                     this.stopTimeCutDown();
                 }
                 // this.timeNode.getComponent(cc.Label).string = nowTime;
@@ -222,7 +230,7 @@ export default class AssetsLifeItem extends cc.Component {
             if (this.checkLifeMax() == false) {
                 ccLog.log("重新开始加体力")
                 this.unscheduleAllCallbacks()
-
+                this.timeTag = false
                 this.startTimeCutDown(JsonManager.passSettingjson.countDownTime)
 
             } else {

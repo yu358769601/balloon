@@ -313,12 +313,14 @@ export default class GameMenuActivity extends Activity {
         Emitter.remove('onEndNodeShow', this.onEndNodeShow, this)
         Emitter.remove('onSetPassByName', this.onSetPassByName, this)
         Emitter.remove('onSetEditPassByName', this.onSetEditPassByName, this)
+        Emitter.remove('onRemovePass', this.onRemovePass, this)
     }
 
     registerEmitter() {
         Emitter.register('onEndNodeShow', this.onEndNodeShow, this)
         Emitter.register('onSetPassByName', this.onSetPassByName, this)
         Emitter.register('onSetEditPassByName', this.onSetEditPassByName, this)
+        Emitter.register('onRemovePass', this.onRemovePass, this)
     }
 
     onLoad() {
@@ -328,6 +330,13 @@ export default class GameMenuActivity extends Activity {
 
 
     }
+    onRemovePass(){
+        if (this.currentNode != null) {
+            this.currentNode.destroy()
+        }
+    }
+
+
 
     //设置关卡通过名字
     // Emitter.fire("onSetPassByName",data)

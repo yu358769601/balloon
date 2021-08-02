@@ -15,6 +15,7 @@ import JsonManager from "../System/manage/JsonManager";
 import {SoundType} from "../System/sound/sound";
 import UtilsNode from "../System/Utils/UtilsNode";
 import {ItemSuperItemType} from "../item/itemSuperItem";
+import LoadManage from "../System/Load/LoadManage";
 
 const {ccclass, property} = cc._decorator;
 
@@ -44,6 +45,12 @@ export default class GetLuckDialog extends BaseDialog {
     限时福利_体力 : cc.Node = null
     限时福利_气球 : cc.Node = null
 
+    限时福利_气球_气球 : cc.Sprite = null
+
+
+    balloonName : string = ""
+
+
     onLoad () {
         super.onLoad()
     }
@@ -71,19 +78,20 @@ export default class GetLuckDialog extends BaseDialog {
         this.initView()
         this.initOnClick()
 
-        this.type = this.data.type
+        this.type = this.data.data.type
         // Emitter.fire("onPlaySound",SoundType.失败)
-
+        ccLog.log("限时奖励 0 ",this.type , this.data)
 
         this.initViewByNode()
     }
 
-    initViewByNode() {
+  async  initViewByNode() {
         let  node
         let data
         switch (this.type) {
             case GetLuckDialogType.金币:
                 UtilsNode.show(this.限时福利_金币,true)
+                ccLog.log("限时奖励 1 ",this.限时福利_金币)
                 break;
             case GetLuckDialogType.金币_体力:
                 UtilsNode.show(this.限时福利_金币_体力,true)
@@ -92,7 +100,26 @@ export default class GetLuckDialog extends BaseDialog {
                 UtilsNode.show(this.限时福利_体力,true)
                 break;
             case GetLuckDialogType.气球:
+                //获取一个没有的气球
+                let data = UtilsDB.getNotRubber()
+                ccLog.log("限时奖励 气球 ",data)
+
+
+                let dataNode = {
+                    type: GetNodeType.纯查找,
+                    otherData: " 限时福利_气球_气球",
+                    parentNode: this.限时福利_气球,
+                }
+                this.限时福利_气球_气球 = GetNode.getNode(dataNode).getComponent(cc.Sprite)
+                //如果都有就随机一个
+                let balloonSkin =  await  LoadManage.getSpriteForName("shopBig_"+data.item.name)
+                this.限时福利_气球_气球.spriteFrame = balloonSkin
+
                 UtilsNode.show(this.限时福利_气球,true)
+                this.balloonName = data.item.name
+
+
+
                 break;
         }
 
@@ -125,7 +152,8 @@ export default class GetLuckDialog extends BaseDialog {
         },this)
         this.失败_重新开始实际点击.on(cc.Node.EventType.TOUCH_START,()=>{
             this.node.destroy()
-            Emitter.fire("onSetPassByName", this.data.data)
+            // Emitter.fire("onSetPassByName", this.data.data)
+
         },this)
 
     }
@@ -155,17 +183,90 @@ export default class GetLuckDialog extends BaseDialog {
         // }
         // Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
 
+        let self = data.data.self
 
 
 
-        // data.data.self.胜利_吞噬层.active = true
-        Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : data.data.self.data.data}, null)
 
-        data.data.self.node.destroy()
+        switch (self.type) {
+            case GetLuckDialogType.金币:
+                // ccLog.log("限时奖励 1 ",this.限时福利_金币)
+                let  dataItem = {
+                    self : self,
+                    rootNode : self.node,
+                    count : JsonManager.passSettingjson.getLuckDialogData[self.type]
+                }
+                let cllbacks = {
+                    ItemPreTypesuccessfulCallback: self.ItemPreTypesuccessfulCallback,
+                    // lookDialogfailureCallback: this.lookDialogfailureCallback
+                }
+                Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
+
+                break;
+            case GetLuckDialogType.金币_体力:
+                let  dataItem = {
+                    self : self,
+                    rootNode : self.node,
+                    count : JsonManager.passSettingjson.getLuckDialogData[self.type]
+                }
+                let cllbacks = {
+                    ItemPreTypesuccessfulCallback: self.ItemPreTypesuccessfulCallback,
+                    // lookDialogfailureCallback: this.lookDialogfailureCallback
+                }
+                Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
+
+                let addLifeData = {
+                    type: AssetsType.体力,
+                    count: JsonManager.passSettingjson.getLuckDialogData[self.type].life,
+                    show : true
+                }
+                // Emitter.fire("onEduShowIndex",2)
+                UtilsDB.addLifeAssets(addLifeData)
+
+                break;
+            case GetLuckDialogType.体力:
+                let addLifeData = {
+                    type: AssetsType.体力,
+                    count: JsonManager.passSettingjson.getLuckDialogData[self.type].life,
+                    show : true
+                }
+                // Emitter.fire("onEduShowIndex",2)
+                UtilsDB.addLifeAssets(addLifeData)
+                self.node.destroy()
+                break;
+            case GetLuckDialogType.气球:
+                UtilsDB.setRubber(self.balloonName)
+                self.node.destroy()
+                break;
+
+            // data.data.self.胜利_吞噬层.active = true
+            // Emitter.fire("onOpenDialog", {name: DialogType.结算界面, zIndex: 100,data : data.data.self.data.data}, null)
+
+            // data.data.self.node.destroy()
+
+        }
+
+
     }
     lookDialogfailureCallback(){
 
     }
+
+    ItemPreTypesuccessfulCallback(data){
+        let self = data.data.self
+
+        let addGemData = {
+            type : AssetsType.钻石,
+            count : data.data.count.gold,
+            // callbackGem_donthave : this.callbackGem_donthaveAdd,
+            // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+            // callbackGem_subsucceed : this.callbackGem_subsucceed
+        }
+        UtilsDB.addAssets(addGemData)
+        self.node.destroy()
+    }
+
+
 
     initView() {
         let  data
@@ -201,7 +302,6 @@ export default class GetLuckDialog extends BaseDialog {
             parentNode: this.node,
         }
         this.限时福利_金币_体力 = GetNode.getNode(data)
-        this.限时福利_金币 = GetNode.getNode(data)
         data = {
             type: GetNodeType.开始隐藏通过参数显示,
             otherData: " 限时福利_体力",

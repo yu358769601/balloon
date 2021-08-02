@@ -6,6 +6,7 @@ import ccLog from "../Log/ccLog";
 import LoadManage from "../Load/LoadManage";
 import UtilsTime from "./UtilsTime";
 import JsonManager from "../manage/JsonManager";
+import {ItemShopItemType} from "../../item/itemShopItem";
 
 const {ccclass, property} = cc._decorator;
 
@@ -2060,7 +2061,7 @@ export default class UtilsDB extends cc.Component {
         }
 
 
-        ccLog.log("什么呢", list)
+        ccLog.log("什么呢", returnList)
 
 
         return returnList
@@ -2333,6 +2334,7 @@ export default class UtilsDB extends cc.Component {
                 if (addData.callback_donthave) {
                     addData.callback_donthave(addData)
                 }
+                Emitter.fire("onAssetsLifeRefresh")
             } else {
                 //仅仅是试探性判断是否满足 判断是否满足不消费
                 ccLog.log("我满足减少条件 0 ", myAssets, addData)
@@ -2346,8 +2348,10 @@ export default class UtilsDB extends cc.Component {
                     case AssetsType.体力:
                         assets.life = myAssets
                         UtilsDB.setLifeAssets(assets)
-                        Emitter.fire("onAssetsLifeAdd",addData.count)
                         Emitter.fire("onAssetsLifeRefresh")
+                        if (addData.show) {
+                            Emitter.fire("onAssetsLifeAdd",addData.count)
+                        }
                         break;
                 }
 
@@ -2367,7 +2371,11 @@ export default class UtilsDB extends cc.Component {
                     }
                     assets.life = myAssets
                     UtilsDB.setLifeAssets(assets)
+                    if (addData.show) {
+                        Emitter.fire("onAssetsLifeAdd",addData.count)
+                    }
                     Emitter.fire("onAssetsLifeRefresh")
+
                     break;
             }
             if (addData.callback_addsucceed) {
@@ -2485,6 +2493,65 @@ export default class UtilsDB extends cc.Component {
     static setNowPassRubber(nowPassRubber) {
         this.setJson("nowPassRubber", nowPassRubber)
     }
+    //获取一个没有的气球 如果都有就获取一个随机的
+    // UtilsDB.getNotRubber()
+    static getNotRubber(){
+        let rubberPass = this.getMyRubberByNotBuyRubberPass()
+        if (rubberPass.length > 0) {
+            // let list = UtilsDB.getMyRubberByNotBuyRubberPassCheck(rubberPass)
+            // ccLog.log("排除之后的数据是", list)
+            //
+            // if (list.length > 0) {
+            //     nowPassRubber.rubber.name = list[0].item.name
+            //     nowPassRubber.rubber.index = 0
+            //     UtilsDB.setNowPassRubber(nowPassRubber)
+            // }
+            let index =  Utils.random(0,rubberPass.length)
+           return  rubberPass[index]
+        }else{
+            let rubber =  this.getRubberByRandom()
+
+            return  rubber
+        }
+    }
+    //获取几个没有的气球
+    // UtilsDB.getNotRubberList(length)
+    static getNotRubberList(length){
+        let rubberPass = this.getMyRubberByNotBuyRubberPass()
+
+        let returnList = []
+        let list = []
+        let newlist = []
+        let newsjsz = Utils.sjsz(rubberPass.length)
+        ccLog.log("前面",newsjsz)
+        for (let i = 0; i < newsjsz.length; i++) {
+            newlist.push(newsjsz[i])
+        }
+
+        for (let i = 0; i <newlist.length ; i++) {
+            returnList.push(rubberPass[newlist[i]])
+        }
+        ccLog.log("对比长度",rubberPass,returnList)
+
+        if (rubberPass.length > length) {
+            // let list = UtilsDB.getMyRubberByNotBuyRubberPassCheck(rubberPass)
+            // ccLog.log("排除之后的数据是", list)
+            //
+            // if (list.length > 0) {
+            //     nowPassRubber.rubber.name = list[0].item.name
+            //     nowPassRubber.rubber.index = 0
+            //     UtilsDB.setNowPassRubber(nowPassRubber)
+            // }
+            return  returnList
+        }else{
+            for (let i = 0; i <length-returnList.length ; i++) {
+                let rubber =  this.getRubberByRandom()
+                returnList.push(rubber)
+            }
+            return  returnList
+        }
+    }
+
 
 
     //获取一个当前关卡的橡皮
@@ -2533,6 +2600,15 @@ export default class UtilsDB extends cc.Component {
 
         // this.setJson("nowPassRubber", nowPassRubber)
     }
+
+
+    //气球的购买和使用
+    // UtilsDB.setRubber(name)
+    static setRubber(name) {
+        UtilsDB.addMyRubber(name)
+        UtilsDB.setUseRubber(name)
+    }
+
 
     // UtilsDB.setMyNowPassRubber(MyNowPassRubber)
     static setMyNowPassRubber(MyNowPassRubber) {

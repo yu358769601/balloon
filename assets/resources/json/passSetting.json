@@ -19,10 +19,30 @@
   "lookADSexMax" : 2,
 
 
-  "luckIndex_": "转盘送的钻石数字",
-  "luckIndex_0": 100,
-  "luckIndex_2": 50,
-  "luckIndex_4": 150,
+  "luckIndexs_": "转盘送的钻石数字",
+  "luckIndexs" : [
+  {
+    "count" : 2000
+  },
+  {
+    "count" : 10
+  },
+  {
+    "count" : 1
+  },
+  {
+    "count" : 1000
+  },
+  {
+    "count" : 20
+  },
+  {
+    "count" : 1
+  }
+],
+  "luckIndex_0": 2000,
+  "luckIndex_1": 2000,
+  "luckIndex_3": 1000,
 
 
   "nowPassRubber_": "当前关卡送的橡皮相关",
@@ -117,7 +137,26 @@
   "superGetCountMax" : 2,
 
   "superGetCountPlayMax_" : "玩几关触发超级大奖",
-  "superGetCountPlayMax" : 3
+  "superGetCountPlayMax" : 3,
 
 
+  "getLuckDialogData_" : "限时礼包数据",
+  "getLuckDialogData" : [
+    {
+      "type" : 0,
+      "gold" : 2000
+    },
+    {
+      "type" : 1,
+      "gold" : 1000,
+      "life" : 10
+    },
+    {
+      "type" : 3,
+      "life" : 10
+    },
+    {
+      "type" : 4
+    }
+  ]
 }

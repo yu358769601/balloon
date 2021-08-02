@@ -81,6 +81,7 @@ export enum PrizeType
 
     钻石 = "钻石",
     橡皮 = "橡皮",
+    体力 = "体力",
 
 
 
@@ -161,6 +162,7 @@ export enum DialogType {
     扎气球得到奖励 = "luckGameGetGoldDialog",
     商店 = "shoppingDialog",
     超级奖励 = "superGetDialog",
+    限时礼包 = "getLuckDialog",
 
 }
 export enum ItemPreType {

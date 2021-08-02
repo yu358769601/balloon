@@ -533,6 +533,7 @@ export default class Helloworld extends cc.Component {
             load["lineSkin_"+balloonName[itemPreType]] = "lineSkin/" + balloonName[itemPreType]
             load["lineSkinItem_"+balloonName[itemPreType]] = "lineSkinItem/" + balloonName[itemPreType]
             load["shopBig_"+balloonName[itemPreType]] = "shopBig/" + balloonName[itemPreType]
+            // load["shopSmall_"+balloonName[itemPreType]] = "shopSmall/" + balloonName[itemPreType]
 
         }
         for (let itemPreType in balloonName) {

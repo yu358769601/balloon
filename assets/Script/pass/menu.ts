@@ -12,9 +12,10 @@ import JsonManager from "../System/manage/JsonManager";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import UtilsAction from "../System/Utils/UtilsAction";
 import Utils from "../System/Utils/Utils";
-import {DialogType, ItemPreType} from "../System/Type/enums";
+import {balloonName, DialogType, ItemPreType} from "../System/Type/enums";
 import {SoundType} from "../System/sound/sound";
 import {ItemSuperItemType} from "../item/itemSuperItem";
+import {GetLuckDialogType} from "../dialog/getLuckDialog";
 
 const {ccclass, property} = cc._decorator;
 
@@ -38,6 +39,7 @@ export default class Menu extends cc.Component {
         Emitter.remove('onNextPass', this.onNextPass, this)
         Emitter.remove('onShowAll', this.onShowAll, this)
         Emitter.remove('onCheckGo', this.onCheckGo, this)
+        Emitter.remove('onShowAllByGetLuck', this.onShowAllByGetLuck, this)
     }
 
     registerEmitter() {
@@ -45,6 +47,7 @@ export default class Menu extends cc.Component {
         Emitter.register('onNextPass', this.onNextPass, this)
         Emitter.register('onShowAll', this.onShowAll, this)
         Emitter.register('onCheckGo', this.onCheckGo, this)
+        Emitter.register('onShowAllByGetLuck', this.onShowAllByGetLuck, this)
     }
 
     onLoad() {
@@ -79,30 +82,121 @@ export default class Menu extends cc.Component {
 
     }
 
+   async onShowAllByGetLuck(selfName,b){
+       await this.onShowAll(selfName,b)
+
+       let list : [] =[]
+       for (let itemPreType in GetLuckDialogType) {
+           if (typeof GetLuckDialogType[itemPreType]  ===  "number") {
+               list.push(GetLuckDialogType[itemPreType])
+               ccLog.log("返回按钮点击之后的显示限时领取 0  ",GetLuckDialogType[itemPreType] )
+           }
+
+       }
+       let random = Utils.random(0,list.length)
+        ccLog.log("返回按钮点击之后的显示限时领取 1  ",list[random] )
+       ccLog.log("返回按钮点击之后的显示限时领取 2  ",list )
+       let  data = {
+           self : this,
+           type : list[random]  ,
+
+       }
+       let cllbacks = {
+           // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
+           // lookDialogfailureCallback: this.lookDialogfailureCallback
+       }
+       Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+
+    }
+
+
+
+
     async onNextPass(selfName, data) {
         ccLog.log("要给过去的数据是 1 ", data)
-        let index = data.index
+
+        // index: 1
+        // isPlay: true
+        // itemName: "pass_1"
 
 
-        // UtilsDB.addCheckpointRecords(returnData.data.itemName)
-        index++
-        ccLog.log("下一关数据 index", index)
+        let addGemData = {
+            type: AssetsType.体力,
+            count: JsonManager.passSettingjson.passAddLife,
+            show : true,
+            callback_donthave : async ()=>{
+                let index = data.index
+                // UtilsDB.addCheckpointRecords(returnData.data.itemName)
+                index++
+                ccLog.log("下一关数据 index", index)
 
-        let pass = await JsonManager.getPassByIndex(index)
-        ccLog.log("下一关数据", pass)
-        let passData = await JsonManager.getPassDataByName(pass.passName, false)
+                let pass = await JsonManager.getPassByIndex(index)
+                ccLog.log("下一关数据", pass)
+                let passData = await JsonManager.getPassDataByName(pass.passName, false)
+                let myPassSave = UtilsDB.getMyPassSave()
+                // myPassSave.index =data.pass.index
+                // let passName = data.pass.passName
+                myPassSave.index =index
+                myPassSave.passName =data.itemName
+                UtilsDB.setMyPassSave(myPassSave)
 
-        // UtilsDB.addCheckpointRecords(pass.itemName,SelectCheckPointType.已解锁未通关)
+                Emitter.fire("onRemovePass")
 
-        if (pass == null) {
-            index = 0
-            pass = JsonManager.getPassByIndex(index)
+                await this.onShowAll("",true)
 
-            ccLog.log("下一关数据吗", pass)
-            Emitter.fire("onSetPassByName", passData)
-        } else {
-            Emitter.fire("onSetPassByName", passData)
+                // let  datatt = {
+                //     txt : "没有体力了小老弟"
+                // }
+                // // let cllbacks = {
+                // //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                // //     failureCallback: this.newSkinDialogfailureCallback
+                // // }
+                // Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:datatt},null)
+
+                let  data = {
+                    self : this,
+                    type : GetLuckDialogType.体力,
+
+                }
+                let cllbacks = {
+                    // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
+                    // lookDialogfailureCallback: this.lookDialogfailureCallback
+                }
+                Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+
+            },
+            // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+            callback_subsucceed : async()=>{
+                let index = data.index
+
+
+                // UtilsDB.addCheckpointRecords(returnData.data.itemName)
+                index++
+                ccLog.log("下一关数据 index", index)
+
+                let pass = await JsonManager.getPassByIndex(index)
+                ccLog.log("下一关数据", pass)
+                let passData = await JsonManager.getPassDataByName(pass.passName, false)
+
+                // UtilsDB.addCheckpointRecords(pass.itemName,SelectCheckPointType.已解锁未通关)
+
+                if (pass == null) {
+                    index = 0
+                    pass = JsonManager.getPassByIndex(index)
+
+                    ccLog.log("下一关数据吗", pass)
+                    Emitter.fire("onSetPassByName", passData)
+                } else {
+                    Emitter.fire("onSetPassByName", passData)
+                }
+            }
         }
+        // Emitter.fire("onEduShowIndex",2)
+        UtilsDB.addLifeAssets(addGemData)
+
+
+
+
     }
 
     passCount : number = 0
@@ -132,6 +226,7 @@ export default class Menu extends cc.Component {
 
     菜单_更多精彩: cc.Node
     菜单_添加桌面: cc.Node
+    菜单_无敌风火轮: cc.Node
 
     菜单_测试按钮: cc.Node
     initView() {
@@ -206,6 +301,12 @@ export default class Menu extends cc.Component {
             parentNode: this.node
         }
         this.菜单_添加桌面 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "菜单_无敌风火轮",
+            parentNode: this.node
+        }
+        this.菜单_无敌风火轮 = GetNode.getNode(data)
     }
 
     initClick() {
@@ -216,15 +317,27 @@ export default class Menu extends cc.Component {
             let addGemData = {
                 type: AssetsType.体力,
                 count: JsonManager.passSettingjson.passAddLife,
+                show : true,
                 callback_donthave : ()=>{
-                    let  data = {
-                        txt : "没有体力了小老弟"
-                    }
-                    // let cllbacks = {
-                    //     successfulCallback: this.newSkinDialogsuccessfulCallback,
-                    //     failureCallback: this.newSkinDialogfailureCallback
+                    // let  data = {
+                    //     txt : "没有体力了小老弟"
                     // }
-                    Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+                    // // let cllbacks = {
+                    // //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                    // //     failureCallback: this.newSkinDialogfailureCallback
+                    // // }
+                    // Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+
+                    let  data = {
+                        self : this,
+                        type : GetLuckDialogType.体力,
+                    }
+                    let cllbacks = {
+                        // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
+                        // lookDialogfailureCallback: this.lookDialogfailureCallback
+                    }
+                    Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+
                 },
                 // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
                 callback_subsucceed : async()=>{
@@ -254,6 +367,31 @@ export default class Menu extends cc.Component {
         this.菜单_测试按钮.on(cc.Node.EventType.TOUCH_END, async () => {
 
             // Emitter.fire("onOpenDialog", {name: DialogType.超级奖励, zIndex: 100,data : {}}, null)
+            //测试按钮
+            // let  data = {
+            //     self : this,
+            //     type : GetLuckDialogType.金币_体力
+            // }
+            // let cllbacks = {
+            //     // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
+            //     // lookDialogfailureCallback: this.lookDialogfailureCallback
+            // }
+            // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+
+
+        }, this)
+        this.菜单_无敌风火轮.on(cc.Node.EventType.TOUCH_END, async () => {
+
+            let data = {
+                self : this,
+                // otherData : otherData
+            }
+            // let cllbacks = {
+            //     // successfulCallback : this.successfulCallbackLuck,
+            //     // failureCallback : this.failureCallbackLuck
+            // }
+            Emitter.fire("onOpenDialog",{name : DialogType.转盘,zIndex : 100,data:data},null)
+
         }, this)
 
 
