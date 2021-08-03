@@ -1,5 +1,5 @@
 import Integer = cc.Integer;
-import {GameCurrentRound, GameState, MonsterTeam, PrizeType} from "../Type/enums";
+import {GameCurrentRound, GameState, PrizeType} from "../Type/enums";
 import Emitter from "../Msg/Emitter";
 import Utils from "./Utils";
 import ccLog from "../Log/ccLog";
@@ -7,15 +7,19 @@ import LoadManage from "../Load/LoadManage";
 import UtilsTime from "./UtilsTime";
 import JsonManager from "../manage/JsonManager";
 import {ItemShopItemType} from "../../item/itemShopItem";
+import {SignInDialogType} from "../../dialog/signInDialog";
 
 const {ccclass, property} = cc._decorator;
 
 //资源类型
 export enum AssetsType {
     钻石 = "钻石",
+    体力 = "体力",
+    气球 = "气球",
+
     放大镜 = "放大镜",
     跳过 = "跳过",
-    体力 = "体力",
+
 }
 
 @ccclass
@@ -3099,8 +3103,75 @@ export default class UtilsDB extends cc.Component {
         }
     }
 
+    //签到
+    //开始 初始化次数
+    // UtilsDB.initSignIn()
+    static initSignIn() {
+        this.setJson("SignIn", {
+            //索引
+            index: 0,
+            indexMax : 6,
+            time : UtilsTime.setTimeTomorrow(),
+            todayGet : false
+        })
+        return this.getJson("SignIn")
+    }
+    // UtilsDB.getSignIn()
+    static getSignIn() {
+        if (this.getJson("SignIn") == null) {
+            this.initSignIn()
+        }
+        //如果过了一天就添加
+        let signIn = this.getJson("SignIn")
+        if (signIn.todayGet == true) {
+            if (UtilsTime.getTime()>signIn.time) {
+                if (signIn.index + 1 <=signIn.indexMax) {
+                    signIn.index += 1
+                }else{
+                    signIn.index  = 0
+                }
+                signIn.todayGet = false
+                signIn.time = UtilsTime.setTimeTomorrow()
+                this.setJson("SignIn", signIn)
+            }
 
+        }
+        return this.getJson("SignIn")
+    }
+    // UtilsDB.addSignIn()
+    static addSignIn() {
+        let signIn = UtilsDB.getSignIn()
+        if (signIn.todayGet == false) {
+            signIn.todayGet = true
+            // signIn.time = UtilsTime.setTimeTomorrow()
+            this.setJson("SignIn", signIn)
+        }
 
+    }
+    // UtilsDB.initSignInIn()
+    static initSignInIn() {
+        this.setJson("SignInIn", {
+            //索引
+            time : UtilsTime.setTimeTomorrow(),
+        })
+        return this.getJson("SignInIn")
+    }
+    // UtilsDB.getSignInIn()
+    static getSignInIn() {
+        if (this.getJson("SignInIn") == null) {
+            this.initSignInIn()
+            return true
+        }
+        //如果过了一天就添加
+        let signIn = this.getJson("SignInIn")
+        if (UtilsTime.getTime()>signIn.time) {
+            signIn.time = UtilsTime.setTimeTomorrow()
+            this.setJson("SignInIn", signIn)
+
+            return true
+        }
+        return false
+    }
 
 
 }

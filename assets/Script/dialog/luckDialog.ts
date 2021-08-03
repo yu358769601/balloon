@@ -275,7 +275,7 @@ export default class LuckDialog extends BaseDialog {
         let miaoshu = "";
         let valueStr = "";
         // 10
-        if (randNum > 0 && randNum <= 40) {
+        if (randNum > 0 && randNum <= 10) {
             index = 5;
             miaoshu = "橡皮";
             // let randhpNum = Utils.random(10000, 20000);
@@ -285,13 +285,13 @@ export default class LuckDialog extends BaseDialog {
             prizeType = PrizeType.橡皮;
         }
         // 15
-        else if (randNum > 40 && randNum <= 45) {
+        else if (randNum > 10 && randNum <= 30) {
             index = 4;
             value = JsonManager.passSettingjson.luckIndexs[4];
             prizeType = PrizeType.体力;
         }
         // 10
-        else if (randNum > 45 && randNum <= 50) {
+        else if (randNum > 30 && randNum <= 50) {
             // index = 3;
             // value = 10;
             // miaoshu = "橡皮";
@@ -310,7 +310,7 @@ export default class LuckDialog extends BaseDialog {
 
         }
         // 15
-        else if (randNum > 50 && randNum <= 90) {
+        else if (randNum > 60 && randNum <= 70) {
             index = 2;
             miaoshu = "橡皮";
             value = 5000;
@@ -318,14 +318,14 @@ export default class LuckDialog extends BaseDialog {
             prizeType = PrizeType.橡皮;
         }
         // 15
-        else if (randNum > 90 && randNum <= 95) {
+        else if (randNum > 70 && randNum <= 80) {
             index = 1;
             miaoshu = "体力";
             value = JsonManager.passSettingjson.luckIndexs[1];
             prizeType = PrizeType.体力;
         }
         // 20
-        else if (randNum > 95 && randNum <= 100) {
+        else if (randNum > 80 && randNum <= 100) {
             index = 0;
             value = JsonManager.passSettingjson.luckIndexs[0];
             miaoshu = "钻石" + value;

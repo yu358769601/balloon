@@ -163,6 +163,7 @@ export enum DialogType {
     商店 = "shoppingDialog",
     超级奖励 = "superGetDialog",
     限时礼包 = "getLuckDialog",
+    签到 = "signInDialog",
 
 }
 export enum ItemPreType {

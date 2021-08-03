@@ -40,6 +40,7 @@ export default class Menu extends cc.Component {
         Emitter.remove('onShowAll', this.onShowAll, this)
         Emitter.remove('onCheckGo', this.onCheckGo, this)
         Emitter.remove('onShowAllByGetLuck', this.onShowAllByGetLuck, this)
+        Emitter.remove('onHua8', this.onHua8, this)
     }
 
     registerEmitter() {
@@ -48,6 +49,7 @@ export default class Menu extends cc.Component {
         Emitter.register('onShowAll', this.onShowAll, this)
         Emitter.register('onCheckGo', this.onCheckGo, this)
         Emitter.register('onShowAllByGetLuck', this.onShowAllByGetLuck, this)
+        Emitter.register('onHua8', this.onHua8, this)
     }
 
     onLoad() {
@@ -59,6 +61,10 @@ export default class Menu extends cc.Component {
         Emitter.fire("onAssetsLifeShowHide",true)
         this.initView()
         this.initClick()
+
+        if (UtilsDB.getSignInIn() == true) {
+            Emitter.fire("onOpenDialog", {name: DialogType.签到, zIndex: 100,data : null}, null)
+        }
     }
 
     onInitPass(selfName, data) {
@@ -199,6 +205,47 @@ export default class Menu extends cc.Component {
 
     }
 
+    onHua8(selfName){
+        let addGemData = {
+            type: AssetsType.体力,
+            count: JsonManager.passSettingjson.passAddLife,
+            show : true,
+            callback_donthave : ()=>{
+                // let  data = {
+                //     txt : "没有体力了小老弟"
+                // }
+                // // let cllbacks = {
+                // //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                // //     failureCallback: this.newSkinDialogfailureCallback
+                // // }
+                // Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+
+                let  data = {
+                    self : this,
+                    type : GetLuckDialogType.体力,
+                }
+                let cllbacks = {
+                    // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
+                    // lookDialogfailureCallback: this.lookDialogfailureCallback
+                }
+                Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+
+            },
+            // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+            callback_subsucceed : async()=>{
+                await this.onShowAll("",false)
+                let pass = await JsonManager.getPassByIndex(UtilsDB.getMyPassSave().index)
+                ccLog.log("关卡信息",pass)
+                Emitter.fire("onSetPassByName", pass)
+            }
+        }
+        // Emitter.fire("onEduShowIndex",2)
+        UtilsDB.addLifeAssets(addGemData)
+
+    }
+
+
+
     passCount : number = 0
 
     onCheckGo(selfName,data){
@@ -219,6 +266,8 @@ export default class Menu extends cc.Component {
 
     菜单_开始按钮: cc.Node
     菜单_设置按钮: cc.Node
+    菜单_签到: cc.Node
+    菜单_画8: cc.Node
     菜单_商城按钮: cc.Node
     菜单_消失动画吞噬: cc.Node
     菜单_熊熊: cc.Node
@@ -307,6 +356,18 @@ export default class Menu extends cc.Component {
             parentNode: this.node
         }
         this.菜单_无敌风火轮 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "菜单_签到",
+            parentNode: this.node
+        }
+        this.菜单_签到 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "菜单_画8",
+            parentNode: this.node
+        }
+        this.菜单_画8 = GetNode.getNode(data)
     }
 
     initClick() {
@@ -364,6 +425,24 @@ export default class Menu extends cc.Component {
             Emitter.fire("onOpenDialog", {name: DialogType.商店, zIndex: 100,data : null}, null)
 
         }, this)
+
+
+        this.菜单_签到.on(cc.Node.EventType.TOUCH_END, async () => {
+
+            // Emitter.fire("onOpenDialog", {name: DialogType.超级奖励, zIndex: 100,data : {}}, null)
+            //测试按钮
+            // let  data = {
+            //     self : this,
+            //     type : GetLuckDialogType.金币_体力
+            // }
+            // let cllbacks = {
+            //     // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
+            //     // lookDialogfailureCallback: this.lookDialogfailureCallback
+            // }
+            // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+            Emitter.fire("onOpenDialog", {name: DialogType.签到, zIndex: 100,data : null}, null)
+
+        }, this)
         this.菜单_测试按钮.on(cc.Node.EventType.TOUCH_END, async () => {
 
             // Emitter.fire("onOpenDialog", {name: DialogType.超级奖励, zIndex: 100,data : {}}, null)
@@ -377,7 +456,7 @@ export default class Menu extends cc.Component {
             //     // lookDialogfailureCallback: this.lookDialogfailureCallback
             // }
             // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
-
+            Emitter.fire("onOpenDialog", {name: DialogType.签到, zIndex: 100,data : null}, null)
 
         }, this)
         this.菜单_无敌风火轮.on(cc.Node.EventType.TOUCH_END, async () => {
@@ -416,6 +495,7 @@ export default class Menu extends cc.Component {
            this.菜单_消失动画吞噬.active = false
            this.菜单_吞噬.active = true
            this.菜单_背景.active = true
+           this.菜单_画8.active = true
 
 
            ccLog.log("此处应该删除关卡")
@@ -435,6 +515,7 @@ export default class Menu extends cc.Component {
            this.菜单_消失动画吞噬.active = false
            this.菜单_吞噬.active = false
            this.菜单_背景.active = false
+           this.菜单_画8.active = false
            ccLog.log("此处应该开始关卡")
 
        }
