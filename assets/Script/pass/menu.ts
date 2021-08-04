@@ -12,7 +12,7 @@ import JsonManager from "../System/manage/JsonManager";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import UtilsAction from "../System/Utils/UtilsAction";
 import Utils from "../System/Utils/Utils";
-import {balloonName, DialogType, ItemPreType} from "../System/Type/enums";
+import {balloonName, DialogType, EffectsType, ItemPreType} from "../System/Type/enums";
 import {SoundType} from "../System/sound/sound";
 import {ItemSuperItemType} from "../item/itemSuperItem";
 import {GetLuckDialogType} from "../dialog/getLuckDialog";
@@ -41,6 +41,8 @@ export default class Menu extends cc.Component {
         Emitter.remove('onCheckGo', this.onCheckGo, this)
         Emitter.remove('onShowAllByGetLuck', this.onShowAllByGetLuck, this)
         Emitter.remove('onHua8', this.onHua8, this)
+        Emitter.remove('onGoToSkinTrial', this.onGoToSkinTrial, this)
+        Emitter.remove('onOnliyTimeGifg', this.onOnliyTimeGifg, this)
     }
 
     registerEmitter() {
@@ -50,6 +52,8 @@ export default class Menu extends cc.Component {
         Emitter.register('onCheckGo', this.onCheckGo, this)
         Emitter.register('onShowAllByGetLuck', this.onShowAllByGetLuck, this)
         Emitter.register('onHua8', this.onHua8, this)
+        Emitter.register('onGoToSkinTrial', this.onGoToSkinTrial, this)
+        Emitter.register('onOnliyTimeGifg', this.onOnliyTimeGifg, this)
     }
 
     onLoad() {
@@ -62,9 +66,30 @@ export default class Menu extends cc.Component {
         this.initView()
         this.initClick()
 
+
+        //进来 可以就显示签到 如果出过签到就去显示 限时礼包
         if (UtilsDB.getSignInIn() == true) {
             Emitter.fire("onOpenDialog", {name: DialogType.签到, zIndex: 100,data : null}, null)
+        }else{
+            this.onOnliyTimeGifg("")
         }
+
+
+        //删除试用气球 如果当前使用的气球和使用气球一致 就恢复默认使用气球
+        //获取试用列表
+        let temps = UtilsDB.getMyRubberByAllRubberTemp();
+        ccLog.log("试用列表",temps)
+
+
+        for (let i = 0; i <temps.length ; i++) {
+            UtilsDB.delMyRubber(temps[i])
+        }
+        let myRubber = UtilsDB.getMyRubber();
+        ccLog.log("试用列表 目前删掉试用之后的",myRubber)
+        UtilsDB.getUseRubber()
+        UtilsDB.initMyRubberTemp()
+
+
     }
 
     onInitPass(selfName, data) {
@@ -91,30 +116,34 @@ export default class Menu extends cc.Component {
    async onShowAllByGetLuck(selfName,b){
        await this.onShowAll(selfName,b)
 
-       let list : [] =[]
-       for (let itemPreType in GetLuckDialogType) {
-           if (typeof GetLuckDialogType[itemPreType]  ===  "number") {
-               list.push(GetLuckDialogType[itemPreType])
-               ccLog.log("返回按钮点击之后的显示限时领取 0  ",GetLuckDialogType[itemPreType] )
-           }
-
-       }
-       let random = Utils.random(0,list.length)
-        ccLog.log("返回按钮点击之后的显示限时领取 1  ",list[random] )
-       ccLog.log("返回按钮点击之后的显示限时领取 2  ",list )
-       let  data = {
-           self : this,
-           type : list[random]  ,
-
-       }
-       let cllbacks = {
-           // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
-           // lookDialogfailureCallback: this.lookDialogfailureCallback
-       }
-       Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
-
+        this.onOnliyTimeGifg("")
     }
 
+    //限时领包
+    onOnliyTimeGifg(selfName){
+        let list : [] =[]
+        for (let itemPreType in GetLuckDialogType) {
+            if (typeof GetLuckDialogType[itemPreType]  ===  "number") {
+                list.push(GetLuckDialogType[itemPreType])
+                ccLog.log("返回按钮点击之后的显示限时领取 0  ",GetLuckDialogType[itemPreType] )
+            }
+
+        }
+        let random = Utils.random(0,list.length)
+        ccLog.log("返回按钮点击之后的显示限时领取 1  ",list[random] )
+        ccLog.log("返回按钮点击之后的显示限时领取 2  ",list )
+        let  data = {
+            self : this,
+            type : list[random]  ,
+
+        }
+        let cllbacks = {
+            // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
+            // lookDialogfailureCallback: this.lookDialogfailureCallback
+        }
+        Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+
+    }
 
 
 
@@ -295,7 +324,7 @@ export default class Menu extends cc.Component {
         this.菜单_UI组 = GetNode.getNode(data)
 
         data = {
-            type: GetNodeType.纯查找,
+            type: GetNodeType.开始隐藏通过参数显示,
             otherData: "菜单_开始按钮",
             parentNode: this.node
         }
@@ -442,6 +471,8 @@ export default class Menu extends cc.Component {
             // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
             Emitter.fire("onOpenDialog", {name: DialogType.签到, zIndex: 100,data : null}, null)
 
+
+
         }, this)
         this.菜单_测试按钮.on(cc.Node.EventType.TOUCH_END, async () => {
 
@@ -456,7 +487,13 @@ export default class Menu extends cc.Component {
             //     // lookDialogfailureCallback: this.lookDialogfailureCallback
             // }
             // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
-            Emitter.fire("onOpenDialog", {name: DialogType.签到, zIndex: 100,data : null}, null)
+
+            let data = {
+                nodeP : this.node
+            }
+
+            Emitter.fire("onOpenEffects",{name : EffectsType.关卡接上掉金币,zIndex : 100,data:data},null)
+
 
         }, this)
         this.菜单_无敌风火轮.on(cc.Node.EventType.TOUCH_END, async () => {
@@ -477,19 +514,38 @@ export default class Menu extends cc.Component {
 
 
     }
+    //弹出试用
+    onGoToSkinTrial(){
+        let rubber = UtilsDB.getNoRubber()
+        if (rubber != null) {
+            let data = {
+                rubber : rubber
+            }
+            Emitter.fire("onOpenDialog", {name: DialogType.皮肤试用, zIndex: 100,data : data}, null)
+        }
+        // Emitter.fire("onGoToSkinTrial")
+    }
+
+
 
    async onShowAll(selfName,b) {
         let time = 1
         //显示
-       if (this.菜单_开始按钮.active == false && b == true) {
+       if (this.菜单_画8.active == false && b == true) {
            this.菜单_消失动画吞噬.active = true
-           this.菜单_开始按钮.active = true
-           UtilsAction.fadeIn(this.菜单_开始按钮,time,null)
+           this.菜单_画8.active = true
+           // UtilsAction.fadeIn(this.菜单_开始按钮,time,null)
+           UtilsAction.fadeIn(this.菜单_画8,time,null)
            UtilsAction.moveBy(this.菜单_设置按钮,time,+300,0,null)
            UtilsAction.moveBy(this.菜单_商城按钮,time,-300,0,null)
+           UtilsAction.moveBy(this.菜单_签到,time,+300,0,null)
 
+           UtilsAction.moveBy(this.菜单_无敌风火轮,time,-300,0,null)
            UtilsAction.moveBy(this.菜单_添加桌面,time,-300,0,null)
            UtilsAction.moveBy(this.菜单_更多精彩,time,+300,0,null)
+
+
+
            this.菜单_熊熊.active = true
            await Utils.setTimerOnce(this,time)
            this.菜单_消失动画吞噬.active = false
@@ -499,19 +555,22 @@ export default class Menu extends cc.Component {
 
 
            ccLog.log("此处应该删除关卡")
-       } else if (this.菜单_开始按钮.active == true && b == false) {
+       } else if (this.菜单_画8.active == true && b == false) {
            //消失
            this.菜单_消失动画吞噬.active = true
-           UtilsAction.fadeOut(this.菜单_开始按钮,time,null)
+           // UtilsAction.fadeOut(this.菜单_开始按钮,time,null)
+           UtilsAction.fadeOut(this.菜单_画8,time,null)
            UtilsAction.moveBy(this.菜单_设置按钮,time,-300,0,null)
+           UtilsAction.moveBy(this.菜单_签到,time,-300,0,null)
            UtilsAction.moveBy(this.菜单_商城按钮,time,+300,0,null)
+           UtilsAction.moveBy(this.菜单_无敌风火轮,time,+300,0,null)
 
            UtilsAction.moveBy(this.菜单_添加桌面,time,+300,0,null)
            UtilsAction.moveBy(this.菜单_更多精彩,time,-300,0,null)
 
            this.菜单_熊熊.active = false
            await Utils.setTimerOnce(this,time)
-           this.菜单_开始按钮.active = false
+           // this.菜单_开始按钮.active = false
            this.菜单_消失动画吞噬.active = false
            this.菜单_吞噬.active = false
            this.菜单_背景.active = false

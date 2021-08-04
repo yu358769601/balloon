@@ -10,7 +10,7 @@ import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
 import ItemBase from "./itemBase";
 import UtilsNode from "../System/Utils/UtilsNode";
-import {ItemPreType} from "../System/Type/enums";
+import {EffectsType, ItemPreType} from "../System/Type/enums";
 
 const {ccclass, property} = cc._decorator;
 
@@ -152,7 +152,16 @@ export default class ItemPoint extends ItemBase {
        this.initNode()
     }
 
+    openEffects(){
 
+        this.node.scale = 3
+
+        //特效
+        let dataEffects = {
+            nodeP : this.node
+        }
+        Emitter.fire("onOpenEffects",{name : EffectsType.关卡接上掉金币,zIndex : 100,data:dataEffects},null)
+    }
 
     initNode(){
         // allowInOutIndexs: Array(3)

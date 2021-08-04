@@ -1,7 +1,7 @@
 import ccLog from "../System/Log/ccLog";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import LoadManage from "../System/Load/LoadManage";
-import {balloonName, ItemPreType} from "../System/Type/enums";
+import {balloonName, DialogType, ItemPreType} from "../System/Type/enums";
 import UtilsNode from "../System/Utils/UtilsNode";
 import {ItemShopItemType} from "../item/itemShopItem";
 import UtilsDB from "../System/Utils/UtilsDB";
@@ -107,14 +107,19 @@ export default class ListItem extends cc.Component {
                 Emitter.fire("onSetSkinLine", this.data.name)
             }else{
                 //没买过
-                let  data = {
-                    txt : "你还没有得到这个气球哦"
-                }
-                // let cllbacks = {
-                //     successfulCallback: this.newSkinDialogsuccessfulCallback,
-                //     failureCallback: this.newSkinDialogfailureCallback
+                // let  data = {
+                //     txt : "你还没有得到这个气球哦"
                 // }
-                Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+                // // let cllbacks = {
+                // //     successfulCallback: this.newSkinDialogsuccessfulCallback,
+                // //     failureCallback: this.newSkinDialogfailureCallback
+                // // }
+                // Emitter.fire("onOpenToast",{name : ItemPreType.打印吐司,zIndex : 100,data:data},null)
+
+
+                Emitter.fire("onOpenDialog",{name : DialogType.免费领取,zIndex : 100,data:this.data},null)
+
+
 
             }
 

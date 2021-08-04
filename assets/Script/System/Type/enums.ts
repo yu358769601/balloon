@@ -164,6 +164,8 @@ export enum DialogType {
     超级奖励 = "superGetDialog",
     限时礼包 = "getLuckDialog",
     签到 = "signInDialog",
+    皮肤试用 = "skinTrialDialog",
+    免费领取 = "quickToBuyDialog",
 
 }
 export enum ItemPreType {
@@ -194,6 +196,10 @@ export enum ItemPreType {
 
 
 
+}
+export enum EffectsType {
+    关卡接上掉金币 = "goldEffects",
+    关卡接上掉金币条目 = "goldEffectsItemBoom",
 }
 
 

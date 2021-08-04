@@ -14,7 +14,7 @@ import UtilsAction from "../System/Utils/UtilsAction";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class ItemGold extends cc.Component {
+export default class ItemBoom extends cc.Component {
    
     data: any = null
     // LIFE-CYCLE CALLBACKS:

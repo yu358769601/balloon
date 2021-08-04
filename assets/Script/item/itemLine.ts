@@ -11,7 +11,7 @@ import {instance, JoystickType, JoystickTypes} from "../../scripts/Joystick";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import Vec2 = cc.Vec2;
 import Size = cc.Size;
-import {DialogType, ItemPreType} from "../System/Type/enums";
+import {DialogType, EffectsType, ItemPreType} from "../System/Type/enums";
 import ItemBase from "./itemBase";
 import UtilsNode from "../System/Utils/UtilsNode";
 import Tools from "../System/Utils/Tools";
@@ -469,6 +469,11 @@ export default class ItemLine extends ItemBase {
                 if (this.startNode != this.endNode) {
                     ccLog.log("编号 棍子", this.index, " 落点 ", this.endNode.getComponent("itemPoint").index)
 
+
+                    // this.endNode.getComponent("itemPoint").openEffects()
+
+
+
                     let index1 = this.index
                     let index2 = this.endNode.getComponent("itemPoint").index
 
@@ -476,6 +481,14 @@ export default class ItemLine extends ItemBase {
                     //设置落点
                     this.node.setPosition(this.endNode.getPosition())
                     this.startNode = this.endNode
+
+//特效
+//                     let dataEffects = {
+//                         nodeP : this.node
+//                     }
+//                     Emitter.fire("onOpenEffects",{name : EffectsType.关卡接上掉金币,zIndex : 100,data:dataEffects},null)
+                    // ccLog.log("落点坐标",this.node.getPosition())
+
 
                     this.index = this.endNode.getComponent("itemPoint").index
                     // ccLog.log("我要爆炸了 1 ", "起点单位", this.startNode, "落点单位", this.endNode)
@@ -486,6 +499,9 @@ export default class ItemLine extends ItemBase {
                     }
 
                     Emitter.fire("onEndNodeShow", data)
+
+                    //去发生特效
+                    Emitter.fire("onOpenEffectsPass")
 
 
                     let getKeyData = {

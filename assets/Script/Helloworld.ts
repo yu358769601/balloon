@@ -13,7 +13,7 @@ import {
     DialogType,
     ItemName,
     ActivityType,
-    ActivityUIType, ItemPreType, PassItemType, balloonName
+    ActivityUIType, ItemPreType, PassItemType, balloonName, EffectsType
 } from "./System/Type/enums";
 import Api from "./System/api/api";
 import GameSetting, {gameModeType} from "./System/mode/gameSetting";
@@ -501,6 +501,9 @@ export default class Helloworld extends cc.Component {
         let itemPreType = this.initItemPreType()
         this.addList(load, itemPreType)
 
+        let initItemEffects = this.initItemEffectsType()
+        this.addList(load, initItemEffects)
+
         let initBalloonName = this.initBalloonName()
         this.addList(load, initBalloonName)
 
@@ -521,6 +524,16 @@ export default class Helloworld extends cc.Component {
         // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
         for (let itemPreType in ItemPreType) {
             load[ItemPreType[itemPreType]] = "item/" + ItemPreType[itemPreType]
+        }
+        return load
+    }
+    initItemEffectsType(){
+        let load = {}
+        // load["GameMenuActivity"] = "activity/GameMenuActivity"
+        // load["GameActivity"] = "activity/GameActivity"
+        // load["SelectCheckPointActivity"] = "activity/SelectCheckPointActivity"
+        for (let itemPreType in EffectsType) {
+            load[EffectsType[itemPreType]] = "effects/" + EffectsType[itemPreType]
         }
         return load
     }

@@ -2746,7 +2746,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -766.074,
+        -417.461,
         149.774,
         0,
         0,
@@ -2964,7 +2964,7 @@
     "alignMode": 1,
     "_target": null,
     "_alignFlags": 9,
-    "_left": -326.07399999999996,
+    "_left": 22.53899999999993,
     "_right": 0,
     "_top": 710.226,
     "_bottom": 0,
@@ -3703,7 +3703,7 @@
       "__id__": 94
     },
     "_enabled": true,
-    "nodeType": 1,
+    "nodeType": 0,
     "nodezIndex": 0,
     "otherData": "菜单_开始按钮",
     "_id": ""

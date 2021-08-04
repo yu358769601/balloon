@@ -9,7 +9,7 @@ import BasePass from "./basePass";
 import Emitter from "../System/Msg/Emitter";
 import ccLog from "../System/Log/ccLog";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
-import {DialogType, ItemPreType} from "../System/Type/enums";
+import {DialogType, EffectsType, ItemPreType} from "../System/Type/enums";
 import UtilsNode from "../System/Utils/UtilsNode";
 import JsonManager from "../System/manage/JsonManager";
 import Tools from "../System/Utils/Tools";
@@ -68,25 +68,47 @@ export default class Pass extends BasePass {
         Emitter.register('onGameOverCall', this.onGameOverCall, this)
         Emitter.register('onPlayAgainGameOverCall', this.onPlayAgainGameOverCall, this)
         Emitter.register('onPassItemEffects', this.onPassItemEffects, this)
+        Emitter.register('onOpenEffectsPass', this.onOpenEffectsPass, this)
     }
 
     removeEmitter() {
         Emitter.remove('onGameOverCall', this.onGameOverCall, this)
         Emitter.remove('onPlayAgainGameOverCall', this.onPlayAgainGameOverCall, this)
         Emitter.remove('onPassItemEffects', this.onPassItemEffects, this)
+        Emitter.remove('onOpenEffectsPass', this.onOpenEffectsPass, this)
     }
 
+
+    tempVec2 : cc.Vec2
 
 
    async onPassItemEffects(selfName,node){
        if (this.游乐场) {
            let vec2 = Tools.convetOtherNodeSpace(node,this.游乐场);
+           this.tempVec2 = vec2
            let itemPointNode = await UtilsNode.getNode(ItemPreType.特效条目,this.游乐场)
-           // ccLog.log("有是没有啊",itemPointNode)
+           ccLog.log("有是没有啊 0 ",itemPointNode)
            itemPointNode.setPosition(vec2)
+
        }
 
     }
+
+    async onOpenEffectsPass(selfName){
+        let dataEffects = {
+            // root : this.游乐场,
+            P :  this.tempVec2
+        }
+        Emitter.fire("onOpenEffects",{name : EffectsType.关卡接上掉金币,zIndex : 100,data:dataEffects},null)
+
+
+        // let itemPointNode = await UtilsNode.getNode(EffectsType.关卡接上掉金币条目,this.游乐场)
+        // // ccLog.log("有是没有啊",itemPointNode)
+        // itemPointNode.setPosition(this.tempVec2)
+
+        // ccLog.log("有是没有啊 1 ",itemPointNode)
+    }
+
 
 
 

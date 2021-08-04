@@ -327,6 +327,29 @@ export default class UtilsAction extends cc.Component {
         })
 
     }
+
+    //跳消失
+    // UtilsAction.jumpToAndFadeOut(this.node,time,positionEnd.x,positionEnd.y,50,Utils.random(1,3),null)
+    static jumpToAndFadeOut(node: cc.Node, duration: number, x: number, y: number, height: number, jumps: number, callback: any) {
+        return new Promise<any>((resolve, reject) => {
+            node.stopAllActions()
+            let interval1 = cc.jumpTo(duration, x, y, height, jumps);
+            let interval2 = cc.fadeOut(duration);
+            let callbacktemp = cc.callFunc(() => {
+                if (callback) {
+                    callback()
+                }
+                resolve()
+            }, this);
+            let spawn = cc.spawn(interval1, interval2)
+            let sequence = cc.sequence(spawn, callbacktemp);
+            node.runAction(sequence);
+        })
+
+    }
+
+
+
     // UtilsAction.fadeOut()
     static fadeOut(node: cc.Node, duration: number, callback ?: any) {
         return new Promise<any>((resolve, reject) => {

@@ -1,5 +1,5 @@
 import Integer = cc.Integer;
-import {GameCurrentRound, GameState, PrizeType} from "../Type/enums";
+import {GameCurrentRound, GameState, ItemPreType, PrizeType} from "../Type/enums";
 import Emitter from "../Msg/Emitter";
 import Utils from "./Utils";
 import ccLog from "../Log/ccLog";
@@ -1833,6 +1833,19 @@ export default class UtilsDB extends cc.Component {
         if (this.getJson("useRubber") == null) {
             this.initUseRubber()
         }
+        //如果我现在拥有的气球名字 在我所有拥有的里面不存在 我就给这个 设置默认的
+       let useRubber =  this.getJson("useRubber")
+        let b = false
+        let myRubber = UtilsDB.getMyRubber();
+        for (let item in myRubber.list) {
+            ccLog.log("买过什么"," item ",item," myRubber[item] ",myRubber.list[item],"我现在是用的名字",useRubber.rubber)
+            if (item == useRubber.rubber) {
+                b = true
+            }
+        }
+        if (b == false) {
+            this.initUseRubber()
+        }
         return this.getJson("useRubber")
     }
 
@@ -1862,7 +1875,18 @@ export default class UtilsDB extends cc.Component {
         }
         return this.getJson("myRubber")
     }
+    // UtilsDB.delMyRubber(name)
+    static delMyRubber(name) {
+        if (this.getJson("myRubber") == null) {
+            this.initMyRubber()
+        }
+        let myRubber =  this.getJson("myRubber")
+        // myRubber.list[]
+        delete  myRubber.list[name];
+        this.setJson("myRubber", myRubber)
 
+        return this.getJson("myRubber")
+    }
     // static getMyRubberByName(){
     //
     // }
@@ -1875,6 +1899,7 @@ export default class UtilsDB extends cc.Component {
         myRubber.list[rubber] = 1
         this.setJson("myRubber", myRubber)
     }
+
 
     //获取购买过每购买过的都有的橡皮
     // UtilsDB.getMyRubberByAllRubber()
@@ -2518,6 +2543,27 @@ export default class UtilsDB extends cc.Component {
             return  rubber
         }
     }
+    //就是获取一个没有的 没有 就没有
+    // UtilsDB.getNoRubber()
+    static getNoRubber(){
+        let rubberPass = this.getMyRubberByNotBuyRubberPass()
+        if (rubberPass.length > 0) {
+            // let list = UtilsDB.getMyRubberByNotBuyRubberPassCheck(rubberPass)
+            // ccLog.log("排除之后的数据是", list)
+            //
+            // if (list.length > 0) {
+            //     nowPassRubber.rubber.name = list[0].item.name
+            //     nowPassRubber.rubber.index = 0
+            //     UtilsDB.setNowPassRubber(nowPassRubber)
+            // }
+            let index =  Utils.random(0,rubberPass.length)
+            return  rubberPass[index]
+        }else{
+
+            return  null
+        }
+    }
+
     //获取几个没有的气球
     // UtilsDB.getNotRubberList(length)
     static getNotRubberList(length){
@@ -3174,4 +3220,74 @@ export default class UtilsDB extends cc.Component {
     }
 
 
+    //购买的橡皮
+    // UtilsDB.initMyRubberTemp()
+    static initMyRubberTemp() {
+        this.setJson("myRubberTemp", {
+            //快速战斗的随机值
+            // UtilsDB.getRandom().fastGameRandom
+            //默认橡皮
+            list: {}
+        })
+        return this.getJson("myRubberTemp")
+    }
+
+    //获取
+    // UtilsDB.getMyRubberTemp()
+    static getMyRubberTemp() {
+        if (this.getJson("myRubberTemp") == null) {
+            this.initMyRubberTemp()
+        }
+        return this.getJson("myRubberTemp")
+    }
+
+    //购买橡皮
+    // UtilsDB.addMyRubberTemp(rubber)
+    static addMyRubberTemp(rubber) {
+        let myRubber = UtilsDB.getMyRubberTemp()
+        myRubber.list[rubber] = 1
+        this.setJson("myRubberTemp", myRubber)
+    }
+
+
+    //获取购买过每购买过的都有的橡皮
+    // UtilsDB.getMyRubberByAllRubberTemp()
+    static getMyRubberByAllRubberTemp() {
+        let list = JsonManager.getRubbers()
+        let myRubber = UtilsDB.getMyRubberTemp()
+        let returnList = []
+
+        for (let i = 0; i < list.length; i++) {
+            let item = list[i]
+            let isCheck = false
+            for (let o in myRubber.list) {
+
+                // ccLog.log('index:', o, 'value:', myRubber.list[o])
+
+                if (o == item.name) {
+                    isCheck = true
+                    returnList.push(item.name)
+                }
+            }
+
+            // returnList.push({item: item, isCheck: isCheck})
+
+        }
+
+
+        ccLog.log("什么呢", list)
+
+
+        return returnList
+    }
+
+
+
+
+    //增加皮肤试用
+    static addMySkinTrialRubber(rubber) {
+        let myRubber = UtilsDB.getMyRubber()
+        myRubber.list[rubber] = 1
+        this.setJson("myRubber", myRubber)
+    }
 }
