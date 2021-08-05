@@ -30,12 +30,12 @@ export enum ChannelBaseType {
 @ccclass
 export default abstract class ChannelBase extends cc.Component {
 
-    @property({
-        type: cc.Enum(ChannelBaseType),
-        displayName: "当前平台管理",
-        tooltip: "当前平台管理",
-    })
-    channelType = ChannelBaseType.web;
+    // @property({
+    //     type: cc.Enum(ChannelBaseType),
+    //     displayName: "当前平台管理",
+    //     tooltip: "当前平台管理",
+    // })
+    // channelType = ChannelBaseType.web;
 
 
 

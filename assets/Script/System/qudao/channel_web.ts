@@ -3,6 +3,7 @@ import {Ichannel_android} from "./Ichannel_android";
 import ccLog from "../Log/ccLog";
 import UtilsTime from "../Utils/UtilsTime";
 import Api from "../api/api";
+import Emitter from "../Msg/Emitter";
 
 const {ccclass, property} = cc._decorator;
 

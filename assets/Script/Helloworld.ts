@@ -850,12 +850,12 @@ export default class Helloworld extends cc.Component {
 
         cc.director.getCollisionManager().enabled = true;
 
-        // cc.director.getCollisionManager().enabledDebugDraw = true;
+        cc.director.getCollisionManager().enabledDebugDraw = true;
 
         cc.director.getPhysicsManager().enabled = true; // 开启了物理引擎
         let Bits = cc.PhysicsManager.DrawBits; // 这个是我们要显示的类型
-        // cc.director.getPhysicsManager().debugDrawFlags = Bits.e_jointBit | Bits.e_shapeBit;
-        // cc.director.getPhysicsManager().gravity = new cc.Vec2(0, -640)
+        cc.director.getPhysicsManager().debugDrawFlags = Bits.e_jointBit | Bits.e_shapeBit;
+        cc.director.getPhysicsManager().gravity = new cc.Vec2(0, -640)
         this.physicsManager = cc.director.getPhysicsManager()
         this.physicsManager.enabledAccumulator = true
 

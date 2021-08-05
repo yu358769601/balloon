@@ -108,7 +108,7 @@
   "superGetCountMax_": "超级奖励最大数量",
   "superGetCountMax": 2,
   "superGetCountPlayMax_": "玩几关触发超级大奖",
-  "superGetCountPlayMax": 3,
+  "superGetCountPlayMax": 1,
   "getLuckDialogData_": "限时礼包数据",
   "getLuckDialogData": [
     {

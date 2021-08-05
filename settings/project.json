@@ -2,11 +2,12 @@
   "group-list": [
     "default",
     "line",
-    "point"
+    "point",
+    "adItem"
   ],
   "collision-matrix": [
     [
-      true
+      false
     ],
     [
       false,
@@ -17,6 +18,12 @@
       false,
       true,
       false
+    ],
+    [
+      false,
+      false,
+      false,
+      true
     ]
   ],
   "excluded-modules": [

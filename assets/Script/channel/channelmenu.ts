@@ -8,18 +8,27 @@
 import ChannelBase, {ChannelBaseType} from "./channelBase";
 import ccLog from "../System/Log/ccLog";
 import Emitter from "../System/Msg/Emitter";
-import ChannelManger from "../System/qudao/channelManger";
+import ChannelManger, {ChannelMangerType} from "../System/qudao/channelManger";
+import Menu from "../pass/menu";
+import Utils from "../System/Utils/Utils";
+import Api from "../System/api/api";
+import {Channel_oppoADType} from "../System/qudao/channel_oppo";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class Channelmenu extends ChannelBase {
 
-    _menu : Menu
-
+    @property(
+        {
+            type: Menu,
+            displayName: "Menu放这里"
+        }
+    )    // call cc.Enum
+    bindComponent : Menu = null
     // LIFE-CYCLE CALLBACKS:
-   async init(menu :Menu){
-        this._menu = menu
+   async init(){
+        // this._menu = menu
 
         // switch (this.channelType){
         //     case ChannelBaseType.Android:
@@ -43,12 +52,43 @@ export default class Channelmenu extends ChannelBase {
        // }else{
        //     menu.更多精彩.active = false
        // }
-       let channelMangerType = ChannelManger.getInstance().getChannelType()
-       if (channelMangerType == ChannelMangerType.Android_oppo ||channelMangerType == ChannelMangerType.qq ) {
-           menu.更多精彩.active = true;
-       }else{
-           menu.更多精彩.active = false
+
+       // let channelMangerType = ChannelManger.getInstance().getChannelType()
+       // if (channelMangerType == ChannelMangerType.Android_oppo ||channelMangerType == ChannelMangerType.qq ) {
+       //     menu.更多精彩.active = true;
+       // }else{
+       //     menu.更多精彩.active = false
+       // }
+
+
+       if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
+           // this._gameOverDialog.initViewChannelNode(this._gameOverDialog.居中布局 )
+           // Api.adCode = 4
+           //设置 激励视频按钮和取消的入侵程度
+           // let height =  Utils.getADBtnHeight(
+           //     Api.getAdCode(),
+           //     // 4,
+           //     this._gameOverDialog.结算多倍按钮实际点击,
+           //     this._gameOverDialog.结算继续按钮实际点击,
+           //     this.oppoADToClose)
+           //
+           // this._gameOverDialog.结算多倍按钮实际点击.height = height
+
+           // data.parent
+           // data.ADTypeCode
+           //data.oppoNativeADToClose
+           let data = {
+               cancelNode : null,
+               parent : this.node,
+               oppoNativeADToClose :null,
+               ADTypeCode : Channel_oppoADType.K原生1280ID,
+               heights : [null,900,950, 970, 1040]
+           }
+           // ChannelManger.getInstance().getChannel().showNativeAd(data)
+           ChannelManger.getInstance().getChannel().showNativeAdTest(data)
        }
+
+
     }
     onLoad () {
         super.onLoad()
@@ -92,7 +132,7 @@ export default class Channelmenu extends ChannelBase {
 
         }
     start () {
-
+            this.init()
     }
 
     registerEmitter() {

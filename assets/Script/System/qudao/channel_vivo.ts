@@ -5,7 +5,6 @@ import ccLog from "../Log/ccLog";
 import {Channel_oppoADCode, Channel_oppoADType} from "./channel_oppo";
 import Emitter from "../Msg/Emitter";
 import Utils from "../Utils/Utils";
-
 const {ccclass, property} = cc._decorator;
 
 // vivo

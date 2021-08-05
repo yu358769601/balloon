@@ -365,19 +365,38 @@ export default class SuperGetDialog extends BaseDialog {
 
         ccLog.log("合计增加了","金币",gold,"生命",life)
 
-        let addGemData = {
-            type : AssetsType.钻石,
-            count : gold,
-            // callbackGem_donthave : this.callbackGem_donthaveAdd,
-            // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
-            // callbackGem_subsucceed : this.callbackGem_subsucceed
+
+
+
+
+
+        let  dataItem = {
+            self : this,
+            rootNode : this.node,
+            count : JsonManager.passSettingjson.diamond
         }
-        UtilsDB.addAssets(addGemData)
+        let cllbacks = {
+            ItemPreTypesuccessfulCallback: ()=>{
+                let addGemData = {
+                    type : AssetsType.钻石,
+                    count : gold,
+                    // callbackGem_donthave : this.callbackGem_donthaveAdd,
+                    // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+                    // callbackGem_subsucceed : this.callbackGem_subsucceed
+                }
+                UtilsDB.addAssets(addGemData)
+            },
+            // lookDialogfailureCallback: this.lookDialogfailureCallback
+        }
+        Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
+
+
 
 
         let addLifeData = {
             type: AssetsType.体力,
             count: life,
+            show : true
             // callback_donthave : ()=>{
             //     let  data = {
             //         txt : "没有体力了小老弟"
@@ -398,6 +417,8 @@ export default class SuperGetDialog extends BaseDialog {
         }
         // Emitter.fire("onEduShowIndex",2)
         UtilsDB.addLifeAssets(addLifeData)
+
+
 
 
 
