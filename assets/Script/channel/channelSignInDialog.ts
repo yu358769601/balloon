@@ -13,23 +13,21 @@ import Menu from "../pass/menu";
 import Utils from "../System/Utils/Utils";
 import Api from "../System/api/api";
 import {Channel_oppoADType} from "../System/qudao/channel_oppo";
-import UtilsNode from "../System/Utils/UtilsNode";
-import {ItemPreType} from "../System/Type/enums";
-import UtilsAction from "../System/Utils/UtilsAction";
-import Vec2 = cc.Vec2;
+import GetLuckDialog from "../dialog/getLuckDialog";
+import SignInDialog from "../dialog/signInDialog";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class ChannelMenu extends ChannelBase {
+export default class ChannelSignInDialog extends ChannelBase {
 
     @property(
         {
-            type: Menu,
-            displayName: "Menu放这里"
+            type: SignInDialog,
+            displayName: "SignInDialog_放这里"
         }
     )    // call cc.Enum
-    bindComponent : Menu = null
+    bindComponent : SignInDialog = null
     // LIFE-CYCLE CALLBACKS:
    async init(){
         // this._menu = menu
@@ -64,12 +62,6 @@ export default class ChannelMenu extends ChannelBase {
        //     menu.更多精彩.active = false
        // }
 
-       let ItemFlyAD = await UtilsNode.getNode(ItemPreType.飞的原生广告或者激励视频广告, this.node);
-       ccLog.log("飞的广告",ItemFlyAD)
-       ItemFlyAD.setPosition(new Vec2(-500,0))
-       //
-       UtilsAction.moveByRepeatForever(ItemFlyAD,3,500,0,null)
-
 
        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
            // this._gameOverDialog.initViewChannelNode(this._gameOverDialog.居中布局 )
@@ -102,9 +94,14 @@ export default class ChannelMenu extends ChannelBase {
 
 
        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
-           UtilsNode.show(this.bindComponent.菜单_更多精彩,true)
-           UtilsNode.show(this.bindComponent.菜单_添加桌面,true)
-           ChannelManger.getInstance().getChannel().showBannerAd()
+           let data = {
+               cancelNode : null,
+               parent : this.node,
+               oppoNativeADToClose :null,
+               ADTypeCode : Channel_oppoADType.K原生三张ID,
+               heights : [null,900,950, 970, 1040]
+           }
+           ChannelManger.getInstance().getChannel().showNativeAd(data)
        }
 
 
@@ -122,21 +119,6 @@ export default class ChannelMenu extends ChannelBase {
         }
 
     }
-    //更多精彩
-    openMoreWonderful(){
-        ccLog.log("点了更多精彩了")
-        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
-            ChannelManger.getInstance().getChannel().moreGame()
-        }
-    }
-    //点了添加桌面
-    openInstallShortcut(){
-        ccLog.log("点了添加桌面")
-        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
-            ChannelManger.getInstance().getChannel().installShortcut()
-        }
-    }
-
     // Emitter.fire("openBannerByMenu")
     //显示广告
     openBannerByMenu(){

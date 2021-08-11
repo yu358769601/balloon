@@ -16,11 +16,12 @@ import {balloonName, DialogType, EffectsType, ItemPreType} from "../System/Type/
 import {SoundType} from "../System/sound/sound";
 import {ItemSuperItemType} from "../item/itemSuperItem";
 import {GetLuckDialogType} from "../dialog/getLuckDialog";
+import ChannelBase, {IChannelBase} from "../channel/channelBase";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class Menu extends cc.Component {
+export default class Menu extends cc.Component implements IChannelBase{
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -511,7 +512,15 @@ export default class Menu extends cc.Component {
         }, this)
 
 
+        this.菜单_更多精彩.on(cc.Node.EventType.TOUCH_END, async () => {
 
+            this.channel.openMoreWonderful()
+        }, this)
+
+        this.菜单_添加桌面.on(cc.Node.EventType.TOUCH_END, async () => {
+
+            this.channel.openInstallShortcut()
+        }, this)
 
     }
     //弹出试用
@@ -584,6 +593,10 @@ export default class Menu extends cc.Component {
 
     start() {
 
+    }
+    channel : ChannelBase
+    init(channel: ChannelBase) {
+           this.channel = channel
     }
 
     // update (dt) {}

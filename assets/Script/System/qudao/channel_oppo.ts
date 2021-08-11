@@ -10,18 +10,29 @@ import Utils from "../Utils/Utils";
 
 const {ccclass, property} = cc._decorator;
 
-// 《钱多多》K激励视频ID: 337437
-// 《钱多多》K原生1280ID: 337438
-// 《钱多多》K原生320ID: 337439
-// 《钱多多》K原生三张ID: 337443
-// 《钱多多》KbannerID: 337436
-// oppo包名：com.ks.qdddqhzl.kyx.nearme.gamecenter
+// oppo
+// 包名：com.ks.sqqq.kyx.nearme.gamecenter
+// appid：30603159
+// appkey： 1nat83YUngYSsSG0Ckwo4sWO0(勿外泄)
+// appsecret：36033eEaBC98BB952423A903093dD8ec(勿外泄)
+//
+// 广告参数
+// 神奇气球ID: 30603159
+// 神奇气球-互推浮层ID: 366542
+// 《神奇气球》K开屏广告ID: 366553
+// 《神奇气球》KbannerID: 366557
+// 《神奇气球》K激励视频ID: 366560
+// 《神奇气球》K原生1280ID: 366564
+// 《神奇气球》K原生320ID: 366567
+// 《神奇气球》K原生三张ID: 366570
+// 《神奇气球》K九宫格ID: 366573
 export enum Channel_oppoADCode {
-    K激励视频ID = "337437",
-    K原生1280ID = "337438",
-    K原生320ID = "337439",
-    K原生三张ID = "337443",
-    KbannerID = "337436",
+    K激励视频ID = "366560",
+    K原生1280ID = "366564",
+    K原生320ID = "366567",
+    K原生三张ID = "366570",
+    KbannerID = "366557",
+    K九宫格ID = "366573",
 }
 export enum Channel_oppoADType {
     K激励视频ID = 0,
@@ -29,6 +40,7 @@ export enum Channel_oppoADType {
     K原生320ID = 2,
     K原生三张ID = 3,
     KbannerID = 4,
+    K九宫格ID = 5,
 }
 
 
@@ -38,6 +50,8 @@ export class Channel_oppo extends ChannelAllBase implements Ichannel_android{
      interstitialAdcreate: any = null;
      nativeAdcreate: any = null;
      _nativeCurrentAd: any = null;
+
+    oppogamePortal: any = null;
 
 
     ADtimesCD:[] =  [
@@ -728,10 +742,81 @@ export class Channel_oppo extends ChannelAllBase implements Ichannel_android{
         this._videoAdSuccessCallback && this._videoAdSuccessCallback();
         // this._videoAdSuccessCallback = null;
     }
+    //更多精彩
      moreGame() {
         console.log("更多游戏广告");
+         if( typeof qg != 'undefined' ) {
+             if (qg.getSystemInfoSync().platformVersionCode >= 1076) {
+                 console.log("oppo九宫盒子互推");
+                 this.oppogamePortal = qg.createGamePortalAd({
+                     adUnitId: Channel_oppoADCode.K九宫格ID
+                 })
+                 this.oppogamePortal.load();
+                 this.oppogamePortal.onLoad( ()=> {
+                     this.oppogamePortal.show()
+                     console.log('互推盒子九宫格广告加载成功')
+                 })
+                 this.oppogamePortal.onError(function (err) {
+                     console.log("互推盒子九宫格广告err", JSON.stringify(err));
+                 })
+                 this.oppogamePortal.onClose(function () {
+                     console.log('互推盒子九宫格广告关闭')
+                 })
+             } else {
+                 console.log('快应用平台版本号低于1076，暂不支持互推盒子相关 API')
+             }
+         }
     }
 
 
+    moreGame() {
+        console.log("更多游戏广告");
+        if( typeof qg != 'undefined' ) {
+            if (qg.getSystemInfoSync().platformVersionCode >= 1076) {
+                console.log("oppo九宫盒子互推");
+                this.oppogamePortal = qg.createGamePortalAd({
+                    adUnitId: Channel_oppoADCode.K九宫格ID
+                })
+                this.oppogamePortal.load();
+                this.oppogamePortal.onLoad( ()=> {
+                    this.oppogamePortal.show()
+                    console.log('互推盒子九宫格广告加载成功')
+                })
+                this.oppogamePortal.onError(function (err) {
+                    console.log("互推盒子九宫格广告err", JSON.stringify(err));
+                })
+                this.oppogamePortal.onClose(function () {
+                    console.log('互推盒子九宫格广告关闭')
+                })
+            } else {
+                console.log('快应用平台版本号低于1076，暂不支持互推盒子相关 API')
+            }
+        }
+    }
+    /**创建桌面图标 */
+    installShortcut() {
+        if( typeof qg != 'undefined' ) {
+            qg.hasShortcutInstalled({
+                success: function (res) {
+                    // 判断图标未存在时，创建图标
+                    if (res == false) {
+                        qg.installShortcut({
+                            success: function () {
+                                // 执行用户创建图标奖励
+                            },
+                            fail: function (err) {
+                            },
+                            complete: function () {
+                            }
+                        })
+                    }
+                },
+                fail: function (err) {
+                },
+                complete: function () {
+                }
+            })
+        }
+    }
 }
 

@@ -666,7 +666,23 @@ export default class UtilsAction extends cc.Component {
         let sequence = cc.sequence(spawn, callbacktemp);
         node.runAction(sequence);
     }
-
+    //一直左右
+    // UtilsAction.moveByRepeatForever(node,duration,x,y,callback)
+    static moveByRepeatForever(node: cc.Node, duration: number, x: number, y: number, callback: any) {
+        node.stopAllActions()
+        // node.scaleX = 1
+        // node.scaleY = 1
+        let interval1 = cc.moveBy(duration, x, y).easing(cc.easeElasticInOut(duration));
+        let interval2 = cc.moveBy(duration, -x, -y).easing(cc.easeElasticInOut(duration));
+        let callbacktemp = cc.callFunc(() => {
+            if (callback) {
+                callback()
+            }
+        }, this);
+        let sequence = cc.sequence(interval1, interval2);
+        let rep = cc.repeatForever(sequence)
+        node.runAction(rep);
+    }
     //一直上下
     static upDownRepeatForever(node: cc.Node, duration: number, x: number, y: number, callback: any) {
         node.stopAllActions()

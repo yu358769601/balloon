@@ -22,6 +22,7 @@ import GetNode, {GetNodeType} from "./System/Utils/getNode";
 import Umengstatistics, {maidianType} from "./System/qudao/umengstatistics";
 import ChannelHelloWroldByAndroid from "./channel/channelHelloWroldByAndroid";
 import ChannelManger from "./System/qudao/channelManger";
+import {NewNet} from "./System/api/newNet";
 
 
 const {ccclass, property} = cc._decorator;
@@ -831,10 +832,10 @@ export default class Helloworld extends cc.Component {
     }
 
     onGetCodeAD() {
-        if (ChannelManger.getInstance().getChannelTypeIsNoAndroid() == true) {
-            Api.getAdControlInfo((num) => {
-            })
-        }
+        // if (ChannelManger.getInstance().getChannelTypeIsNoAndroid() == true) {
+        //     Api.getAdControlInfo((num) => {
+        //     })
+        // }
     }
 
     onDisable() {
@@ -844,8 +845,8 @@ export default class Helloworld extends cc.Component {
 
     async onLoad() {
 
-        let r = window.location.search
-        ccLog.log("什么地址呢 ",r)
+        // let r = window.location.search
+        // ccLog.log("什么地址呢 ",r)
 
 
         cc.director.getCollisionManager().enabled = true;
@@ -875,10 +876,12 @@ export default class Helloworld extends cc.Component {
         ccLog.log("当前渠道", channel)
 
 
-        Api.getAdControlInfo((num) => {
-            ccLog.log("当前渠道", channel, "广告参数", num)
-        })
+        // Api.getAdControlInfo((num) => {
+        //     ccLog.log("当前渠道", channel, "广告参数", num)
+        // })
 
+        // await NewNet.getAdControl()
+        await NewNet.getServerData()
 
         // let data = {
         //     httpType : "post",

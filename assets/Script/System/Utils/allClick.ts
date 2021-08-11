@@ -137,6 +137,8 @@ export default class AllClick extends cc.Component {
         ccLog.log("撞到了 碰撞 "," 肇事者 ",sendData.self," 受害者 ",sendData.other)
         if (sendData.other.node.name == "btn_click") {
             Emitter.fire("onCodeBtnClickByNativeAdDialog")
+        }else if (sendData.other.node.name == "btn_click_fly") {
+            Emitter.fire("onCodeBtnClickByItemFlyAD")
         }
 
     }

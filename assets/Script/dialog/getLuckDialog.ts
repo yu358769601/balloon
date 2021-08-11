@@ -16,6 +16,7 @@ import {SoundType} from "../System/sound/sound";
 import UtilsNode from "../System/Utils/UtilsNode";
 import {ItemSuperItemType} from "../item/itemSuperItem";
 import LoadManage from "../System/Load/LoadManage";
+import ChannelBase, {IChannelBase} from "../channel/channelBase";
 
 const {ccclass, property} = cc._decorator;
 
@@ -28,7 +29,7 @@ export enum GetLuckDialogType {
 
 
 @ccclass
-export default class GetLuckDialog extends BaseDialog {
+export default class GetLuckDialog extends BaseDialog implements IChannelBase {
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -318,6 +319,10 @@ export default class GetLuckDialog extends BaseDialog {
     }
 
 
+    channel : ChannelBase
+    init(channel: ChannelBase) {
+        this.channel = channel
+    }
 
 
 

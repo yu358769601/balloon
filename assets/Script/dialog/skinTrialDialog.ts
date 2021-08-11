@@ -18,11 +18,12 @@ import LoadManage from "../System/Load/LoadManage";
 import Tween from "../System/Utils/Tween";
 import {ItemShopItemType} from "../item/itemShopItem";
 import {SoundType} from "../System/sound/sound";
+import ChannelBase, {IChannelBase} from "../channel/channelBase";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class SkinTrialDialog extends BaseDialog {
+export default class SkinTrialDialog extends BaseDialog  implements IChannelBase{
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -316,6 +317,11 @@ export default class SkinTrialDialog extends BaseDialog {
 
         // this.胜利_结算.getComponent(cc.Widget).enabled = true
 
+    }
+
+    channel : ChannelBase
+    init(channel: ChannelBase) {
+        this.channel = channel
     }
 
     // update (dt) {}

@@ -194,7 +194,7 @@ export enum ItemPreType {
     超级奖励条目 = "itemSuperItem",
     超级奖励海胆 = "itemSuperEffects",
     全按屏幕点击块 = "allClickItem",
-    飞的原生广告或者激励视频广告 = "ItemFlyAD",
+    飞的原生广告或者激励视频广告 = "itemFlyAD",
 
 
 

@@ -27,6 +27,12 @@ export enum ChannelBaseType {
 
 }
 
+export interface IChannelBase {
+    init(channel : ChannelBase)
+}
+
+
+
 @ccclass
 export default abstract class ChannelBase extends cc.Component {
 

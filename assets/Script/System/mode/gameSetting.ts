@@ -22,7 +22,7 @@ export enum passModeType {
 export default class GameSetting {
 
     //游戏模式 GameSetting.mode
-    static mode :number = gameModeType.正式
+    static mode :number = gameModeType.测试
 
     static passMode :number = passModeType.正常
     //过关中

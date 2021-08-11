@@ -19,6 +19,8 @@ import Tween from "../System/Utils/Tween";
 import {ItemShopItemType} from "../item/itemShopItem";
 import {SoundType} from "../System/sound/sound";
 import UtilsNode from "../System/Utils/UtilsNode";
+import ChannelBase, {IChannelBase} from "../channel/channelBase";
+import Tools from "../System/Utils/Tools";
 
 const {ccclass, property} = cc._decorator;
 
@@ -33,7 +35,7 @@ export enum SignInDialogTypeCheck {
 }
 
 @ccclass
-export default class SignInDialog extends BaseDialog {
+export default class SignInDialog extends BaseDialog implements IChannelBase{
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -570,6 +572,9 @@ export default class SignInDialog extends BaseDialog {
         // this.胜利_结算.getComponent(cc.Widget).enabled = true
 
     }
-
+    channel : ChannelBase
+    init(channel: ChannelBase) {
+        this.channel = channel
+    }
     // update (dt) {}
 }

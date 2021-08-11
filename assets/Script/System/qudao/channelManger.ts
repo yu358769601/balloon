@@ -82,7 +82,7 @@ export default class ChannelManger {
 //         tooltip: "当前平台管理",
 //     })
     //平台管理 当前渠道
-    channelMangerType = ChannelMangerType.web;
+    channelMangerType = ChannelMangerType.oppo;
     // LIFE-CYCLE CALLBACKS:
     list: ChannelAllBase[] = [
         new Channel_web(),

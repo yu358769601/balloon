@@ -12,7 +12,10 @@ import Emitter from "../System/Msg/Emitter";
 import UtilsDB from "../System/Utils/UtilsDB";
 import Api from "../System/api/api";
 import JsonManager from "../System/manage/JsonManager";
-import ChannelManger from "../System/qudao/channelManger";
+import ChannelManger, {ChannelMangerType} from "../System/qudao/channelManger";
+import SkinTrialDialog from "../dialog/skinTrialDialog";
+import GameOverDialog from "../dialog/gameOverDialog";
+import {Channel_oppoADType} from "../System/qudao/channel_oppo";
 
 const {ccclass, property} = cc._decorator;
 
@@ -47,16 +50,20 @@ export default class ChannelgameOverDialog extends ChannelBase {
     // _gameOverDialog : GameOverDialog
     sound : boolean = false
     music : boolean = false
+    @property(
+        {
+            type: GameOverDialog,
+            displayName: "GameOverDialog_放这里"
+        }
+    )    // call cc.Enum
+    bindComponent : GameOverDialog = null
 
-
-    setLayout(idialogLayout :IDialogLayout){
-        idialogLayout.setLayoutDefault()
-    }
+    // setLayout(idialogLayout :IDialogLayout){
+    //     idialogLayout.setLayoutDefault()
+    // }
     // LIFE-CYCLE CALLBACKS:
-   async init(gameOverDialog :GameOverDialog){
-        this._gameOverDialog = gameOverDialog
-
-
+   async init(){
+       this.bindComponent.init(this)
        // IDialogLayout
 
         // switch (this.channelType){
@@ -73,7 +80,6 @@ export default class ChannelgameOverDialog extends ChannelBase {
         //
         //         break;
         // }
-       ccLog.log("进来什么",this._gameOverDialog.data)
 
        if (ChannelManger.getInstance().getChannelTypeIsAndroid() == true) {
            this._gameOverDialog.initViewChannelNode(this._gameOverDialog.贴底布局 )
@@ -112,26 +118,26 @@ export default class ChannelgameOverDialog extends ChannelBase {
 
        // this. 结算广告按钮实际点击
        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
-           this._gameOverDialog.initViewChannelNode(this._gameOverDialog.贴底布局 )
+           // this._gameOverDialog.initViewChannelNode(this._gameOverDialog.贴底布局 )
            // Api.adCode = 4
            //设置 激励视频按钮和取消的入侵程度
-           let height =  Utils.getADBtnHeight(
-               Api.getAdCode(),
-               // 4,
-               this._gameOverDialog.结算多倍按钮实际点击,
-               this._gameOverDialog.结算继续按钮实际点击,
-               this.oppoADToClose)
-
-           this._gameOverDialog.结算多倍按钮实际点击.height = height
+           // let height =  Utils.getADBtnHeight(
+           //     Api.getAdCode(),
+           //     // 4,
+           //     this._gameOverDialog.结算多倍按钮实际点击,
+           //     this._gameOverDialog.结算继续按钮实际点击,
+           //     this.oppoADToClose)
+           //
+           // this._gameOverDialog.结算多倍按钮实际点击.height = height
 
            // data.parent
            // data.ADTypeCode
            //data.oppoNativeADToClose
            let data = {
-               cancelNode : this._gameOverDialog.结算继续按钮实际点击,
+               cancelNode : null,
                parent : this.node,
                oppoNativeADToClose : this.oppoNativeADToClose,
-               ADTypeCode : Channel_oppoADType.K原生1280ID,
+               ADTypeCode : Channel_oppoADType.K原生320ID,
                heights : [null,900,950, 970, 1040]
            }
            ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -376,8 +382,8 @@ export default class ChannelgameOverDialog extends ChannelBase {
     }
     onDestroy() {
         super.onDestroy();
-        ChannelManger.getInstance().getChannel().hideBannerAd()
-        ChannelManger.getInstance().getChannel().closeFeedAd(0)
+        // ChannelManger.getInstance().getChannel().hideBannerAd()
+        // ChannelManger.getInstance().getChannel().closeFeedAd(0)
     }
 
     start () {

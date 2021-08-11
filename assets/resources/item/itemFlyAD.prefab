@@ -332,7 +332,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "btn_click",
+    "_name": "btn_click_fly",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -526,7 +526,7 @@
     "_enabled": true,
     "alignMode": 1,
     "_target": null,
-    "_alignFlags": 4,
+    "_alignFlags": 0,
     "_left": 0,
     "_right": 0,
     "_top": 0,
