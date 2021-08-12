@@ -23,6 +23,7 @@ import Umengstatistics, {maidianType} from "./System/qudao/umengstatistics";
 import ChannelHelloWroldByAndroid from "./channel/channelHelloWroldByAndroid";
 import ChannelManger from "./System/qudao/channelManger";
 import {NewNet} from "./System/api/newNet";
+import ControlCommercial from "./control/controlCommercial";
 
 
 const {ccclass, property} = cc._decorator;
@@ -881,7 +882,7 @@ export default class Helloworld extends cc.Component {
         // })
 
         // await NewNet.getAdControl()
-        await NewNet.getServerData()
+        ControlCommercial.init()
 
         // let data = {
         //     httpType : "post",

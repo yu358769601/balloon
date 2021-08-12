@@ -75,6 +75,78 @@ export default class ChannelManger {
             },
         ]
     }
+    // web = 0,
+    // oppo = 1,
+    // vivo = 2,
+    // meizu = 3,
+    // Android = 4,
+    // Android_oppo = 5,
+    // Android_mi = 6,
+    // qq = 7,
+    // tt = 8,
+    //
+    gameData = {
+        ChannelList: [
+            {
+                name : "web",
+                gameId: "202107006",
+                channelId:"1006",
+                version: "1.0.0",
+            },
+            {
+                name : "oppo",
+                gameId: "202107006",
+                channelId:"1006",
+                version: "1.0.0",
+            },
+            {
+                name : "vivo",
+                gameId: "202107006",
+                channelId:"1007",
+                version: "1.0.0",
+            },
+            {
+                name : "meizu",
+                gameId: "202107006",
+                channelId:"1008",
+                version: "1.0.0",
+            },
+            {
+                name : "Android",
+                gameId: "202120017",
+                channelId:"1006",
+                version: "1.0.0",
+            },
+            {
+                name : "Android_oppo",
+                gameId: "202120017",
+                channelId:"1006",
+                version: "1.0.0",
+            },
+            {
+                name : "Android_mi",
+                gameId: "202107006",
+                channelId:"1001",
+                version: "1.0.0",
+            },
+            {
+                name : "qq",
+                gameId: "202107006",
+                channelId:"qqh5",
+                version: "1.0.0",
+            },
+            {
+                name : "tt",
+                gameId: "202107006",
+                channelId:"douyinh5",
+                version: "1.0.0",
+            },
+
+        ]
+    }
+
+
+
 
 // @property({
 //         type: cc.Enum(ChannelMangerType),
@@ -120,7 +192,16 @@ export default class ChannelManger {
         }
         return data
     }
-
+    //获取新的渠道参数
+    // ChannelManger.getInstance().getNewMyChannelData()
+    getNewMyChannelData() {
+        let item = this.gameData.ChannelList[this.channelMangerType]
+        ccLog.log("商业化参数",item)
+        if (item) {
+            return item
+        }
+        return null
+    }
 
     // ccLog.log("全局获取通道管理",ChannelManger.getInstance().getChannel())
 

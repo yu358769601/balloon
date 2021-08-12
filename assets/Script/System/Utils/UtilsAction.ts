@@ -1,4 +1,5 @@
 import Utils from "./Utils";
+import Vec2 = cc.Vec2;
 
 const {ccclass, property} = cc._decorator;
 
@@ -71,6 +72,7 @@ export default class UtilsAction extends cc.Component {
         let repeatForever = cc.repeatForever(sequence);
         node.runAction(repeatForever);
     }
+
     //永远上下
     static moveByRepeatForeverXY(node: cc.Node, duration: number, x: number, y: number, callback: any) {
         node.stopAllActions()
@@ -211,27 +213,28 @@ export default class UtilsAction extends cc.Component {
     }
 
     //旋转一定角度
-    static rotateBy(node: cc.Node, deltaAngle: number, duration: number,callback) {
+    static rotateBy(node: cc.Node, deltaAngle: number, duration: number, callback) {
         return new Promise<any>((resolve, reject) => {
-        node.stopAllActions()
-        // node.scaleX = 1
-        // node.scaleY = 1
-        let interval1 = cc.rotateBy(duration, deltaAngle).easing(cc.easeElasticInOut(duration));
-        // let interval2 = cc.scaleTo(duration, 1, 1).easing(cc.easeElasticInOut(duration));
-        let callbacktemp = cc.callFunc(() => {
-            if (callback) {
-                callback()
-            }
-            resolve()
-        }, this);
-        let sequence = cc.sequence(interval1,callbacktemp);
-        // let rep = cc.repeatForever(interval1)
-        node.runAction(sequence);
+            node.stopAllActions()
+            // node.scaleX = 1
+            // node.scaleY = 1
+            let interval1 = cc.rotateBy(duration, deltaAngle).easing(cc.easeElasticInOut(duration));
+            // let interval2 = cc.scaleTo(duration, 1, 1).easing(cc.easeElasticInOut(duration));
+            let callbacktemp = cc.callFunc(() => {
+                if (callback) {
+                    callback()
+                }
+                resolve()
+            }, this);
+            let sequence = cc.sequence(interval1, callbacktemp);
+            // let rep = cc.repeatForever(interval1)
+            node.runAction(sequence);
         })
 
     }
+
     //旋转一定角度
-    static rotateTo(node: cc.Node, deltaAngle: number, duration: number,callback) {
+    static rotateTo(node: cc.Node, deltaAngle: number, duration: number, callback) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
             // node.scaleX = 1
@@ -244,12 +247,13 @@ export default class UtilsAction extends cc.Component {
                 }
                 resolve()
             }, this);
-            let sequence = cc.sequence(interval1,callbacktemp);
+            let sequence = cc.sequence(interval1, callbacktemp);
             // let rep = cc.repeatForever(interval1)
             node.runAction(sequence);
         })
 
     }
+
     //一直旋转
     static turnUpRepeatForever(node: cc.Node, duration: number) {
         node.stopAllActions()
@@ -312,6 +316,7 @@ export default class UtilsAction extends cc.Component {
         })
 
     }
+
     static jumpTo(node: cc.Node, duration: number, x: number, y: number, height: number, jumps: number, callback: any) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
@@ -347,7 +352,6 @@ export default class UtilsAction extends cc.Component {
         })
 
     }
-
 
 
     // UtilsAction.fadeOut()
@@ -476,6 +480,7 @@ export default class UtilsAction extends cc.Component {
         let rep = cc.repeatForever(sequence)
         node.runAction(rep);
     }
+
     //掉落小怪
     // UtilsAction.drop(node,endp,callback)
     static drop(node: cc.Node, endp, callback) {
@@ -666,6 +671,7 @@ export default class UtilsAction extends cc.Component {
         let sequence = cc.sequence(spawn, callbacktemp);
         node.runAction(sequence);
     }
+
     //一直左右
     // UtilsAction.moveByRepeatForever(node,duration,x,y,callback)
     static moveByRepeatForever(node: cc.Node, duration: number, x: number, y: number, callback: any) {
@@ -683,6 +689,39 @@ export default class UtilsAction extends cc.Component {
         let rep = cc.repeatForever(sequence)
         node.runAction(rep);
     }
+
+    //飞的广告
+    // UtilsAction.fiyAD(node,duration,x,y,offSetX,offSetY1,offSetY2,offSetY3,callback)
+    // UtilsAction.fiyAD(this.node,duration0,x,y,duration1,offSetY1,duration2,offSetY2,duration3,offSetY3,this.fiyADCallBack)
+    // static fiyAD(node: cc.Node, duration: number, x: number, y: number, offSetX: number, offSetY1: number,offSetY2: number,offSetY3: number, callback: any) {
+    static fiyAD(node: cc.Node, duration0: number, x: number, y: number, duration1: number, offSetY1: number, duration2: number, offSetY2: number, duration3: number, offSetY3: number, self : any,,callback: any) {
+        node.stopAllActions()
+        // node.scaleX = 1
+        // node.scaleY = 1
+        let interval1 = cc.moveBy(duration0, x, y)
+        let interval2 = cc.moveBy(duration1, 0, offSetY1).easing(cc.easeSineInOut());
+        let interval3 = cc.moveBy(duration2, 0, offSetY2).easing(cc.easeSineInOut());
+        let interval4 = cc.moveBy(duration3, 0, offSetY3).easing(cc.easeSineInOut());
+        let sequence1 = cc.sequence(interval2, interval3, interval4);
+        let spawn = cc.spawn(interval1, sequence1)
+
+        // let interval2 = cc.moveBy(duration, -x, -y).easing(cc.easeElasticInOut(duration));
+        // let interval1 = cc.bezierBy(duration,[new Vec2(x+offSetX,y+offSetY1),new Vec2(x+offSetX,y+offSetY2),new Vec2(x+offSetX,y+offSetY2)])
+
+
+        let callbacktemp = cc.callFunc(() => {
+            if (callback) {
+                callback(self)
+            }
+        }, this);
+        let sequence2 = cc.sequence(spawn, callbacktemp);
+        // let rep = cc.repeatForever(sequence)
+        node.runAction(sequence2);
+
+
+    }
+
+
     //一直上下
     static upDownRepeatForever(node: cc.Node, duration: number, x: number, y: number, callback: any) {
         node.stopAllActions()
@@ -733,7 +772,7 @@ export default class UtilsAction extends cc.Component {
 
     //门锁动画
     // UtilsAction.doorLockAn(node,duration,callback)
-    static doorLockAn(node: cc.Node,duration : number, callback) {
+    static doorLockAn(node: cc.Node, duration: number, callback) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
             let y = node.scaleY
@@ -775,22 +814,23 @@ export default class UtilsAction extends cc.Component {
             node.runAction(sequence);
         })
     }
+
     //门动画
     // UtilsAction.doorAn(node,duration,callback)
-    static doorAn(node: cc.Node,duration : number, callback) {
+    static doorAn(node: cc.Node, duration: number, callback) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
-            let  p = node.getPosition()
+            let p = node.getPosition()
 
-            let interval1 = cc.moveBy(duration, p.x+4, 0).easing(cc.easeElasticInOut(duration));
-            let interval2 = cc.moveBy(duration, p.x-4 ,0).easing(cc.easeElasticInOut(duration));
-            let interval3 = cc.moveBy(duration, p.x-4, 0).easing(cc.easeElasticInOut(duration));
-            let interval4 = cc.moveBy(duration, p.x+4, 0).easing(cc.easeElasticInOut(duration));
+            let interval1 = cc.moveBy(duration, p.x + 4, 0).easing(cc.easeElasticInOut(duration));
+            let interval2 = cc.moveBy(duration, p.x - 4, 0).easing(cc.easeElasticInOut(duration));
+            let interval3 = cc.moveBy(duration, p.x - 4, 0).easing(cc.easeElasticInOut(duration));
+            let interval4 = cc.moveBy(duration, p.x + 4, 0).easing(cc.easeElasticInOut(duration));
 
-            let interval5 = cc.moveBy(duration, p.x+4, 0).easing(cc.easeElasticInOut(duration));
-            let interval6 = cc.moveBy(duration, p.x-4 ,0).easing(cc.easeElasticInOut(duration));
-            let interval7 = cc.moveBy(duration, p.x-4, 0).easing(cc.easeElasticInOut(duration));
-            let interval8 = cc.moveBy(duration, p.x+4, 0).easing(cc.easeElasticInOut(duration));
+            let interval5 = cc.moveBy(duration, p.x + 4, 0).easing(cc.easeElasticInOut(duration));
+            let interval6 = cc.moveBy(duration, p.x - 4, 0).easing(cc.easeElasticInOut(duration));
+            let interval7 = cc.moveBy(duration, p.x - 4, 0).easing(cc.easeElasticInOut(duration));
+            let interval8 = cc.moveBy(duration, p.x + 4, 0).easing(cc.easeElasticInOut(duration));
 
             // let interval9 = cc.moveBy(duration, p.x+10, 0).easing(cc.easeElasticInOut(duration));
             // let interval10 = cc.moveBy(duration, p.x-10 ,0).easing(cc.easeElasticInOut(duration));
@@ -827,12 +867,12 @@ export default class UtilsAction extends cc.Component {
 
     //永远变色再变回来
     // UtilsAction.tintToRepeatForever(node,toColorTime,myColorTime,toColor,myColor,callback)
-    static tintToRepeatForever(node: cc.Node,toColorTime : number,myColorTime : number,toColor: cc.Color, myColor: cc.Color,callback) {
+    static tintToRepeatForever(node: cc.Node, toColorTime: number, myColorTime: number, toColor: cc.Color, myColor: cc.Color, callback) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
 
-            let interval1 = cc.tintTo(toColorTime,myColor.r,myColor.g,myColor.b).easing(cc.easeElasticInOut(1));
-            let interval2 = cc.tintTo(myColorTime,toColor.r,toColor.g,toColor.b).easing(cc.easeElasticInOut(1));
+            let interval1 = cc.tintTo(toColorTime, myColor.r, myColor.g, myColor.b).easing(cc.easeElasticInOut(1));
+            let interval2 = cc.tintTo(myColorTime, toColor.r, toColor.g, toColor.b).easing(cc.easeElasticInOut(1));
             // let spawn = cc.spawn(interval1,interval2)
             let callbacktemp = cc.callFunc(() => {
                 if (callback) {
@@ -848,12 +888,13 @@ export default class UtilsAction extends cc.Component {
             node.runAction(rep);
         })
     }
+
     // UtilsAction.tintTo(node,toColorTime,toColor,callback)
-    static tintTo(node: cc.Node,toColorTime : number,toColor: cc.Color,callback) {
+    static tintTo(node: cc.Node, toColorTime: number, toColor: cc.Color, callback) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
 
-            let interval1 = cc.tintTo(toColorTime,toColor.r,toColor.g,toColor.b).easing(cc.easeElasticInOut(1));
+            let interval1 = cc.tintTo(toColorTime, toColor.r, toColor.g, toColor.b).easing(cc.easeElasticInOut(1));
             // let spawn = cc.spawn(interval1,interval2)
             let callbacktemp = cc.callFunc(() => {
                 if (callback) {
@@ -871,7 +912,7 @@ export default class UtilsAction extends cc.Component {
 
     //永远变色再变回来
     // UtilsAction.fadeOutToInRepeatForever(node,tofadeOutTime,tofadeInTime,callback)
-    static fadeOutToInRepeatForever(node: cc.Node,tofadeOutTime : number,tofadeInTime : number,callback) {
+    static fadeOutToInRepeatForever(node: cc.Node, tofadeOutTime: number, tofadeInTime: number, callback) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
 
@@ -892,12 +933,13 @@ export default class UtilsAction extends cc.Component {
             node.runAction(rep);
         })
     }
+
     // UtilsAction.fadeTo(node,tofadeOutTime,opacity,callback)
-    static fadeTo(node: cc.Node,tofadeOutTime : number,opacity : number,callback) {
+    static fadeTo(node: cc.Node, tofadeOutTime: number, opacity: number, callback) {
         return new Promise<any>((resolve, reject) => {
             node.stopAllActions()
 
-            let interval1 = cc.fadeTo(tofadeOutTime,opacity).easing(cc.easeElasticOut(tofadeOutTime));
+            let interval1 = cc.fadeTo(tofadeOutTime, opacity).easing(cc.easeElasticOut(tofadeOutTime));
             // let spawn = cc.spawn(interval1,interval2)
             let callbacktemp = cc.callFunc(() => {
                 if (callback) {
@@ -915,7 +957,7 @@ export default class UtilsAction extends cc.Component {
 
     //一直上下带缓动
     // UtilsAction.moveByRepeatForeverXY_easeElasticOut(node,duration,x,y,tofadeOutTime,callback)
-    static moveByRepeatForeverXY_easeElasticOut(node: cc.Node, duration: number, x: number, y: number, tofadeOutTime,callback: any) {
+    static moveByRepeatForeverXY_easeElasticOut(node: cc.Node, duration: number, x: number, y: number, tofadeOutTime, callback: any) {
         node.stopAllActions()
         let interval1 = cc.moveBy(duration, x, y).easing(cc.easeElasticInOut(tofadeOutTime));
         let interval2 = cc.moveBy(duration, -x, -y).easing(cc.easeElasticInOut(tofadeOutTime));
@@ -928,8 +970,9 @@ export default class UtilsAction extends cc.Component {
         let repeatForever = cc.repeatForever(sequence);
         node.runAction(repeatForever);
     }
+
     //一直旋转
-    static turnUpRepeatForeverSetDeltaAngle(node: cc.Node, deltaAngle: number,duration: number) {
+    static turnUpRepeatForeverSetDeltaAngle(node: cc.Node, deltaAngle: number, duration: number) {
         node.stopAllActions()
         // node.scaleX = 1
         // node.scaleY = 1

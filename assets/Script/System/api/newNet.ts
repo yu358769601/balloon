@@ -98,7 +98,7 @@ export class  NewNet{
             // }
 
             ccLog.log("去网络请求的数据",paramData)
-            let str: string = JSON.stringify(paramData);
+            let str: string = JSON.stringify(paramData.setData);
             //数据加密，秘钥由我方运营提供
             let requestData = Seal.rc4Encrypt(str, "ksgamesqqq");
 
@@ -129,6 +129,18 @@ export class  NewNet{
                     // reject(xmlhttp)
                 }
             }
+            xmlhttp.onerror = (err) => {
+                cc.log("网络访问发生错误, 请检查网络是否畅通", err);
+                resolve(null);
+            };
+            xmlhttp.timeout = 1000;
+            xmlhttp.ontimeout = () => {
+                cc.log("网络请求超时, 请保证你的网络环境稳定");
+                resolve(null);
+            };
+
+
+
             /*接口连接，先判断连接类型是post还是get*/
             if (httpType == 'GET') {
                 xmlhttp.open("GET", httpUrl, async);
@@ -138,7 +150,7 @@ export class  NewNet{
                 // 发送合适的请求头信息
                 xmlhttp.setRequestHeader("Content-Type", "html/text");//加密
                 xmlhttp.setRequestHeader("ec", "true");//加密
-                xmlhttp.setRequestHeader( 'appId', '202107006');//加密
+                xmlhttp.setRequestHeader( 'appId', paramData.obj.gameId);//加密
                 xmlhttp.send(requestData);//加密
             }
         }).catch((e) => {});
@@ -147,10 +159,9 @@ export class  NewNet{
 
     //获取后台配置数据，只需要在进入游戏内请求一次即可，无需多次请求
     // NewNet.getServerData()
-    static async  getServerData(){
+    static async  getServerData(sendData){
         let bObj: any;
         //商业化后台控制的界面id集合（id详见我方运营提供的控制内容文档）
-        let viewArr = ["sqqq_qd", "sqqq_xslb", "sqqq_pfsy"];
         //TTSDK.serverSookie服务端缓存在客户端的内容，第一次请求拿到后再次请求需要携带
         if (!this.sookiead) {
             //version：运营提供；
@@ -158,12 +169,14 @@ export class  NewNet{
             //controlIds：控制位id
             //userId：用户唯一id，手动生成一个16位的字符串保存在本地使用
             // sookie:服务端返回的数据，第一次请求完后端会返回该数据，之后每次请求都需要携带
-            bObj = { version: "1.0.0", channelId: '1006', controlIds: viewArr, userId: "1234567891234567", sookie: {} }
+            bObj = sendData
         } else {
-            bObj = { version: "1.0.0", channelId: '1006', controlIds: viewArr, userId: "1234567891234567", sookie: this.sookiead }
+            sendData.setData.sookie = this.sookiead
+            bObj = sendData
         }
 
       let res =  await this.getData("https://gamectrl.ugmars.com/api/bctrl","post",bObj)
+      // let res =  await this.getData("https://www.baidu.com/api/bctrl","post",bObj)
        ccLog.log("新广告请求回来的参数",res)
         // //请求内容
         // HttpClient.toData("https://gamectrl.ugmars.com/api/bctrl", str, 'post', 'text', headers, false, function (res) {
@@ -173,6 +186,9 @@ export class  NewNet{
         //     TTSDK.serverSookie = res.data.sookie;
         //     console.log("tt配置内容:" + res);
         // });
+
+
+        return res
     }
 
 

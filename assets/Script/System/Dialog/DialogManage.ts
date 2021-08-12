@@ -25,12 +25,14 @@ export default class DialogManage extends cc.Component {
         Emitter.remove('onOpenItem', this.onOpenItem,this)
         Emitter.remove('onCloseDialog', this.onCloseDialog,this)
         Emitter.remove('onOpenNativeAdDialog', this.onOpenNativeAdDialog,this)
+        Emitter.remove('onAddItem', this.onAddItem,this)
     }
     registerEmitter(){
         Emitter.register('onOpenDialog', this.onOpenDialog,this)
         Emitter.register('onOpenItem', this.onOpenItem,this)
         Emitter.register('onCloseDialog', this.onCloseDialog,this)
         Emitter.register('onOpenNativeAdDialog', this.onOpenNativeAdDialog,this)
+        Emitter.register('onAddItem', this.onAddItem,this)
     }
     onLoad () {
         this.removeEmitter()
@@ -121,7 +123,26 @@ export default class DialogManage extends cc.Component {
         //     // Emitter.fire("onRefreshFastGameCount")
         // })
     }
-
+    async onAddItem(selfName,data,cllbacks){
+        // ccLog.log("创建diaolog",data,this.Root.children)
+        // this.Root.children.forEach((item) => {
+        //     if (item) {
+        //         ccLog.log("创建diaolog 现在有了吗",item.name,data.name , "结果",item.name ==data.name )
+        //         if (item.name == data.name) {
+        //             return
+        //         }
+        //     }
+        //
+        // });
+        let node = await UtilsNode.getNode(data.name, data.rootNode);
+        node.getComponent(data.name).initCallback(cllbacks)
+        node.getComponent(data.name).setData(data)
+        if (data.zIndex != null) {
+            node.zIndex = data.zIndex
+        }else{
+            node.zIndex = 100
+        }
+    }
 
     async onCloseDialog(selfName,name){
         // ccLog.log("创建diaolog",data,this.Root.children)

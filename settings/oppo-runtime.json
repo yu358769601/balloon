@@ -1,0 +1,18 @@
+{
+  "package": "com.ks.sqqq.kyx.nearme.gamecenter",
+  "name": "神奇气球",
+  "icon": "D:\\workProgram\\balloon\\icon\\icon1-512.png",
+  "versionName": "0.0.1",
+  "versionCode": "1",
+  "minPlatformVersion": "1080",
+  "deviceOrientation": "portrait",
+  "logLevel": "log",
+  "tinyPackageServer": "",
+  "useDebugKey": false,
+  "privatePath": "D:\\workProgram\\jiujiuxiaolaomei\\key\\oppo\\private.pem",
+  "certificatePath": "D:\\workProgram\\jiujiuxiaolaomei\\key\\oppo\\certificate.pem",
+  "disabledMode": "",
+  "npmPath": "",
+  "showNpmPath": false,
+  "packFirstScreenRes": false
+}
