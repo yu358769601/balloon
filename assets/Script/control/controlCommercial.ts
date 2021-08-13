@@ -12,6 +12,7 @@ import {NewNet} from "../System/api/newNet";
 import Utils from "../System/Utils/Utils";
 import ChannelManger from "../System/qudao/channelManger";
 import {ItemPreType} from "../System/Type/enums";
+import UtilsTime from "../System/Utils/UtilsTime";
 
 const {ccclass, property} = cc._decorator;
 
@@ -98,10 +99,15 @@ export enum ControlCommercialItemName {
 @ccclass
 export default class ControlCommercial {
 
-    static netData :any = {}
-    static  netDataNoNet :any = {}
+    static netData  : {[name: string]: Object} = {}
+    static  netDataNoNet  : {[name: string]: Object} = {}
+
+    static itemNameTime : {[name: string]: number} = {}
+    static itemNameCount : {[name: string]: number} = {}
 
 
+    // ControlCommercial.key
+    static key : string = "ksgamesqqq"
 
     static initData(){
         let data = {}
@@ -131,8 +137,8 @@ export default class ControlCommercial {
         data[ControlCommercialItemName.盒子广告展示间隔控制] = 30
         data[ControlCommercialItemName.激励广告点击区域开关控制] = true
         data[ControlCommercialItemName.激励广告点击区域参数控制] = 100
-        data[ControlCommercialItemName.激励广告点击区域时间间隔控制] = 0
-        data[ControlCommercialItemName.激励广告点击区域次数控制] = 0
+        data[ControlCommercialItemName.激励广告点击区域时间间隔控制] = 30
+        data[ControlCommercialItemName.激励广告点击区域次数控制] = 1
         data[ControlCommercialItemName.激励视频图标展示] = 1
         data[ControlCommercialItemName.积木广告展示] = true
         data[ControlCommercialItemName.积木广告延迟展示] = 0
@@ -520,7 +526,7 @@ export default class ControlCommercial {
 
                 this.netData[s] = this.initData()
             }
-
+            ccLog.log("真实数据 没网络",this.netData)
         }
 
     }
@@ -531,7 +537,90 @@ export default class ControlCommercial {
         ccLog.log("得到了什么呢",item)
         return item
     }
+    //调用了之后多长时间之后再调用要判断间隔时间
+// ControlCommercial.getItemNameTime(sceneId,itemName)
+    static getItemNameTime(sceneId,itemName){
+        let item = this.netData[sceneId][itemName]
+        let itemTime = this.itemNameTime[itemName]
+        let  time = UtilsTime.getTime()
+        ccLog.log("得到了什么呢",item)
+        if (itemTime) {
+            switch (itemName){
+                // case ControlCommercialItemName.限时礼包奖励时间范围控制 :
+                case ControlCommercialItemName.激励广告点击区域时间间隔控制 :
+                case ControlCommercialItemName.盒子广告展示间隔控制 :
+                case ControlCommercialItemName.原生广告点击区域时间间隔控制 :
+                case ControlCommercialItemName.原生广告初始展示间隔控制 :
+                case ControlCommercialItemName.原生广告展示间隔控制 :
+                    if (time-itemTime>item*1000) {
+                        this.itemNameTime[itemName] = time
+                        return true
+                    }
+                    break
+            }
+        }else{
+            this.itemNameTime[itemName] = time
+            return true
+        }
 
+
+        return false
+
+    }
+
+    static getItemNameTimeByFirst(sceneId,itemName){
+        let item = this.netData[sceneId][itemName]
+        let itemTime = this.itemNameTime[itemName]
+        let  time = UtilsTime.getTime()
+        ccLog.log("得到了什么呢",item)
+        if (itemTime) {
+            switch (itemName){
+                // case ControlCommercialItemName.限时礼包奖励时间范围控制 :
+                // case ControlCommercialItemName.激励广告点击区域时间间隔控制 :
+                // case ControlCommercialItemName.盒子广告展示间隔控制 :
+                // case ControlCommercialItemName.原生广告点击区域时间间隔控制 :
+                case ControlCommercialItemName.原生广告初始展示间隔控制 :
+                // case ControlCommercialItemName.原生广告展示间隔控制 :
+                    if (time-itemTime>item*1000) {
+                        this.itemNameTime[itemName] = time
+                        return true
+                    }
+                    break
+            }
+        }else{
+            this.itemNameTime[itemName] = time
+            return true
+        }
+
+
+        return false
+
+    }
+
+
+
+
+    //减少使用次数
+    // ControlCommercial.getItemNameCount(sceneId,itemName)
+    static getItemNameCount(sceneId,itemName){
+        let item = this.netData[sceneId][itemName]
+        if (item<=0) {
+
+            this.netData[sceneId][itemName] = 0
+
+            switch (itemName){
+                case ControlCommercialItemName.激励广告点击区域次数控制 :
+                case ControlCommercialItemName.原生广告点击区域次数控制 :
+                    return false
+                    break
+            }
+        }else{
+            this.netData[sceneId][itemName]-=1
+            ccLog.log("减少了次数"," sceneId ",sceneId," itemName ",itemName,this.netData[sceneId][itemName])
+            return true
+        }
+        return false
+    }
 
 
 }

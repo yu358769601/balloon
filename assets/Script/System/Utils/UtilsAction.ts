@@ -987,4 +987,57 @@ export default class UtilsAction extends cc.Component {
         let rep = cc.repeatForever(interval1)
         node.runAction(rep);
     }
+
+
+    //引导小手代码动画
+    // UtilsAction.hand(node)
+    static hand(node: cc.Node) {
+        node.stopAllActions()
+        // node.scaleX = 1
+        // node.scaleY = 1
+        // let interval2 = cc.scaleTo(duration, 1, 1).easing(cc.easeElasticInOut(duration));
+        // let callbacktemp = cc.callFunc(() => {
+        //     if (callback) {
+        //         callback()
+        //     }
+        // }, this);
+
+
+        node.opacity = 0
+        node.scaleX = 2
+        node.scaleY = 2
+        node.angle = 0
+
+
+        let interval1 = cc.scaleTo(1,1,1)
+        let interval2 = cc.fadeIn(1)
+        let spawn1 = cc.spawn(interval1,interval2)
+
+
+        let interval3 = cc.rotateBy(0.2,-20)
+        let interval4 = cc.rotateBy(0.2,20)
+        let sequence1 = cc.sequence(interval3,interval4);
+
+        let interval5 = cc.scaleTo(0.5,2,2)
+        let interval6 = cc.fadeOut(0.5)
+        let spawn2 = cc.spawn(interval5,interval6)
+
+
+        let sequence = cc.sequence(spawn1,sequence1,spawn2);
+        let rep = cc.repeatForever(sequence)
+        node.runAction(rep);
+    }
+    //按钮缩放
+    // UtilsAction.btnAn(node)
+    static btnAn(node: cc.Node) {
+        node.stopAllActions()
+        node.scale = 1
+        let interval1 = cc.scaleTo(1, 1.2, 1.2).easing(cc.easeElasticOut(0.25));
+        let interval2 = cc.scaleTo(1, 1, 1)
+
+        let sequence = cc.sequence(interval1,interval2);
+        let rep = cc.repeatForever(sequence)
+        node.runAction(rep);
+    }
+
 }

@@ -14,11 +14,254 @@ import Utils from "../System/Utils/Utils";
 import Api from "../System/api/api";
 import {Channel_oppoADType} from "../System/qudao/channel_oppo";
 import GetLuckDialog from "../dialog/getLuckDialog";
+import ControlCommercial, {
+    ControlCommercialItemName,
+    ControlCommercialSceneId
+} from "../control/controlCommercial";
+import {DialogType} from "../System/Type/enums";
+import UtilsAction from "../System/Utils/UtilsAction";
+import UtilsNode from "../System/Utils/UtilsNode";
 
 const {ccclass, property} = cc._decorator;
 
+export interface IChannelGetLuckDialog {
+    小手指引导()
+    按钮缩放()
+    插屏广告展示()
+    插屏展示间隔()
+    插屏延迟展示()
+    插屏广告概率控制()
+    盒子广告展示()
+    盒子广告延迟展示控制()
+    盒子广告展示间隔控制()
+    激励广告点击区域开关控制()
+    激励广告点击区域参数控制()
+    激励广告点击区域时间间隔控制()
+    激励广告点击区域次数控制()
+    激励视频图标展示()
+    原生广告展示()
+    原生广告展示次数()
+    原生广告点击区域开关控制()
+    原生广告点击区域大小控制()
+    原生广告点击区域时间间隔控制()
+    原生广告点击区域次数控制()
+    原生广告关闭按钮点击区域()
+    原生广告延迟展示()
+    原生广告概率控制()
+    原生广告初始展示间隔控制()
+    原生广告展示间隔控制()
+    积木广告展示()
+    积木广告延迟展示()
+    积木广告位置变更()
+    积木广告位置变更概率控制()
+}
+
+
+//限时礼包
 @ccclass
-export default class ChannelGetLuckDialog extends ChannelBase {
+export default class ChannelGetLuckDialog extends ChannelBase implements IChannelGetLuckDialog{
+    小手指引导() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.小手指引导) == true) {
+            UtilsNode.show(this.bindComponent.引导_小手指,true)
+            UtilsAction.hand(this.bindComponent.引导_小手指)
+        }
+
+    }
+    按钮缩放() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.按钮缩放) == true) {
+            UtilsAction.btnAn(this.bindComponent.失败_看广告按钮)
+        }
+
+    }
+    插屏广告展示() {
+
+    }
+    插屏展示间隔() {
+
+    }
+    插屏延迟展示() {
+
+    }
+    插屏广告概率控制() {
+
+    }
+    盒子广告展示() {
+
+    }
+    盒子广告延迟展示控制() {
+
+    }
+    盒子广告展示间隔控制() {
+
+    }
+    激励广告点击区域开关控制() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.激励广告点击区域开关控制) == true) {
+            return true
+        }
+        return false
+    }
+    激励广告点击区域参数控制() {
+        if (this.激励广告点击区域开关控制() && this.激励广告点击区域时间间隔控制() && this.激励广告点击区域次数控制()) {
+          let ControlNum =  ControlCommercial.getSceneData(
+                ControlCommercialSceneId.限时礼包,
+                ControlCommercialItemName.激励广告点击区域参数控制)
+            if (ControlNum == null) {
+                ControlNum = 100
+            }
+            this.bindComponent.失败_看广告跳过实际点击.height += ControlNum
+        }
+    }
+    激励广告点击区域时间间隔控制() {
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.激励广告点击区域时间间隔控制) == true) {
+            return true
+        }
+        return false
+    }
+    激励广告点击区域次数控制() {
+        // ControlCommercial.getItemNameCount(sceneId,itemName)
+        if (ControlCommercial.getItemNameCount(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.激励广告点击区域次数控制) == true) {
+            return true
+        }
+        return false
+    }
+    激励视频图标展示() {
+
+    }
+    原生广告展示() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告展示) == true) {
+            return true
+        }
+        return false
+    }
+    原生广告展示次数() {
+        if (ControlCommercial.getItemNameCount(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告展示次数) == true) {
+            return true
+        }
+        return false
+    }
+    原生广告点击区域开关控制() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告点击区域开关控制) == true) {
+            return true
+        }
+        return false
+    }
+   async 原生广告点击区域大小控制() {
+        if (this.原生广告展示()
+            && this.原生广告展示次数()
+            && this.原生广告点击区域开关控制()
+            && this.原生广告点击区域时间间隔控制()
+            && this.原生广告点击区域次数控制()
+            && this.原生广告展示间隔控制()
+            && this.原生广告初始展示间隔控制()
+            && this.原生广告概率控制()
+        ) {
+            let ControlNum =  ControlCommercial.getSceneData(
+                ControlCommercialSceneId.限时礼包,
+                ControlCommercialItemName.原生广告点击区域大小控制)
+            if (ControlNum == null) {
+                ControlNum = 100
+            }
+            // this.bindComponent.失败_看广告跳过实际点击.height += ControlNum
+            //根据渠道不同展示广告
+            //先留着
+           let time = this.原生广告延迟展示()
+          await  Utils.setTimerOnce(this,time)
+
+
+        }
+
+    }
+    原生广告点击区域时间间隔控制() {
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告点击区域时间间隔控制) == true) {
+            return true
+        }
+        return false
+    }
+    原生广告点击区域次数控制() {
+        if (ControlCommercial.getItemNameCount(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告点击区域次数控制) == true) {
+            return true
+        }
+        return false
+    }
+    原生广告关闭按钮点击区域() {
+        let ControlNum =  ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告关闭按钮点击区域)
+    //    根据传值控制原生广告关闭按钮的点击区域，默认30x30，后台传值30，如后台传值20那么点击区域为20x20
+
+    }
+    原生广告延迟展示() {
+        let ControlNum =  ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告延迟展示)
+        return ControlNum
+    }
+    原生广告概率控制() {
+        let ControlNum =  ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告概率控制)
+
+       let random = Utils.random(0,100)
+        if (ControlNum*100 > random) {
+            return true
+        }else{
+            return false
+        }
+
+
+    }
+    原生广告初始展示间隔控制() {
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告初始展示间隔控制) == true) {
+            return true
+        }
+        return false
+    }
+    原生广告展示间隔控制() {
+
+
+    this.原生广告初始展示间隔控制()
+
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告展示间隔控制) == true) {
+            return true
+        }
+        return false
+    }
+    积木广告展示() {
+
+    }
+    积木广告延迟展示() {
+
+    }
+    积木广告位置变更() {
+
+    }
+    积木广告位置变更概率控制() {
+
+    }
 
     @property(
         {
@@ -89,6 +332,15 @@ export default class ChannelGetLuckDialog extends ChannelBase {
            // }
            // // ChannelManger.getInstance().getChannel().showNativeAd(data)
            // ChannelManger.getInstance().getChannel().showNativeAdTest(data)
+
+
+
+            this.小手指引导()
+            this.按钮缩放()
+            this.激励广告点击区域参数控制()
+            this.原生广告点击区域大小控制()
+
+
        }
 
 

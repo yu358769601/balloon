@@ -142,8 +142,8 @@ export default class Menu extends cc.Component implements IChannelBase{
             // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
             // lookDialogfailureCallback: this.lookDialogfailureCallback
         }
-        Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
-
+        // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+        Emitter.fire("onOpenDialogByGetLuckDialog",data)
     }
 
 
@@ -198,8 +198,8 @@ export default class Menu extends cc.Component implements IChannelBase{
                     // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
                     // lookDialogfailureCallback: this.lookDialogfailureCallback
                 }
-                Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
-
+                // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+                Emitter.fire("onOpenDialogByGetLuckDialog",data)
             },
             // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
             callback_subsucceed : async()=>{
@@ -258,8 +258,8 @@ export default class Menu extends cc.Component implements IChannelBase{
                     // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
                     // lookDialogfailureCallback: this.lookDialogfailureCallback
                 }
-                Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
-
+                // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+                Emitter.fire("onOpenDialogByGetLuckDialog",data)
             },
             // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
             callback_subsucceed : async()=>{
@@ -308,6 +308,7 @@ export default class Menu extends cc.Component implements IChannelBase{
     菜单_无敌风火轮: cc.Node
 
     菜单_测试按钮: cc.Node
+    菜单_限时礼包: cc.Node
     initView() {
         let data
 
@@ -398,6 +399,12 @@ export default class Menu extends cc.Component implements IChannelBase{
             parentNode: this.node
         }
         this.菜单_画8 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "菜单_限时礼包",
+            parentNode: this.node
+        }
+        this.菜单_限时礼包 = GetNode.getNode(data)
     }
 
     initClick() {
@@ -427,8 +434,8 @@ export default class Menu extends cc.Component implements IChannelBase{
                         // lookDialogsuccessfulCallback: this.lookDialogsuccessfulCallback,
                         // lookDialogfailureCallback: this.lookDialogfailureCallback
                     }
-                    Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
-
+                    // Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+                    Emitter.fire("onOpenDialogByGetLuckDialog",data)
                 },
                 // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
                 callback_subsucceed : async()=>{
@@ -509,6 +516,19 @@ export default class Menu extends cc.Component implements IChannelBase{
             // }
             Emitter.fire("onOpenDialog",{name : DialogType.转盘,zIndex : 100,data:data},null)
 
+        }, this)
+        this.菜单_限时礼包.on(cc.Node.EventType.TOUCH_END, async () => {
+
+            // let data = {
+            //     self : this,
+            //     // otherData : otherData
+            // }
+            // // let cllbacks = {
+            // //     // successfulCallback : this.successfulCallbackLuck,
+            // //     // failureCallback : this.failureCallbackLuck
+            // // }
+            // Emitter.fire("onOpenDialog",{name : DialogType.转盘,zIndex : 100,data:data},null)
+            this.onOnliyTimeGifg("")
         }, this)
 
 

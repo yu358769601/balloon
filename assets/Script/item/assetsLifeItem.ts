@@ -155,7 +155,7 @@ export default class AssetsLifeItem extends cc.Component {
 
     // 开始倒计时
     startTimeCutDown(time) {
-        ccLog.log("现在去倒计时了吗 0 ",this.timeTag,time)
+        // ccLog.log("现在去倒计时了吗 0 ",this.timeTag,time)
         if (this.timeTag == false) {
             this.timeTag = true
             // ccLog.log("进来几次",this.timeTag)
@@ -166,7 +166,7 @@ export default class AssetsLifeItem extends cc.Component {
 
             let scheduleCallback = () => {
                 let newTime = this.showTime(allTime,startOsTime)
-                ccLog.log("现在去倒计时了吗 过程中 0 ",newTime)
+                // ccLog.log("现在去倒计时了吗 过程中 0 ",newTime)
 
                 if ( newTime<= 0) {
                     this.stopTimeCutDown();

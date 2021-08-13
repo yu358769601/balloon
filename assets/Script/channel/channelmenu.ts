@@ -14,7 +14,7 @@ import Utils from "../System/Utils/Utils";
 import Api from "../System/api/api";
 import {Channel_oppoADType} from "../System/qudao/channel_oppo";
 import UtilsNode from "../System/Utils/UtilsNode";
-import {ItemPreType} from "../System/Type/enums";
+import {DialogType, ItemPreType} from "../System/Type/enums";
 import UtilsAction from "../System/Utils/UtilsAction";
 import Vec2 = cc.Vec2;
 import ControlCommercial, {
@@ -24,8 +24,57 @@ import ControlCommercial, {
 
 const {ccclass, property} = cc._decorator;
 
+
+export interface IChannelMenu {
+    主界面更多游戏图标展示控制()
+    主界面添加到桌面控制()
+    主界面添加到桌面奖励控制()
+    限时礼包开关控制()
+    限时礼包奖励时间范围控制()
+    限时礼包主动展示()
+}
+
 @ccclass
-export default class ChannelMenu extends ChannelBase {
+export default class ChannelMenu extends ChannelBase implements IChannelMenu{
+    主界面更多游戏图标展示控制() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.游戏首页,
+            ControlCommercialItemName.主界面更多游戏图标展示控制) == true) {
+            UtilsNode.show(this.bindComponent.菜单_更多精彩, true)
+        }
+    }
+    主界面添加到桌面控制() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.游戏首页,
+            ControlCommercialItemName.主界面添加到桌面控制) == true) {
+            UtilsNode.show(this.bindComponent.菜单_添加桌面, true)
+        }
+    }
+    主界面添加到桌面奖励控制() {
+        //添加 加钱
+        let addGold = ControlCommercial.getSceneData(
+            ControlCommercialSceneId.游戏首页,
+            ControlCommercialItemName.主界面添加到桌面奖励控制)
+
+    }
+    限时礼包开关控制() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.游戏首页,
+            ControlCommercialItemName.限时礼包开关控制) == true) {
+            UtilsNode.show(this.bindComponent.菜单_限时礼包, true)
+
+            this.bindComponent.菜单_限时礼包.getComponent("itemGetLuckBtn").startA()
+
+
+
+        }
+    }
+    限时礼包奖励时间范围控制() {
+
+    }
+    限时礼包主动展示() {
+
+    }
 
     @property(
         {
@@ -39,6 +88,12 @@ export default class ChannelMenu extends ChannelBase {
     async init() {
         // this._menu = menu
         this.bindComponent.init(this)
+        //这里的原生广告开始有60秒要不显示
+        ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.原生广告初始展示间隔控制)
+
+
         // switch (this.channelType){
         //     case ChannelBaseType.Android:
         //
@@ -76,23 +131,10 @@ export default class ChannelMenu extends ChannelBase {
 
         if (ChannelManger.getInstance().getChannelType() == ChannelMangerType.web) {
 
-
-            if (ControlCommercial.getSceneData(
-                ControlCommercialSceneId.游戏首页,
-                ControlCommercialItemName.主界面更多游戏图标展示控制) == true) {
-                UtilsNode.show(this.bindComponent.菜单_更多精彩, true)
-            }
-            if (ControlCommercial.getSceneData(
-                ControlCommercialSceneId.游戏首页,
-                ControlCommercialItemName.主界面添加到桌面控制) == true) {
-                UtilsNode.show(this.bindComponent.菜单_添加桌面, true)
-            }
-            //添加 加钱
-           let addGold = ControlCommercial.getSceneData(
-                ControlCommercialSceneId.游戏首页,
-                ControlCommercialItemName.主界面添加到桌面奖励控制)
-
-
+            this.主界面更多游戏图标展示控制()
+            this.主界面添加到桌面控制()
+            this.主界面添加到桌面奖励控制()
+            this.限时礼包开关控制()
 
 
             // this._gameOverDialog.initViewChannelNode(this._gameOverDialog.居中布局 )
@@ -146,12 +188,8 @@ export default class ChannelMenu extends ChannelBase {
 
 
         if (ChannelManger.getInstance().getChannelType() == ChannelMangerType.oppo) {
-            if (ControlCommercial.getSceneData(
-                ControlCommercialSceneId.游戏首页,
-                ControlCommercialItemName.主界面更多游戏图标展示控制) == true) {
-                UtilsNode.show(this.bindComponent.菜单_更多精彩, true)
-                UtilsNode.show(this.bindComponent.菜单_添加桌面, true)
-            }
+            this.主界面更多游戏图标展示控制()
+            this.主界面添加到桌面控制()
             ChannelManger.getInstance().getChannel().showBannerAd()
         }
 
@@ -229,15 +267,42 @@ export default class ChannelMenu extends ChannelBase {
         this.init()
     }
 
+
+    getLuckDialogTime : number = 0
+
+    onOpenDialogByGetLuckDialog(selfName,data){
+        if (ChannelManger.getInstance().getChannelType() == ChannelMangerType.web) {
+            // if (ControlCommercial.getItemNameTime(
+            //     ControlCommercialSceneId.游戏首页,
+            //     ControlCommercialItemName.限时礼包奖励时间范围控制) == true) {
+            //
+            //
+            // }
+
+            if (ControlCommercial.getSceneData(
+                ControlCommercialSceneId.游戏首页,
+                ControlCommercialItemName.限时礼包主动展示) == true) {
+                Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+            }
+
+
+        }
+
+    }
+
+
+
     registerEmitter() {
 
         Emitter.register("openBannerByMenu", this.openBannerByMenu, this)
         Emitter.register("closeBannerByMenu", this.closeBannerByMenu, this)
+        Emitter.register("onOpenDialogByGetLuckDialog", this.onOpenDialogByGetLuckDialog, this)
     }
 
     removeEmitter() {
         Emitter.remove("openBannerByMenu", this.openBannerByMenu, this)
         Emitter.remove("closeBannerByMenu", this.closeBannerByMenu, this)
+        Emitter.remove("onOpenDialogByGetLuckDialog", this.onOpenDialogByGetLuckDialog, this)
     }
 
     // update (dt) {}

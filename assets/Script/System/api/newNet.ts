@@ -1,5 +1,6 @@
 import {Seal} from "./Seal";
 import ccLog from "../Log/ccLog";
+import ControlCommercial from "../../control/controlCommercial";
 
 export class  NewNet{
     public static readonly instance = new NewNet();
@@ -100,7 +101,7 @@ export class  NewNet{
             ccLog.log("去网络请求的数据",paramData)
             let str: string = JSON.stringify(paramData.setData);
             //数据加密，秘钥由我方运营提供
-            let requestData = Seal.rc4Encrypt(str, "ksgamesqqq");
+            let requestData = Seal.rc4Encrypt(str, ControlCommercial.key);
 
             //请求的头部参数   appid:我方运营提供
             let headers = ['Content-Type', 'html/text', 'ec', 'true', 'appid', '123456'];
@@ -111,7 +112,7 @@ export class  NewNet{
             xmlhttp.onreadystatechange = () => {
                 if (xmlhttp.readyState == 4 && (xmlhttp.status >= 200 && xmlhttp.status < 400)) {
                     // console.log("成功回调函数requestType: ", JSON.parse(this.rc4Decode(xmlhttp.responseText)));
-                    let data = JSON.parse(Seal.rc4Decode(xmlhttp.responseText,"ksgamesqqq"))//加密
+                    let data = JSON.parse(Seal.rc4Decode(xmlhttp.responseText,ControlCommercial.key))//加密
                     console.log('回来什么呢',data)
                     if (data.status.code == '0') {
                         // data.data.code //广告策略类型
@@ -175,8 +176,8 @@ export class  NewNet{
             bObj = sendData
         }
 
-      let res =  await this.getData("https://gamectrl.ugmars.com/api/bctrl","post",bObj)
-      // let res =  await this.getData("https://www.baidu.com/api/bctrl","post",bObj)
+      // let res =  await this.getData("https://gamectrl.ugmars.com/api/bctrl","post",bObj)
+      let res =  await this.getData("https://www.baidu.com/api/bctrl","post",bObj)
        ccLog.log("新广告请求回来的参数",res)
         // //请求内容
         // HttpClient.toData("https://gamectrl.ugmars.com/api/bctrl", str, 'post', 'text', headers, false, function (res) {

@@ -28,6 +28,10 @@ export enum GetLuckDialogType {
 }
 
 
+
+
+
+
 @ccclass
 export default class GetLuckDialog extends BaseDialog implements IChannelBase {
 
@@ -45,6 +49,8 @@ export default class GetLuckDialog extends BaseDialog implements IChannelBase {
     限时福利_金币_体力 : cc.Node = null
     限时福利_体力 : cc.Node = null
     限时福利_气球 : cc.Node = null
+    引导_小手指 : cc.Node = null
+    失败_看广告按钮 : cc.Node = null
 
     限时福利_气球_气球 : cc.Sprite = null
 
@@ -315,6 +321,18 @@ export default class GetLuckDialog extends BaseDialog implements IChannelBase {
             parentNode: this.node,
         }
         this.限时福利_气球 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: " 引导_小手指",
+            parentNode: this.node,
+        }
+        this.引导_小手指 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: " 失败_看广告按钮",
+            parentNode: this.node,
+        }
+        this.失败_看广告按钮 = GetNode.getNode(data)
 
     }
 
