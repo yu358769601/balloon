@@ -107,7 +107,16 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
         return false
     }
     激励广告点击区域参数控制() {
-        if (this.激励广告点击区域开关控制() && this.激励广告点击区域时间间隔控制() && this.激励广告点击区域次数控制()) {
+
+
+
+        if (
+            Utils.allTrueOrFalseByAllItem(true,[
+            this.激励广告点击区域开关控制(),
+            this.激励广告点击区域时间间隔控制(),
+            this.激励广告点击区域次数控制(),
+        ])
+        ) {
           let ControlNum =  ControlCommercial.getSceneData(
                 ControlCommercialSceneId.限时礼包,
                 ControlCommercialItemName.激励广告点击区域参数控制)
@@ -141,49 +150,72 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告展示) == true) {
+            ccLog.log("判断是否出现广告","原生广告展示",true)
             return true
         }
+        ccLog.log("判断是否出现广告","原生广告展示",false)
         return false
     }
     原生广告展示次数() {
         if (ControlCommercial.getItemNameCount(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告展示次数) == true) {
+            ccLog.log("判断是否出现广告","原生广告展示次数",true)
             return true
         }
+        ccLog.log("判断是否出现广告","原生广告展示次数",false)
         return false
     }
     原生广告点击区域开关控制() {
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告点击区域开关控制) == true) {
+            ccLog.log("判断是否出现广告","原生广告点击区域开关控制",true)
             return true
         }
+        ccLog.log("判断是否出现广告","原生广告点击区域开关控制",false)
         return false
     }
    async 原生广告点击区域大小控制() {
-        if (this.原生广告展示()
-            && this.原生广告展示次数()
-            && this.原生广告点击区域开关控制()
-            && this.原生广告点击区域时间间隔控制()
-            && this.原生广告点击区域次数控制()
-            && this.原生广告展示间隔控制()
-            && this.原生广告初始展示间隔控制()
-            && this.原生广告概率控制()
+
+
+
+        if (
+            Utils.allTrueOrFalseByAllItem(true,[
+                this.原生广告展示(),
+                this.原生广告概率控制(),
+                this.原生广告点击区域开关控制(),
+                this.原生广告点击区域时间间隔控制(),
+                this.原生广告点击区域次数控制(),
+                this.原生广告初始展示间隔控制(),
+                this.原生广告展示间隔控制(),
+                this.原生广告展示次数(),
+            ])
         ) {
             let ControlNum =  ControlCommercial.getSceneData(
                 ControlCommercialSceneId.限时礼包,
                 ControlCommercialItemName.原生广告点击区域大小控制)
-            if (ControlNum == null) {
-                ControlNum = 100
-            }
+            // if (ControlNum == null) {
+            //     ControlNum = 100
+            // }
             // this.bindComponent.失败_看广告跳过实际点击.height += ControlNum
             //根据渠道不同展示广告
             //先留着
            let time = this.原生广告延迟展示()
           await  Utils.setTimerOnce(this,time)
 
-
+            if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
+                let data = {
+                    cancelNode : null,
+                    parent : this.node,
+                    oppoNativeADToClose :null,
+                    ADTypeCode : Channel_oppoADType.K原生1280ID,
+                    adCode : 1,
+                    heights : [null,900+ControlNum]
+                }
+                // ChannelManger.getInstance().getChannel().showNativeAd(data)
+                ChannelManger.getInstance().getChannel().showNativeAdTest(data)
+            }
         }
 
     }
@@ -191,16 +223,20 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
         if (ControlCommercial.getItemNameTime(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告点击区域时间间隔控制) == true) {
+            ccLog.log("判断是否出现广告","原生广告点击区域时间间隔控制",true)
             return true
         }
+        ccLog.log("判断是否出现广告","原生广告点击区域时间间隔控制",false)
         return false
     }
     原生广告点击区域次数控制() {
         if (ControlCommercial.getItemNameCount(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告点击区域次数控制) == true) {
+            ccLog.log("判断是否出现广告","原生广告点击区域次数控制",true)
             return true
         }
+        ccLog.log("判断是否出现广告","原生广告点击区域次数控制",false)
         return false
     }
     原生广告关闭按钮点击区域() {
@@ -217,37 +253,38 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
         return ControlNum
     }
     原生广告概率控制() {
-        let ControlNum =  ControlCommercial.getSceneData(
+        if (ControlCommercial.getRandom(
             ControlCommercialSceneId.限时礼包,
-            ControlCommercialItemName.原生广告概率控制)
-
-       let random = Utils.random(0,100)
-        if (ControlNum*100 > random) {
+            ControlCommercialItemName.原生广告概率控制) == true) {
+            ccLog.log("判断是否出现广告","原生广告概率控制",true)
             return true
-        }else{
-            return false
         }
-
+        ccLog.log("判断是否出现广告","原生广告概率控制",false)
+        return false
 
     }
     原生广告初始展示间隔控制() {
         if (ControlCommercial.getItemNameTime(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告初始展示间隔控制) == true) {
+            ccLog.log("判断是否出现广告","原生广告初始展示间隔控制",true)
             return true
         }
+        ccLog.log("判断是否出现广告","原生广告初始展示间隔控制",false)
         return false
     }
     原生广告展示间隔控制() {
 
 
-    this.原生广告初始展示间隔控制()
+    // this.原生广告初始展示间隔控制()
 
         if (ControlCommercial.getItemNameTime(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告展示间隔控制) == true) {
+            ccLog.log("判断是否出现广告","原生广告展示间隔控制",true)
             return true
         }
+        ccLog.log("判断是否出现广告","原生广告展示间隔控制",false)
         return false
     }
     积木广告展示() {

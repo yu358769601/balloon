@@ -360,4 +360,40 @@ export default class Utils extends cc.Component {
         return res
     }
 
+
+
+    // Utils.allTrueOrFalseByAll(true,[])
+    //都同意
+    static allTrueOrFalseByAll(TrueOrFalse,arr) {
+        // let objArray = [{a: 1}, {b: 2}, {c: 3}, {d: 4}, {e: 5}, {f: 6}, {g: 7}];
+        let temp = 0
+        for (let i = 0; i <arr.length ; i++) {
+           let item =  arr[i]
+            if (TrueOrFalse != item) {
+                temp++
+            }
+        }
+        if (temp>0) {
+            return !TrueOrFalse
+        }
+
+
+        return TrueOrFalse
+    }
+
+    // Utils.allTrueOrFalseByAllItem(true,[])
+    //都同意
+    static allTrueOrFalseByAllItem(TrueOrFalse,arr) {
+        // let objArray = [{a: 1}, {b: 2}, {c: 3}, {d: 4}, {e: 5}, {f: 6}, {g: 7}];
+        let temp = 0
+        for (let i = 0; i <arr.length ; i++) {
+            let item =  arr[i]
+            if (TrueOrFalse != item) {
+                return !TrueOrFalse
+            }
+        }
+
+
+        return TrueOrFalse
+    }
 }

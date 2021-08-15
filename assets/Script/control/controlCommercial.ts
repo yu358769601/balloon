@@ -165,6 +165,62 @@ export default class ControlCommercial {
         return data
 
     }
+    static initDataTest(){
+        let data = {}
+        data[ControlCommercialItemName.小手指引导] = true
+        data[ControlCommercialItemName.按钮缩放] = true
+        data[ControlCommercialItemName.奖励倍数] = 2
+        data[ControlCommercialItemName.独立分享是否展示控制] = false
+        data[ControlCommercialItemName.独立分享页面展示间隔控制] = 0
+        data[ControlCommercialItemName.独立分享页面分享图标展示控制] = false
+        data[ControlCommercialItemName.游戏弹窗ui按钮变更] = false
+        data[ControlCommercialItemName.主界面更多游戏图标展示控制] = true
+        data[ControlCommercialItemName.主界面添加到桌面控制] = true
+        data[ControlCommercialItemName.主界面添加到桌面奖励控制] = 0
+        data[ControlCommercialItemName.限时礼包开关控制] = true
+        data[ControlCommercialItemName.限时礼包奖励时间范围控制] = 300
+        data[ControlCommercialItemName.限时礼包主动展示] = true
+        data[ControlCommercialItemName.特殊按钮2开关控制] = true
+        data[ControlCommercialItemName.特殊按钮2展示概率控制] = 1
+        data[ControlCommercialItemName.特殊按钮2展示间隔控制] = 0
+        data[ControlCommercialItemName.特殊按钮2点击区域大小] = 100
+        data[ControlCommercialItemName.插屏广告展示] = false
+        data[ControlCommercialItemName.插屏展示间隔] = 30
+        data[ControlCommercialItemName.插屏延迟展示] = 0
+        data[ControlCommercialItemName.插屏广告概率控制] = 100
+        data[ControlCommercialItemName.盒子广告展示] = false
+        data[ControlCommercialItemName.盒子广告延迟展示控制] = 0
+        data[ControlCommercialItemName.盒子广告展示间隔控制] = 30
+        data[ControlCommercialItemName.激励广告点击区域开关控制] = true
+        data[ControlCommercialItemName.激励广告点击区域参数控制] = 100
+        data[ControlCommercialItemName.激励广告点击区域时间间隔控制] = 30
+        data[ControlCommercialItemName.激励广告点击区域次数控制] = 1
+        data[ControlCommercialItemName.激励视频图标展示] = 1
+        data[ControlCommercialItemName.积木广告展示] = true
+        data[ControlCommercialItemName.积木广告延迟展示] = 0
+        data[ControlCommercialItemName.积木广告位置变更] = false
+        data[ControlCommercialItemName.积木广告位置变更概率控制] = 1
+        data[ControlCommercialItemName.开屏广告是否展示] = false
+        data[ControlCommercialItemName.开屏广告展示关卡间隔控制] = 5
+        data[ControlCommercialItemName.开屏广告展示时间间隔控制] = 60
+        data[ControlCommercialItemName.全屏视频广告时间间隔] = 60
+        data[ControlCommercialItemName.全屏视频广告延迟展示] = 0
+        data[ControlCommercialItemName.测试开关] = false
+        data[ControlCommercialItemName.原生广告展示] = true
+        data[ControlCommercialItemName.原生广告展示次数] = 999
+        data[ControlCommercialItemName.原生广告点击区域开关控制] = true
+        data[ControlCommercialItemName.原生广告点击区域大小控制] = 0
+        data[ControlCommercialItemName.原生广告点击区域时间间隔控制] = 0
+        data[ControlCommercialItemName.原生广告点击区域次数控制] = 999
+        data[ControlCommercialItemName.原生广告关闭按钮点击区域] = 0
+        data[ControlCommercialItemName.原生广告延迟展示] = 0
+        data[ControlCommercialItemName.原生广告概率控制] = 100
+        data[ControlCommercialItemName.原生广告初始展示间隔控制] = 10
+        data[ControlCommercialItemName.原生广告展示间隔控制] = 30
+
+        return data
+
+    }
     // ControlCommercial.init()
     static async init() {
 
@@ -524,7 +580,7 @@ export default class ControlCommercial {
 
                 ccLog.log("有多少应用场景啊",s)
 
-                this.netData[s] = this.initData()
+                this.netData[s] = this.initDataTest()
             }
             ccLog.log("真实数据 没网络",this.netData)
         }
@@ -537,26 +593,47 @@ export default class ControlCommercial {
         ccLog.log("得到了什么呢",item)
         return item
     }
+
+
+
     //调用了之后多长时间之后再调用要判断间隔时间
 // ControlCommercial.getItemNameTime(sceneId,itemName)
     static getItemNameTime(sceneId,itemName){
         let item = this.netData[sceneId][itemName]
         let itemTime = this.itemNameTime[itemName]
         let  time = UtilsTime.getTime()
-        ccLog.log("得到了什么呢",item)
+        ccLog.log("对比的是什么呢",itemName)
         if (itemTime) {
             switch (itemName){
                 // case ControlCommercialItemName.限时礼包奖励时间范围控制 :
                 case ControlCommercialItemName.激励广告点击区域时间间隔控制 :
                 case ControlCommercialItemName.盒子广告展示间隔控制 :
                 case ControlCommercialItemName.原生广告点击区域时间间隔控制 :
-                case ControlCommercialItemName.原生广告初始展示间隔控制 :
                 case ControlCommercialItemName.原生广告展示间隔控制 :
+
+                    // ccLog.log("间隔呢","当前时间",time,"间隔时间",itemTime,"对比时间",item*1000)
+                    ccLog.log("间隔呢 0 ",itemName)
                     if (time-itemTime>item*1000) {
                         this.itemNameTime[itemName] = time
+
+                        // ccLog.log("间隔呢",this.itemNameTime[itemName])
+
                         return true
                     }
-                    break
+                    // break
+            }
+
+            ccLog.log("间隔呢 1 ","当前时间",time,"间隔时间",itemTime,"对比时间",item*1000,itemName)
+            switch (itemName){
+                case ControlCommercialItemName.原生广告初始展示间隔控制 :
+
+                    if (time-itemTime>item*1000) {
+                        // this.itemNameTime[itemName] = time
+
+                        // ccLog.log("间隔呢",this.itemNameTime[itemName])
+                        return true
+                    }
+                    // break
             }
         }else{
             this.itemNameTime[itemName] = time
@@ -581,13 +658,14 @@ export default class ControlCommercial {
                 // case ControlCommercialItemName.原生广告点击区域时间间隔控制 :
                 case ControlCommercialItemName.原生广告初始展示间隔控制 :
                 // case ControlCommercialItemName.原生广告展示间隔控制 :
-                    if (time-itemTime>item*1000) {
+                //     if (time-itemTime>item*1000) {
                         this.itemNameTime[itemName] = time
                         return true
-                    }
-                    break
+                    // }
+                    // break
             }
         }else{
+            ccLog.log("初始间隔 0 ","当前时间",time,itemName)
             this.itemNameTime[itemName] = time
             return true
         }
@@ -620,6 +698,24 @@ export default class ControlCommercial {
             return true
         }
         return false
+    }
+    // ControlCommercial.getRandom(sceneId,itemName)
+    static getRandom(sceneId,itemName){
+            let ControlNum = this.netData[sceneId][itemName]
+
+        switch (itemName) {
+            case ControlCommercialItemName.原生广告概率控制 :
+                let random = Utils.random(0,100)
+                if (ControlNum*100 > random) {
+                    return true
+                }else{
+                    return false
+                }
+                break
+        }
+
+        return false
+
     }
 
 

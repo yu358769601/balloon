@@ -89,7 +89,7 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
         // this._menu = menu
         this.bindComponent.init(this)
         //这里的原生广告开始有60秒要不显示
-        ControlCommercial.getItemNameTime(
+        ControlCommercial.getItemNameTimeByFirst(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告初始展示间隔控制)
 

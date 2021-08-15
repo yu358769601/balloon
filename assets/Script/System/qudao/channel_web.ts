@@ -101,24 +101,24 @@ export class Channel_web extends ChannelAllBase implements Ichannel_android {
     }
 
     async showNativeAdTest(data){
-        let currentTime = UtilsTime.getTime()
-        let time = (currentTime - this._createNativeAdTime) / 1000;
+        // let currentTime = UtilsTime.getTime()
+        // let time = (currentTime - this._createNativeAdTime) / 1000;
 
 
-        let adCode = Api.getAdCode()
-        if (adCode ==4) {
-            this._createNativeAdCountMin = 0
-        }
-
-        let temptime = 0
-        ccLog.log("什么参数啊","adCode",adCode,"延时时间数组",this.ADtimesCD)
-        temptime = this.ADtimesCD[adCode]
-        if (this._createNativeAdCountMin >= this._createNativeAdCountMax) {
-            if (time < temptime) {
-                return;
-            }
-            this._createNativeAdCountMin = 0
-        }
+        // let adCode = Api.getAdCode()
+        // if (adCode ==4) {
+        //     this._createNativeAdCountMin = 0
+        // }
+        //
+        // let temptime = 0
+        // ccLog.log("什么参数啊","adCode",adCode,"延时时间数组",this.ADtimesCD)
+        // temptime = this.ADtimesCD[adCode]
+        // if (this._createNativeAdCountMin >= this._createNativeAdCountMax) {
+        //     if (time < temptime) {
+        //         return;
+        //     }
+        //     this._createNativeAdCountMin = 0
+        // }
         let tempCode =  0
         this.adnativepic = []
         tempCode = data.ADTypeCode
@@ -137,17 +137,17 @@ export class Channel_web extends ChannelAllBase implements Ichannel_android {
         //     texture : this.adnativepic[data.ADTypeCode],
         //     height : heightList[adCode]
         // }
-         adCode = Api.getAdCode()
-        data.adCode = adCode
+        //  adCode = Api.getAdCode()
+        // data.adCode = adCode
 
         let remoteUrl = "https://adsfs.heytapimage.com/ads-material-depot/image/968155e6c0dc59663538c2b9a98a7ea8.jpg"
        await this.getUrlImage(data,remoteUrl)
-        let heights = [
-           null,900,950, 970, 1040
-        ]
+        // let heights = [
+        //    null,900,950, 970, 1040
+        // ]
         console.log("下载资源图片完成 结果 1 ",this.adnativepic,data.ADTypeCode);
         data.texture = this.adnativepic[data.ADTypeCode]
-        data.height = heights[data.adCode]
+        data.height = data.heights[data.adCode]
         console.log("给过去的",data);
         // data.parent
         // data.ADTypeCode
@@ -155,20 +155,20 @@ export class Channel_web extends ChannelAllBase implements Ichannel_android {
 
         Emitter.fire('onOpenNativeAdDialog',data, pos,data.parent,successfulCallback)
 
-         currentTime = UtilsTime.getTime()
-        // console.log("现在有图 2",currentTime);
-        this._createNativeAdTime = currentTime
-        // console.log("现在有图 3",this._createNativeAdTime);
-        if (adCode !=4) {
-            this._createNativeAdCountMin++
-        }
-
-        // console.log("现在有图 4",this._createNativeAdCountMin);
-        if (this._createNativeAdCountMin>=this._createNativeAdCountMax) {
-            // console.log("现在有图 5",this._createNativeAdCountMin,"",this._createNativeAdCountMax);
-            this._createNativeAdCountMin = this._createNativeAdCountMax
-            // console.log("现在有图 6",this._createNativeAdCountMin,"",this._createNativeAdCountMax);
-        }
+        //  currentTime = UtilsTime.getTime()
+        // // console.log("现在有图 2",currentTime);
+        // this._createNativeAdTime = currentTime
+        // // console.log("现在有图 3",this._createNativeAdTime);
+        // if (adCode !=4) {
+        //     this._createNativeAdCountMin++
+        // }
+        //
+        // // console.log("现在有图 4",this._createNativeAdCountMin);
+        // if (this._createNativeAdCountMin>=this._createNativeAdCountMax) {
+        //     // console.log("现在有图 5",this._createNativeAdCountMin,"",this._createNativeAdCountMax);
+        //     this._createNativeAdCountMin = this._createNativeAdCountMax
+        //     // console.log("现在有图 6",this._createNativeAdCountMin,"",this._createNativeAdCountMax);
+        // }
     }
     //测试飞
     async showNativeAdTestFly(data){
