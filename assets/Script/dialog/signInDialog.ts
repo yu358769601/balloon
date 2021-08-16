@@ -54,6 +54,13 @@ export default class SignInDialog extends BaseDialog implements IChannelBase{
     签到_今日已领取: cc.Node = null
     签到_今日已领取实际点击: cc.Node = null
 
+    引导_小手指: cc.Node = null
+    失败_看广告按钮: cc.Node = null
+
+
+    //领取倍数
+    adCount : number = 2
+
 
     onLoad () {
         super.onLoad()
@@ -440,7 +447,7 @@ export default class SignInDialog extends BaseDialog implements IChannelBase{
         // Emitter.fire("onDefultListItem",data.data.self.data.data.newSkin)
         // Emitter.fire("onSetSkinLine", data.data.self.data.data.newSkin)
         UtilsDB.addSignIn()
-        data.data.self.toGet(JsonManager.passSettingjson.signInData[data.data.self.index],2)
+        data.data.self.toGet(JsonManager.passSettingjson.signInData[data.data.self.index],this.adCount)
 
         data.data.self.node.destroy()
 
@@ -546,6 +553,21 @@ export default class SignInDialog extends BaseDialog implements IChannelBase{
            parentNode: this.node,
        }
        this.签到_今日已领取实际点击 = GetNode.getNode(data)
+
+
+       data = {
+           type: GetNodeType.开始隐藏通过参数显示,
+           otherData: "引导_小手指",
+           parentNode: this.node,
+       }
+       this.引导_小手指 = GetNode.getNode(data)
+
+       data = {
+           type: GetNodeType.纯查找,
+           otherData: "失败_看广告按钮",
+           parentNode: this.node,
+       }
+       this.失败_看广告按钮 = GetNode.getNode(data)
 
 
 

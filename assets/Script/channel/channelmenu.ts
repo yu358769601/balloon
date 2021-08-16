@@ -21,6 +21,8 @@ import ControlCommercial, {
     ControlCommercialItemName,
     ControlCommercialSceneId
 } from "../control/controlCommercial";
+import UtilsDB, {AssetsType} from "../System/Utils/UtilsDB";
+import JsonManager from "../System/manage/JsonManager";
 
 const {ccclass, property} = cc._decorator;
 
@@ -40,6 +42,7 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.游戏首页,
             ControlCommercialItemName.主界面更多游戏图标展示控制) == true) {
+            ccLog.log("更多精彩出来了吗",)
             UtilsNode.show(this.bindComponent.菜单_更多精彩, true)
         }
     }
@@ -56,18 +59,49 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
             ControlCommercialSceneId.游戏首页,
             ControlCommercialItemName.主界面添加到桌面奖励控制)
 
+
+        if (addGold<=0) {
+            return
+        }
+
+        let  dataItem = {
+            self : this,
+            rootNode : this.node,
+            count : addGold
+        }
+        let cllbacks = {
+            ItemPreTypesuccessfulCallback: this.ItemPreTypesuccessfulCallback,
+            // lookDialogfailureCallback: this.lookDialogfailureCallback
+        }
+        Emitter.fire("onOpenToast",{name : ItemPreType.加钱,zIndex : 100,data:dataItem},cllbacks)
+
+
     }
+
+    ItemPreTypesuccessfulCallback(data){
+        let addGemData = {
+            type : AssetsType.钻石,
+            count : data.data.count,
+            // callbackGem_donthave : this.callbackGem_donthaveAdd,
+            // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
+            // callbackGem_subsucceed : this.callbackGem_subsucceed
+        }
+        UtilsDB.addAssets(addGemData)
+    }
+
+
     限时礼包开关控制() {
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.游戏首页,
             ControlCommercialItemName.限时礼包开关控制) == true) {
             UtilsNode.show(this.bindComponent.菜单_限时礼包, true)
-
+            ccLog.log("限时礼包 显示",this.bindComponent.菜单_限时礼包)
             this.bindComponent.菜单_限时礼包.getComponent("itemGetLuckBtn").startA()
 
 
 
         }
+        ccLog.log("限时礼包 不显示",this.bindComponent.菜单_限时礼包)
     }
     限时礼包奖励时间范围控制() {
 
@@ -92,7 +126,9 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
         ControlCommercial.getItemNameTimeByFirst(
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告初始展示间隔控制)
-
+        ControlCommercial.getItemNameTimeByFirst(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告初始展示间隔控制)
 
         // switch (this.channelType){
         //     case ChannelBaseType.Android:
@@ -133,7 +169,7 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
 
             this.主界面更多游戏图标展示控制()
             this.主界面添加到桌面控制()
-            this.主界面添加到桌面奖励控制()
+            // this.主界面添加到桌面奖励控制()
             this.限时礼包开关控制()
 
 
@@ -170,19 +206,19 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
             // ItemFlyAD.getComponent(ItemPreType.飞的原生广告或者激励视频广告).startAction(1,[-500,500])
             // ItemFlyAD.getComponent(ItemPreType.飞的原生广告或者激励视频广告).initCallback()
 
-            let data = {
-                // cancelNode : null,
-                rootNode: this.node,
-                // oppoNativeADToClose :null,
-                ADTypeCode: Channel_oppoADType.K原生1280ID,
-                // heights : [null,900,950, 970, 1040]
-                p: new Vec2(-800, 0),
-                orientation: 1,
-                ylist: [-500, 500],
-                name: ItemPreType.飞的原生广告或者激励视频广告
-            }
-            // ChannelManger.getInstance().getChannel().showNativeAd(data)
-            ChannelManger.getInstance().getChannel().showNativeAdTestFly(data)
+            // let data = {
+            //     // cancelNode : null,
+            //     rootNode: this.node,
+            //     // oppoNativeADToClose :null,
+            //     ADTypeCode: Channel_oppoADType.K原生1280ID,
+            //     // heights : [null,900,950, 970, 1040]
+            //     p: new Vec2(-800, 0),
+            //     orientation: 1,
+            //     ylist: [-500, 500],
+            //     name: ItemPreType.飞的原生广告或者激励视频广告
+            // }
+            // // ChannelManger.getInstance().getChannel().showNativeAd(data)
+            // ChannelManger.getInstance().getChannel().showNativeAdTestFly(data)
 
         }
 
@@ -190,6 +226,8 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
         if (ChannelManger.getInstance().getChannelType() == ChannelMangerType.oppo) {
             this.主界面更多游戏图标展示控制()
             this.主界面添加到桌面控制()
+
+            this.限时礼包开关控制()
             ChannelManger.getInstance().getChannel().showBannerAd()
         }
 
@@ -220,10 +258,14 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
     }
 
     //点了添加桌面
-    openInstallShortcut() {
+    openInstallShortcut(success) {
         ccLog.log("点了添加桌面")
         if (ChannelManger.getInstance().getChannelType() == ChannelMangerType.oppo) {
-            ChannelManger.getInstance().getChannel().installShortcut()
+            ChannelManger.getInstance().getChannel().installShortcut(()=>{
+                if (UtilsDB.addOppoZhuomian() == true) {
+                    this.主界面添加到桌面奖励控制()
+                }
+            })
         }
     }
 
@@ -287,7 +329,22 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
 
 
         }
+        if (ChannelManger.getInstance().getChannelType() == ChannelMangerType.oppo) {
+            // if (ControlCommercial.getItemNameTime(
+            //     ControlCommercialSceneId.游戏首页,
+            //     ControlCommercialItemName.限时礼包奖励时间范围控制) == true) {
+            //
+            //
+            // }
 
+            if (ControlCommercial.getSceneData(
+                ControlCommercialSceneId.游戏首页,
+                ControlCommercialItemName.限时礼包主动展示) == true) {
+                Emitter.fire("onOpenDialog",{name : DialogType.限时礼包,zIndex : 100,data:data},null)
+            }
+
+
+        }
     }
 
 

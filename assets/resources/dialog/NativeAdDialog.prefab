@@ -120,8 +120,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1000,
-      "height": 560
+      "width": 1080,
+      "height": 540
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -140,7 +140,7 @@
         0,
         1,
         1,
-        0.6,
+        1,
         1
       ]
     },
@@ -192,7 +192,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 1080,
-      "height": 900
+      "height": 540
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -263,7 +263,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 80
+      "height": 60
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -275,7 +275,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        839.789,
+        496.95899999999995,
         0,
         0,
         0,
@@ -346,7 +346,7 @@
         0,
         1,
         1,
-        1.66667,
+        1,
         1
       ]
     },
@@ -452,7 +452,7 @@
     "_alignFlags": 1,
     "_left": 0,
     "_right": 0,
-    "_top": 20.211000000000013,
+    "_top": 13.041000000000054,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
@@ -620,7 +620,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 1080,
-      "height": 900
+      "height": 540
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -711,12 +711,12 @@
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 250
+      "y": 270
     },
     "_size": {
       "__type__": "cc.Size",
       "width": 1080,
-      "height": 500
+      "height": 540
     },
     "_id": ""
   },
@@ -780,15 +780,15 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        457.23,
-        833.5629999999999,
+        469.59799999999996,
+        499.08799999999997,
         0,
         0,
         0,
         0,
         1,
         1,
-        1.66667,
+        1,
         1
       ]
     },
@@ -1114,10 +1114,10 @@
     "_enabled": true,
     "alignMode": 1,
     "_target": null,
-    "_alignFlags": 1,
+    "_alignFlags": 33,
     "_left": 0,
-    "_right": 0,
-    "_top": -340.2297999999999,
+    "_right": 10.401999999999987,
+    "_top": 0.9119999999999777,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,

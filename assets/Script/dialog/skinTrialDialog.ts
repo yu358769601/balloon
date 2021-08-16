@@ -39,6 +39,9 @@ export default class SkinTrialDialog extends BaseDialog  implements IChannelBase
     结算_送橡皮底板展示3: cc.Sprite = null
     结算_送橡皮底板1: cc.Sprite = null
 
+    引导_小手指: cc.Node = null
+    失败_看广告按钮: cc.Node = null
+
     onLoad () {
         super.onLoad()
     }
@@ -316,6 +319,19 @@ export default class SkinTrialDialog extends BaseDialog  implements IChannelBase
 
 
         // this.胜利_结算.getComponent(cc.Widget).enabled = true
+       data = {
+           type: GetNodeType.开始隐藏通过参数显示,
+           otherData: " 引导_小手指",
+           parentNode: this.node,
+       }
+       this.引导_小手指 = GetNode.getNode(data)
+       data = {
+           type: GetNodeType.纯查找,
+           otherData: " 失败_看广告按钮",
+           parentNode: this.node,
+       }
+       this.失败_看广告按钮 = GetNode.getNode(data)
+
 
     }
 

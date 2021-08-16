@@ -17,11 +17,12 @@ import {GetItemType} from "./getItemDialog";
 import GameSetting, {gameModeType} from "../System/mode/gameSetting";
 import GetNode, {GetNodeType} from "../System/Utils/getNode";
 import JsonManager from "../System/manage/JsonManager";
+import ChannelBase, {IChannelBase} from "../channel/channelBase";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class LuckDialog extends BaseDialog {
+export default class LuckDialog extends BaseDialog implements IChannelBase{
 
     oldIndex: number = 0;
     _inTurning: boolean = false;
@@ -66,6 +67,10 @@ export default class LuckDialog extends BaseDialog {
     结算: cc.Node = null
     底子: cc.Node = null
     标题: cc.Node = null
+
+    引导_小手指: cc.Node = null
+
+    胜利_看广告领取样子: cc.Node = null
 
     initOnClick() {
         this.转盘_关闭.on(cc.Node.EventType.TOUCH_END, () => {
@@ -160,6 +165,20 @@ export default class LuckDialog extends BaseDialog {
         this.listRubber.push(this.转盘_橡皮1)
         this.listRubber.push(this.转盘_橡皮2)
         ccLog.log("什么照片 0", this.listRubber)
+
+
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "引导_小手指",
+            parentNode: this.node,
+        }
+        this.引导_小手指 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "胜利_看广告领取样子",
+            parentNode: this.node,
+        }
+        this.胜利_看广告领取样子 = GetNode.getNode(data)
 
         // data = {
         //     type: GetNodeType.开始隐藏通过参数显示,
@@ -577,6 +596,11 @@ export default class LuckDialog extends BaseDialog {
                 }
             })
             .start()
+    }
+
+    channel : ChannelBase
+    init(channel: ChannelBase) {
+        this.channel = channel
     }
 
     // update (dt) {}

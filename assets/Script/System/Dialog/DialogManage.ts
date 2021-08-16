@@ -33,7 +33,9 @@ export default class DialogManage extends cc.Component {
         Emitter.register('onCloseDialog', this.onCloseDialog,this)
         Emitter.register('onOpenNativeAdDialog', this.onOpenNativeAdDialog,this)
         Emitter.register('onAddItem', this.onAddItem,this)
+
     }
+
     onLoad () {
         this.removeEmitter()
         this.registerEmitter()

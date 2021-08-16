@@ -17,6 +17,7 @@ import {SoundType} from "../System/sound/sound";
 import {ItemSuperItemType} from "../item/itemSuperItem";
 import {GetLuckDialogType} from "../dialog/getLuckDialog";
 import ChannelBase, {IChannelBase} from "../channel/channelBase";
+import UtilsNode from "../System/Utils/UtilsNode";
 
 const {ccclass, property} = cc._decorator;
 
@@ -375,6 +376,9 @@ export default class Menu extends cc.Component implements IChannelBase{
             parentNode: this.node
         }
         this.菜单_测试按钮 = GetNode.getNode(data)
+
+        UtilsNode.show(this.菜单_测试按钮,false)
+
         data = {
             type: GetNodeType.开始隐藏通过参数显示,
             otherData: "菜单_添加桌面",
@@ -571,6 +575,7 @@ export default class Menu extends cc.Component implements IChannelBase{
 
            UtilsAction.moveBy(this.菜单_无敌风火轮,time,-300,0,null)
            UtilsAction.moveBy(this.菜单_添加桌面,time,-300,0,null)
+           UtilsAction.moveBy(this.菜单_限时礼包,time,+300,0,null)
            UtilsAction.moveBy(this.菜单_更多精彩,time,+300,0,null)
 
 
@@ -581,6 +586,7 @@ export default class Menu extends cc.Component implements IChannelBase{
            this.菜单_吞噬.active = true
            this.菜单_背景.active = true
            this.菜单_画8.active = true
+           this.菜单_限时礼包.active = true
 
 
            ccLog.log("此处应该删除关卡")
@@ -596,6 +602,7 @@ export default class Menu extends cc.Component implements IChannelBase{
 
            UtilsAction.moveBy(this.菜单_添加桌面,time,+300,0,null)
            UtilsAction.moveBy(this.菜单_更多精彩,time,-300,0,null)
+           UtilsAction.moveBy(this.菜单_限时礼包,time,-300,0,null)
 
            this.菜单_熊熊.active = false
            await Utils.setTimerOnce(this,time)
@@ -604,6 +611,7 @@ export default class Menu extends cc.Component implements IChannelBase{
            this.菜单_吞噬.active = false
            this.菜单_背景.active = false
            this.菜单_画8.active = false
+           this.菜单_限时礼包.active = false
            ccLog.log("此处应该开始关卡")
 
        }

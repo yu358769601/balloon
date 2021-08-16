@@ -131,12 +131,12 @@ export class  NewNet{
                 }
             }
             xmlhttp.onerror = (err) => {
-                cc.log("网络访问发生错误, 请检查网络是否畅通", err);
+                console.log("网络访问发生错误, 请检查网络是否畅通", err);
                 resolve(null);
             };
             xmlhttp.timeout = 1000;
             xmlhttp.ontimeout = () => {
-                cc.log("网络请求超时, 请保证你的网络环境稳定");
+                console.log("网络请求超时, 请保证你的网络环境稳定");
                 resolve(null);
             };
 
@@ -176,8 +176,8 @@ export class  NewNet{
             bObj = sendData
         }
 
-      // let res =  await this.getData("https://gamectrl.ugmars.com/api/bctrl","post",bObj)
-      let res =  await this.getData("https://www.baidu.com/api/bctrl","post",bObj)
+      let res =  await this.getData("https://gamectrl.ugmars.com/api/bctrl","post",bObj)
+      // let res =  await this.getData("https://www.baidu.com/api/bctrl","post",bObj)
        ccLog.log("新广告请求回来的参数",res)
         // //请求内容
         // HttpClient.toData("https://gamectrl.ugmars.com/api/bctrl", str, 'post', 'text', headers, false, function (res) {

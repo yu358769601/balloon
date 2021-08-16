@@ -14,12 +14,311 @@ import Utils from "../System/Utils/Utils";
 import Api from "../System/api/api";
 import {Channel_oppoADType} from "../System/qudao/channel_oppo";
 import SkinTrialDialog from "../dialog/skinTrialDialog";
+import ControlCommercial, {
+    ControlCommercialItemName,
+    ControlCommercialSceneId
+} from "../control/controlCommercial";
+import UtilsNode from "../System/Utils/UtilsNode";
+import UtilsAction from "../System/Utils/UtilsAction";
 
 const {ccclass, property} = cc._decorator;
 
-@ccclass
-export default class ChannelSkinTrialDialog extends ChannelBase {
+export interface IChannelSkinTrialDialog {
+    小手指引导()
+    按钮缩放()
+    插屏广告展示()
+    插屏展示间隔()
+    插屏延迟展示()
+    插屏广告概率控制()
+    盒子广告展示()
+    盒子广告延迟展示控制()
+    盒子广告展示间隔控制()
+    激励广告点击区域开关控制()
+    激励广告点击区域参数控制()
+    激励广告点击区域时间间隔控制(is)
+    激励广告点击区域次数控制(is)
+    激励视频图标展示()
+    原生广告展示()
+    原生广告展示次数(is)
+    原生广告点击区域开关控制()
+    原生广告点击区域大小控制()
+    原生广告点击区域时间间隔控制(is)
+    原生广告点击区域次数控制(is)
+    原生广告关闭按钮点击区域()
+    原生广告延迟展示()
+    原生广告概率控制()
+    原生广告初始展示间隔控制(is)
+    原生广告展示间隔控制(is)
+    积木广告展示()
+    积木广告延迟展示()
+    积木广告位置变更()
+    积木广告位置变更概率控制()
+}
 
+
+
+@ccclass
+export default class ChannelSkinTrialDialog extends ChannelBase implements IChannelSkinTrialDialog{
+    小手指引导() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.小手指引导) == true) {
+            UtilsNode.show(this.bindComponent.引导_小手指,true)
+            UtilsAction.hand(this.bindComponent.引导_小手指)
+        }
+
+    }
+    按钮缩放() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.按钮缩放) == true) {
+            UtilsAction.btnAn(this.bindComponent.失败_看广告按钮)
+        }
+
+    }
+    插屏广告展示() {
+
+    }
+    插屏展示间隔() {
+
+    }
+    插屏延迟展示() {
+
+    }
+    插屏广告概率控制() {
+
+    }
+    盒子广告展示() {
+
+    }
+    盒子广告延迟展示控制() {
+
+    }
+    盒子广告展示间隔控制() {
+
+    }
+    激励广告点击区域开关控制() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.激励广告点击区域开关控制) == true) {
+            return true
+        }
+        return false
+    }
+    激励广告点击区域参数控制() {
+
+
+
+        if (
+            Utils.allTrueOrFalseByAllItem(true,[
+                this.激励广告点击区域开关控制(),
+                this.激励广告点击区域时间间隔控制(true),
+                this.激励广告点击区域次数控制(true),
+            ])
+        ) {
+            this.激励广告点击区域时间间隔控制(false)
+            this.激励广告点击区域次数控制(false)
+
+            let ControlNum =  ControlCommercial.getSceneData(
+                ControlCommercialSceneId.皮肤试用,
+                ControlCommercialItemName.激励广告点击区域参数控制)
+            if (ControlNum == null) {
+                ControlNum = 100
+            }
+            this.bindComponent.胜利_看广告领取实际点击.height += ControlNum
+        }
+    }
+    激励广告点击区域时间间隔控制(is) {
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.激励广告点击区域时间间隔控制,is) == true) {
+            return true
+        }
+        return false
+    }
+    激励广告点击区域次数控制(is) {
+        // ControlCommercial.getItemNameCount(sceneId,itemName)
+        if (ControlCommercial.getItemNameCount(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.激励广告点击区域次数控制,is) == true) {
+            return true
+        }
+        return false
+    }
+    激励视频图标展示() {
+
+    }
+    原生广告展示() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告展示) == true) {
+            ccLog.log("判断是否出现广告","原生广告展示",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","原生广告展示",false)
+        return false
+    }
+    原生广告展示次数(is) {
+        if (ControlCommercial.getItemNameCount(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告展示次数,is) == true) {
+            ccLog.log("判断是否出现广告","原生广告展示次数",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","原生广告展示次数",false)
+        return false
+    }
+    原生广告点击区域开关控制() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告点击区域开关控制) == true) {
+            ccLog.log("判断是否出现广告","原生广告点击区域开关控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","原生广告点击区域开关控制",false)
+        return false
+    }
+
+
+
+    async 原生广告点击区域大小控制() {
+
+
+
+        if (
+            Utils.allTrueOrFalseByAllItem(true,[
+                this.原生广告展示(),
+                this.原生广告概率控制(),
+                this.原生广告点击区域开关控制(),
+                this.原生广告初始展示间隔控制(true),
+                this.原生广告展示间隔控制(true),
+                this.原生广告展示次数(true),
+                this.原生广告点击区域时间间隔控制(true),
+            ])
+        ) {
+            this.原生广告初始展示间隔控制(false)
+            this.原生广告展示间隔控制(false)
+            this.原生广告展示次数(false)
+            this.原生广告点击区域时间间隔控制(false)
+            let ControlNum =  ControlCommercial.getSceneData(
+                ControlCommercialSceneId.皮肤试用,
+                ControlCommercialItemName.原生广告点击区域大小控制)
+            // if (ControlNum == null) {
+            //     ControlNum = 100
+            // }
+            // this.bindComponent.失败_看广告跳过实际点击.height += ControlNum
+            //根据渠道不同展示广告
+            //先留着
+            let time = this.原生广告延迟展示()
+            await  Utils.setTimerOnce(this,time)
+            if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
+                let data = {
+                    cancelNode : null,
+                    parent : this.node,
+                    oppoNativeADToClose :null,
+                    ADTypeCode : Channel_oppoADType.K原生1280ID,
+                    adCode : 1,
+                    heights : [null,600+ControlNum]
+                }
+                // ChannelManger.getInstance().getChannel().showNativeAd(data)
+                ChannelManger.getInstance().getChannel().showNativeAdTest(data)
+            }
+            if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
+                let data = {
+                    cancelNode : null,
+                    parent : this.node,
+                    oppoNativeADToClose :null,
+                    ADTypeCode : Channel_oppoADType.K原生1280ID,
+                    adCode : 1,
+                    heights : [null,600+ControlNum]
+                }
+                // ChannelManger.getInstance().getChannel().showNativeAd(data)
+                ChannelManger.getInstance().getChannel().showNativeAd(data)
+            }
+        }
+
+    }
+    原生广告点击区域时间间隔控制(is) {
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告点击区域时间间隔控制,is) == true) {
+            ccLog.log("判断是否出现广告","原生广告点击区域时间间隔控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","原生广告点击区域时间间隔控制",false)
+        return false
+    }
+
+    原生广告点击区域次数控制(is) {
+        if (ControlCommercial.getItemNameCount(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告点击区域次数控制,is) == true) {
+            ccLog.log("判断是否出现广告","原生广告点击区域次数控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","原生广告点击区域次数控制",false)
+        return false
+    }
+    原生广告关闭按钮点击区域() {
+        let ControlNum =  ControlCommercial.getSceneData(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告关闭按钮点击区域)
+        //    根据传值控制原生广告关闭按钮的点击区域，默认30x30，后台传值30，如后台传值20那么点击区域为20x20
+
+    }
+    原生广告延迟展示() {
+        let ControlNum =  ControlCommercial.getSceneData(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告延迟展示)
+        return ControlNum
+    }
+    原生广告概率控制() {
+        if (ControlCommercial.getRandom(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告概率控制) == true) {
+            ccLog.log("判断是否出现广告","原生广告概率控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","原生广告概率控制",false)
+        return false
+
+    }
+    原生广告初始展示间隔控制(is) {
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告初始展示间隔控制,is) == true) {
+            ccLog.log("判断是否出现广告","原生广告初始展示间隔控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","原生广告初始展示间隔控制",false)
+        return false
+    }
+    原生广告展示间隔控制(is) {
+
+
+        // this.原生广告初始展示间隔控制()
+
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.皮肤试用,
+            ControlCommercialItemName.原生广告展示间隔控制,is) == true) {
+            ccLog.log("判断是否出现广告","原生广告展示间隔控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","原生广告展示间隔控制",false)
+        return false
+    }
+    积木广告展示() {
+
+    }
+    积木广告延迟展示() {
+
+    }
+    积木广告位置变更() {
+
+    }
+    积木广告位置变更概率控制() {
+
+    }
     @property(
         {
             type: SkinTrialDialog,
@@ -89,18 +388,30 @@ export default class ChannelSkinTrialDialog extends ChannelBase {
            // }
            // // ChannelManger.getInstance().getChannel().showNativeAd(data)
            // ChannelManger.getInstance().getChannel().showNativeAdTest(data)
+
+           this.小手指引导()
+           this.按钮缩放()
+           this.激励广告点击区域参数控制()
+           this.原生广告点击区域大小控制()
+
+
+
        }
 
 
        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
-           let data = {
-               cancelNode : null,
-               parent : this.node,
-               oppoNativeADToClose :null,
-               ADTypeCode : Channel_oppoADType.K原生1280ID,
-               heights : [null,900,950, 970, 1040]
-           }
-           ChannelManger.getInstance().getChannel().showNativeAd(data)
+           this.小手指引导()
+           this.按钮缩放()
+           this.激励广告点击区域参数控制()
+           this.原生广告点击区域大小控制()
+           // let data = {
+           //     cancelNode : null,
+           //     parent : this.node,
+           //     oppoNativeADToClose :null,
+           //     ADTypeCode : Channel_oppoADType.K原生1280ID,
+           //     heights : [null,900,950, 970, 1040]
+           // }
+           // ChannelManger.getInstance().getChannel().showNativeAd(data)
            // ChannelManger.getInstance().getChannel().showNativeAdTest(data)
        }
 

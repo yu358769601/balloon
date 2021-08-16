@@ -24,26 +24,26 @@
         "__id__": 7
       },
       {
-        "__id__": 105
+        "__id__": 110
       },
       {
-        "__id__": 111
+        "__id__": 116
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 115
+        "__id__": 120
       },
       {
-        "__id__": 116
+        "__id__": 121
       },
       {
-        "__id__": 117
+        "__id__": 122
       }
     ],
     "_prefab": {
-      "__id__": 118
+      "__id__": 123
     },
     "_opacity": 255,
     "_color": {
@@ -266,11 +266,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 103
+        "__id__": 108
       }
     ],
     "_prefab": {
-      "__id__": 104
+      "__id__": 109
     },
     "_opacity": 255,
     "_color": {
@@ -339,7 +339,7 @@
     "_prefab": {
       "__id__": 11
     },
-    "_opacity": 255,
+    "_opacity": 204.76500000000001,
     "_color": {
       "__type__": "cc.Color",
       "r": 252,
@@ -2150,20 +2150,23 @@
         "__id__": 63
       },
       {
-        "__id__": 83
-      }
-    ],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 100
+        "__id__": 80
       },
       {
         "__id__": 101
       }
     ],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 105
+      },
+      {
+        "__id__": 106
+      }
+    ],
     "_prefab": {
-      "__id__": 102
+      "__id__": 107
     },
     "_opacity": 255,
     "_color": {
@@ -2214,7 +2217,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "胜利_看广告领取",
+    "_name": "胜利_普通领取",
     "_objFlags": 0,
     "_parent": {
       "__id__": 62
@@ -2224,17 +2227,17 @@
         "__id__": 64
       },
       {
-        "__id__": 76
+        "__id__": 73
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 81
+        "__id__": 78
       }
     ],
     "_prefab": {
-      "__id__": 82
+      "__id__": 79
     },
     "_opacity": 255,
     "_color": {
@@ -2259,7 +2262,7 @@
       "ctor": "Float64Array",
       "array": [
         -2.91,
-        -6.815,
+        -223.773,
         0,
         0,
         0,
@@ -2285,7 +2288,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "胜利_看广告领取样子",
+    "_name": "胜利_普通领取样子",
     "_objFlags": 0,
     "_parent": {
       "__id__": 63
@@ -2296,19 +2299,16 @@
       },
       {
         "__id__": 68
-      },
-      {
-        "__id__": 71
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 74
+        "__id__": 71
       }
     ],
     "_prefab": {
-      "__id__": 75
+      "__id__": 72
     },
     "_opacity": 255,
     "_color": {
@@ -2359,7 +2359,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "资源 389",
+    "_name": "资源 385",
     "_objFlags": 0,
     "_parent": {
       "__id__": 64
@@ -2384,8 +2384,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 127,
-      "height": 97
+      "width": 80,
+      "height": 83
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2396,8 +2396,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -123.1,
-        -102.339,
+        -70.908,
+        -91.234,
         0,
         0,
         0,
@@ -2437,113 +2437,6 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "467d05f2-7ae8-4a76-832f-aac5d2ecd2de"
-    },
-    "_type": 0,
-    "_sizeMode": 1,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
-    },
-    "fileId": "e2Fq4V8S1A34IZ42BF9Ue4",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "资源 385",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 64
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 69
-      }
-    ],
-    "_prefab": {
-      "__id__": 70
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 80,
-      "height": 83
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        2.923,
-        -97.468,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 68
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
       "__uuid__": "f7b7f7f5-dbaa-4c7e-a1e1-1a992f3bb97c"
     },
     "_type": 0,
@@ -2568,7 +2461,7 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "b89ZglqDtB7Zi9ikJKQQSS",
+    "fileId": "16uXs9ScVIFoMAp/QyRHdG",
     "sync": false
   },
   {
@@ -2582,24 +2475,24 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 72
+        "__id__": 69
       }
     ],
     "_prefab": {
-      "__id__": 73
+      "__id__": 70
     },
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 170,
+      "g": 238,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 125.13,
-      "height": 94.5
+      "height": 88.2
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2610,8 +2503,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        125.566,
-        -101.926,
+        52.518,
+        -87.559,
         0,
         0,
         0,
@@ -2640,7 +2533,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 71
+      "__id__": 68
     },
     "_enabled": true,
     "_materials": [
@@ -2650,10 +2543,10 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "600",
-    "_N$string": "600",
+    "_string": "200",
+    "_N$string": "200",
     "_fontSize": 75,
-    "_lineHeight": 75,
+    "_lineHeight": 70,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2676,7 +2569,7 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "53Ziyxe4tA8alUNF5qLIAy",
+    "fileId": "fb3vgmYS1LpYVbOVTn8UuV",
     "sync": false
   },
   {
@@ -2695,7 +2588,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "c03e5687-8d42-48c7-bb86-3692a38f6c26"
+      "__uuid__": "64deeb1a-c7e3-41e1-8fc6-bc21889f299c"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -2719,12 +2612,12 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "f6eAPUxVRBzqp8EshTS+3K",
+    "fileId": "02yD81IzJHhblSU785f2kk",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "胜利_看广告领取实际点击",
+    "_name": "胜利_普通领取实际点击",
     "_objFlags": 0,
     "_parent": {
       "__id__": 63
@@ -2733,24 +2626,24 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 77
+        "__id__": 74
       },
       {
-        "__id__": 78
+        "__id__": 75
       },
       {
-        "__id__": 79
+        "__id__": 76
       }
     ],
     "_prefab": {
-      "__id__": 80
+      "__id__": 77
     },
-    "_opacity": 128.26500000000001,
+    "_opacity": 131.835,
     "_color": {
       "__type__": "cc.Color",
-      "r": 232,
-      "g": 128,
-      "b": 128,
+      "r": 174,
+      "g": 152,
+      "b": 235,
       "a": 255
     },
     "_contentSize": {
@@ -2797,7 +2690,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 76
+      "__id__": 73
     },
     "_enabled": false,
     "_materials": [
@@ -2825,11 +2718,24 @@
     "_id": ""
   },
   {
+    "__type__": "7347boEyy9FHZJk4yfD0f4e",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 73
+    },
+    "_enabled": true,
+    "nodeType": 1,
+    "nodezIndex": 0,
+    "otherData": "胜利_普通领取实际点击",
+    "_id": ""
+  },
+  {
     "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 76
+      "__id__": 73
     },
     "_enabled": true,
     "_normalMaterial": null,
@@ -2895,19 +2801,6 @@
     "_id": ""
   },
   {
-    "__type__": "7347boEyy9FHZJk4yfD0f4e",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 76
-    },
-    "_enabled": true,
-    "nodeType": 1,
-    "nodezIndex": 0,
-    "otherData": "胜利_看广告领取实际点击",
-    "_id": ""
-  },
-  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -2915,7 +2808,7 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "e4XmyJdaFE0Zv+50696ue5",
+    "fileId": "ddgfWCMY1KjpslFLkTaBj1",
     "sync": false
   },
   {
@@ -2958,32 +2851,32 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "72KxVRrEFG+5uR0KDDUGP2",
+    "fileId": "71xLD5sXxNbqDdOTx3+VpT",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "胜利_普通领取",
+    "_name": "胜利_看广告领取",
     "_objFlags": 0,
     "_parent": {
       "__id__": 62
     },
     "_children": [
       {
-        "__id__": 84
+        "__id__": 81
       },
       {
-        "__id__": 93
+        "__id__": 94
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 98
+        "__id__": 99
       }
     ],
     "_prefab": {
-      "__id__": 99
+      "__id__": 100
     },
     "_opacity": 255,
     "_color": {
@@ -3008,7 +2901,7 @@
       "ctor": "Float64Array",
       "array": [
         -2.91,
-        -223.773,
+        -6.815,
         0,
         0,
         0,
@@ -3034,12 +2927,15 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "胜利_普通领取样子",
+    "_name": "胜利_看广告领取样子",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 83
+      "__id__": 80
     },
     "_children": [
+      {
+        "__id__": 82
+      },
       {
         "__id__": 85
       },
@@ -3051,10 +2947,13 @@
     "_components": [
       {
         "__id__": 91
+      },
+      {
+        "__id__": 92
       }
     ],
     "_prefab": {
-      "__id__": 92
+      "__id__": 93
     },
     "_opacity": 255,
     "_color": {
@@ -3072,14 +2971,14 @@
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 1
+      "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
         0,
-        -3.325,
+        -105.234,
         0,
         0,
         0,
@@ -3105,10 +3004,117 @@
   },
   {
     "__type__": "cc.Node",
+    "_name": "资源 389",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 81
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 83
+      }
+    ],
+    "_prefab": {
+      "__id__": 84
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 127,
+      "height": 97
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -123.1,
+        -2.109,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 82
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "467d05f2-7ae8-4a76-832f-aac5d2ecd2de"
+    },
+    "_type": 0,
+    "_sizeMode": 1,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
+    },
+    "fileId": "e2Fq4V8S1A34IZ42BF9Ue4",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
     "_name": "资源 385",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 84
+      "__id__": 81
     },
     "_children": [],
     "_active": true,
@@ -3142,8 +3148,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -70.908,
-        -91.234,
+        2.923,
+        2.762,
         0,
         0,
         0,
@@ -3207,7 +3213,7 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "16uXs9ScVIFoMAp/QyRHdG",
+    "fileId": "b89ZglqDtB7Zi9ikJKQQSS",
     "sync": false
   },
   {
@@ -3215,7 +3221,7 @@
     "_name": "New Label",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 84
+      "__id__": 81
     },
     "_children": [],
     "_active": true,
@@ -3230,15 +3236,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 170,
-      "g": 238,
-      "b": 75,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 125.13,
-      "height": 88.2
+      "height": 94.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3249,8 +3255,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        52.518,
-        -87.559,
+        125.566,
+        -0.092,
         0,
         0,
         0,
@@ -3289,10 +3295,10 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "200",
-    "_N$string": "200",
+    "_string": "600",
+    "_N$string": "600",
     "_fontSize": 75,
-    "_lineHeight": 70,
+    "_lineHeight": 75,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3315,7 +3321,7 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "fb3vgmYS1LpYVbOVTn8UuV",
+    "fileId": "53Ziyxe4tA8alUNF5qLIAy",
     "sync": false
   },
   {
@@ -3323,7 +3329,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 84
+      "__id__": 81
     },
     "_enabled": true,
     "_materials": [
@@ -3334,7 +3340,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "64deeb1a-c7e3-41e1-8fc6-bc21889f299c"
+      "__uuid__": "c03e5687-8d42-48c7-bb86-3692a38f6c26"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -3351,6 +3357,19 @@
     "_id": ""
   },
   {
+    "__type__": "7347boEyy9FHZJk4yfD0f4e",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 81
+    },
+    "_enabled": true,
+    "nodeType": 1,
+    "nodezIndex": 0,
+    "otherData": "胜利_看广告领取样子",
+    "_id": ""
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -3358,38 +3377,38 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "02yD81IzJHhblSU785f2kk",
+    "fileId": "f6eAPUxVRBzqp8EshTS+3K",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "胜利_普通领取实际点击",
+    "_name": "胜利_看广告领取实际点击",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 83
+      "__id__": 80
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 94
-      },
-      {
         "__id__": 95
       },
       {
         "__id__": 96
+      },
+      {
+        "__id__": 97
       }
     ],
     "_prefab": {
-      "__id__": 97
+      "__id__": 98
     },
-    "_opacity": 131.835,
+    "_opacity": 128.26500000000001,
     "_color": {
       "__type__": "cc.Color",
-      "r": 174,
-      "g": 152,
-      "b": 235,
+      "r": 232,
+      "g": 128,
+      "b": 128,
       "a": 255
     },
     "_contentSize": {
@@ -3436,7 +3455,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 93
+      "__id__": 94
     },
     "_enabled": false,
     "_materials": [
@@ -3464,24 +3483,11 @@
     "_id": ""
   },
   {
-    "__type__": "7347boEyy9FHZJk4yfD0f4e",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 93
-    },
-    "_enabled": true,
-    "nodeType": 1,
-    "nodezIndex": 0,
-    "otherData": "胜利_普通领取实际点击",
-    "_id": ""
-  },
-  {
     "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 93
+      "__id__": 94
     },
     "_enabled": true,
     "_normalMaterial": null,
@@ -3542,8 +3548,21 @@
     "hoverSprite": null,
     "_N$disabledSprite": null,
     "_N$target": {
-      "__id__": 84
+      "__id__": 81
     },
+    "_id": ""
+  },
+  {
+    "__type__": "7347boEyy9FHZJk4yfD0f4e",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 94
+    },
+    "_enabled": true,
+    "nodeType": 1,
+    "nodezIndex": 0,
+    "otherData": "胜利_看广告领取实际点击",
     "_id": ""
   },
   {
@@ -3554,7 +3573,7 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "ddgfWCMY1KjpslFLkTaBj1",
+    "fileId": "e4XmyJdaFE0Zv+50696ue5",
     "sync": false
   },
   {
@@ -3562,7 +3581,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 83
+      "__id__": 80
     },
     "_enabled": false,
     "_materials": [
@@ -3597,7 +3616,130 @@
     "asset": {
       "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
     },
-    "fileId": "71xLD5sXxNbqDdOTx3+VpT",
+    "fileId": "72KxVRrEFG+5uR0KDDUGP2",
+    "sync": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "引导_小手指",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 62
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 102
+      },
+      {
+        "__id__": 103
+      }
+    ],
+    "_prefab": {
+      "__id__": 104
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 119,
+      "height": 97
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        92.389,
+        -128.95,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 101
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "fd5d98a9-403d-4c13-81f6-4668d74a21ea"
+    },
+    "_type": 0,
+    "_sizeMode": 1,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "7347boEyy9FHZJk4yfD0f4e",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 101
+    },
+    "_enabled": true,
+    "nodeType": 0,
+    "nodezIndex": 0,
+    "otherData": "引导_小手指",
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "4bda257c-f639-4dd5-b316-6ab06dcf52d3"
+    },
+    "fileId": "a1+AcvPhtGyp0pcdKSP6k0",
     "sync": false
   },
   {
@@ -3683,20 +3825,20 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 106
+        "__id__": 111
       },
       {
-        "__id__": 107
+        "__id__": 112
       },
       {
-        "__id__": 108
+        "__id__": 113
       },
       {
-        "__id__": 109
+        "__id__": 114
       }
     ],
     "_prefab": {
-      "__id__": 110
+      "__id__": 115
     },
     "_opacity": 255,
     "_color": {
@@ -3750,7 +3892,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 105
+      "__id__": 110
     },
     "_enabled": false,
     "_materials": [
@@ -3782,7 +3924,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 105
+      "__id__": 110
     },
     "_enabled": true,
     "_id": ""
@@ -3792,7 +3934,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 105
+      "__id__": 110
     },
     "_enabled": true,
     "alignMode": 1,
@@ -3819,7 +3961,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 105
+      "__id__": 110
     },
     "_enabled": true,
     "nodeType": 0,
@@ -3849,14 +3991,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 112
+        "__id__": 117
       },
       {
-        "__id__": 113
+        "__id__": 118
       }
     ],
     "_prefab": {
-      "__id__": 114
+      "__id__": 119
     },
     "_opacity": 114.75,
     "_color": {
@@ -3910,7 +4052,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 111
+      "__id__": 116
     },
     "_enabled": true,
     "_materials": [
@@ -3942,7 +4084,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 111
+      "__id__": 116
     },
     "_enabled": true,
     "nodeType": 0,
@@ -3990,7 +4132,7 @@
     },
     "_enabled": true,
     "bindComponent": {
-      "__id__": 115
+      "__id__": 120
     },
     "_id": ""
   },

@@ -3290,4 +3290,49 @@ export default class UtilsDB extends cc.Component {
         myRubber.list[rubber] = 1
         this.setJson("myRubber", myRubber)
     }
+
+
+
+    //初始化oppo 桌面次数
+    // UtilsDB.initOppoZhuomian()
+    static initOppoZhuomian() {
+        this.setJson("oppoZhuomian", {
+            count : 0
+        })
+        return this.getJson("oppoZhuomian")
+    }
+
+    //获取
+    // UtilsDB.isOppoZhuomian()
+    static isOppoZhuomian() {
+        if (this.getJson("oppoZhuomian") == null) {
+            this.initOppoZhuomian()
+        }
+       let oppoZhuomian = this.getJson("oppoZhuomian")
+        if (oppoZhuomian.count == 1) {
+            return true
+        }else{
+            return false
+        }
+    }
+
+    //购买橡皮
+    // UtilsDB.addOppoZhuomian()
+    static addOppoZhuomian() {
+        if (this.getJson("oppoZhuomian") == null) {
+            this.initOppoZhuomian()
+        }
+        let oppoZhuomian = this.getJson("oppoZhuomian")
+        oppoZhuomian.count++
+        this.setJson("oppoZhuomian", oppoZhuomian)
+
+        if (oppoZhuomian.count == 1) {
+            return true
+        }else{
+            return false
+        }
+
+    }
+
+
 }

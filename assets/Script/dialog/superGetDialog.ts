@@ -37,6 +37,8 @@ export default class SuperGetDialog extends BaseDialog implements IChannelBase{
     胜利_吞噬层: cc.Node = null
 
     超级奖励_吞噬: cc.Node = null
+    胜利_看广告领取样子: cc.Node = null
+    引导_小手指: cc.Node = null
 
     结算_送橡皮变化2: cc.Node = null
     结算_送橡皮底板展示3: cc.Sprite = null
@@ -501,6 +503,21 @@ export default class SuperGetDialog extends BaseDialog implements IChannelBase{
             parentNode: this.node,
         }
         this.超级奖励_吞噬 = GetNode.getNode(data)
+
+
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "胜利_看广告领取样子",
+            parentNode: this.node,
+        }
+        this.胜利_看广告领取样子 = GetNode.getNode(data)
+
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "引导_小手指",
+            parentNode: this.node,
+        }
+        this.引导_小手指 = GetNode.getNode(data)
 
 
 

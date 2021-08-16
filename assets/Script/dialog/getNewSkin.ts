@@ -18,11 +18,12 @@ import LoadManage from "../System/Load/LoadManage";
 import Tween from "../System/Utils/Tween";
 import {ItemShopItemType} from "../item/itemShopItem";
 import {SoundType} from "../System/sound/sound";
+import ChannelBase, {IChannelBase} from "../channel/channelBase";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class GetNewSkin extends BaseDialog {
+export default class GetNewSkin extends BaseDialog implements IChannelBase{
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -30,12 +31,15 @@ export default class GetNewSkin extends BaseDialog {
 
     胜利_普通领取实际点击 : cc.Node = null
     胜利_看广告领取实际点击 : cc.Node = null
+    胜利_看广告领取 : cc.Node = null
     胜利_结算 : cc.Node = null
     胜利_吞噬层: cc.Node = null
 
     结算_送橡皮变化2: cc.Node = null
     结算_送橡皮底板展示3: cc.Sprite = null
     结算_送橡皮底板1: cc.Sprite = null
+
+    引导_小手指: cc.Node = null
 
     onLoad () {
         super.onLoad()
@@ -296,6 +300,12 @@ export default class GetNewSkin extends BaseDialog {
             parentNode: this.node,
         }
         this.胜利_看广告领取实际点击 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "胜利_看广告领取",
+            parentNode: this.node,
+        }
+        this.胜利_看广告领取 = GetNode.getNode(data)
 
         data = {
             type: GetNodeType.纯查找,
@@ -311,12 +321,12 @@ export default class GetNewSkin extends BaseDialog {
         this.胜利_吞噬层 = GetNode.getNode(data)
 
 
-       // data = {
-       //     type: GetNodeType.纯查找,
-       //     otherData: "结算_送橡皮变化2",
-       //     parentNode: this.node,
-       // }
-       // this.结算_送橡皮变化2 = GetNode.getNode(data)
+       data = {
+           type: GetNodeType.开始隐藏通过参数显示,
+           otherData: "引导_小手指",
+           parentNode: this.node,
+       }
+       this.引导_小手指 = GetNode.getNode(data)
        data = {
            type: GetNodeType.纯查找,
            otherData: "结算_送橡皮底板展示3",
@@ -334,6 +344,9 @@ export default class GetNewSkin extends BaseDialog {
         // this.胜利_结算.getComponent(cc.Widget).enabled = true
 
     }
-
+    channel : ChannelBase
+    init(channel: ChannelBase) {
+        this.channel = channel
+    }
     // update (dt) {}
 }

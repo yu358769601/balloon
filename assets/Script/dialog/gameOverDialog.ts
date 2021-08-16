@@ -32,8 +32,10 @@ export default class GameOverDialog extends BaseDialog implements IChannelBase {
     胜利_看广告领取实际点击 : cc.Node = null
     胜利_结算 : cc.Node = null
     胜利_吞噬层: cc.Node = null
+    胜利_看广告领取样子: cc.Node = null
 
     结算_送橡皮变化2: cc.Node = null
+    引导_小手指: cc.Node = null
     结算_送橡皮底板展示3: cc.Sprite = null
     结算_送橡皮底板1: cc.Sprite = null
 
@@ -384,8 +386,19 @@ export default class GameOverDialog extends BaseDialog implements IChannelBase {
            parentNode: this.node,
        }
        this.结算_送橡皮底板1 = GetNode.getNode(data).getComponent(cc.Sprite)
-
-
+       data = {
+           type: GetNodeType.纯查找,
+           otherData: "胜利_看广告领取样子",
+           parentNode: this.node,
+       }
+       this.胜利_看广告领取样子 = GetNode.getNode(data)
+        // this.胜利_结算.getComponent(cc.Widget).enabled = true
+       data = {
+           type: GetNodeType.开始隐藏通过参数显示,
+           otherData: "引导_小手指",
+           parentNode: this.node,
+       }
+       this.引导_小手指 = GetNode.getNode(data)
         // this.胜利_结算.getComponent(cc.Widget).enabled = true
 
     }
