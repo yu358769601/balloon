@@ -54,12 +54,22 @@ export interface IChannelGetLuckDialog {
     积木广告延迟展示()
     积木广告位置变更()
     积木广告位置变更概率控制()
+    测试开关()
 }
 
 
 //限时礼包
 @ccclass
 export default class ChannelGetLuckDialog extends ChannelBase implements IChannelGetLuckDialog{
+    测试开关(){
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.测试开关) == true) {
+            this.bindComponent.失败_看广告跳过实际点击.getComponent(cc.Sprite).enabled = true
+            this.bindComponent.失败_重新开始实际点击.getComponent(cc.Sprite).enabled = true
+        }
+    }
+
     小手指引导() {
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.限时礼包,
@@ -219,7 +229,11 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdTest(data)
@@ -231,7 +245,11 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -265,7 +283,7 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
             ControlCommercialSceneId.限时礼包,
             ControlCommercialItemName.原生广告关闭按钮点击区域)
     //    根据传值控制原生广告关闭按钮的点击区域，默认30x30，后台传值30，如后台传值20那么点击区域为20x20
-
+        return ControlNum
     }
     原生广告延迟展示() {
         let ControlNum =  ControlCommercial.getSceneData(
@@ -362,7 +380,7 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
        //     menu.更多精彩.active = false
        // }
 
-
+        this.测试开关()
        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
            // this._gameOverDialog.initViewChannelNode(this._gameOverDialog.居中布局 )
            // Api.adCode = 4

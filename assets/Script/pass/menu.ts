@@ -237,6 +237,7 @@ export default class Menu extends cc.Component implements IChannelBase{
     }
 
     onHua8(selfName){
+        Emitter.fire("onReMoveFiyADNode")
         let addGemData = {
             type: AssetsType.体力,
             count: JsonManager.passSettingjson.passAddLife,
@@ -265,6 +266,8 @@ export default class Menu extends cc.Component implements IChannelBase{
             // callbackGem_addsucceed : this.callbackGem_addsucceedAdd,
             callback_subsucceed : async()=>{
                 await this.onShowAll("",false)
+                this.channel.flyAd()
+
                 let pass = await JsonManager.getPassByIndex(UtilsDB.getMyPassSave().index)
                 ccLog.log("关卡信息",pass)
                 Emitter.fire("onSetPassByName", pass)
@@ -565,6 +568,8 @@ export default class Menu extends cc.Component implements IChannelBase{
         let time = 1
         //显示
        if (this.菜单_画8.active == false && b == true) {
+
+           Emitter.fire("onReMoveFiyADNode")
            this.菜单_消失动画吞噬.active = true
            this.菜单_画8.active = true
            // UtilsAction.fadeIn(this.菜单_开始按钮,time,null)

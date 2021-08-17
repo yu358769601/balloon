@@ -2324,9 +2324,9 @@ export default class UtilsDB extends cc.Component {
     static initLifeAssets() {
         this.setJson("lifeAssets", {
             // 体力
-            life: 20,
+            life: JsonManager.passSettingjson.lifeMax,
             //体力最大
-            lifeMax: 40,
+            lifeMax: JsonManager.passSettingjson.lifeMax,
         })
         return this.getJson("lifeAssets")
     }

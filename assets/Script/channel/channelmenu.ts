@@ -34,6 +34,11 @@ export interface IChannelMenu {
     限时礼包开关控制()
     限时礼包奖励时间范围控制()
     限时礼包主动展示()
+
+    特殊按钮2开关控制()
+    特殊按钮2展示概率控制()
+    特殊按钮2展示间隔控制(is)
+    特殊按钮2点击区域大小()
 }
 
 @ccclass
@@ -109,6 +114,123 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
     限时礼包主动展示() {
 
     }
+
+    特殊按钮2开关控制() {
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.漂浮窗,
+            ControlCommercialItemName.特殊按钮2开关控制) == true) {
+            // UtilsNode.show(this.bindComponent.引导_小手指,true)
+            // UtilsAction.hand(this.bindComponent.引导_小手指)
+            ccLog.log("判断是否出现广告","特殊按钮2开关控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","特殊按钮2开关控制",false)
+        return false
+    }
+
+    特殊按钮2展示概率控制() {
+        if (ControlCommercial.getRandom(
+            ControlCommercialSceneId.漂浮窗,
+            ControlCommercialItemName.特殊按钮2展示概率控制) == true) {
+            ccLog.log("判断是否出现广告","特殊按钮2展示概率控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","特殊按钮2展示概率控制",false)
+        return false
+    }
+
+    特殊按钮2展示间隔控制(is) {
+        if (ControlCommercial.getItemNameTime(
+            ControlCommercialSceneId.漂浮窗,
+            ControlCommercialItemName.特殊按钮2展示间隔控制,is) == true) {
+            ccLog.log("判断是否出现广告","特殊按钮2展示间隔控制",true)
+            return true
+        }
+        ccLog.log("判断是否出现广告","特殊按钮2展示间隔控制",false)
+        return false
+    }
+
+    特殊按钮2点击区域大小() {
+        if (
+            Utils.allTrueOrFalseByAllItem(true,[
+                this.特殊按钮2开关控制(),
+                this.特殊按钮2展示概率控制(),
+                this.特殊按钮2展示间隔控制(true),
+            ])
+        ) {
+            this.特殊按钮2展示间隔控制(false)
+            let ControlNum =  ControlCommercial.getSceneData(
+                ControlCommercialSceneId.漂浮窗,
+                ControlCommercialItemName.特殊按钮2点击区域大小)
+            // if (ControlNum == null) {
+            //     ControlNum = 100
+            // }
+            // this.bindComponent.失败_看广告跳过实际点击.height += ControlNum
+            //根据渠道不同展示广告
+            //先留着
+            if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
+                let data = {
+                    // cancelNode : null,
+                    rootNode: this.node,
+                    // oppoNativeADToClose :null,
+                    ADTypeCode: Channel_oppoADType.K原生1280ID,
+                    // heights : [null,900,950, 970, 1040]
+                    p: new Vec2(-800, 0),
+                    orientation: 1,
+                    ylist: [200, 600],
+                    name: ItemPreType.飞的原生广告或者激励视频广告,
+                    debug : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.漂浮窗,
+                        ControlCommercialItemName.测试开关),
+                    withHeight : [ControlNum/100, ControlNum/100],
+
+                    self : this,
+                    startCallBack : this.startCallBack
+                }
+                // ChannelManger.getInstance().getChannel().showNativeAd(data)
+                ChannelManger.getInstance().getChannel().showNativeAdTestFly(data)
+
+            }
+            if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
+                let data = {
+                    // cancelNode : null,
+                    rootNode: this.node,
+                    // oppoNativeADToClose :null,
+                    ADTypeCode: Channel_oppoADType.K512,
+                    // heights : [null,900,950, 970, 1040]
+                    p: new Vec2(-800, 0),
+                    orientation: 1,
+                    ylist: [-300, 300],
+                    name: ItemPreType.飞的原生广告或者激励视频广告,
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.漂浮窗,
+                        ControlCommercialItemName.测试开关),
+                    withHeight : [ControlNum/100, ControlNum/100],
+                    self : this,
+                    startCallBack : this.startCallBack
+                }
+                // ChannelManger.getInstance().getChannel().showNativeAd(data)
+                ChannelManger.getInstance().getChannel().showNativeAdFly(data)
+
+            }
+        }
+    }
+    fiyADNode : any
+    startCallBack(data,item){
+        ccLog.log("飞得参数是啥",data,item)
+        data.fiyADNode = item
+    }
+    onReMoveFiyADNode(){
+        ccLog.log("飞得参数是啥 删除飞的", this.fiyADNode)
+        if ( this.fiyADNode != null) {
+            if (this.fiyADNode.node) {
+                this.fiyADNode.node.destroy()
+            }
+
+        }
+    }
+
+
 
     @property(
         {
@@ -308,7 +430,9 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
     start() {
         this.init()
     }
-
+    flyAd(){
+        this.特殊按钮2点击区域大小()
+    }
 
     getLuckDialogTime : number = 0
 
@@ -354,12 +478,14 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
         Emitter.register("openBannerByMenu", this.openBannerByMenu, this)
         Emitter.register("closeBannerByMenu", this.closeBannerByMenu, this)
         Emitter.register("onOpenDialogByGetLuckDialog", this.onOpenDialogByGetLuckDialog, this)
+        Emitter.register("onReMoveFiyADNode", this.onReMoveFiyADNode, this)
     }
 
     removeEmitter() {
         Emitter.remove("openBannerByMenu", this.openBannerByMenu, this)
         Emitter.remove("closeBannerByMenu", this.closeBannerByMenu, this)
         Emitter.remove("onOpenDialogByGetLuckDialog", this.onOpenDialogByGetLuckDialog, this)
+        Emitter.remove("onReMoveFiyADNode", this.onReMoveFiyADNode, this)
     }
 
     // update (dt) {}

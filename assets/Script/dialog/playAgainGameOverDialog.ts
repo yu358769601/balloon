@@ -13,11 +13,12 @@ import {DialogType, ItemPreType} from "../System/Type/enums";
 import UtilsDB, {AssetsType} from "../System/Utils/UtilsDB";
 import JsonManager from "../System/manage/JsonManager";
 import {SoundType} from "../System/sound/sound";
+import ChannelBase, {IChannelBase} from "../channel/channelBase";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class PlayAgainGameOverDialog extends BaseDialog {
+export default class PlayAgainGameOverDialog extends BaseDialog implements IChannelBase{
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -26,6 +27,8 @@ export default class PlayAgainGameOverDialog extends BaseDialog {
     过关 : cc.Node = null
     失败_看广告跳过实际点击 : cc.Node = null
     失败_重新开始实际点击 : cc.Node = null
+
+    引导_小手指 : cc.Node = null
 
     onLoad () {
         super.onLoad()
@@ -145,6 +148,12 @@ export default class PlayAgainGameOverDialog extends BaseDialog {
             parentNode: this.node,
         }
         this.失败_重新开始实际点击 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "引导_小手指",
+            parentNode: this.node,
+        }
+        this.引导_小手指 = GetNode.getNode(data)
 
 
 
@@ -152,4 +161,8 @@ export default class PlayAgainGameOverDialog extends BaseDialog {
     }
 
     // update (dt) {}
+    channel : ChannelBase
+    init(channel: ChannelBase) {
+        this.channel = channel
+    }
 }

@@ -146,16 +146,38 @@ export default class ItemFlyAD extends BaseDialogNoAd {
 
         console.log("高度呢", this.btn_click.height)
 
+        if(data.withHeight != null){
+            this.btn_click.width*= data.withHeight[0]
+            this.btn_click.height*= data.withHeight[1]
+
+            let boxCollider = this.btn_click.getComponent(cc.BoxCollider)
+            boxCollider.offset = new Vec2(0, 0)
+            boxCollider.size = new Size(this.btn_click.width, this.btn_click.height)
+        }
+
 
 
 
         if (data.p != null) {
             this.node.setPosition(data.p)
+            ccLog.log("飞广告 位置", data.p)
         }
         if (data.orientation != null) {
             this.startAction(data.orientation,data.ylist)
+            ccLog.log("飞广告 一些数据", data , this)
         }
 
+        if (data.debug ) {
+            if (data.debug == true) {
+                if (this.btn_click) {
+                    this.btn_click.getComponent(cc.Sprite).enabled = true
+                }
+            }
+        }
+
+        if (data.self &&  data.startCallBack) {
+            data.startCallBack(data.self,this)
+        }
 
         // let  data1 = {
         //     txt : "创建了吗"

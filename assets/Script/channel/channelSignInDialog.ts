@@ -223,7 +223,11 @@ export default class ChannelSignInDialog extends ChannelBase implements IChannel
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生三张ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdTest(data)
@@ -235,7 +239,11 @@ export default class ChannelSignInDialog extends ChannelBase implements IChannel
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生三张ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -269,7 +277,7 @@ export default class ChannelSignInDialog extends ChannelBase implements IChannel
             ControlCommercialSceneId.签到,
             ControlCommercialItemName.原生广告关闭按钮点击区域)
         //    根据传值控制原生广告关闭按钮的点击区域，默认30x30，后台传值30，如后台传值20那么点击区域为20x20
-
+        return ControlNum
     }
     原生广告延迟展示() {
         let ControlNum =  ControlCommercial.getSceneData(

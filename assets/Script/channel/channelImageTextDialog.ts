@@ -15,6 +15,10 @@ import ChannelManger, {ChannelMangerType} from "../System/qudao/channelManger";
 import {Channel_oppoADType} from "../System/qudao/channel_oppo";
 import {Channel_vivoADCode} from "../System/qudao/channel_vivo";
 import JsonManager from "../System/manage/JsonManager";
+import ControlCommercial, {
+    ControlCommercialItemName,
+    ControlCommercialSceneId
+} from "../control/controlCommercial";
 
 const {ccclass, property} = cc._decorator;
 
@@ -96,7 +100,11 @@ export default class ChannelImageTextDialog extends ChannelBase {
                parent : this.node,
                oppoNativeADToClose : this.oppoNativeADToClose,
                ADTypeCode : Channel_oppoADType.K原生320ID,
-               heights : [null,900,950, 970, 1040]
+               heights : [null,900,950, 970, 1040],
+               debug  : ControlCommercial.getSceneData(
+                   ControlCommercialSceneId.获得皮肤,
+                   ControlCommercialItemName.测试开关),
+               closedSize : this.原生广告关闭按钮点击区域()
            }
            ChannelManger.getInstance().getChannel().showNativeAd(data)
            // ChannelManger.getInstance().getChannel().showNativeAdTest(data)

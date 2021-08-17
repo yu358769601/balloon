@@ -33,6 +33,7 @@ export enum Channel_oppoADCode {
     K原生三张ID = "366570",
     KbannerID = "366557",
     K九宫格ID = "366573",
+    K512 = "370136"
 }
 export enum Channel_oppoADType {
     K激励视频ID = 0,
@@ -41,6 +42,7 @@ export enum Channel_oppoADType {
     K原生三张ID = 3,
     KbannerID = 4,
     K九宫格ID = 5,
+    K512 = 6
 }
 
 
@@ -150,6 +152,7 @@ export class Channel_oppo extends ChannelAllBase implements Ichannel_android{
          tempnativeid[Channel_oppoADType.K原生1280ID] = Channel_oppoADCode.K原生1280ID
          tempnativeid[Channel_oppoADType.K原生320ID] = Channel_oppoADCode.K原生320ID
          tempnativeid[Channel_oppoADType.K原生三张ID] = Channel_oppoADCode.K原生三张ID
+         tempnativeid[Channel_oppoADType.K512] = Channel_oppoADCode.K512
          // tempnativeid.push(Channel_oppoADCode.K原生1280ID);
          // tempnativeid.push(Channel_oppoADCode.K原生320ID);
          // tempnativeid.push(Channel_oppoADCode.K原生三张ID);
@@ -178,8 +181,10 @@ export class Channel_oppo extends ChannelAllBase implements Ichannel_android{
 
             this.adnative[i].onLoad((res) => {
                 if (res && res.adList){
-                    console.log("原生广告完成"+i);
+                    ccLog.log("原生广告完成"+i);
+                    ccLog.log("原生广告完成数据是 0 ",res);
                     this.adnativedata[i] = res.adList.pop();
+                    ccLog.log("原生广告完成数据是 1 ",this.adnativedata[i]);
                     this.loadnativepic(i);
                 }
             });
@@ -206,6 +211,7 @@ export class Channel_oppo extends ChannelAllBase implements Ichannel_android{
             tempnativeid[Channel_oppoADType.K原生1280ID] = Channel_oppoADCode.K原生1280ID
             tempnativeid[Channel_oppoADType.K原生320ID] = Channel_oppoADCode.K原生320ID
             tempnativeid[Channel_oppoADType.K原生三张ID] = Channel_oppoADCode.K原生三张ID
+            tempnativeid[Channel_oppoADType.K512] = Channel_oppoADCode.K512
         }
         else if(cc.sys.platform == cc.sys.VIVO_GAME){
             tempnativeid.push("原生广告ID1");
@@ -523,7 +529,10 @@ export class Channel_oppo extends ChannelAllBase implements Ichannel_android{
         //     this._createNativeAdCountMin = 0
         // }
         let tempCode =  0
-        this.adnativepic = []
+        if (this.adnativepic[data.ADTypeCode] == null) {
+            this.createnativeByIndex(data.ADTypeCode)
+            return
+        }
         // this.shownative(tempCode)
         tempCode = data.ADTypeCode
         this.shownative(tempCode)
@@ -644,37 +653,55 @@ export class Channel_oppo extends ChannelAllBase implements Ichannel_android{
      loadnativepic(num){//预加载原生广告的图片,需要显示原生广告时，直接引用图片对象adnativepic
         let self = this;
         // this.adnativepic[num] = null;
-        let temppath = Utils.getStr(this.adnativedata[num].imgUrlList[0],0,"?")
-        console.log("现在 下载图 路径 ",temppath);
-        if(temppath != "")
-        {
+         ccLog.log("原生广告完成数据是 2 ",this.adnativedata[num]);
 
-            cc.assetManager.loadRemote(temppath,  (err, tex)=> {
-                if(err)
-                {
-                    console.log("现在 有错误 ",err);
-                }
-                else
-                {
-                    console.log("loadnativepicok "+num);
-                    // let sp = new cc.SpriteFrame(tex,new cc.Rect(0, 0, tex.width, tex.height));
-                    let sp = tex;
-                    console.log("现在 有图 ",sp);
-                    // console.log("现在 渠道名字 ",this._name);
-                    this.adnativepic[num] = sp;
-                    console.log("现在 放进去了吗 ",this.adnativepic);
-                    console.log("现在 下载资源图片完成",tex);
-                    // Emitter.fire('onSetTempSprite',sp)
+         let tempImgUrlList = ""
+         if (this.adnativedata[num].imgUrlList.length == 0) {
+             tempImgUrlList = this.adnativedata[num].iconUrlList[0]
+         }
+         if (tempImgUrlList == "") {
+             if (this.adnativedata[num].iconUrlList.length == 0) {
+                 tempImgUrlList = this.adnativedata[num].imgUrlList[0]
+             }
+         }
+         if (tempImgUrlList !="") {
+
+             let temppath = Utils.getStr(tempImgUrlList,0,"?")
+             console.log("现在 下载图 路径 ",temppath);
+             ccLog.log("原生广告完成数据是 3 ",temppath);
+             if(temppath != "")
+             {
+
+                 cc.assetManager.loadRemote(temppath,  (err, tex)=> {
+                     if(err)
+                     {
+                         console.log("现在 有错误 ",err);
+                     }
+                     else
+                     {
+                         console.log("loadnativepicok "+num);
+                         // let sp = new cc.SpriteFrame(tex,new cc.Rect(0, 0, tex.width, tex.height));
+                         let sp = tex;
+                         console.log("现在 有图 ",sp);
+                         // console.log("现在 渠道名字 ",this._name);
+                         this.adnativepic[num] = sp;
+                         console.log("现在 放进去了吗 ",this.adnativepic);
+                         console.log("现在 下载资源图片完成",tex);
+                         // Emitter.fire('onSetTempSprite',sp)
 
 
 
-                    // if (this.adnativepicDialog[num] !=null) {
-                    //     this.adnativepicDialog[num].onLoadSP(null,num,sp)
-                    // }
-                    // Emitter.fire('onLoadSP',num,sp)
-                }
-            });
-        }
+                         // if (this.adnativepicDialog[num] !=null) {
+                         //     this.adnativepicDialog[num].onLoadSP(null,num,sp)
+                         // }
+                         // Emitter.fire('onLoadSP',num,sp)
+                     }
+                 });
+             }
+         }
+
+
+
     }
 
      shownative(num){//上报显示

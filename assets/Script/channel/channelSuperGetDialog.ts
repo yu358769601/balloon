@@ -59,6 +59,7 @@ export interface IChannelSuperGetDialog {
     积木广告延迟展示()
     积木广告位置变更()
     积木广告位置变更概率控制()
+
 }
 
 
@@ -129,7 +130,11 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
                     p: new Vec2(-800, 0),
                     orientation: 1,
                     ylist: [200, 600],
-                    name: ItemPreType.飞的原生广告或者激励视频广告
+                    name: ItemPreType.飞的原生广告或者激励视频广告,
+                    debug : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.漂浮窗,
+                        ControlCommercialItemName.测试开关),
+                    withHeight : [ControlNum/100, ControlNum/100]
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdTestFly(data)
@@ -140,12 +145,16 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
                     // cancelNode : null,
                     rootNode: this.node,
                     // oppoNativeADToClose :null,
-                    ADTypeCode: Channel_oppoADType.K原生1280ID,
+                    ADTypeCode: Channel_oppoADType.K512,
                     // heights : [null,900,950, 970, 1040]
                     p: new Vec2(-800, 0),
                     orientation: 1,
                     ylist: [200, 600],
-                    name: ItemPreType.飞的原生广告或者激励视频广告
+                    name: ItemPreType.飞的原生广告或者激励视频广告,
+                    debug  : ControlCommercial.getSceneData(
+                    ControlCommercialSceneId.漂浮窗,
+                    ControlCommercialItemName.测试开关),
+                    withHeight : [ControlNum/100, ControlNum/100]
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdFly(data)
@@ -314,7 +323,11 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdTest(data)
@@ -326,7 +339,11 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -360,7 +377,7 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
             ControlCommercialSceneId.盲盒,
             ControlCommercialItemName.原生广告关闭按钮点击区域)
         //    根据传值控制原生广告关闭按钮的点击区域，默认30x30，后台传值30，如后台传值20那么点击区域为20x20
-
+        return ControlNum
     }
     原生广告延迟展示() {
         let ControlNum =  ControlCommercial.getSceneData(

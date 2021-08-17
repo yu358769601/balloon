@@ -216,7 +216,10 @@ export default class ChannelLuckDialog extends ChannelBase implements IChannelLu
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关)
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdTest(data)
@@ -228,7 +231,10 @@ export default class ChannelLuckDialog extends ChannelBase implements IChannelLu
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关)
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAd(data)

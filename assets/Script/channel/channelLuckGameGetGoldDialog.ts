@@ -22,13 +22,14 @@ import ControlCommercial, {
 } from "../control/controlCommercial";
 import UtilsNode from "../System/Utils/UtilsNode";
 import UtilsAction from "../System/Utils/UtilsAction";
+import LuckGameGetGoldDialog from "../dialog/luckGameGetGoldDialog";
 
 const {ccclass, property} = cc._decorator;
 
 
 
 
-export interface IChannelgameOverDialog {
+export interface IChannelLuckGameGetGoldDialog {
     小手指引导()
     按钮缩放()
     插屏广告展示()
@@ -66,13 +67,13 @@ export interface IChannelgameOverDialog {
     测试开关()
 }
 @ccclass
-export default class ChannelgameOverDialog extends ChannelBase implements IChannelgameOverDialog{
+export default class ChannelLuckGameGetGoldDialog extends ChannelBase implements IChannelLuckGameGetGoldDialog{
     测试开关(){
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.结算,
             ControlCommercialItemName.测试开关) == true) {
-            this.bindComponent.胜利_普通领取实际点击.getComponent(cc.Sprite).enabled = true
-            this.bindComponent.胜利_看广告领取实际点击.getComponent(cc.Sprite).enabled = true
+            this.bindComponent.气球获得_看广告领取实际点击.getComponent(cc.Sprite).enabled = true
+            this.bindComponent.气球获得_普通领取实际点击.getComponent(cc.Sprite).enabled = true
         }
     }
 
@@ -152,7 +153,7 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
             if (ControlNum == null) {
                 ControlNum = 100
             }
-            this.bindComponent.胜利_看广告领取实际点击.height += ControlNum
+            // this.bindComponent.气球获得_看广告领取实际点击.height += ControlNum
         }
     }
     激励广告点击区域时间间隔控制(is) {
@@ -241,14 +242,15 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
             if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
                 let data = {
                     cancelNode : null,
-                    parent : this.node,
+                    parent : this.bindComponent.气球获得_广告节点,
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,540+ControlNum],
+                    heights : [null,540],
                     debug  : ControlCommercial.getSceneData(
                     ControlCommercialSceneId.结算,
-                    ControlCommercialItemName.测试开关)
+                    ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdTest(data)
@@ -256,14 +258,15 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
             if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
                 let data = {
                     cancelNode : null,
-                    parent : this.node,
+                    parent : this.bindComponent.气球获得_广告节点,
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,540+ControlNum],
+                    heights : [null,540],
                     debug  : ControlCommercial.getSceneData(
                         ControlCommercialSceneId.结算,
-                        ControlCommercialItemName.测试开关)
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -297,7 +300,7 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
             ControlCommercialSceneId.结算,
             ControlCommercialItemName.原生广告关闭按钮点击区域)
         //    根据传值控制原生广告关闭按钮的点击区域，默认30x30，后台传值30，如后台传值20那么点击区域为20x20
-
+        return ControlNum
     }
     原生广告延迟展示() {
         let ControlNum =  ControlCommercial.getSceneData(
@@ -358,11 +361,11 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
     music : boolean = false
     @property(
         {
-            type: GameOverDialog,
-            displayName: "GameOverDialog_放这里"
+            type: LuckGameGetGoldDialog,
+            displayName: "LuckGameGetGoldDialog_放这里"
         }
     )    // call cc.Enum
-    bindComponent : GameOverDialog = null
+    bindComponent : LuckGameGetGoldDialog = null
 
     // setLayout(idialogLayout :IDialogLayout){
     //     idialogLayout.setLayoutDefault()
@@ -371,8 +374,6 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
    async init(){
        this.bindComponent.init(this)
        // IDialogLayout
-
-       Emitter.fire("onReMoveFiyADNode")
 
         // switch (this.channelType){
         //     case ChannelBaseType.Android:

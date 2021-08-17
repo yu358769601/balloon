@@ -90,21 +90,28 @@
   "ttfenxiang": 40,
   "GoLuckGameIndexs_": "去扎气球的关卡",
   "GoLuckGameIndexs": [
-    1,
+    8,
     16,
     24,
-    32
+    32,
+    40,
+    48,
+    56
   ],
   "GoLuckGameCountdown_": "扎气球倒计时时间",
   "GoLuckGameCountdown": 6,
   "GoLuckGameGold_": "扎气球每个气球金币数量",
   "GoLuckGameGold": 10,
   "countDownTime_": "倒计时时间(毫秒) 300000",
-  "countDownTime": 10000,
+  "countDownTime": 300000,
   "countDownTimeAddLife_": "每次倒计时到了增加的生命值",
   "countDownTimeAddLife": 1,
   "passAddLife_": "每关消耗的体力",
   "passAddLife": -1,
+
+  "lifeMax_": "每次倒计时到了增加的生命值",
+  "lifeMax": 20,
+
   "superGetCountMax_": "超级奖励最大数量",
   "superGetCountMax": 2,
   "superGetCountPlayMax_": "玩几关触发超级大奖",

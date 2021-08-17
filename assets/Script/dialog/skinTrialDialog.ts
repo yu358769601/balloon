@@ -168,6 +168,8 @@ export default class SkinTrialDialog extends BaseDialog  implements IChannelBase
             Emitter.fire("onPlaySound",SoundType.按钮,1)
             this.胜利_吞噬层.active = true
             this.node.destroy()
+            Emitter.fire("onCodeBtnClickByNativeAdDialog")
+
         },this)
         this.皮肤试用_关闭.on(cc.Node.EventType.TOUCH_START,()=>{
             Emitter.fire("onPlaySound",SoundType.按钮,1)

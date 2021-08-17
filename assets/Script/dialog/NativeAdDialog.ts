@@ -129,7 +129,23 @@ export default class NativeAdDialog extends BaseDialogNoAd {
             ccLog.log("现在我的坐标是 2 ",newP)
         }
 
+        if (data.debug ) {
+            if (data.debug == true) {
+                if (this.btn_click) {
+                    this.btn_click.getComponent(cc.Sprite).enabled = true
+                }
+                if (this.btn_close) {
+                    this.btn_close.getComponent(cc.Sprite).enabled = true
+                }
+            }
+        }
 
+        if (data.closedSize != null ) {
+            if (this.btn_close) {
+                this.btn_close.width = data.closedSize
+                this.btn_close.height = data.closedSize
+            }
+        }
 
         // data.height = Utils.getADNativeHeight(Api.adCode,data.cancelNode,this.node,data.oppoNativeADToClose)
 

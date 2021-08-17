@@ -22,13 +22,14 @@ import ControlCommercial, {
 } from "../control/controlCommercial";
 import UtilsNode from "../System/Utils/UtilsNode";
 import UtilsAction from "../System/Utils/UtilsAction";
+import PlayAgainGameOverDialog from "../dialog/playAgainGameOverDialog";
 
 const {ccclass, property} = cc._decorator;
 
 
 
 
-export interface IChannelgameOverDialog {
+export interface IChannelPlayAgainGameOverDialog {
     小手指引导()
     按钮缩放()
     插屏广告展示()
@@ -63,19 +64,9 @@ export interface IChannelgameOverDialog {
     积木广告延迟展示()
     积木广告位置变更()
     积木广告位置变更概率控制()
-    测试开关()
 }
 @ccclass
-export default class ChannelgameOverDialog extends ChannelBase implements IChannelgameOverDialog{
-    测试开关(){
-        if (ControlCommercial.getSceneData(
-            ControlCommercialSceneId.结算,
-            ControlCommercialItemName.测试开关) == true) {
-            this.bindComponent.胜利_普通领取实际点击.getComponent(cc.Sprite).enabled = true
-            this.bindComponent.胜利_看广告领取实际点击.getComponent(cc.Sprite).enabled = true
-        }
-    }
-
+export default class ChannelPlayAgainGameOverDialog extends ChannelBase implements IChannelPlayAgainGameOverDialog{
     开屏广告是否展示() {
     }
     开屏广告展示关卡间隔控制() {
@@ -99,7 +90,7 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.结算,
             ControlCommercialItemName.按钮缩放) == true) {
-            UtilsAction.btnAn(this.bindComponent.胜利_看广告领取样子)
+            UtilsAction.btnAn(this.bindComponent.失败_看广告跳过实际点击)
         }
 
     }
@@ -152,7 +143,7 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
             if (ControlNum == null) {
                 ControlNum = 100
             }
-            this.bindComponent.胜利_看广告领取实际点击.height += ControlNum
+            this.bindComponent.失败_看广告跳过实际点击.height += ControlNum
         }
     }
     激励广告点击区域时间间隔控制(is) {
@@ -247,8 +238,9 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                    ControlCommercialSceneId.结算,
-                    ControlCommercialItemName.测试开关)
+                        ControlCommercialSceneId.结算,
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdTest(data)
@@ -263,7 +255,8 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
                         ControlCommercialSceneId.结算,
-                        ControlCommercialItemName.测试开关)
+                        ControlCommercialItemName.测试开关),
+                    closedSize : this.原生广告关闭按钮点击区域()
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -297,7 +290,7 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
             ControlCommercialSceneId.结算,
             ControlCommercialItemName.原生广告关闭按钮点击区域)
         //    根据传值控制原生广告关闭按钮的点击区域，默认30x30，后台传值30，如后台传值20那么点击区域为20x20
-
+        return ControlNum
     }
     原生广告延迟展示() {
         let ControlNum =  ControlCommercial.getSceneData(
@@ -358,11 +351,11 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
     music : boolean = false
     @property(
         {
-            type: GameOverDialog,
-            displayName: "GameOverDialog_放这里"
+            type: PlayAgainGameOverDialog,
+            displayName: "PlayAgainGameOverDialog_放这里"
         }
     )    // call cc.Enum
-    bindComponent : GameOverDialog = null
+    bindComponent : PlayAgainGameOverDialog = null
 
     // setLayout(idialogLayout :IDialogLayout){
     //     idialogLayout.setLayoutDefault()
@@ -371,8 +364,6 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
    async init(){
        this.bindComponent.init(this)
        // IDialogLayout
-
-       Emitter.fire("onReMoveFiyADNode")
 
         // switch (this.channelType){
         //     case ChannelBaseType.Android:
@@ -423,7 +414,6 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
        //         this.myAD()
        //     }
        // }
-       this.测试开关()
        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
            this.小手指引导()
            this.按钮缩放()

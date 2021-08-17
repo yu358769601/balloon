@@ -14,11 +14,12 @@ import UtilsDB, {AssetsType} from "../System/Utils/UtilsDB";
 import JsonManager from "../System/manage/JsonManager";
 import {DialogType, ItemPreType} from "../System/Type/enums";
 import ControlGoLuckGame from "../control/controlGoLuckGame";
+import ChannelBase, {IChannelBase} from "../channel/channelBase";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class LuckGameGetGoldDialog extends BaseDialog {
+export default class LuckGameGetGoldDialog extends BaseDialog implements IChannelBase {
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -203,6 +204,10 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
     气球获得_吞噬层: cc.Node = null
     气球获得_获得奖励: cc.Label = null
 
+    引导_小手指: cc.Node = null
+    胜利_看广告领取样子: cc.Node = null
+    气球获得_广告节点: cc.Node = null
+
 
    async initView() {
         let  data
@@ -237,10 +242,32 @@ export default class LuckGameGetGoldDialog extends BaseDialog {
             parentNode: this.node,
         }
         this.气球获得_获得奖励 = GetNode.getNode(data).getComponent(cc.Label)
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "引导_小手指",
+            parentNode: this.node,
+        }
+        this.引导_小手指 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "胜利_看广告领取样子",
+            parentNode: this.node,
+        }
+        this.胜利_看广告领取样子 = GetNode.getNode(data)
+        data = {
+            type: GetNodeType.纯查找,
+            otherData: "气球获得_广告节点",
+            parentNode: this.node,
+        }
+        this.气球获得_广告节点 = GetNode.getNode(data)
 
 
         // this.胜利_结算.getComponent(cc.Widget).enabled = true
 
+    }
+    channel : ChannelBase
+    init(channel: ChannelBase) {
+        this.channel = channel
     }
 
     // update (dt) {}

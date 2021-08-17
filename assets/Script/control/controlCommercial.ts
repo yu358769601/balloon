@@ -183,7 +183,7 @@ export default class ControlCommercial {
         data[ControlCommercialItemName.特殊按钮2开关控制] = true
         data[ControlCommercialItemName.特殊按钮2展示概率控制] = 1
         data[ControlCommercialItemName.特殊按钮2展示间隔控制] = 0
-        data[ControlCommercialItemName.特殊按钮2点击区域大小] = 100
+        data[ControlCommercialItemName.特殊按钮2点击区域大小] = 200
         data[ControlCommercialItemName.插屏广告展示] = false
         data[ControlCommercialItemName.插屏展示间隔] = 30
         data[ControlCommercialItemName.插屏延迟展示] = 0
@@ -192,7 +192,7 @@ export default class ControlCommercial {
         data[ControlCommercialItemName.盒子广告延迟展示控制] = 0
         data[ControlCommercialItemName.盒子广告展示间隔控制] = 30
         data[ControlCommercialItemName.激励广告点击区域开关控制] = true
-        data[ControlCommercialItemName.激励广告点击区域参数控制] = 100
+        data[ControlCommercialItemName.激励广告点击区域参数控制] = 0
         data[ControlCommercialItemName.激励广告点击区域时间间隔控制] = 30
         data[ControlCommercialItemName.激励广告点击区域次数控制] = 1
         data[ControlCommercialItemName.激励视频图标展示] = 1
@@ -205,7 +205,7 @@ export default class ControlCommercial {
         data[ControlCommercialItemName.开屏广告展示时间间隔控制] = 60
         data[ControlCommercialItemName.全屏视频广告时间间隔] = 60
         data[ControlCommercialItemName.全屏视频广告延迟展示] = 0
-        data[ControlCommercialItemName.测试开关] = false
+        data[ControlCommercialItemName.测试开关] = true
         data[ControlCommercialItemName.原生广告展示] = true
         data[ControlCommercialItemName.原生广告展示次数] = 999
         data[ControlCommercialItemName.原生广告点击区域开关控制] = true
@@ -215,8 +215,8 @@ export default class ControlCommercial {
         data[ControlCommercialItemName.原生广告关闭按钮点击区域] = 0
         data[ControlCommercialItemName.原生广告延迟展示] = 0
         data[ControlCommercialItemName.原生广告概率控制] = 1
-        data[ControlCommercialItemName.原生广告初始展示间隔控制] = 5
-        data[ControlCommercialItemName.原生广告展示间隔控制] = 5
+        data[ControlCommercialItemName.原生广告初始展示间隔控制] = 0
+        data[ControlCommercialItemName.原生广告展示间隔控制] = 2
 
         return data
 
@@ -548,6 +548,16 @@ export default class ControlCommercial {
         //     "isDefault": false
         // }
 
+        for (let itemPreType in ControlCommercialSceneId) {
+            let s :string = ControlCommercialSceneId[itemPreType];
+
+            ccLog.log("有多少应用场景啊",s)
+
+            this.netData[s] = this.initDataTest()
+        }
+
+
+
         let netData =  await NewNet.getServerData(data)
         if (netData) {
            let listData =  netData.data.params
@@ -566,8 +576,8 @@ export default class ControlCommercial {
 
                 ccLog.log("有多少应用场景啊",s)
 
-                // this.netDataNoNet[s] = this.initData()
-                this.netData[s] = this.initDataTest()
+                // this.netData[s] = this.initDataTest()
+                this.netDataNoNet[s] = this.initDataTest()
             }
 
 

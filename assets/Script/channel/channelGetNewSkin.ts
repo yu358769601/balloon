@@ -54,12 +54,22 @@ export interface IChannelSkinTrialDialog {
     积木广告延迟展示()
     积木广告位置变更()
     积木广告位置变更概率控制()
+    测试开关()
 }
 
 
 
 @ccclass
 export default class ChannelGetNewSkin extends ChannelBase implements IChannelSkinTrialDialog{
+
+    测试开关(){
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.限时礼包,
+            ControlCommercialItemName.测试开关) == true) {
+            this.bindComponent.胜利_看广告领取实际点击.getComponent(cc.Sprite).enabled = true
+            this.bindComponent.胜利_普通领取实际点击.getComponent(cc.Sprite).enabled = true
+        }
+    }
     小手指引导() {
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.获得皮肤,
@@ -219,7 +229,10 @@ export default class ChannelGetNewSkin extends ChannelBase implements IChannelSk
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.获得皮肤,
+                        ControlCommercialItemName.测试开关)
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAdTest(data)
@@ -231,7 +244,10 @@ export default class ChannelGetNewSkin extends ChannelBase implements IChannelSk
                     oppoNativeADToClose :null,
                     ADTypeCode : Channel_oppoADType.K原生1280ID,
                     adCode : 1,
-                    heights : [null,600+ControlNum]
+                    heights : [null,540+ControlNum],
+                    debug  : ControlCommercial.getSceneData(
+                        ControlCommercialSceneId.获得皮肤,
+                        ControlCommercialItemName.测试开关)
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
                 ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -361,7 +377,7 @@ export default class ChannelGetNewSkin extends ChannelBase implements IChannelSk
        //     menu.更多精彩.active = false
        // }
 
-
+        this.测试开关()
        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.web) {
            // this._gameOverDialog.initViewChannelNode(this._gameOverDialog.居中布局 )
            // Api.adCode = 4

@@ -5525,8 +5525,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
-      "height": 250
+      "width": 550,
+      "height": 350
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5913,7 +5913,7 @@
       "__id__": 152
     },
     "_enabled": true,
-    "countMax": 30,
+    "countMax": 10,
     "_id": ""
   },
   {
@@ -6161,7 +6161,7 @@
         "__id__": 179
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 182

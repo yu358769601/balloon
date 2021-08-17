@@ -2909,11 +2909,11 @@
           "typeName": "itemPoint",
           "index": 1,
           "isStart": false,
-          "x": -237.39030434782606,
-          "y": 255.65210869565226,
+          "x": -237.39,
+          "y": 255.6521,
           "zIndex": 1,
           "allowInOutIndexs": [
-            "1",
+            "5",
             "15"
           ]
         },
@@ -14830,7 +14830,7 @@
           "zIndex": 0
         }
       ],
-      "index": 0,
+      "index": 60,
       "passName": "pass_60",
       "itemName": "pass_60",
       "isPlay": true,
