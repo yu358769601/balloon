@@ -54,9 +54,19 @@ export interface IChannelSignInDialog {
     积木广告延迟展示()
     积木广告位置变更()
     积木广告位置变更概率控制()
+    测试开关()
 }
 @ccclass
 export default class ChannelSignInDialog extends ChannelBase implements IChannelSignInDialog{
+    测试开关(){
+        if (ControlCommercial.getSceneData(
+            ControlCommercialSceneId.游戏首页,
+            ControlCommercialItemName.测试开关) == true) {
+            this.bindComponent.签到_今日已领取实际点击.getComponent(cc.Sprite).enabled = true
+            this.bindComponent.签到_看广告领取实际点击.getComponent(cc.Sprite).enabled = true
+            this.bindComponent.签到_普通领取实际点击.getComponent(cc.Sprite).enabled = true
+        }
+    }
     小手指引导() {
         if (ControlCommercial.getSceneData(
             ControlCommercialSceneId.签到,
@@ -225,7 +235,7 @@ export default class ChannelSignInDialog extends ChannelBase implements IChannel
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }
@@ -241,7 +251,7 @@ export default class ChannelSignInDialog extends ChannelBase implements IChannel
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }
@@ -404,7 +414,7 @@ export default class ChannelSignInDialog extends ChannelBase implements IChannel
            // }
            // // ChannelManger.getInstance().getChannel().showNativeAd(data)
            // ChannelManger.getInstance().getChannel().showNativeAdTest(data)
-
+            this.测试开关()
            this.小手指引导()
            this.按钮缩放()
            this.激励广告点击区域参数控制()
@@ -413,6 +423,7 @@ export default class ChannelSignInDialog extends ChannelBase implements IChannel
 
 
        if (ChannelManger.getInstance().getChannelType() ==  ChannelMangerType.oppo) {
+           this.测试开关()
            this.小手指引导()
            this.按钮缩放()
            this.激励广告点击区域参数控制()

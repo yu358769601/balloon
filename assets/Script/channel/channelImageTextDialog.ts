@@ -102,7 +102,7 @@ export default class ChannelImageTextDialog extends ChannelBase {
                ADTypeCode : Channel_oppoADType.K原生320ID,
                heights : [null,900,950, 970, 1040],
                debug  : ControlCommercial.getSceneData(
-                   ControlCommercialSceneId.获得皮肤,
+                   ControlCommercialSceneId.游戏首页,
                    ControlCommercialItemName.测试开关),
                closedSize : this.原生广告关闭按钮点击区域()
            }

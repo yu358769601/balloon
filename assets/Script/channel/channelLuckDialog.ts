@@ -218,7 +218,7 @@ export default class ChannelLuckDialog extends ChannelBase implements IChannelLu
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关)
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -233,7 +233,7 @@ export default class ChannelLuckDialog extends ChannelBase implements IChannelLu
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关)
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)

@@ -47,7 +47,7 @@ export default class Pass extends BasePass {
     关卡_跳过: cc.Node = null
 
     关卡_数字: cc.Label = null
-
+    新手引导_组件: cc.Node = null
     getitemNames: string[] = []
 
     onDestroy() {
@@ -147,7 +147,27 @@ export default class Pass extends BasePass {
             await this.addLine(passData)
 
         this.关卡_数字.string =  this.data.index
+
+        ccLog.log("设置关卡的数据 0 新手引导显示")
+        if (this.getIndex(JsonManager.passSettingjson.newHand,this.data.index) == true) {
+            ccLog.log("设置关卡的数据 2 新手引导显示")
+            this.新手引导_组件.active = true
+        }
+
+
     }
+
+    getIndex(arr,index){
+        for (let i = 0; i <arr.length ; i++) {
+            ccLog.log("设置关卡的数据 1 新手引导显示",arr[i] ,"后面",index)
+            if (arr[i] == index) {
+                return true
+            }
+        }
+        return  false
+    }
+
+
    async onGameOverCall(){
         UtilsNode.show(this.关卡吞噬,true)
        Emitter.fire("onVictory")
@@ -280,6 +300,14 @@ export default class Pass extends BasePass {
             parentNode: this.node
         }
         this.关卡_数字 = GetNode.getNode(data).getComponent(cc.Label)
+
+
+        data = {
+            type: GetNodeType.开始隐藏通过参数显示,
+            otherData: "新手引导_组件",
+            parentNode: this.node
+        }
+        this.新手引导_组件 = GetNode.getNode(data)
 
 
     }

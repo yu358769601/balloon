@@ -1027,6 +1027,79 @@ export default class UtilsAction extends cc.Component {
         let rep = cc.repeatForever(sequence)
         node.runAction(rep);
     }
+
+    static newHandMode(node: cc.Node) {
+        node.stopAllActions()
+        // node.scaleX = 1
+        // node.scaleY = 1
+        // let interval2 = cc.scaleTo(duration, 1, 1).easing(cc.easeElasticInOut(duration));
+        // let callbacktemp = cc.callFunc(() => {
+        //     if (callback) {
+        //         callback()
+        //     }
+        // }, this);
+
+
+        node.opacity = 0
+        node.scaleX = 2
+        node.scaleY = 2
+        node.angle = 0
+
+            let interval1_1 = cc.scaleTo(1,1,1)
+            let interval2_1 = cc.fadeIn(1)
+            let interval3_1 = cc.moveBy(1,-100,0)
+
+
+            let spawn1_1 = cc.spawn(interval1_1,interval2_1)
+        let sequence_0 = cc.sequence(spawn1_1,interval3_1);
+
+        let interval4_1 = cc.moveBy(0.01,100,0)
+        let interval5_1 = cc.fadeOut(0.01)
+        let interval6_1 = cc.scaleTo(0.01,2,2)
+        let spawn7_1 = cc.spawn(interval4_1,interval5_1,interval6_1)
+
+        let sequence_1 = cc.sequence(sequence_0,spawn7_1);
+
+
+        let interval1_2 = cc.scaleTo(1,1,1)
+        let interval2_2 = cc.fadeIn(1)
+        let interval3_2 = cc.moveBy(1,100,0)
+        let spawn1_2 = cc.spawn(interval1_2,interval2_2)
+
+        let sequence_00 = cc.sequence(spawn1_2,interval3_2);
+
+
+        let interval4_2 = cc.moveBy(0.01,-100,0)
+        let interval5_2 = cc.fadeOut(0.01)
+        let interval6_2 = cc.scaleTo(0.01,2,2)
+        let spawn7_2 = cc.spawn(interval4_2,interval5_2,interval6_2)
+
+        let sequence_2 = cc.sequence(sequence_00,spawn7_2);
+
+            // let callbacktemp = cc.callFunc(() => {
+            //     if (callback) {
+            //         callback()
+            //     }
+            // }, this);
+
+
+
+
+            let sequence = cc.sequence(sequence_1,sequence_2);
+            let rep = cc.repeatForever(sequence)
+            node.runAction(rep);
+        }
+
+
+
+
+        // let interval4 = cc.rotateBy(0.2,20)
+        // let sequence1 = cc.sequence(interval3,interval4);
+        //
+        // let interval5 = cc.scaleTo(0.5,2,2)
+        // let interval6 = cc.fadeOut(0.5)
+        // let spawn2 = cc.spawn(interval5,interval6)
+
     //按钮缩放
     // UtilsAction.btnAn(node)
     static btnAn(node: cc.Node) {

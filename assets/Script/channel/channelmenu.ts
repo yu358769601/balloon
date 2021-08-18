@@ -180,7 +180,7 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
                     ylist: [200, 600],
                     name: ItemPreType.飞的原生广告或者激励视频广告,
                     debug : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.漂浮窗,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     withHeight : [ControlNum/100, ControlNum/100],
 
@@ -203,7 +203,7 @@ export default class ChannelMenu extends ChannelBase implements IChannelMenu{
                     ylist: [-300, 300],
                     name: ItemPreType.飞的原生广告或者激励视频广告,
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.漂浮窗,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     withHeight : [ControlNum/100, ControlNum/100],
                     self : this,

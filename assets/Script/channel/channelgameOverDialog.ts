@@ -69,7 +69,7 @@ export interface IChannelgameOverDialog {
 export default class ChannelgameOverDialog extends ChannelBase implements IChannelgameOverDialog{
     测试开关(){
         if (ControlCommercial.getSceneData(
-            ControlCommercialSceneId.结算,
+            ControlCommercialSceneId.游戏首页,
             ControlCommercialItemName.测试开关) == true) {
             this.bindComponent.胜利_普通领取实际点击.getComponent(cc.Sprite).enabled = true
             this.bindComponent.胜利_看广告领取实际点击.getComponent(cc.Sprite).enabled = true
@@ -247,7 +247,7 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                    ControlCommercialSceneId.结算,
+                    ControlCommercialSceneId.游戏首页,
                     ControlCommercialItemName.测试开关)
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)
@@ -262,7 +262,7 @@ export default class ChannelgameOverDialog extends ChannelBase implements IChann
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关)
                 }
                 // ChannelManger.getInstance().getChannel().showNativeAd(data)

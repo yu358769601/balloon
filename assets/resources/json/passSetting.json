@@ -115,7 +115,7 @@
   "superGetCountMax_": "超级奖励最大数量",
   "superGetCountMax": 2,
   "superGetCountPlayMax_": "玩几关触发超级大奖",
-  "superGetCountPlayMax": 1,
+  "superGetCountPlayMax": 3,
   "getLuckDialogData_": "限时礼包数据",
   "getLuckDialogData": [
     {
@@ -165,5 +165,10 @@
       "type": 2,
       "count": 1
     }
-  ]
+  ],
+
+
+  "newHand_": "新手引导关",
+  "newHand": [1,2,3]
+
 }

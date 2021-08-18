@@ -132,7 +132,7 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
                     ylist: [200, 600],
                     name: ItemPreType.飞的原生广告或者激励视频广告,
                     debug : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.漂浮窗,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     withHeight : [ControlNum/100, ControlNum/100]
                 }
@@ -152,7 +152,7 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
                     ylist: [200, 600],
                     name: ItemPreType.飞的原生广告或者激励视频广告,
                     debug  : ControlCommercial.getSceneData(
-                    ControlCommercialSceneId.漂浮窗,
+                    ControlCommercialSceneId.游戏首页,
                     ControlCommercialItemName.测试开关),
                     withHeight : [ControlNum/100, ControlNum/100]
                 }
@@ -325,7 +325,7 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }
@@ -341,7 +341,7 @@ export default class ChannelSuperGetDialog extends ChannelBase implements  IChan
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }

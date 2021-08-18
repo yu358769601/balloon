@@ -63,7 +63,7 @@ export interface IChannelGetLuckDialog {
 export default class ChannelGetLuckDialog extends ChannelBase implements IChannelGetLuckDialog{
     测试开关(){
         if (ControlCommercial.getSceneData(
-            ControlCommercialSceneId.限时礼包,
+            ControlCommercialSceneId.游戏首页,
             ControlCommercialItemName.测试开关) == true) {
             this.bindComponent.失败_看广告跳过实际点击.getComponent(cc.Sprite).enabled = true
             this.bindComponent.失败_重新开始实际点击.getComponent(cc.Sprite).enabled = true
@@ -231,7 +231,7 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }
@@ -247,7 +247,7 @@ export default class ChannelGetLuckDialog extends ChannelBase implements IChanne
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }

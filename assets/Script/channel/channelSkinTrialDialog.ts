@@ -62,7 +62,7 @@ export interface IChannelSkinTrialDialog {
 export default class ChannelSkinTrialDialog extends ChannelBase implements IChannelSkinTrialDialog{
     测试开关(){
         if (ControlCommercial.getSceneData(
-            ControlCommercialSceneId.结算,
+            ControlCommercialSceneId.游戏首页,
             ControlCommercialItemName.测试开关) == true) {
             this.bindComponent.胜利_普通领取实际点击.getComponent(cc.Sprite).enabled = true
             this.bindComponent.胜利_看广告领取实际点击.getComponent(cc.Sprite).enabled = true
@@ -229,7 +229,7 @@ export default class ChannelSkinTrialDialog extends ChannelBase implements IChan
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.皮肤试用,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }
@@ -245,7 +245,7 @@ export default class ChannelSkinTrialDialog extends ChannelBase implements IChan
                     adCode : 1,
                     heights : [null,540+ControlNum],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.皮肤试用,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }

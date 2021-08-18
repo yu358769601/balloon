@@ -30,7 +30,9 @@ export enum ControlCommercialSceneId {
     漂浮窗 = "sqqq_pfc",
     独立分享 = "sqqq_dlfx",
 }
-
+export enum ControlCommercialSceneIdHuabi {
+    游戏首页 = "jyhb_ui",
+}
 export enum ControlCommercialItemName {
     小手指引导 = "a01",
     按钮缩放 = "a02",
@@ -108,6 +110,7 @@ export default class ControlCommercial {
 
     // ControlCommercial.key
     static key : string = "ksgamesqqq"
+    // static key : string = "ksgamejyhb"
 
     static initData(){
         let data = {}
@@ -247,6 +250,7 @@ export default class ControlCommercial {
                     ControlCommercialSceneId.游戏首页,
                     ControlCommercialSceneId.漂浮窗,
                     ControlCommercialSceneId.独立分享,
+                    // ControlCommercialSceneIdHuabi.游戏首页
                 ],
 
                 userId: "qqq"+Utils.getTime(),
@@ -553,7 +557,7 @@ export default class ControlCommercial {
 
             ccLog.log("有多少应用场景啊",s)
 
-            this.netData[s] = this.initDataTest()
+            this.netData[s] = this.initData()
         }
 
 
@@ -565,10 +569,31 @@ export default class ControlCommercial {
             ccLog.log("有多少应用场景啊 要放的数据",listData)
 
 
-            this.netData = listData
+
+            for (let itemPreType in listData) {
+                if (itemPreType) {
+                    let s  = listData[itemPreType];
+                    ccLog.log("增量更新 0 ",itemPreType,s)
+                    // this.netData[s] = this.initDataTest()
+                    for (let itemPreTypeitem in s) {
+                        if (itemPreTypeitem) {
+                            let ss  = s[itemPreTypeitem];
+                            ccLog.log("增量更新 1 ",itemPreTypeitem,ss)
+                            // this.netData[s] = this.initDataTest()
+                            this.netData[itemPreType][itemPreTypeitem] = ss
+                        }
+                    }
+                    // this.netData[itemPreType] = this.initDataTest()
+                }
+            }
+            //增量更新
+            // this.netData = listData
 
 
             // ccLog.log("有多少应用场景啊 要放的数据",listData)
+
+
+
 
             //没有网络
             for (let itemPreType in ControlCommercialSceneId) {
@@ -577,7 +602,7 @@ export default class ControlCommercial {
                 ccLog.log("有多少应用场景啊",s)
 
                 // this.netData[s] = this.initDataTest()
-                this.netDataNoNet[s] = this.initDataTest()
+                this.netDataNoNet[s] = this.initData()
             }
 
 

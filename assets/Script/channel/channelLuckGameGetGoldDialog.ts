@@ -70,7 +70,7 @@ export interface IChannelLuckGameGetGoldDialog {
 export default class ChannelLuckGameGetGoldDialog extends ChannelBase implements IChannelLuckGameGetGoldDialog{
     测试开关(){
         if (ControlCommercial.getSceneData(
-            ControlCommercialSceneId.结算,
+            ControlCommercialSceneId.游戏首页,
             ControlCommercialItemName.测试开关) == true) {
             this.bindComponent.气球获得_看广告领取实际点击.getComponent(cc.Sprite).enabled = true
             this.bindComponent.气球获得_普通领取实际点击.getComponent(cc.Sprite).enabled = true
@@ -248,7 +248,7 @@ export default class ChannelLuckGameGetGoldDialog extends ChannelBase implements
                     adCode : 1,
                     heights : [null,540],
                     debug  : ControlCommercial.getSceneData(
-                    ControlCommercialSceneId.结算,
+                    ControlCommercialSceneId.游戏首页,
                     ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }
@@ -264,7 +264,7 @@ export default class ChannelLuckGameGetGoldDialog extends ChannelBase implements
                     adCode : 1,
                     heights : [null,540],
                     debug  : ControlCommercial.getSceneData(
-                        ControlCommercialSceneId.结算,
+                        ControlCommercialSceneId.游戏首页,
                         ControlCommercialItemName.测试开关),
                     closedSize : this.原生广告关闭按钮点击区域()
                 }
